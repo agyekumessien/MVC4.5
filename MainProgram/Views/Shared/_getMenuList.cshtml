@@ -1,0 +1,494 @@
+﻿
+@model IEnumerable<MainProgram.Edm.tbh_Departments>
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<script>
+    $(document).ready(function () {
+        $('.nav li  > .dropdown-menu').parent().hover(function () {
+            var Navbar = $(this).children('.dropdown-menu');
+            if ($(Navbar).is(':hidden')) {
+                $(Navbar).slideDown(200);
+            } else {
+                $(Navbar).slideUp(200);
+            }
+        });
+    })
+
+</script>
+
+<script>
+    $(function () {
+       
+        $("#aa-main").click(function () {
+            $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+            );
+        });
+
+        $("#nav").click(function () {
+            $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+               );
+        });
+
+
+        $("#navbar-default").click(function () {
+            $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+               );
+        });
+
+
+        $("#dropdown-menu").click(function () {
+            $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                );
+        });
+
+        $("#aa-header-top-right").click(function () {
+            $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+               );
+        });
+
+
+
+        $("#aa-header3").click(function () {
+            $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                 );
+        });
+
+
+
+
+        $("#aa-header2").click(function () {
+            $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+
+           );
+        });
+
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<section id="menu" style="margin-bottom: 1px; background-image: url('../../Content/img/slider/Nyork.jpg');">
+    <div class="container no-gutter no-padding">
+        <div class="menu-area no-padding no-gutter" style="height:70px; width:100%; border:none; color:white">
+            <!-- Navbar -->
+            <!-- logo  -->
+            <!-- Text based logo -->
+           
+            <table  style="text-align:center; width:100%">
+                <tr>
+                                       <td style="margin-left:0px; float:left; text-align:center; color:white">
+
+            <p style="color:white">
+                <ul class="navbar-nav pull-left col-lg-12 no-padding no-gutter">
+                    <li>
+                        <a href="@Url.Action("Index","Home")">
+
+                          <img src="~/Content/img/ApparelImages/home_icon4.png" style="width:20px; height:20px; margin-top:8px" />
+
+                        </a>
+                    </li>
+                </ul>
+            </p>
+        </td>
+                    <!-- img based logo -->
+                    <!-- <a href="index.html"><img src="~/Content/img/logo.jpg" alt="logo img"></a> -->
+                    <td class="nav-table" style="margin-right:0px; float:none; width:100%; height:40px; color:white; border-color:none; border:none; display:inline">
+                        
+                        <p class="P-menu no-gutter no-padding" >
+                                <!-- Left nav -->
+                                <ul class="nav navbar-nav center-block  navbar-collapse  no-gutter no-padding" role="navigation" style="position: center; margin: auto; background-image: url('../../Content/img/slider/Nyork.jpg');">
+                                        @{
+                                           
+                                            foreach (var item in Model)
+                                            {
+                                                    <li class="center-block" style="float:right; position:relative;  width:92px; margin-top:15px">
+                                                        <a href="/Departments/@item.MenuURL">@item.Name</a>
+                                                        @if (item.tbh_SubDepartments.Count > 0)
+                                                        {
+                                                            <ul class="dropdown-menu" style="background-image: url('../../Content/img/slider/Nyork.jpg');">
+                                                                @foreach (var item2 in item.tbh_SubDepartments)
+                                                                {
+                                                                    <li ><a href="/Pages/@item2.MenuURL/@item2.SubDepartmentID">@item2.Name</a></li>
+                                                                }
+                                                            </ul>
+                                                           
+                                                        }
+                                                    </li>
+                                                }
+                                            }
+                                        
+                                   
+
+                               </ul>
+                        </p>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--/.nav-collapse
+        <!-- / search box -->
+    </div>
+
+    <!-- / header bottom  -->
+</section>
+
+
+
+<style>
+    #menu {
+        display: inline;
+        float: left;
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100%;
+        font-size: 18px;
+        text-align:center;
+
+    }
+
+        #menu .dropdown-menu {
+            font-size: 18px;
+            border: thin;
+            
+            background-image: url('../../Content/img/slider/Nyork.jpg');  
+}
+        
+
+
+    #menu .menu-area .aa-logo {
+        float: left;
+    }
+
+        #menu .menu-area .aa-logo a {
+            font-family: "Raleway", sans-serif;
+            font-size: 18px;
+            color: white;
+        }
+
+            #menu .menu-area .aa-logo a:hover {
+               
+            }
+
+            #menu .menu-area .aa-logo a span {
+                display: inline-block;
+                float: left;
+                font-size: 18px;
+              
+            }
+
+            #menu .menu-area .aa-logo a p {
+                display: inline-block;
+                float: left;
+                font-weight: bold;
+                margin-bottom: 0;
+                margin-left: 5px;
+                margin-top: -5px;
+            }
+
+                #menu .menu-area .aa-logo a p span {
+                    display: block;
+                    font-size: 12px;
+                    font-weight: normal;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                   
+                }
+
+    #menu .container {
+       
+        height: 100%;
+        margin: 0px;
+        width: 100%;
+       
+}
+
+    .center-block {
+        display: block;
+        margin-right: auto;
+       
+    }
+    #menu  .dropdown-menu{
+        font-size: 12px;
+        width:auto;
+        
+         color:white;
+ background-image: url('../../Content/img/slider/Nyork.jpg');
+}
+    
+
+
+
+
+    #menu .nav{
+text-align:center;
+ font-size: 12px;
+    }
+
+
+
+#menu .navbar-default{
+background-color:transparent;
+ font-size: 12px;
+ border:none;
+}
+
+ #menu .navbar-nav{
+     width:auto;
+     text-align:center;
+ 
+
+ }
+
+ #menu  ul li a {         
+            height: 35px;
+            display: block;
+            text-decoration: none;
+            text-align: left;
+            font-family: Georgia,'Times New Roman',serif;
+            color: #ffffff;
+            border:none;
+            
+        }
+
+
+  
+
+ 
+
+   #menu ul li:hover ul {
+
+        visibility: visible;
+
+    }
+
+ 
+
+     #menu  li:hover {
+
+        background-image: url('../../Content/img/slider/Nyork.jpg'); 
+ width:auto;
+    }
+
+ 
+
+    #menu ul li:hover ul li a:hover {
+
+       background-image: url(Content/img/Slider/Nyork.jpg); 
+      width:auto;
+    }
+
+
+
+    #menu a:hover {
+       background-image: url(Content/img/Slider/Nyork.jpg);  
+    }
+
+
+
+     .content-wrapper {
+            margin-top: 0%;
+            margin-left: 0%;
+            background-position: top;
+        }
+
+        .left {
+            width: 20%;
+            margin-left: 1%;
+            margin-top: 0%;
+            background-position: top;
+            position: relative;
+            background-color: #eee3e3;
+        }
+
+
+
+        .right-sidebar {
+            content: " ";
+            position: relative;
+            margin-top: 0%;
+            width: 80%;
+            overflow: no-display;
+            padding-right: 10px;
+            margin-left: 20%;
+            margin-right: 0%;
+            background-position: top;
+            margin-bottom: 0px;
+        }
+
+
+
+
+
+        /*Menu*/
+
+       #menu {
+        display: inline;
+        float: left;
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100%;
+        font-size: 18px;
+        text-align:center;
+
+    }
+
+        #menu .dropdown-menu {
+            font-size: 18px;
+            border: thin;
+            
+            background-image: url('../../Content/img/slider/Nyork.jpg');  
+}
+        
+
+
+    #menu .menu-area .aa-logo {
+        float: left;
+    }
+
+        #menu .menu-area .aa-logo a {
+            font-family: "Raleway", sans-serif;
+            font-size: 18px;
+            color: white;
+        }
+
+            #menu .menu-area .aa-logo a:hover {
+               
+            }
+
+            #menu .menu-area .aa-logo a span {
+                display: inline-block;
+                float: left;
+                font-size: 18px;
+              
+            }
+
+            #menu .menu-area .aa-logo a p {
+                display: inline-block;
+                float: left;
+                font-weight: bold;
+                margin-bottom: 0;
+                margin-left: 5px;
+                margin-top: -5px;
+            }
+
+                #menu .menu-area .aa-logo a p span {
+                    display: block;
+                    font-size: 12px;
+                    font-weight: normal;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                   
+                }
+
+    #menu .container {
+       
+        height: 100%;
+        margin: 0px;
+        width: 100%;
+       
+}
+
+    .center-block {
+        display: block;
+        margin-right: auto;
+       
+    }
+    #menu  .dropdown-menu{
+        font-size: 12px;
+        width:auto;
+        
+         color:white;
+ background-image: url('../../Content/img/slider/Nyork.jpg');
+}
+    
+
+    #menu .nav{
+text-align:center;
+ font-size: 12px;
+    }
+
+
+
+#menu .navbar-default{
+background-color: transparent; 
+ font-size: 12px;
+ border:none;
+}
+
+ #menu .navbar-nav{
+     width:auto;
+     text-align:center;
+ 
+
+ }
+
+ #menu  ul li a {         
+            height: 35px;
+            display: block;
+            text-decoration: none;
+            text-align: left;
+            font-family: Georgia,'Times New Roman',serif;
+            color: #ffffff;
+            border:none;
+            margin-top:4px;
+        }
+
+
+  
+
+ 
+
+   #menu ul li:hover ul {
+
+        visibility: visible;
+
+    }
+
+ 
+
+     #menu  li:hover {
+
+        background-image: url('../../Content/img/slider/Nyork.jpg'); 
+ width:auto;
+    }
+
+ 
+
+    #menu ul li:hover ul li a:hover {
+
+       background-image: url(Content/img/Slider/Nyork.jpg); 
+      width:auto;
+    }
+
+
+
+    #menu a:hover {
+       background-image: url(Content/img/Slider/Nyork.jpg);  
+    }
+
+        #menu ul li:hover ul li a:hover {
+
+        background-color: #0a0338;
+
+    }
+
+
+  #menu  li:hover {
+
+        background-color: #0a0338;
+
+    }
+
+</style>

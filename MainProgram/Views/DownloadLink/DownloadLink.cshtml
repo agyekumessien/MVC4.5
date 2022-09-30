@@ -1,0 +1,339 @@
+﻿@using MainProgram.Core.Resources
+@using MainProgram.Edm
+
+
+@{
+    ViewBag.Title = "Procedure";
+    Layout = "~/Views/Shared/_LayoutSub.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+@{
+    ViewBag.Title = "DownloadLink";
+}
+
+
+
+@using MainProgram.Models
+
+@model MainProgram.Core.ImgViewModel
+
+@{
+    ViewBag.Title = "ASP.NET MVC5: Upload Image into Database";
+}
+
+<div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; top:0px">
+
+
+
+    <!-- left sidebar-->
+
+
+    <div class="left" style="width: 17%; float:left; top:0px">
+        <div class="Container">
+            <div class="col-md-4">
+                <div class="container">
+                    <div class="panel panel-default" style="width: 22%; margin-left: 15px">
+                        <strong style="font-size:x-large"><b>DEVELOPER BLOG</b></strong>
+                        <div class=" panel-body  no-gutter">
+                            <div col-md-4">
+                                <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+
+                                    <img src="~/Content/img/ApparelImages/Essien.jpg " width=" 120" height="120" style="padding-right:15px; margin-right:10px; padding-bottom:5px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple />
+                                    <br />
+                                    <br /><br /><br /><br /><br /><br />
+
+
+                                    <hr />
+                                    <p style="width:100%">Download My Resume: Please, email me at agyekumessien@gmail.com &raquo;</p>
+                                    @{
+
+                                        foreach (MainProgram.Edm.tbh_Documents item in ViewBag.Essien)
+                                        {
+                                            <a href="@Url.Action("DownloadLinkFile", "DownloadLink", new { fileId =@item.file_id})">
+                                                @item.file_name
+                                            </a>
+                                        }
+
+                                    }
+
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--End Of Left-->
+<!-- Right-->
+<!--End Of Right-->
+<!--MID Sidebar Main content-->
+<div class="Mid-sidebar" style="margin-right:10px;  padding-right:0px; text-align:center">
+    <div class="panel panel-default" style="width: 99%; margin-left: 10px; padding-left:10px; padding-right:10px;">
+
+
+        <h1>My Resume</h1>
+        <p style="text-align:left"><strong>Peter A. Essien Phone: 404.447.3025 | Email: agyekumessien@gmail.com | 2414 Noble Forest Dr. Norcross, GA. 30092</strong></p>
+        <p>TARGETING:  .Net Developer, Web Developer and Designer, Database Administrator, or Software Developer Work Authorization: Citizen</p>
+
+        <ul>
+
+            <li style="text-align:left"> <strong>Summary&#58;</strong></li>
+            <li style="text-align:left"> &#8231; More than six years’ experience in Web development and applications using .NET languages (C# and ASP.NET).</li>
+            <li style="text-align:left"> &#8231; Good working knowledge in Advanced Visual Basic (VB.NET), SQL databases.</li>
+            <li style="text-align:left"> &#8231; Good knowledge in Advance Database (Oracle), Microsoft SQL server and database Concepts (MySQL).</li>
+            <li style="text-align:left"> &#8231; Good knowledge in Internet Oriented Programming and JAVA Programming</li>
+            <li style="text-align:left"> &#8231;  Good Leadership and Organizational Behavior and Strategic Management of Technology and Managing Organizational Change. Good Leadership and Organizational Behavior and Strategic Management of Technology and Managing Organizational Change.</li>
+
+        </ul>
+
+
+        <p>
+            <ul>
+
+                <li style="text-align:left"> <strong>Training&#58;</strong></li>
+                <li style="text-align:left"> &#8231;Course Work: Business Programming with Lab (C++), Web Application Programing with Lab - Using .NET (C#), Visual Basic Application Programming with Lab (VB.NET), Database Programming Concepts (MySQL), Advance Database Programming (Oracle), Networking Concepts and Applications, Internet Oriented Programming(HTML5) , JAVA Programming with Lab, Leadership and Organizational Behavior, Strategic Management of Technology, CIS Senior Project, Object-Oriented Analysis and Design (C#), Database System and Implementations ( Oracle), Architecture and Operating Systems with Lab, Principles of Information Systems Security, Statistics, Environmental Science, Introduction To Business and Technology, Critical Thinking and Problem-Solving, Structured Analysis and Design, Project Management, Essentials In Accounting, Sociology, CIS Senior Project.</li>
+            </ul>
+        </p>
+
+        <p>
+            <ul>
+
+                <li style="text-align:left"> <strong>Technical Skills&#58;</strong></li>
+                <li style="text-align:left">
+                    &#8231;Languages: Visual Basic, JAVA. NET, C#, C++
+                    Software: MS Project, MS Visio, MS Office, Visual Studio and Eclipse.Databases: Microsoft SQL Server 2012, Access Database, Oracle Database, MySQL.Other: jQuery, MVC, CSS, WPF, WCF, Angular, HTML5, SSRS, TFS, Window Forms, Agile Environment. Flow Diagrams: Visio, InDesign, Photoshop. System: UNIX, Linux, Windows all Models.
+                </li>
+            </ul>
+        </p>
+
+        <p>
+
+            <ul>
+
+                <li style="text-align:left"><br> <strong>Professional Experience&#58;</strong><br></li>
+
+                <li style="text-align:left"><strong>Web developer (Donat LLC) At www.essien.net  (Desktop view only)&#58;</strong>			           <strong style="float:right"> January 2018 -To Present</strong></li>
+                <li style="text-align:left"><strong>Responsibilities&#58; New Development| Coding | Test | Trouble Shoot | Fix Bugs</strong></li>
+                <li style="text-align:left"> &#8226; Using Angular 9 for front-end development and Web API backend development with Microsoft Visual Studio 2019  &#xa0;&#xa0;&#xa0;&#xa0; &#xa0;&#xa0;&#xa0;&#xa0; Major creations include components, services, user registrations, routers as well as Admin Dashboard</li>
+                <li style="text-align:left"> &#8226;Site Integrated with E-Commerce Application with online PayPal payment.</li>
+                <li style="text-align:left"> &#8226; Ensuring that, Http Module (Hypertext Transfer Protocol (HTTP) communicates between front end (Angular) and backend Asp.Net Core API, (full-stack development).</li>
+
+                <li style="text-align:left"> &#8226;Using Microsoft Asp.Net Core 3.1, Microsoft Asp.Net Identity Core, and SQL server database for development.</li>
+                <li style="text-align:left"> &#8226;  The following are some of the major creations include; components, services, and routers, helpers, authorization guards, and interceptors.</li>
+
+                <li style="text-align:left"> &#8226; Publishing to Azure App Service with ahead of time compilation, Jit, and setup proxy for API Calls.</li>
+
+                <li style="text-align:left"> &#8226;  Using Strong Security with Microsoft Asp.Net Core identity for user account creation, authentication, and database migrations.</li>
+                <li style="text-align:left"> &#8226; Other major creations include database tables with foreign key relations, database first approach in conjunction with Entity Framework 6, Ado net Entity Data Model (EDM).</li>
+                <li style="text-align:left"> &#8226;  Ensuring that, Admin dashboard is capable of tracking user performance, presence and easy to use platform for modifications site settings (Admin Only).</li>
+                <li style="text-align:left"> &#8226;  Implement client-side Validation controls on text and label boxes to ensure that, the user meets all the necessary requirements.</li>
+                <li style="text-align:left"> &#8226; Creating a Stored Procedure that communicates with the database in conjunction with a connection string to populate data to view.</li>
+                <li style="text-align:left"> &#8226;  Use of ADO.NET  Entity  data Model with Entity Frame work 6 to fetch and handle user data from database and populate data to pages</li>
+
+            </ul>
+        </p>
+        <br />
+
+
+
+        <p>
+
+            <ul>
+
+               
+
+                <li style="text-align:left"><strong>Web Developer (Donat LLC) At www.essien.net  (Desktop view only)&#58;</strong>			           <strong style="float:right"> January 2018 -To Present</strong></li>
+                <li style="text-align:left"><strong>Responsibilities&#58;</strong></li>
+                <li style="text-align:left"> &#8226;: Asp.net C#, Core 1.0, Entity Framework 6. Responsive Web Design (RWD), include, E-Commerce, JavaScript,  &#xa0;&#xa0;&#xa0;&#xa0; &#xa0;&#xa0;&#xa0;&#xa0; Jason, CSS, SCSS, JQuery, font, theme, bootstrap, intelligence, Store procedure, Shared Master Page, HTML5, Image Slider, SQL database, with Visual Studio version 2013.</li>
+                <li style="text-align:left"> &#8226;Site Integrated with E-Commerce Application with online PayPal payment.</li>
+                <li style="text-align:left"> &#8226; Using Strong Security technology using Microsoft Asp.Net Identity for user account creation with code first migrations </li>
+                <li style="text-align:left"> &#8226; Creating database tables with foreign key relations using SQL Server as well as using database first approach in conjunction with Entity Framework 6, Ado net Entity Data Model (EDM).</li>
+                <li style="text-align:left"> &#8226;  Creating Multi-level Navigation Menu using methodology such as, Parent and Sub-Parent navigation link (URL route) connecting to controllers displaying on main navigation in the front page</li>
+                <li style="text-align:left"> &#8226; Using session variable to keep track of Online logged in users whenever signed in</li>
+                <li style="text-align:left"> &#8226;  Create includes HTML Custom helper using static method and extensions for online videos and Tutorial for user to access. </li>
+                <li style="text-align:left"> &#8226; Ensuring rapid route or navigation by ensuring use of URl Action method, from database to Controller to display a view.</li>
+                <li style="text-align:left"> &#8226;  Implement client side Validation controls on text and label boxes to ensure that, user meets all the necessary requirements.</li>
+                <li style="text-align:left"> &#8226;  Creating Stored Procedure which communicates with database in conjunction with connection string to populate data to view</li>
+                <li style="text-align:left"> &#8226; Using declarative programming model such as "Extensible Application Markup Language," or XAML which can leverage all the benefits of a typed programming system such as, data binding, Database menu creation, others features include, Slider Slideshow creation, Animations, and Vector graphics.</li>
+                <li style="text-align:left"> &#8226;  Use of ADO.NET  Entity  data Model with Entity Frame work 6 to fetch and handle user data from database and populate data to pages within the MVC architecture.</li>
+                <li style="text-align:left"> &#8226;  Use of DreamWeaver (for file transfer), InDesign, Photoshop (Logo and site blueprint creation), Visio ( For Flow diagrams) to depict over all application initial strategies.</li>
+                <li style="text-align:left"> &#8226;  Design and Developed User Interface application and implement client side Validation controls with the help of JavaScript.</li>
+
+            </ul>
+        </p>
+        <br />
+
+    
+
+        <p>
+            <ul>
+
+                <li style="text-align:left"> <br><strong>Previous Practices&#58;</strong><br></li>
+                <li style="text-align:left"><strong>CHURCH OF PENTECOST, Stockwell Enterprise - Norcross, GA&#58;</strong>			           <strong style="float:right"> Jan 2011 – Dec 2017</strong></li>
+                <li style="text-align:left"> &#8226;  For Web Development and site maintenance (Project language Used Asp.net - C#)</li>
+                <li style="text-align:left"> &#8226; Using Asp.net Webform (C#), Create, deploy and customize Master Pages, HTML5, CSS, and SQL database, store procedure with Visual Studio 2010/2012/2013.</li>
+                <li style="text-align:left"> &#8226; Using InDesign and Photoshop and Visio to create the sites Logo, or Flow diagrams to depict over all the application initial strategy.</li>
+                <li style="text-align:left"> &#8226; Administer intranet, public facing and collaboration environments as well as designing web application themes, navigation and search.</li>
+                <li style="text-align:left"> &#8226; Use ASP.NET pattern to add functionality to individual pages such that to accept input from the page request and invoke the requested actions on the mode.</li>
+                <li style="text-align:left"> &#8226; Extensively used Entity Framework to connect SQL Server database with Data Access Layer.</li>
+                <li style="text-align:left"> &#8226; Use LINQ to SQL to interact with the SQL Server Database.</li>
+                <li style="text-align:left"> &#8226;  Use ASP.NET AJAX Controls like Script Manager, Update Panels and Updated Triggers to make the page more responsive and interactive to the users.</li>
+                <li style="text-align:left"> &#8226;  Use of DreamWeaver (for file transfer), InDesign, Photoshop (Logo and site blueprint creation), Visio ( For Flow diagrams) to depict over all application initial strategies.</li>
+                <li style="text-align:left"> &#8226; Design and develop UI using ASP.NET/ C#.NET, HTML, JavaScript, MVC, CSS, and JQuery.</li>
+                <li style="text-align:left"> &#8226;  Design and Developed User Interface application and implement client side Validation controls with the help of JavaScript.</li>
+                <li style="text-align:left"> &#8226;  Participate fully within the Agile environment to ensure work is finished on time for approval and ensure presence in all team meetings to discuss improvements options during the development of any application.</li>
+                <li style="text-align:left"> &#8226;  Design and Developed User Interface application and implement client side Validation controls with the help of JavaScript.</li>
+                <li style="text-align:left"> &#8226;  Participate fully within the Agile environment to ensure work is finished on time for approval and ensure presence in all team meetings to discuss improvements options during the development of any application.</li>
+                <li style="text-align:left"> &#8226;  Design and Developed User Interface application and implement client side Validation controls with the help of JavaScript.</li>
+                <li style="text-align:left"> &#8226;  Participate fully within the Agile environment to ensure work is finished on time for approval and ensure presence in all team meetings to discuss improvements options during the development of any application.</li>
+                <li style="text-align:left"> &#8226;  Design and Developed User Interface application and implement client side Validation controls with the help of JavaScript.</li>
+                <li style="text-align:left"> &#8226;  Participate fully within the Agile environment to ensure work is finished on time for approval and ensure presence in all team meetings to discuss improvements options during the development of any application.</li>
+                <li style="text-align:left"> &#8226;  Design and Developed User Interface application and implement client side Validation controls with the help of JavaScript.</li>
+                <li style="text-align:left"> &#8226;  Participate fully within the Agile environment to ensure work is finished on time for approval and ensure presence in all team meetings to discuss improvements options during the development of any application.</li>
+
+            </ul>
+        </p>
+
+        <p>
+            <ul>
+
+                <li style="text-align:left"> <br><strong>Previous Practices&#58;</strong><br></li>
+                <li style="text-align:left"><strong>MILLENNIUM MAT COMPANY, Suwannee, GA	&#58;</strong>			           <strong style="float:right"> Jan 2005 –Jan 2011</strong></li>
+                <li style="text-align:left"> &#8226;  Role: Assisted Database System</li>
+                <li style="text-align:left"> &#8226; Successfully code and create tables using Oracle database system.</li>
+                <li style="text-align:left"> &#8226; Write SQL statements within its syntax. PL/SQL program units are compiled by the Oracle Database server and stored inside the database.</li>
+                <li style="text-align:left"> &#8226; Working with PL/SQL cursors and Data dictionary to make manipulations of contents to create database tables.</li>
+                <li style="text-align:left"> &#8226; Design Projects Diagrams using Visio or Flow diagramming and apply chart as a blue print to suite the project requirement.</li>
+                <li style="text-align:left"> &#8226; Perform tuning, backup, recovery and disaster planning, archiving and ensure loss of data.</li>
+                <li style="text-align:left"> &#8226; Reorganization and defragmentation and manage permissions</li>
+                <li style="text-align:left"> &#8226; Write and execute Query Statements using join, view and store procedure.</li>
+                <li style="text-align:left"> &#8226; Explore database dynamic structured query language using (Oracle databases and MySQL.</li>
+                <li style="text-align:left"> &#8226;  Use SQL for complex queries, data warehousing, reporting capability creation, performance tuning, and data security.</li>
+                <li style="text-align:left"> &#8226;  Design and Developed User Interface application and implement client side Validation controls with the help of JavaScript.</li>
+                <li style="text-align:left"> &#8226;  Assess client needs and develop specifications; plan and implement projects from initial conceptual design through coding, final delivery, and client approval.</li>
+                <li style="text-align:left"> &#8226;  Work with team Developers/Manages to get work done on time without delay.</li>
+                <li style="text-align:left"> &#8226;  Apply unit testing to ensure softwares integrity and quality.</li>
+                <li style="text-align:left"> &#8226;  Provide timely, courteous and knowledgeable response to information requests, screen and transfer calls</li>
+                <li style="text-align:left"> &#8226;  Monitor and Resolve user account in Active Directory.</li>
+
+            </ul>
+        </p>
+
+        <p>
+            <ul>
+
+                <li style="text-align:left"><br> <strong>Education:&#58;</strong><br></li>
+
+                <li style="text-align:left"><strong>Keller Graduate School of Management&#58;</strong>
+                <li style="text-align:left">Master’s Degree (2 years in CIS) - Computer Engineering Information System and Management (2016), University of DeVry</strong></li>
+                <li style="text-align:left"> &#8231;Bachelor’s Degree (4 years in CIS). Computer engineering Database Administrator (2014)</li>
+                <li style="text-align:left"> &#8231;Languages: Visual Basic, JAVA. NET, C#, C++</li>
+            </ul>
+        </p>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<!--End Of MID-->
+
+
+
+
+
+
+
+
+<style>
+    .content-wrapper {
+        margin-top: 0%;
+        margin-left: 0%;
+        background-position: top;
+    }
+
+    #left {
+        width: 20%;
+        margin-left: 0%;
+        margin-top: 0%;
+        background-position: top;
+        position: relative;
+        background-color: #eee3e3;
+    }
+
+
+
+    .Mid-sidebar {
+        content: " ";
+        position: relative;
+        margin-top: 0%;
+        width: 78%;
+        overflow: no-display;
+        padding-right: 0px;
+        margin-left: 20%;
+        margin-right: 0%;
+        background-position: top;
+        margin-bottom: 0px;
+        background-color: #fff;
+        padding-right: 10px;
+    }
+
+
+    .SiteT {
+        width: 100%;
+        border: none;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
+
+
+
+    .main--container {
+        margin-left: 17px;
+    }
+
+   .card {
+                box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+                 background: #ffffff;
+            }
+
+
+            .col-lg-2 {
+                flex: 0 0 10% !important;
+                max-width: 20%;
+            }
+</style>
+
+

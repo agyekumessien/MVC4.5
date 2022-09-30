@@ -1,0 +1,425 @@
+﻿@using MainProgram.Core.Resources
+@using MainProgram.Edm
+
+
+
+
+@{
+    ViewBag.Title = "Photos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+<!--END SLIDER-->
+<!--END Content Header (Page header) -->
+<!-- Begins Content Body -->
+<section class="hero is-info is-fullheight is-bold">
+
+    <div class="Main-Bar" style="width:100%; margin-right:0px; padding-right:0px; margin-top:20px; text-align:center; background-color:#fff">
+        <div class="panel2" style="width: 98.8%; padding-left: 0px; padding-right: 0px;">
+            <div class="row mt-4 mb-6 mb-12">
+
+                <div class="hero-body   mt-4 mb-6 mb-12" style="background-color: ghostwhite; margin-right:0px; padding-right:0px; text-align:center">
+
+                    <div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; margin-top:30px; background-color:white; border:none">
+
+
+
+
+
+
+                        <!-- left sidebar-->
+                        <div class="left" style="width: 22%; margin-left:0%; top:0px; border-right:none; border-bottom:none; border-top:none; border-left:none ">
+                            <div class="Container">
+                                <div class="col-md-4">
+                                    <div class="container">
+
+                                        <div class="panel panel-default" style="width: 22%; margin-right:1px; border-right:none; border-bottom:none; border-top:none; border-left:none">
+
+                                            <strong style="font-size:x-large"><b>Statistics</b></strong>
+                                            <br />
+                                            <div class=" panel-body  no-gutter">
+                                                <div col-md-4">
+
+
+
+
+
+
+                                                    <!--END-->
+
+                                                </div>
+
+
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!--END of LEFT-->
+                        <!--Middle-->
+                        <div class="Middle" style="width:59%; float:left; margin-left:14%; overflow:hidden;border-left:2px solid #f1f1f1; border-right:2px solid #f1f1f1; border-radius:8px; border-top:2px solid #f1f1f1; border-bottom:2px solid #f1f1f1; ">
+                            <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+                                <strong style="font-size:x-large"><b>STRONG CONTRIBUTERS</b></strong>
+                                <hr />
+                                <ul class="list-unstyled list-inline mb-0" style="text-align:left">
+                                    <li class="fa fa-Right">
+                                    </li>
+
+                                    @*
+                                    @{
+
+                                    MainProgram.Edm.angulardemoEntities dbg3 = new MainProgram.Edm.angulardemoEntities();
+
+                                    List<MainProgram.Edm.tbh_Replies> Modelq = dbg3.tbh_Replies.ToList();
+
+                                    foreach (MainProgram.Edm.tbh_Replies item in Modelq)
+                                    {
+
+                                    <li style="margin-right:30px; margin-bottom:30px; margin-left:8px; text-align:left; float:left">
+                                    <a href="@Url.Action("Details", "Home", new { id = item.UserId })" class="aa-cartbox-img">
+                                    <a href="@Url.Action("ChatRoom", "Post", new { id = item.ThreadId })" class="aa-cartbox-img">
+                                    <img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; vertical-align:sub" multiple />
+                                    </a>
+
+
+
+                                    <div class="aa-cartbox-info">
+                                    <h4><b><a href="@Url.Action("Details", "Home", new { id = Model.UserId })">
+                                    @Model.UserName</a></b></h4>
+
+
+
+                                    </div>
+                                    </li>
+                                    }
+                                    }
+                                    </ul>
+
+
+
+                                    *@
+
+
+
+
+
+
+
+
+
+
+
+                                    @{
+
+
+                                    MainProgram.Edm.angulardemoEntities dbg4 = new MainProgram.Edm.angulardemoEntities();
+
+                                    List<MainProgram.Edm.tbh_Replies> Modelq1 = dbg4.tbh_Replies.ToList();
+
+                                    foreach (MainProgram.Edm.tbh_Replies item in Modelq1)
+                                    {
+                                    <li class="list-unstyled list-inline mb-0" style=" margin:20px; width:150px; height:200px">
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <a>
+                                            <img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:0px; margin-bottom:0px; border-radius:50px; text-align:left; vertical-align:sub" multiple />
+                                        </a>
+
+
+                                        <a>
+                                            <br />
+                                            <br />
+                                            @item.AspNetUser.UserName
+
+                                        </a>
+
+                                        <br />
+                                        @*<a href="@Url.Action("ChatRoom", "Post")">View</a>*@
+
+
+                                    </li>
+                                    }
+                                    }
+
+
+                                </ul>
+                                <br />
+                                <hr />
+
+
+
+
+                                </ul>
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="ScrollgridR2" style="margin-right:5px; width:19%; float:right; padding-right:15px; margin-top:2px; border:none; overflow:hidden">
+
+
+
+
+                            <div class="panel panel-default" style="width: 100%; border-radius:8px">
+
+
+
+                                <strong style="font-size:x-large"><b>Related Topics</b></strong>
+
+
+
+
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+                      
+
+                    </div>
+
+
+
+
+        
+
+
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <style>
+                            .content-wrapper {
+                                margin-top: 0%;
+                                margin-left: 0%;
+                                background-position: top;
+                            }
+
+                            #left {
+                                width: 20%;
+                                margin-left: 0%;
+                                margin-top: 0%;
+                                background-position: top;
+                                position: relative;
+                                background-color: #eee3e3;
+                            }
+
+
+
+                            .Mid-sidebar {
+                                content: " ";
+                                position: relative;
+                                margin-top: 0%;
+                                width: 60%;
+                                overflow: no-display;
+                                padding-right: 0px;
+                                margin-left: 20%;
+                                margin-right: 0%;
+                                background-position: top;
+                                margin-bottom: 0px;
+                                background-color: #fff;
+                            }
+
+
+                            .SiteT {
+                                width: 100%;
+                                border: none;
+                                margin-right: 0px;
+                                padding-right: 0px;
+                            }
+
+
+
+
+                            .main--container {
+                                margin-left: 17px;
+                            }
+                       
+
+    .ScrollgridL {
+        OVERFLOW: auto;
+        border: none;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        WIDTH: 100%;
+        BORDER-BOTTOM: #000000 none;
+        HEIGHT: 750px;
+        max-height: 750px;
+        min-height: 750px;
+        scrollbar-3dlight-color: none;
+        scrollbar-arrow-color: #9C3842;
+        scrollbar-base-color: #ffffff;
+        scrollbar-darkshadow-color: none;
+        scrollbar-face-color: transparent;
+        scrollbar-highlight-color: #ffffff;
+        scrollbar-shadow-color: #ffffff;
+    }
+
+    .ScrollgridR {
+        OVERFLOW: auto;
+        border: none;
+        WIDTH: 100%;
+        BORDER-BOTTOM: #000000 none;
+        HEIGHT: 700px;
+        max-height: 700px;
+        min-height: 700px;
+        scrollbar-3dlight-color: #fff;
+        scrollbar-arrow-color: #9C3842;
+        scrollbar-base-color: #003366;
+        scrollbar-face-color: #ffffff;
+        scrollbar-face-color: #ffffff;
+        scrollbar-highlight-color: #ffffff;
+        scrollbar-shadow-color: #ffffff;
+    }
+
+    .ScrollgridM {
+        OVERFLOW: auto;
+        border: none;
+        WIDTH: 100%;
+        BORDER-BOTTOM: #000000 none;
+        HEIGHT: 700px;
+        max-height: 700px;
+        min-height: 700px;
+        scrollbar-3dlight-color: #fff;
+        scrollbar-arrow-color: #9C3842;
+        scrollbar-base-color: #003366;
+        scrollbar-face-color: #ffffff;
+        scrollbar-face-color: #ffffff;
+        scrollbar-highlight-color: #ffffff;
+        scrollbar-shadow-color: #ffffff;
+    }
+
+
+    .carousel.fade {
+        opacity: 1;
+    }
+
+
+        .carousel.fade .item {
+            /* transition: opacity ease-out .7s;  can remove to stop 1st slide rapid changing */
+            left: 0;
+            top: 0;
+            position: absolute;
+            width: 100%;
+            display: block;
+        }
+
+            .carousel.fade .item:first-child {
+                top: auto;
+                opacity: 1; /* show first slide */
+                position: relative;
+            }
+
+            .carousel.fade .item.active {
+                opacity: 1;
+            }
+
+
+
+
+
+
+
+    .carousel,
+    .carousel-inner,
+    .carousel-inner .item {
+        height: 100%;
+    }
+
+    .item:nth-child(1) {
+        background: #f1f1f1;
+    }
+
+    .item:nth-child(2) {
+        background: #51BCE8;
+    }
+
+    .item:nth-child(3) {
+        background: #E46653;
+    }
+
+
+    /*.carousel-fade   .carousel-inner  .item{
+
+                transition-property: opacity;
+            }*/
+
+    .item,
+    .active.left,
+    .active.right {
+        opacity: 0;
+    }
+
+    .active,
+    .next.left,
+    .prev.right {
+        opacity: 1;
+    }
+
+        .next,
+        .prev,
+        .active.left,
+        .active.right {
+            left: 0;
+            transform: translate3d(0, 0, 0);
+        }
+
+
+    .carousel-control {
+        z-index: 2;
+    }
+</style>
+        @Scripts.Render("~/bundles/bootstrap-file")
+
+        @Styles.Render("~/Content/Bootstrap-file/css")
+    </div>

@@ -1,0 +1,689 @@
+﻿@*@model PagedList.IPagedList<MainProgram.Edm.Angular>*@
+@model MainProgram.Edm.tbh_Pages
+
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+
+
+
+@{
+    ViewBag.Title = "GetPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Intellisence/css/jquery-ui.min.css" rel="stylesheet" />
+<script src="~/Content/Intellisence/js/jquery-1.10.2.min.js"></script>
+<script src="~/Content/Intellisence/js/jquery-ui.min.js"></script>
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="hero is-info is-fullheight is-bold">
+
+
+    <div class="Main-Bar" style="width:100%; margin-right:0px; padding-right:0px; margin-top:20px; text-align:center; background-color:#fff">
+        <div class="panel2" style="width: 98.8%; padding-left: 0px; padding-right: 0px;">
+            <div class="row mt-4 mb-6 mb-12">
+
+                <div class="hero-body   mt-4 mb-6 mb-12" style="background-color: ghostwhite; margin-right:0px; padding-right:0px; text-align:center">
+
+                    <div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; margin-top:30px; background-color:white; border:none">
+
+
+
+
+                        <!-- left sidebar-->
+
+
+                        <div class="left" style="float:left; top:0px; background-color:white; border:none">
+                            <div class="Container">
+                                <div class="col-md-2">
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!--End Of Left-->
+                        <!-- Right-->
+
+
+                        <div class="right"
+                             style="float:right; margin-right:8px; padding-right:8px; top:0px; background-color:white; border:none">
+                            <div class="Container">
+                                <div class="col-md-2">
+
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+                        <!--End Of Right-->
+                        <!--MID Sidebar Main content-->
+                        <div class="Mid-sidebar" style="margin-right:0px; padding-right:0px; text-align:center">
+                            <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+
+                              
+                                    <div id="why_buy">
+                                        <div class="info_right">
+                                            <h5 class="text-center mb-3">News Post</h5>
+                                            <ul style="text-align:left; font-size:16px; margin:15px">
+
+                                                @{
+
+
+                                                    MainProgram.Edm.angulardemoEntities dbg = new MainProgram.Edm.angulardemoEntities();
+
+                                                    List<MainProgram.Edm.tbh_Pages> Modelg = dbg.tbh_Pages.ToList();
+
+
+
+
+
+                                                    foreach (MainProgram.Edm.tbh_Pages item in ViewBag.netCoreN)
+                                                    {
+
+                                                        <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                            &#8231;
+
+                                                            <img src="~/Content/img/News/Author.png" style="text-align:left"><br /><br />
+                                                        </li>
+
+
+                                                        <li style="text-align:center"><br> <strong style="font-size:20px; color:red">What is Solid Principle?</strong><br><br></li>
+
+                                                        <li style="text-align:center"><br> <strong style="font-size:20px; color:red">How to apply SOLID principles with practical examples in C#</strong><br><br></li>
+
+
+
+                                                        <li style="text-align:left; margin-left:10px; margin-right:10px ">
+                                                            In Object-Oriented Programming (OOP), SOLID is one of the most popular sets of design principles that help developers write readable, reusable, maintainable, and scalable code. It's a mnemonic acronym for five design principles listed below:
+                                                            <br />
+                                                            1. Single Responsibility Principle (SRS)
+                                                            2. Open/Closed Principle (OCP)
+                                                            3. Liskov Substitution Principle (LSP)
+                                                            4. Interface Segregation Principle (ISP)
+                                                            5. Dependency Inversion Principle (DIP)
+                                                            <br />
+                                                            This article will get into the concept of each principle in Object-Oriented Design and why you should use them in software design. We also explore how to apply these principles effectively in your application with practical examples using C#. Even if you aren't a C# developer, some OOP experience can also help you produce a robust and maintainable software.
+
+                                                            &#xa0;&#xa0;&#xa0;&#xa0; &#xa0;&#xa0;&#xa0;&#xa0;
+                                                        </li>
+
+
+                                                        <li style="text-align:left"><strong style="font-size:20px; color:red">Why you should use SOLID design principles</strong></li>
+
+
+                                                        <li style="text-align:left">
+                                                            As software developers, the natural tendency is to start developing applications based on your own hands-on experience and knowledge right away. However, over time issues in the application arise, adaptations to changes, and new features happen. Since then, you gradually realize that you have put too much effort into one thing: modifying the application. Even when implementing a simple task, it also requires understanding the whole system. You can’t blame them for changes or new features since they are inevitable parts of software development. So, what is the main problem here?
+
+                                                            The obvious answer could be derived from the application's design. Keeping the system design as clean and scalable as possible is one of the critical things that any professional developer should dedicate their time to. And that’s where SOLID design principles come into play. It helps developers eliminate design smells and build the best designs for a set of features.
+
+                                                            Although the SOLID design principles were first introduced by the famous Computer Scientist Robert C. Martin (a.k.a. Uncle Bob) in his paper in 2000, its acronym was introduced later by Michael Feathers. Uncle Bob is also the author of best-selling books Clean Code, Clean Architecture, Agile Software Development: Principles, Patterns, and Practices, and Designing Object-Oriented C++ Applications Using The Booch Method.<br><br>
+                                                        </li>
+
+
+
+
+                                                        <li style="text-align:left"><strong style="font-size:20px; color:red">Why you should use SOLID design principles</strong></li>
+                                                        <li style="text-align:left">
+                                                            As software developers, the natural tendency is to start developing applications based on your own hands-on experience and knowledge right away. However, over time issues in the application arise, adaptations to changes, and new features happen. Since then, you gradually realize that you have put too much effort into one thing: modifying the application. Even when implementing a simple task, it also requires understanding the whole system. You can’t blame them for changes or new features since they are inevitable parts of software development. So, what is the main problem here?
+
+                                                            The obvious answer could be derived from the application's design. Keeping the system design as clean and scalable as possible is one of the critical things that any professional developer should dedicate their time to. And that’s where SOLID design principles come into play. It helps developers eliminate design smells and build the best designs for a set of features.
+
+                                                            Although the SOLID design principles were first introduced by the famous Computer Scientist Robert C. Martin (a.k.a. Uncle Bob) in his paper in 2000, its acronym was introduced later by Michael Feathers. Uncle Bob is also the author of best-selling books Clean Code, Clean Architecture, Agile Software Development: Principles, Patterns, and Practices, and Designing Object-Oriented C++ Applications Using The Booch Method.<br><br>
+                                                        </li>
+
+
+
+                                                        <li style="text-align:left"><strong style="font-size:20px; color:red">Advantages of SOLID design principles in C#</strong></li>
+
+                                                        <li style="text-align:left">
+                                                            The SOLID are long-standing principles used to manage most of the software design problems you encounter in your daily programming process.
+
+                                                            Whether you are designing or developing the application, you can leverage the following advantages of SOLID principles to write code in the right way.
+                                                            <p>
+                                                                <ul>
+
+                                                                    <li style="text-align:left"> <strong>Maintainability&#58;</strong></li>
+                                                                    <li style="text-align:left">
+                                                                        So far, maintenance is vital for any organization to keep high quality as a standard in developing software. As the business has been growing and the market requires more changes, the software design should be adapted to future modifications at ease.
+
+                                                                    </li>
+                                                                    <li style="text-align:left"> <strong>Testability&#58;</strong></li>
+                                                                    <li style="text-align:left">
+                                                                        When you design and develop a large-scale application, it's essential to build one that facilitates testing each functionality early and easily.
+
+                                                                    </li>
+                                                                    <li style="text-align:left"> <strong>Flexibility and scalability&#58;</strong></li>
+                                                                    <li style="text-align:left">
+                                                                        Flexibility and scalability are the foremost crucial parts of enterprise applications. As a result, the system design should be adaptable to any later update and extensible for adding new features smoothly and efficiently.
+                                                                    </li>
+                                                                    <li style="text-align:left"> <strong>Parallel development&#58;</strong></li>
+                                                                    <li style="text-align:left">
+                                                                        Parallel development is one of the most key factors for saving time and costs in software development. It could be challenging for all team members to work on the same module at the same time. That’s why the software needs to be broken down into various modules which allow different teams to work independently and simultaneously.
+                                                                    </li>
+                                                                </ul>
+                                                            </p>
+
+                                                            <br><br>
+                                                        </li>
+
+
+
+
+
+                                                        <li style="text-align:left"><strong style="font-size:20px; color:red">SOLID principles in a .NET Core application</strong></li>
+
+                                                        <li style="text-align:left">
+                                                            Robert Martin states that “Every software module should have only one reason to change.”
+                                                            <p>
+                                                                <ul>
+
+
+                                                                    <li style="text-align:left">
+                                                                        It's tempting to pack a class with a lot of functionality, like when you can only take one suitcase on your flight. However, the issue is that your class won't be conceptually cohesive, giving it several reasons to change. Reducing the number of times to modify a class is essential. If this job's specifications change, you only need to modify that specific class. This change is less likely to break the whole application since other classes continue to function as before. As a result, classes have become smaller, cleaner, and thus easier to maintain.
+
+                                                                        To simplify the coding process, we choose 3-layer architecture to implement this project. Our application includes three layers: API, Application, Entity, and Infrastructure (a.k.a. Data Access Layer).
+
+                                                                    </li>
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/psStructure.png" style="text-align:left"><br /><br />
+                                                                    </li>
+
+
+                                                                    As you can see in the above screenshot, each layer is designed for one responsibility:
+
+
+                                                                    <li style="text-align:left"> <strong> &#8231;API: Handle requests from clients.&#58;</strong></li>
+                                                                    <li style="text-align:left">
+                                                                        &#8231;Application: Process business logic.
+
+                                                                    </li>
+                                                                    <li style="text-align:left"> <strong>Data Access Layer: &#58;</strong></li>
+                                                                    Entities: POCO classes, construction, and model validation.
+                                                                    Infrastructure: Communicate with the database (Persistent Layer).
+
+
+                                                                    <li style="text-align:left"><strong style="font-size:20px; color:red">Class Structure</strong></li>
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/cStructure.png" style="text-align:left"><br /><br />
+                                                                    </li>
+                                                                    <li style="text-align:left"> <strong>In the Application Layer, each service class is designed to handle only one feature. If there are multiple classes in a layer, they should relate to one responsibility. In the example, you could see how service classes are structured.&#58;</strong></li>
+                                                                    <li style="text-align:left"><strong style="font-size:20px; color:red">Method Structure</strong></li>
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/mStructure.png" style="text-align:left"><br /><br />
+                                                                    </li>
+
+                                                                    Each method, in this case, in the Basket class is also responsible for one functionality. This approach enables you to structure your code clearer and ease the refactoring process in the future.
+
+
+
+
+
+                                                                </ul>
+                                                            </p>
+
+                                                            <br><br>
+                                                        </li>
+
+
+
+                                                        <li style="text-align:left"><strong style="font-size:20px; color:red">Single responsibility principle</strong></li>
+
+                                                        <li style="text-align:left">
+
+                                                            <p>
+                                                                <ul>
+
+                                                                    <li style="text-align:left"> <strong>Open/Closed Principle&#58;</strong></li>
+                                                                    “Software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification.”
+
+                                                                    Modules that follow the Open/Closed Principle include two key attributes.
+
+
+                                                                    <li style="text-align:left">
+                                                                        &#8231; "Open for extension."
+                                                                        It means that the module’s behavior can be extended. When the requirements of the application change, you can extend the module with new behaviors that adapt to those changes.
+
+                                                                    </li>
+                                                                    <li style="text-align:left">
+                                                                        &#8231; "Closed for modification."
+                                                                        The source code of such a module is inviolate when you extend the module's behavior. You shouldn't refactor and modify the existing code for the module until bugs are detected. The reason is the source code has already passed the unit testing, so changing it can affect other existing functionalities.
+                                                                        In our application, there are two types of invoices. One for the company, and another for the individual. And each of them will acquire different methods of signing.
+
+                                                                        Let's look at the code. The following example shows that signing implementation details of two invoice types are placed in InvoiceService. They work totally fine, but outside their core class (CompanyInvoice & PersonalInvoice). As a result, they are not closed for modification.
+                                                                        <br />
+                                                                    </li>
+                                                                    InvoiceService.cs (Wrong case)
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/InvoiceService.png" style="text-align:left"><br /><br />
+                                                                    </li>
+
+                                                                    To fix them, we will create the InvoiceBase abstract class, which defines common methods required in invoice features. We also place the abstract Sign() method in the base class.
+
+                                                                    InvoiceBase.cs
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/InvoiceBase.png" style="text-align:left"><br /><br />
+                                                                    </li>
+
+                                                                    Then, each type of invoice class will implement its own Sign() method and handle them in its class scope.
+
+
+
+
+                                                                    To fix them, we will create the InvoiceBase abstract class, which defines common methods required in invoice features. We also place the abstract Sign() method in the base class.
+
+
+                                                                    CompanyInvoiceBase.cs
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/CompanyInvoice.png" style="text-align:left"><br /><br />
+                                                                    </li>
+
+                                                                    PersonalInvoice.cs
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/PersonalInvoice.png" style="text-align:left"><br /><br />
+                                                                    </li>
+
+                                                                    PersonalInvoice.cs
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/InvoiceService2.png" style="text-align:left"><br /><br />
+                                                                    </li>
+
+                                                                </ul>
+                                                            </p>
+
+
+
+
+                                                            <p>
+                                                                <ul>
+
+                                                                    <li style="text-align:left"> <strong>Liskov Substitution Principle&#58;</strong></li>
+                                                                    “You should be able to use any derived class instead of a parent class and have it behave in the same manner without modification.”
+
+
+                                                                    <li style="text-align:left">
+                                                                        &#8231; This principle clearly states that when you have a parent class and a child class in your project, the child class can be a substitution of the parent class without changing the correctness of the application.
+
+                                                                        In this application, besides the signing method, business analysts required a default exporting form for the invoice. Therefore, we declared the Export() method in the InvoiceBase class to generate the default form of the export feature.
+
+                                                                        Now let's see the code example.
+                                                                    </li>
+
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/InvoiceBase2.png" style="text-align:left"><br /><br />
+                                                                    </li>
+
+                                                                    But then, they proposed another requirement. Company invoice needs to have its own format. Hence, I overrode the Export() function from the base class and implemented their own one.
+
+                                                                    You can follow the code examples as below:
+
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/CompanyInvoice2.png" style="text-align:left"><br /><br />
+                                                                    </li>
+                                                                    In InvoiceService, we implement the Export() method, which will export the details of the invoice based on its type.
+
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/InvoiceService3.png" style="text-align:left"><br /><br />
+                                                                    </li>
+
+                                                                    The personal invoice doesn’t override the default Export() method in InvoiceBase class, and given that, it will return the default export form. However, the company invoice does, it will return the export form which was overridden in the company invoice.
+
+                                                                    The Export() method in the company invoice is called a good substitution for the Export() method in the base class (InvoiceBase) without affecting the correctness of our application.
+
+                                                                    On the other hand, if we inherited PersonalInvoice from CompanyInvoice, they would affect the correctness of the application. At that time, the personal invoice can’t have a tax number. Thus, it would be an inappropriate use case that we should avoid.
+
+
+
+
+                                                                    <li style="text-align:left"><strong style="font-size:20px; color:red">  Interface Segregation Principle</strong></li>
+
+                                                                    <li style="text-align:left">
+
+                                                                        Interface Segregation Principle
+                                                                        “Clients should not be forced to implement interfaces they don't use. Instead of one fat interface, many small interfaces are preferred based on groups of functions, each one serving one submodule.”
+
+                                                                        In the requirement, our order fulfillment application allows 2 payment methods. The first is paying via bank account, and the second is via e-wallet. Here is the wrong way to code.
+                                                                    </li>
+
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/Ipayment.png" style="text-align:left"><br /><br />
+                                                                    </li>
+
+                                                                    In the first stage, we created an IPayment interface for both of them. But then, we realized that some functions are designed for specific payment methods. For instance, adding bank information and paying with installment loans are features that are only allowed on a bank account, not spent for e-wallet. And vice versa.
+
+                                                                    Therefore, we hold the common function in the IPayment interface and create specific interfaces, which contains specific functions for each payment method.
+
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/Ipayment3.png" style="text-align:left"><br /><br />
+                                                                    </li>
+
+                                                                    Sub-interfaces for each payment will implement IPayment to inherit common functions that a payment method must have.
+
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/IBankPayment.png" style="text-align:left"><br /><br />
+                                                                    </li>
+
+                                                                    After creating the necessary interfaces, we will implement actual classes with functions' details.
+
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/BankPayment.png" style="text-align:left"><br /><br />
+                                                                    </li>
+
+
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/EWalletPayment2.png" style="text-align:left"><br /><br />
+                                                                    </li>
+
+
+
+                                                                    <li style="text-align:left"><strong style="font-size:20px; color:red">Dependency Inversion Principle</strong></li>
+
+                                                                    It’s the last principle in SOLID and states two critical parts as follows:
+                                                                    <li style="text-align:left">High-level modules should not depend on low-level modules. Both should depend on abstractions (interface).</li>
+                                                                    <li style="text-align:left">Abstractions should not depend upon details. Details should depend on abstractions.</li>
+
+
+                                                                    The high-level modules include the important policy decisions and business models of an application. If these modules depend on the lower-level details, changes to the lower-level modules can directly impact the higher-level ones, forcing them to change in turn. When building a real-time application, the critical point is always to keep the high-level module and low-level module loosely coupled as much as possible. It helps to protect the other class while you are making changes to any specific class. All in all, instead of a high-level module depending on a low-level module, both should depend on an abstraction.
+
+                                                                    Let me give you an example that helps you understand this principle clearly.
+
+                                                                    First, I defined an abstract interface IBasketService along with functions that basket service would implement.
+
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/IBasketService.png" style="text-align:left"><br /><br />
+                                                                    </li>
+
+                                                                    Then, the BasketService class will inherit the IBasketService interface and implement all functions that have been defined. This ensures details depend on abstraction.
+
+
+
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/BasketService.png" style="text-align:left"><br /><br />
+                                                                    </li>
+
+                                                                    Next, we need to use BasketService in BasketController. Given that, we pass the service to the constructor of BasketController. Once again, it works fine but violates the Dependency Inversion Principle. This means that the BasketController class depends on low-level modules, specifically the BasketService.
+
+
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/BasketController.png" style="text-align:left"><br /><br />
+                                                                    </li>
+
+                                                                    Instead, BasketController should depend on abstraction, and in this case, it is IBasketService. We will implement them along with Dependency Injection.
+
+                                                                    In programming, Dependency Injection (DI) is a powerful technique in which an object receives other objects that it depends on, called dependencies. In the code below, I applied DI to register all classes along with and their interfaces which will be used in other classes of the application, including BasketService.
+
+
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/Startup.png" style="text-align:left"><br /><br />
+                                                                    </li>
+                                                                    In high-level modules, we could use classes from low-level modules by injecting their interface via DI. The DI would create instances and provide them to the current class. This keeps BasketController and other similar classes from depending on low-level modules but just only relying on abstractions (interface).
+
+
+
+
+                                                                    <li style="text-align:left;  margin-top:5px; margin-bottom:5px">
+                                                                        &#8231;
+
+                                                                        <img src="~/Content/img/News/BasketController2.png" style="text-align:left"><br /><br />
+                                                                    </li>
+
+
+
+                                                                    <li style="text-align:left"><strong style="font-size:20px; color:red">Final thoughts,</strong></li>
+
+                                                                    So far, the above example helps you distinguish SOLID principles in the right and wrong way. Throughout the years of programming, I used to refactor many projects, and what I realize is that it’s really tricky to change the code structure if you don’t apply the SOLID principles and other standards like DRY. Clear, understandable, loosely coupled, and scalable are all important attributes we should focus on. Without them, the codebase will become a nightmare for other developers to maintain and update them later.
+
+                                                                    In this article, I explained how to apply SOLID principles into a C# project, from layers, classes to methods. Though, I can’t cover all specific cases in your real project, hopefully this article can inspire you to apply these principles in the C# code structure and benefit from their traits. Let's make the most of every chance you have to practice SOLID as much as possible. It will deepen your experiences in creating the most beautiful codebase.
+
+                                                                    For better understanding, you can find the source code on GitHub here.
+
+                                                                    Thank you for spending your time reading the whole article.
+
+                                                                    Happy coding and have a nice day!
+
+                                                                    <li style="text-align:left"><strong style="font-size:20px; color:red"> References:</strong></li>
+
+                                                                    <li style="text-align:left">
+                                                                        Robert C. Martin, Agile Software Development, Principles, Patterns, and Practices, 2002.
+                                                                        Yiğit Kemal Erinç, The SOLID Principles of Object-Oriented Programming, www.freecodecamp.org, 2020.
+                                                                        Dot Net Tutorials, SOLID Design Principles in C#, www.dotnettutorials.net.
+                                                                    </li>
+                                                                    <li style="text-align:left">Abstractions should not depend upon details. Details should depend on abstractions.</li>
+
+                                                                </ul>
+                                                            </p>
+
+                                                            <br><br>
+                                                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    }
+
+
+
+
+
+                                                }
+
+
+
+
+
+
+                                            </ul>
+
+
+
+
+
+                                        </div>
+                                    </div>
+                              
+
+
+
+
+
+
+
+
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+                    <!--End Of MID-->
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<style>
+    .content-wrapper {
+        margin-top: 0%;
+        margin-left: 0%;
+        background-position: top;
+        background: #d2d6de;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+
+    #left {
+        width: 5%;
+        margin-left: 0%;
+        margin-top: 0%;
+        background-position: top;
+        position: relative;
+        background-color: #eee3e3;
+    }
+
+    #Right {
+        width: 5%;
+        margin-right: 0%;
+        margin-top: 0%;
+        background-position: top;
+        position: relative;
+        background-color: #eee3e3;
+    }
+
+
+    .Mid-sidebar {
+        content: " ";
+        position: relative;
+        margin-top: 0%;
+        width: 90%;
+        overflow: no-display;
+        padding-right: 0px;
+        margin-left: 5%;
+        margin-right: 0%;
+        background-position: top;
+        margin-bottom: 0px;
+        background-color: #fff;
+    }
+
+
+    .SiteT {
+        width: 100%;
+        border: none;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
+
+
+
+    .main--container {
+        margin-left: 17px;
+    }
+
+    .card-body {
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+<style>
+    .blue {
+        height: 200px;
+        text-align: left;
+    }
+
+    .card {
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+        background: #ffffff;
+    }
+
+
+    .col-lg-2 {
+        flex: 0 0 10% !important;
+        max-width: 20%;
+    }
+</style>

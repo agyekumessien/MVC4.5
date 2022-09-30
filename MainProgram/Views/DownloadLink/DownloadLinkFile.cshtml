@@ -1,0 +1,241 @@
+﻿@using MainProgram.Core.Resources
+@using MainProgram.Edm
+
+
+@{
+    ViewBag.Title = "Procedure";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+@{
+    ViewBag.Title = "DownloadLink";
+}
+
+
+
+@using MainProgram.Models
+
+@model MainProgram.Core.ImgViewModel
+
+@{
+    ViewBag.Title = "ASP.NET MVC5: Upload Image into Database";
+}
+
+<div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; top:0px">
+
+
+    <section class="content-header" style="margin-left:0px; top:2px;">
+
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">
+                    <i class="headerA"></i>
+                </a>
+            </li>
+            <li class="active"></li>
+        </ol>
+    </section>
+
+    <!-- left sidebar-->
+
+
+    <div class="left" style="width: 17%; float:left; top:0px">
+        <div class="Container">
+            <div class="col-md-4">
+                <div class="container">
+                    <div class="panel panel-default" style="width: 22%">
+                        <strong style="font-size:x-large"><b>DEVELOPER BLOG</b></strong>
+                        <div class=" panel-body  no-gutter">
+                            <div col-md-4">
+                                <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+
+                                    <img src="~/Content/img/ApparelImages/Essien.jpg " width=" 120" height="120" style="padding-right:15px; margin-right:10px; padding-bottom:5px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /><br />
+                                    <br /><br /><br />
+                                    <hr />
+                                    @{
+
+                                        <u>
+
+
+                                            @for (int i = 0; i < Model.ImgLst.Count; i++)
+                                            {
+                                                <br /><br /><br />
+                                                @(i + 1)
+
+                                                <i class="fa fa-2x fa-paperclip text-navy"></i>
+                                                <a href="@Url.Action("DownloadLinkFile", "DownloadLink", new { fileId = @Model.ImgLst[i].FileId })" target="_blank">
+                                                    <i>    Download my Resume &raquo;<br />  @Model.ImgLst[i].FileName</i>
+
+                                                </a>
+                                            }
+                                        </u>
+                                    }
+
+
+
+
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--End Of Left-->
+    <!-- Right-->
+    <!--End Of Right-->
+    <!--MID Sidebar Main content-->
+    <div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+        <div class="panel panel-default" style="width: 99%; margin-left: 0px;">
+
+
+            <h1>About Me</h1>
+            <p>By using STechies.com (STechies, the &quot;Site&quot; or We or Us) You (User, reader, visitor) accept and will be bound by the terms and conditions. These terms and conditions may be updated time to time without prior notice.</p>
+            <p>If you do not wish to be bound by these terms and conditions, you may not use this site.</p>
+            <p><strong>Copyright, Licenses and Content Submissions.</strong></p>
+            <p>The articles, tutorials, projects and other content on this site is copyright of the site and its authors. You may read, down and use the published content for your personal and educational use. The content may not be used for commerical purposes. However, you may not re publish the content without prior written permission from us.</p>
+            <p><strong>Use of the Site.</strong></p>
+            <p>STechies.com is a free resource online community. Any body can share their code, articles, tips, projects or other related material on the site. Use the site on your own risk. STechies.com does not guarantee or warrant accuracy and reliability of data and information published on the site. The site takes no responsibility of direct or indirect loss or any kind of harm to its users by other users. The site also doesn't take responsibility of infected files or source code with any kind of infection or viruses, worms, Trojan horses.</p>
+            <p><strong>To use the site, you agree you will not:</strong></p>
+            <p>Post any information, data, text, or images, or other material that is unlawful, harmful, threatening, abusive, harassing, vulgar, obscene, libelous, or otherwise objectionable that may invade another's right of privacy or publicity:</p>
+            <ol>
+                <li> Post any Material that you do not have a right to reproduce. If you publish other authors work, you must have a written permission of the author of that material.</li>
+                <li> Delete any author attributions, legal notices or proprietary designations or labels that you upload to any communication feature;</li>
+                <li> Upload any material copyright, trademark, patent, or proprietary rights of any third party.</li>
+                <li> Post any material, which can harm our visitors or authors.</li>
+                <li> Use our author's or members emails (published on their request in their profile) to send junk mail, Spam, or chain letters or without their permission,</li>
+                <li> Violate any applicable local, state, national or international law,</li>
+                <li> Post any information or images on discussion forums that may harm any body by any means or unlawful, harmful, threatening, abusive, harassing, vulgar, obscene, libelous, or otherwise objectionable that may invade another's right of privacy or publicity.</li>
+            </ol>
+            <p><strong> Authors</strong></p>
+            <p>As an author, you agree that the site visitors are free to use your code or article for their reference and can use the code in their own programs freely and without restriction (UNLESS YOU HAVE THE PERMISSION IN YOUR CODE ITSELF) and may distribute compiled versions of the code freely and without restriction. By submitting your article or source code, you agree that you are the original owner (UNLESS YOU SPECIFY THE REFERENCES AND HAVE A WRITTEN PERMISSION OF THE ORIGINAL AUTHOR) of the article or code or otherwise has the right to redistribute it freely. STechies.com takes no responsibility, no liability for disputes regarding ownership, copyright, or trademarks of the code uploaded to this site. However, by submitting your article or source code, you grant to STechies.com, a nonexclusive, worldwide license to link to, reproduce, distribute, adapt, perform, display and sublicense the submitted code or content.</p>
+            <p>STechies reserves the right to reject any submission, to alter submissions, and to remove a submission from the site that had previously been posted at any time without any previous notification. However once published article or code may not be removed from the site.</p>
+            <p><strong>The Information STechies may collect</strong></p>
+            <ol>
+                <li><strong>User-provided Information</strong>: When you register for, browse and use the Website, you may provide to STechies "identity information" (such as your name, email address, address, home or mobile telephone number etc). You may also be able to add a picture of yourself.</li>
+                <li>If you decide to register through or otherwise grant access to a third party social networking or authentication service that we may make available ("<strong>Authentication Service</strong>"), such as Facebook Connect or Google, STechies may also collect any such "identity information" that you have provided to the Authentication Service from the account you have with the Authentication Service.</li>
+                <li>Details of transactions by your Facebook friends and other Facebook users generated by you through our Service.</li>
+                <li> If you choose to provide such information, during registration or otherwise, you are giving STechies the permission to use and store it consistent with this policy. Therefore, please understand that when you sign in with STechies, you are not anonymous to us.</li>
+            </ol>
+            <p>
+                <strong>IP Addresses and cookies</strong><br>
+                We may collect information about your computer, including where available your IP address, operating system and browser type, for system administration and to report aggregate information to our advertisers. We may also collect such information from your Facebook friends and other Facebook users who use the Service. This is statistical data about our users' browsing actions and patterns, and does not identify any individual.
+            </p>
+            <ol>
+                <li>Please note that our advertisers may also use cookies, over which we have no control.</li>
+            </ol>
+            <p><strong>The Way STechies Uses Information</strong></p>
+            <ol>
+                <li>STechies uses the information that you provide or that we collect in order to establish and enhance our relationship with you. STechies generally uses the information you provide or that we collect to operate, maintain, enhance, and provide all of the features and services found on the Website. If you have given STechies consent, we may use your personally identifiable information to provide you with information about STechies's features, services and other offerings that may be of interest to you. We may also send information or offers to groups of users on behalf of other businesses.</li>
+            </ol>
+            <p><strong>When STechies Discloses Information</strong></p>
+            <ol>
+                <li><strong>Social Networks:</strong> STechies will disclose your personal information if you have explicitly agreed that we may do so. In particular, we will disclose personal information where you have elected to connect your account on our Website to a social network or other similar service (e.g., Facebook or Google), or have elected to have your activity on our Website published to a social network or other similar service (e.g., Facebook or Google). To control the information that you share, you should review and, if appropriate, modify your privacy settings on such services.</li>
+                <li><strong>Required by Law:</strong> STechies may also disclose User information if required to do so by law or in the good-faith belief that such action is necessary to comply with state and other governing bodies</li>
+                <li><strong>Merger or Acquisition:</strong> In the event that STechies is acquired by or merged with a third-party entity, we reserve the right, in any of these circumstances, to transfer or assign the information that we have collected from Users as part of such merger, acquisition, sale, or other change of control.</li>
+                <li><strong>Other Purposes:</strong> STechies also reserves the right to disclose User information that we believe, in good faith, is appropriate or necessary to take precautions against liability; protect STechies from fraudulent, abusive, or unlawful uses; to investigate and defend ourselves against any third-party claims or allegations; to assist government enforcement agencies; to protect the security or integrity of the Website; or to protect the rights, property, or personal safety of STechies, our Users, or others.      </li>
+            </ol>
+            <p><strong>DISCLAIMER</strong></p>
+            <p>IN NO EVENT WILL stechies.COM BE RESPONSIBLE FOR ANY INCIDENTAL, CONSEQUENTIAL, DIRECT OR INDIRECT DAMAGES, OR OTHER LOSSES FOR ANY USE OF THE SITE, ITS MEMBERS SITES, OR LINKS TO THIRD PARTY SITES INCLUDING ANY LOST PROFITS, BUSINESS LOSSES, DATA LOSSES, OR ANY PROPERTY LOSSES.</p>
+            <p>THE CONTENTS OF THE SITE MAY BE SUBJECT TO CHANGE OR UPDATE WITHOUT ANY PRIOR NOTICE. WE DO NOT TAKE RESPONSIBILITY OF THE ACCURACY OR REDUNDANCY, OR ORIGINALITY OF THE MATERIAL OR ANY CONTENTS INCLUDING TEXT, GRAPHICS, CODE, OR OTHER MATERIAL, ON THE SITE.</p>
+            <p><strong>Links to third party sites</strong></p>
+            <p>Third party site links on this site are only for your convenience and we have no responsibility and control on third party links. If any link is misleading or changed or removed, we are not responsible for that.</p>
+            <p><strong>Copyright Notice</strong></p>
+            <p>Permission to use STechies.com contents may be granted only after receiving a written request to do so. </p>
+        </div>
+
+    </div>
+
+
+
+    <div>
+        @Html.ActionLink("Back to HomePage", "Index", "Home")
+    </div>
+
+
+
+</div>
+<!--End Of MID-->
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    .content-wrapper {
+        margin-top: 0%;
+        margin-left: 0%;
+        background-position: top;
+    }
+
+    #left {
+        width: 20%;
+        margin-left: 0%;
+        margin-top: 0%;
+        background-position: top;
+        position: relative;
+        background-color: #eee3e3;
+    }
+
+
+
+    .Mid-sidebar {
+        content: " ";
+        position: relative;
+        margin-top: 0%;
+        width: 78%;
+        overflow: no-display;
+        padding-right: 0px;
+        margin-left: 20%;
+        margin-right: 0%;
+        background-position: top;
+        margin-bottom: 0px;
+        background-color: #fff;
+        padding-right: 10px;
+    }
+
+
+    .SiteT {
+        width: 100%;
+        border: none;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
+
+
+
+    .main--container {
+        margin-left: 17px;
+    }
+</style>
+
+
+</div>

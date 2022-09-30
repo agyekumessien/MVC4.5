@@ -1,0 +1,301 @@
+﻿@model IEnumerable<MainProgram.Edm.tbh_Departments>
+
+
+@{
+    ViewBag.Title = "Articles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+@{
+    ViewBag.Title = "Article";
+}
+
+
+
+<div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; top:0px">
+
+
+
+    <!-- left sidebar-->
+
+
+    <div class="left" style="width: 17%; float:left; top:0px">
+        <div class="Container">
+            <div class="col-md-4">
+                <div class="container">
+                    <div class="panel panel-default" style="width: 22%">
+                        <strong style="font-size:x-large"><b>Articles</b></strong>
+                        <div class=" panel-body  no-gutter">
+                            <div col-md-4">
+                                <div class="panel panel-default" style="width: 100%; margin-left: 15px;">
+
+
+                                    <img src="~/Content/img/Books/FBooks/Articles.jpg" width=" 120" height="120" style="padding-right:15px; margin-right:10px; padding-bottom:5px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple />
+                                    <br />
+                                    <br /><br /><br /><br /><br /><br />
+
+
+                                    <hr />
+
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--End Of Left-->
+<!-- Right-->
+<!--End Of Right-->
+<!--MID Sidebar Main content-->
+<div class="Mid-sidebar" style="margin-right:10px;  padding-right:0px; text-align:center">
+    <div class="panel panel-default" style="width: 99%; margin-left: 10px; padding-left:10px; padding-right:10px;">
+
+
+        <p><big><strong>What is HTML and what does HTML stand for?</strong></big></p>
+
+        <p>HTML stands for <strong>HyperText Markup Language</strong> that is used to create the basic structure of the web pages. HTML uses various attributes and tags to determine the behavior of the web pages, like what images to display, the different hyperlinks, for setting basic styles of text and background, etc. It is also used to define how the web page will respond upon user interaction.</p>
+
+        <p><big><strong>What are the main features of HTML?</strong></big></p>
+
+        <p><strong>The essential features of HTML are:</strong></p>
+
+        <ul>
+            <li>It is not a programming language, but a markup language.</li>
+            <li>It is not case sensitive.</li>
+            <li>It can run on any operating system or browser and is platform-independent.</li>
+            <li>Video elements can be implemented in the web pages through the video tag without any third-party plug-in.</li>
+            <li>Web workers allow web applications to perform complicated tasks without affecting the performance of the web pages.</li>
+            <li>The canvas element allows users to modify the images and graphics easily without resorting to technologies like jQuery.</li>
+        </ul>
+
+        <p><big><strong>What is the basic fundamental block of an HTML page?</strong></big></p>
+
+        <p>The basic fundamental block of an HTML page is the <code><strong>&lt;html&gt;</strong></code> tag.&nbsp;</p>
+
+
+        <p><big><strong>Why HTML is not a true programming language?</strong></big></p>
+
+        <p>HTML is a markup language that defines the basic structure of the web pages and the arrangement of elements. As it does not have any programming logic and lacks logical statements like loops or if-else statements, it cannot be considered a true programming language.</p>
+
+        <p><big><strong>How to comment in HTML?</strong></big></p>
+
+        <p>Comments in HTML are placed by adding the information in between the &lt;!--and --&gt;. All the data in between the comments are not visible in the web page but will be visible to if the source code is viewed.&nbsp; The following syntax is used for providing comments on a web page:</p>
+
+<pre>
+<code class="language-html">&lt;!-- You will not be able to see this sample text. --&gt;</code></pre>
+
+        <p><big><strong>How to change the font in HTML?</strong></big></p>
+
+        <p>Fonts in a web page can be changed in HTML using the<code><strong> &lt;style&gt;</strong></code> tag. Inside this tag the font size, font family, font-weight, color etc. features can be altered. The following syntax can be used:</p>
+
+<pre>
+<code class="language-html">&lt;style&gt;
+font-size: 12px;
+font-family: Tahoma;
+color: red;
+&lt;/style&gt;</code></pre>
+
+        <p><strong>Inline style statements can also be used for example,</strong></p>
+
+<pre>
+<code class="language-html">&lt;p style= “font-size: 12px; font-family: Tahoma; color: red”;&gt;</code></pre>
+
+        <p><big><strong>What is div in HTML?</strong></big></p>
+
+        <p>The <strong>&lt;div&gt; </strong>is a very important tag used for creating a division or section in the web page. The div provides a container where other elements can be placed. It helps while styling them with the help of CSS and defining their interactions with the user through Javascript.</p>
+
+        <p><strong>For example,</strong></p>
+
+<pre>
+<code class="language-html">&lt;div style="background-color: seablue"&gt;
+  &lt;h3&gt;Just a heading&lt;/h3&gt;
+  &lt;p&gt;And a paragraph&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+        <p><big><strong>What is padding in HTML?</strong></big></p>
+
+        <p>Padding defines the area or amount space inside an element. It can be considered as the distance between the content and the border around the element.</p>
+
+        <p><big><strong>How many levels of heading are there in HTML?</strong></big></p>
+
+        <p>There are 6 levels of heading in HTML starting from <strong>&lt;h1&gt;</strong> to <strong>&lt;h6&gt;</strong>, where<strong> &lt;h1&gt;</strong> is the biggest in size and <strong>&lt;h6&gt;</strong> is the smallest.</p>
+
+        <p><big><strong>What are HTML tags? Name some most commonly used Html tags</strong></big></p>
+
+        <p>HTML tags are a set of codes which is used to define the structure of your webpage such as heading, hyperlink, paragraph etc. Any HTML tag start with <strong>&lt; sign</strong> and ends with <strong>&gt; sign</strong> ie&nbsp;<strong>&lt;H1&gt;</strong>.</p>
+
+        <p><strong>Some&nbsp;most commonly used Html tags are:</strong></p>
+
+        <ul>
+            <li><strong>Title Tag &lt;title&gt;:</strong>&nbsp;Used to define the title of the webpage</li>
+            <li><strong>Body tag &lt;body&gt;: </strong>Used to define the main content of the webpage</li>
+            <li><strong>Head tag &lt;head&gt;:&nbsp;</strong>Used to define the headings of web page</li>
+            <li><strong>A tag &lt;a&gt;:</strong> To use links</li>
+            <li><strong>P tag &lt;p&gt;:</strong>&nbsp;Used to define paragraph</li>
+            <li><strong>Table tag &lt;table&gt;: </strong>Define table in webpage</li>
+            <li><strong>&lt;div&gt;, &lt;li&gt;, &lt;ul&gt;, &lt;ol&gt;, &lt;section&gt;&nbsp;</strong>etc are some other important Html tags.</li>
+        </ul>
+
+        <p><big><strong>Explain the HTML image map?</strong></big></p>
+
+        <p>An image map is a set of coordinates related to an image used in HTML. It is used to hyperlink the different sections within an image to other destinations web sites. It removes the need to create image files. They are used in both the server-side and the client-side. They can be created manually through a text editor. They are defined using the <strong>&lt;map&gt;</strong> tag.</p>
+
+        <p><big><strong>How to add alternative text for an image in HTML?&nbsp; &nbsp;&nbsp;</strong></big></p>
+
+        <p>To add an alternate text in HTML in case the original image is not shown properly or is not rendered, the alt attribute is used inside the image tag. The following syntax can be used in this case:</p>
+
+<pre>
+<code class="language-html">&lt;img src=”home.jpg” alt=”Oops!”&gt;</code></pre>
+
+        <p><strong><big>What is doctype in HTML? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</big>&nbsp;</strong></p>
+
+        <p>The <strong>&lt;!DOCTYPE&gt;</strong> is not a tag but a declaration to the web browser that specifies the version of HTML currently being used in the page. For example, it tells the browser that the page being rendered is in HTML 5. As the element does not have any content, it does not have a closing tag. Every HTML document must start with a <strong>&lt;!DOCTYPE&gt;</strong> declaration.</p>
+
+        <p><big><strong>What is span in HTML?</strong></big></p>
+
+        <p>The <strong>&lt;span&gt;</strong> tag is used in HTML to group inline elements and style them. This tag is used along with inline elements like a paragraph or certain portions of it too. For example, it can be used to set a colour different from that of other paragraphs in a document.</p>
+
+        <p><strong>For example,</strong></p>
+
+<pre>
+<code class="language-html">&lt;p&gt; This is a sample text &lt;span style=”color: green”&gt; where some of it is different in colour &lt;/span&gt;&lt;/p&gt;</code></pre>
+
+        <p><big><strong>How to increase button size in HTML?</strong></big></p>
+
+        <p>The size of a button in <strong>HTML</strong> can be increased modifying the height and width attributes of the button tag. It can be achieved using inline style statements and through external style sheets through CSS.</p>
+
+        <p><big><strong>What is the pre tag in HTML?</strong></big></p>
+
+        <p>The <strong>&lt;pre&gt;</strong> tag is used to define preformatted text. All the text or information inside a &lt;pre&gt; tag is displayed on the web page just as it is, preserving the line breaks and whitespaces. The text inside a <strong>&lt;pre&gt;</strong> tag is usually shown in a font like Courier that has fixed width.</p>
+
+        <p><big><strong>What is a placeholder in HTML?</strong></big></p>
+
+        <p>The placeholder is an attribute that is used to provide a&nbsp;hint about the text that can be given in the input field by the user. The attribute is compatible with the input types like search, text, email, password, tel, and URL. For example, if there is an input field called First Name, the textbox will display <strong>&ldquo;John&rdquo;</strong> according to the placeholder value.</p>
+
+        <p><strong>The syntax is:</strong></p>
+
+
+
+        <p><big><strong>What is a label in HTML?</strong></big></p>
+
+        <p>The <strong>&lt;label&gt; </strong>in HTML defines a label for elements like <strong>&lt;input&gt;, &lt;output&gt;, &lt;button&gt;, &lt;textarea&gt;, &lt;progress&gt;, &lt;select&gt; </strong>etc. The for an attribute of the elements have to be equal to their respective id values, to combine them together. The label tag does not display anything on the web page but helps in improving the interactivity with the users while they click on these elements.</p>
+
+        <p><big><strong>What is &#39;tt&#39; &amp; &#39;p&#39; tag in html?</strong></big></p>
+
+        <p>The<strong> &lt;tt&gt; </strong>tag <strong>(Teletype Text)</strong> is an obsolete tag that is not supported by HTML 5. It was used for rendering the text as it would appear on a fixed width display like a teletype or a line printer.</p>
+
+        <p>
+            The <strong>&lt;p&gt;</strong> is used to display a paragraph. <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        </p>
+    </div>
+
+    <div class="w3-clear">
+        <div id="div-gpt-ad-ATD-ST-D1"></div>
+
+
+
+
+        <div class="w3-col w3-mobile" id="comm"></div>
+
+
+
+
+
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<!--End Of MID-->
+
+
+
+
+
+
+
+
+<style>
+    .content-wrapper {
+        margin-top: 0%;
+        margin-left: 0%;
+        background-position: top;
+    }
+
+    #left {
+        width: 20%;
+        margin-left: 0%;
+        margin-top: 0%;
+        background-position: top;
+        position: relative;
+        background-color: #eee3e3;
+    }
+
+
+
+    .Mid-sidebar {
+        content: " ";
+        position: relative;
+        margin-top: 0%;
+        width: 78%;
+        overflow: no-display;
+        padding-right: 0px;
+        margin-left: 20%;
+        margin-right: 0%;
+        background-position: top;
+        margin-bottom: 0px;
+        background-color: #fff;
+        padding-right: 10px;
+    }
+
+
+    .SiteT {
+        width: 100%;
+        border: none;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
+
+
+
+    .main--container {
+        margin-left: 17px;
+    }
+</style>
+
+
+
+

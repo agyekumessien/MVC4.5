@@ -1,0 +1,81 @@
+﻿@using MainProgram.Core.Provider
+@using MainProgram.Core.Resources
+@*@model MainProgram.Edm.tbh_OrderDetails*@
+@model MainProgram.Models.ShoppingCart.ShoppingCartViewModel
+
+@{
+    ViewBag.Title = "OrderDetail";
+}
+
+<div class="features_items">
+    <table class="table table-condensed" id="cart-table">
+        <thead>
+            <tr class="cart_menu">
+                <td class="image">@Resource.HeaderItem</td>
+                <td class="description">@Resource.HeaderItem</td>
+                <td class="price">@Resource.HeaderPrice</td>
+                <td class="quantity">@Resource.HeaderQuantity</td>
+                <td class="total">@Resource.HeaderTotal</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CartItems)
+            {
+                <tr id="row-@item.RecordId">
+                    <td class="cart_product">
+                        <a href="" class="productinfo"><img src="@item.tbh_Products.FullImageUrl" alt="" style="width: 80px; height: 100px"></a>
+                    </td>
+                    <td class="cart_description">
+                        <h4>@Html.ActionLink(item.tbh_Products.Name, "Details", "Home", new { id = item.ProductID }, null)</h4>
+                        @*<p>@item.Content</p>*@
+                    </td>
+                    <td class="cart_price">
+                        <p class="cart_price">@String.Format("{0:F}", item.tbh_Products.UnitPrice)</p>
+                    </td>
+                    <td class="cart_quantity">
+                        <div class="cart_quantity_button">
+                            <a class="cart_quantity_up" onclick="cart.IncreaseQuantity(this)"> + </a>
+                            <input class="cart_quantity_input" type="text" name="quantity" value="@item.tbh_Products.Quantity" autocomplete="off" size="2">
+                            <a class="cart_quantity_down" onclick="cart.DecreaseQuantity(this)"> - </a>
+                        </div>
+                    </td>
+
+                    <td id="item-count-@item.RecordId">
+                        @item.Count
+                    </td>
+                    <td class="cart_delete">
+                        <a href="#" class="RemoveLink" data-id="@item.RecordId"><i class="fa fa-times"></i></a>
+                    </td>
+                </tr>
+            }
+
+            <tr>
+                <td>
+                    Total
+                </td>
+                <td></td>
+                <td></td>
+                <td id="cart-total">
+
+                    <p class="cart_price">@String.Format("{0:F}", @Model.CartTotal)</p>
+                </td>
+            </tr>
+
+
+
+
+        </tbody>
+        @if (Model.CartItems.Any())
+        {
+            <tfoot>
+                <tr>
+                    <td colspan="6" class="text-right ">
+                        @Html.ActionLink("Checkout >>", "AddressAndPayment", "Checkout")
+                    </td>
+                </tr>
+            </tfoot>
+        }
+    </table>
+
+</div>

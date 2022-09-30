@@ -1,0 +1,221 @@
+﻿@*<!--@model PagedList.IPagedList<MainProgram.Edm.NoteList>-->*@
+@*@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />*@
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+@model MainProgram.Edm.NoteList
+
+
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutSub.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+
+
+
+
+    <!-- left sidebar-->
+
+
+
+    <div class="left" style="width: 17%; float:left; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+        <div class="Container">
+            <div class="col-md-4">
+                <div class="container">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--End Of Left-->
+<!-- Right-->
+
+
+<div class="right"
+     style="width: 21%; float:right; margin-right:8px; padding-right:8px; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+    <div class="Container">
+        <div class="col-md-4">
+            <div class="container">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--End Of Right-->
+<!--MID Sidebar Main content-->
+<div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+    <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+        <strong style="font-size:x-large"><b> Delete</b></strong>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <h3>Are you sure you want to delete this?</h3>
+            <div>
+                <h4>Thread</h4>
+                <hr />
+                <dl class="dl-horizontal">
+
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.NoteListTitle)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NoteListTitle)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.NoteListText)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NoteListText)
+                    </dd>
+
+
+
+
+                </dl>
+
+
+                @using (Html.BeginForm())
+                {
+
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-default" /> |
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                }
+            </div>
+
+
+        }
+
+
+    </div>
+    <!--End Of MID-->
+
+
+
+
+
+
+
+
+
+    <style>
+        .content-wrapper {
+            margin-top: 0%;
+            margin-left: 0%;
+            background-position: top;
+        }
+
+        #left {
+            width: 20%;
+            margin-left: 0%;
+            margin-top: 0%;
+            background-position: top;
+            position: relative;
+            background-color: #eee3e3;
+        }
+
+
+
+        .Mid-sidebar {
+            content: " ";
+            position: relative;
+            margin-top: 0%;
+            width: 60%;
+            overflow: no-display;
+            padding-right: 0px;
+            margin-left: 20%;
+            margin-right: 0%;
+            background-position: top;
+            margin-bottom: 0px;
+            background-color: #fff;
+        }
+
+
+        .SiteT {
+            width: 100%;
+            border: none;
+            margin-right: 0px;
+            padding-right: 0px;
+        }
+
+
+
+
+        .main--container {
+            margin-left: 17px;
+        }
+
+        .blue {
+            height: 200px;
+            text-align: left;
+        }
+    </style>
+
+
+</div>
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<style>
+    .blue {
+        height: 200px;
+        width: 100%;
+        white-space: pre-wrap;
+        text-align: left;
+    }
+</style>
+
+<p id="paragraph">
+
+</p>
+<script>
+        var ContentFromTextArea = "dib";
+        ContentFromTextArea.replace("\r", "<br />", "text-align left");
+        ContentFromTextArea.replace("\n", "<br />");
+        $("#paragraph").html(ContentFromTextArea);
+        $("#blue").html("text-align left");
+</script>

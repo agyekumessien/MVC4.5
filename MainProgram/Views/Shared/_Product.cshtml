@@ -1,0 +1,191 @@
+﻿@model MainProgram.Edm.tbh_Products
+
+
+            <li style="width:100%">
+    <div class="col-lg-4" style="float:left; border-right:2px, solid #f1f1f1; ">
+        <div class="card">
+
+            <div class="card-body block text-center" style="margin-bottom:15px; padding-bottom:10px">
+
+
+
+
+
+                <a href="@Url.Action("Details", "Home", new { id = Model.ProductID })">
+                    <img alt="@Model.AltText" src="@Model.FullImageUrl" style="width: 200px; height: 200px;padding-right:15px; padding-left:15px; padding-top:10px;  padding-bottom:5px; text-align:center">
+                </a>
+               
+             
+                <p class="aa-product-view-content" style="">
+                    <h3><strong> @Model.Name</strong></h3></p>
+                <p>@Model.ShortDescription</p>
+                <p class="aa-product-rating">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            if (ViewBag.AvgRate >= i)
+                            {
+                                <span class="fa fa-star" style="color: #ff6600"></span>
+                            }
+                            else
+                            {
+                                <span class="fa fa-star-o" style="color: #ff6600"></span>
+                            }
+                        }
+                 </p>
+                    <div class="aa-price-block">
+                        <span class="aa-product-view-price">@String.Format("{0:F}", Model.UnitPrice)</span>
+                        @if (Model.UnitsInStock > 0)
+                        {
+                            <p class="aa-product-avilability"><span style="color:white ;background-color:green">In Stock (@Model.UnitsInStock)</span></p>
+                        }
+                        else
+                        {
+                            <p class="aa-product-avilability"><span style="color:white;background-color:red">Out of Stock</span></p>
+                        }
+                        @{
+                            TempData["returnURL"] = Request.RawUrl;
+                        }
+
+                       
+                    </div>
+                   
+                <div class="aa-prod-view-bottom">
+                    <a class="fa fa-heart-o" href="@Url.Action("WishList", "Product", new { id = Model.ProductID })" data-toggle="tooltip" data-placement="top" title="Add to Wishlist" style="color:red; border:none; text-decoration:none; padding-top:5px">&nbsp;&nbsp;|</a>
+                    <a class="" href="@Url.Action("Details", "Home", new { id = Model.ProductID })">&nbsp;&nbsp;View Details&nbsp;&nbsp;|</a>
+                    @if (Model.ProductID > 0)
+                    {
+                        <a class="button">
+                            @Html.ActionLink("Add to cart", "AddToCart",
+                                           "Cart", new { id = Model.ProductID }, "")
+
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="aa-add-to-cart-btn" ))">Add To Cart</a>
+
+                    }
+                </div>
+
+
+
+                    
+               
+
+
+
+                
+
+            </div>
+        </div>
+    </div>
+
+
+
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*
+
+
+<li>
+    <figure>
+        <a class="aa-product-img" href="@Url.Action("ViewDetails", "Product", new { id = Model.ProductID })"><img src="@Model.FullImageUrl" alt="@Model.AltText"></a>
+        
+        <span class="fa fa-shopping-cart"></span>Add To Cart</a>
+        <figcaption>
+            <h4 class="aa-product-title"><a href="#">@Model.Name</a></h4>
+            <span class="aa-product-price">$ @Model.UnitPrice</span><span class="aa-product-old-price">
+                <del>
+                    @if (Model.OldPrice != null)
+                    {
+                        <text>Rs. @Model.OldPrice</text>
+                    }
+                </del>
+            </span>
+        </figcaption>
+    </figure>
+    <div class="aa-product-hvr-content">
+        <a href="@Url.Action("WishList","Product", new {id=@Model.ProductID }) )" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+        <a href="@Url.Action("ViewDetails", "Product", new { id = Model.ProductID })" title="View Details" data-toggle="tooltip" data-placement="top"><span class="fa fa-info"></span></a>
+
+    </div>
+    @if (Model.AddBadge == true)
+    {
+        <span class="aa-badge  @Model.OfferBadgeClass" href="#">@Model.OfferTitle</span>
+    }
+    @{
+        TempData["returnURL"] = Request.RawUrl;
+    }
+</li>
+
+*@

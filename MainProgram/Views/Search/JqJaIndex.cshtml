@@ -1,0 +1,227 @@
+﻿@model IEnumerable<MainProgram.Edm.JqJava>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+
+@{
+    ViewBag.Title = "CSS Search page";
+    Layout = "~/Views/Shared/_LayoutSub.cshtml";
+}
+
+
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+<!--NEXT SEARCH-->
+@{
+    angulardemoEntities dbm = new angulardemoEntities();
+    var AspWebFCat = dbm.AspWebforms.Where(c => c.DepartmentID == c.DepartmentID).ToList();
+}
+
+
+
+
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#category").change(function () {
+            // alert("JqJa Seaching OK......");
+          
+            $("#form1").submit();
+        });
+    });
+</script>
+
+
+
+
+
+<div class="content-wrapper" style="width: 15%; margin-left: 0px; width:100%; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+
+
+    
+
+    <!-- left sidebar-->
+    <div class="left" style="width: 17%; float:left; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+        <div class="Container">
+            <div class="col-md-4">
+
+                <!--End of Container-->
+
+                <hr />
+
+                <!--Second-->
+                <!--End of Third-->
+
+
+            </div>
+        </div>
+    </div>
+    <!--End Of Left-->
+    <!-- Right-->
+    <div class="right" style="width: 21%; float:right; margin-right:8px; padding-right:8px; top:0px;">
+        <div class="Container">
+            <div class="col-md-4">
+
+                <!--End of Container-->
+
+                <hr />
+
+
+            </div>
+        </div>
+    </div><!--End Of Right-->
+    <!--MID Sidebar Main content-->
+    <div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+        <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+            <strong style="font-size:x-large"><b> JQuery and Java Top Interview  questions</b></strong>
+
+
+
+
+
+            <p style="font-size:20px">
+                @Html.ActionLink("New Post", "Create", "EntityF")
+            </p>
+            <hr />
+            <fieldset>
+                <form action="@Url.Action("AspWebFIndex", "Search")" method="get" style="text-align:center">
+                    <div>
+                        <div>
+                            <!--Next Search-->
+                            <select class="srchTxt" id="category" style="height:40px; width:45px; margin-top:0px; font-size:medium">
+                                <option value="--"></option>
+                                <option value="@AspWebFCat">AspNet Webform</option>
+                                <option value="@AspWebFCat">DBA</option>
+                                <option value="@AspWebFCat">MVC</option>
+                            </select>
+
+
+                            <input id="searchString" name="searchString" class="srchTxt" type="text" value="@ViewBag.searchString" placeholder="Type or click find button to Search" style="width:100%; height:40px; width:300px;  font-size:12px" />
+
+
+
+
+
+                            <button type="submit" style="text-align:center; height:40px; width:35px; background-color:inherit; background-color:transparent; border:none;"><span class="fa fa-search" style="color:black"></span></button>
+                        </div>
+                    </div>
+
+
+                </form>
+                <br />
+                <table class="table">
+
+                    <tr>
+                        Next Search JQery, Java.....
+
+                    </tr>
+
+
+
+
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td>
+                                <br />
+                                <span style="margin-right:15px; font-size:16px; color:black">
+                                    <br />
+                                    <b>@item.JqJavaTitle</b>
+                                </span>
+
+                                <br />
+                                <span style="margin-right:15px; font-size:16px; color:black">
+                                    <br /> @Html.Raw(@item.JqJavaText)
+                                </span>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PostDate)
+                            </td>
+                            @*<td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.DotNetId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.DotNetId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.DotNetId })
+                                </td>*@
+                        </tr>
+                    }
+
+                </table>
+                <br />
+                <ul>
+                    <li>
+
+
+                    <li>
+                        @Html.ActionLink("Full Page", "GetPosts", "JqJa")
+                    </li>
+                </ul>
+
+
+
+
+            </fieldset>
+        </div><!--End Of MID-->
+
+    </div>
+
+
+
+
+    <style>
+        .content-wrapper {
+            margin-top: 0%;
+            margin-left: 0%;
+            background-position: top;
+        }
+
+        #left {
+            width: 17%;
+            margin-left: 0%;
+            margin-top: 0%;
+            background-position: top;
+            position: relative;
+            background-color: #eee3e3;
+        }
+
+
+
+        .Mid-sidebar {
+            content: " ";
+            position: relative;
+            margin-top: 0%;
+            width: 63%;
+            overflow: no-display;
+            padding-right: 0px;
+            margin-left: 18%;
+            margin-right: 0%;
+            background-position: top;
+            margin-bottom: 0px;
+            background-color: #fff;
+        }
+
+
+        .SiteT {
+            width: 100%;
+            border: none;
+            margin-right: 0px;
+            padding-right: 0px;
+        }
+
+
+
+
+        .main--container {
+            margin-left: 17px;
+        }
+    </style>
+
+
+</div>

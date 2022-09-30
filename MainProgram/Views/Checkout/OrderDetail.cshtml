@@ -1,0 +1,459 @@
+﻿@model MainProgram.Models.ShoppingCart.ShoppingCartViewModel
+
+
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using MainProgram.Models
+@using MainProgram.Core.Provider
+@using MainProgram.Core
+
+@using PagedList.Mvc;
+
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using MainProgram.Models
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+
+@{
+    ViewBag.Title = "Shopping Cart";
+    Layout = "~/Views/Shared/_LayoutSub.cshtml";
+}
+
+
+@{
+
+    var cartObj = Session[Constants.CookieCart];
+    var quantity = 0;
+    try
+    {
+        var cart = (MainProgram.Models.Orders.CartViewModel)cartObj;
+        quantity = cart == null || cart.tbh_Products1 == null ? 0 : cart.tbh_Products1.Count;
+    }
+    catch (Exception)
+    {
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+
+
+   
+
+    <!-- left sidebar-->
+
+
+    <div class="left" style="width: 17%; float:left; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+        <div class="Container">
+            <div class="col-md-4">
+                <div class="container">
+                    <div class="panel panel-default" style="width: 22%">
+                        <strong style="font-size:x-large"><b>Best Contributers</b></strong>
+                        <div class=" panel-body  no-gutter">
+                            <div col-md-4">
+
+
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--End Of Left-->
+    <!-- Right-->
+
+
+    <div class="right" style="margin-right:10px;   padding-right:0px; text-align:center">
+
+        <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+
+
+
+
+
+
+
+
+
+            <section id="cart_items" style="height:600px">
+                <div class="">
+                    <div class="breadcrumbs">
+                        <ol class="breadcrumb">
+                            <li class="active">@Resource.LabelShoppingCart</li>
+                            <li><a href="@Url.Action("Index","Home")">Order Summary</a></li>
+
+                        </ol>
+                    </div>
+                    <div class="table-responsive cart_info">
+
+                        <div class="aa-order-summary-area">
+                            <table class="table table-condensed" id="cart-table" style="border:solid 4px; border-bottom-width:thin 4px; border-color:#e1dbdb">
+
+
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @if (Session["UserName"] != null)
+                                    {
+                                        foreach (var item in Model.CartItems)
+                                        {
+
+                                            <tr>
+                                                <td>@item.tbh_Products.Name <strong> x  @item.Quantity</strong></td>
+
+                                            </tr>
+                                        }
+                                    }
+
+                                </tbody>
+
+
+                                <tfoot>
+
+
+                                    <tr>
+                                        @Html.Hidden("discount", null, new { @value = ViewBag.Discount })
+                                        <th>Discount</th>
+                                        <td>@ViewBag.Discount</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Subtotal</th>
+                                        <td>@ViewBag.SubTotal</td>
+                                    </tr>
+                                    <tr>
+                                        @Html.Hidden("totalAmount", null, new { @value = ViewBag.TotalAmount })
+                                        <th>Total</th>
+                                        <td>@String.Format("{0:F}", @Model.CartTotal)</td>
+                                    </tr>
+                                </tfoot>
+
+
+                                @* <tr>
+                                        <th>Subtotal</th>
+                                        <td>@ViewBag.SubTotal</td>
+                                    </tr>
+                                    <tr>
+                                        @Html.Hidden("discount", null, new { @value = ViewBag.Discount })
+                                        <th>Discount</th>
+                                        <td>@ViewBag.Discount</td>
+                                    </tr>*@
+
+                                </tfoot>
+                            </table>
+
+
+
+
+
+
+
+
+
+                            <div class="col-md-4">
+                                <div class="checkout-right">
+
+                                    <h4>Payment Method</h4>
+                                    <div class="aa-payment-method" style="float:right">
+
+
+                                        @* <div class="form-group">
+
+                                              <div class="col-md-10">
+                                                    @Html.DropDownList("PayMethod", null, htmlAttributes: new { @class = "form-control", @name = "PaymentMethod" })
+
+                                                </div>
+                                            </div>*@
+
+
+                                    </div>
+                                </div>
+
+                               
+                                <br /><br />
+                                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark">
+                                    <div style="margin-right:5px; float: right">
+                                        <input type="submit" value="Place Order" class="aa-browse-btn" style="color:black; border-color:none">
+                                       
+                                    </div>
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+
+
+
+
+                </div>
+        </div></div>
+
+    </div>
+
+
+
+
+
+</div>
+
+
+<!--End Of Right-->
+<!--MID Sidebar Main content-->
+<div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+
+    <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+        <section id="cart_items" style="height:600px">
+            <div class="">
+                <div class="breadcrumbs">
+                    <ol class="breadcrumb">
+                        <li><a href="@Url.Action("Index","Home")">@Resource.LabelHome</a></li>
+                        <li class="active">@Resource.LabelShoppingCart</li>
+                    </ol>
+                </div>
+                <div class="table-responsive cart_info">
+                    <table class="table table-condensed" id="cart-table" style="border:4px; border-color:#808080">
+
+                        <tbody>
+                            @foreach (var item in Model.CartItems)
+                            {
+                                <tr>
+                                    <td class="cart_product">
+                                        <a href="" class="productinfo"><img src="@item.tbh_Products.FullImageUrl" alt="" style="width: 80px; height: 100px"></a>
+                                    </td>
+                                    <td>@item.tbh_Products.ShortDescription</td>
+
+                                    <td>@item.tbh_Products.Quantity <strong> x  @item.Quantity</strong></td>
+
+                                </tr>
+                            }
+
+                            <tr>
+                                <td>
+                                    Total
+                                </td>
+                                <td></td>
+                                <td></td>
+
+                            </tr>
+
+
+
+
+
+
+
+                        </tbody>
+
+
+
+                    </table>
+                    <div class="class=" col-md-5 col-sm-5 col-xs-12">
+                        <div class="aa-product-details-bottom" style="margin-right:inherit">
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="class=" col-md-5 col-sm-5 col-xs-12">
+                                    <div class="aa-product-details-bottom" style="margin-right:inherit">
+                                        <ul class="nav nav-tabs" id="myTab2">
+                                            <li><a href="#review" data-toggle="tab">Reviews Purchase</a></li>
+                                        </ul>
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade in active" id="description">
+                                                <ul>
+                                                    @foreach (var item in Model.CartItems)
+                                                    {
+                                                        <li>@Html.Raw(@item.tbh_Products.ShortDescription)</li>
+
+                                                    }
+                                                </ul>
+
+                                            </div>
+
+
+
+
+
+                                        </div>
+
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade in active" id="description">
+                                                <ul>
+                                                    @foreach (var item in Model.OrderItems)
+                                                    {
+                                                        <li>(@item.AspNetUser.UserName)</li>
+
+                                                    }
+                                                </ul>
+
+                                            </div>
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+
+
+
+</div>
+<!--End Of MID-->
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    .content-wrapper {
+        margin-top: 0%;
+        margin-left: 0%;
+        background-position: top;
+    }
+
+    #left {
+        width: 5%;
+        margin-left: 0%;
+        margin-top: 0%;
+        background-position: top;
+        position: relative;
+        background-color: #eee3e3;
+    }
+
+
+
+    .Mid-sidebar {
+        content: " ";
+        position: relative;
+        margin-top: 0%;
+        width: 40%;
+        overflow: no-display;
+        padding-right: 0px;
+        margin-left: 20%;
+        margin-right: 0%;
+        background-position: top;
+        margin-bottom: 0px;
+        background-color: #fff;
+    }
+
+    .right {
+        content: " ";
+        float: right;
+        position: relative;
+        margin-top: 0%;
+        width: 40%;
+        overflow: no-display;
+        padding-right: 10px;
+        margin-right: 2%;
+        margin-right: 0%;
+        background-position: top;
+        margin-bottom: 0px;
+        background-color: #fff;
+        margin-left: 10px;
+        border-left: 3px solid #f1f1f1;
+        border-right: 20px solid #f1f1f1;
+    }
+
+    .SiteT {
+        width: 100%;
+        border: none;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
+
+
+
+    .main--container {
+        margin-left: 17px;
+    }
+</style>
+
+
+</div>

@@ -1,0 +1,187 @@
+﻿@model IEnumerable<MainProgram.Edm.Thread>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="text-success text-center">Welcome to ChartRoom!</h2>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+
+
+<table class="pull-right" style="width:25%; margin-left:1%; margin-right:5%;  text-align:center">
+
+
+
+
+    <tr style="border:1px solid black">
+
+
+
+
+
+        <td>
+
+            <br /><br />
+            @using (Html.BeginForm("PostThread", "ChatRoom", FormMethod.Post))
+            {
+                <input type="text" name="ThreadText" placeholder="Type new Thread....."
+                       style="width:90%; height:100px; font-size:16px; margin-bottom:10px">
+                <br />
+                <input type="submit" value="post  Thread" class="btn btn-default"
+                       styles="margin-top:10px; margin-bottom:10px">
+            }
+
+
+        </td>
+
+
+
+
+
+    </tr>
+    }
+
+</table>
+
+
+
+
+
+<table class="table text-center;" style="width:50%; margin-left:10%; text-align:center">
+    @*  <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.User.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text)
+            </th>
+            <th></th>
+        </tr>*@
+
+@foreach (var item in Model)
+{
+    
+       <tr style="border:1px solid black">
+       <td>
+           <span style="margin-right:15px; font-size:16px; color:green">
+               @Html.DisplayFor(modelItem => item.LastName)
+           </span>
+           <span style="margin-right:15px; font-size:16px; color:green">
+               @Html.DisplayFor(modelItem => item.FirstName)
+           </span>
+
+           <span style="margin-right:15px; font-size:16px; color:green">
+               @Html.DisplayFor(modelItem => item.ThreadText)
+           </span>
+           <span style="margin-right:15px; font-size:16px; color:green">
+               @Html.DisplayFor(modelItem => item.ThreadTitle)
+           </span>
+
+
+           <span style="margin-right:15px; font-size:16px; color:green">
+               @Html.DisplayFor(modelItem => item.Title)
+           </span>
+           <span style="margin-right:15px; font-size:16px; color:green">
+               @Html.DisplayFor(modelItem => item.ImagePath)
+           </span>
+           <span style="margin-right:15px; font-size:16px; color:green">
+               @Html.DisplayFor(modelItem => item.CreatedOn)
+           </span>
+           <span style="margin-right:15px; font-size:16px; color:green">
+               @Html.DisplayFor(modelItem => item.AspNetUser.FirstName)
+           </span>
+
+
+
+           
+    
+}
+
+}
+<br /><br />
+
+@foreach (var reply in item.tbh_Replies)
+{
+    <br />
+    <span style="margin-right:15px; font-size:16px; color:green">
+        @Html.DisplayFor(modelItem => item.LastName)
+    </span>
+    <span style="margin-right:15px; font-size:16px; color:green">
+        @Html.DisplayFor(modelItem => item.FirstName)
+    </span>
+
+    <span style="margin-right:15px; font-size:16px; color:green">
+        @reply.ReplyText
+    </span>
+    <span style="margin-right:15px; font-size:16px; color:green">
+        @reply.CreatedOn
+    </span>
+
+    @*<span style="margin-right:15px; font-size:16px; color:green">
+            @reply.ImagePath
+
+        </span>*@
+
+}
+<br /><br />
+
+@using (Html.BeginForm("PostReply", "Reply", FormMethod.Post))
+{
+
+    <input type="text" name="Reply" style="width:60%; height:100px; font-size:16px; margin-bottom:10px">
+    <br />
+    <input type="hidden" name="TID" value="@item.ThreadId" />
+    <input type="submit" value="post  reply" class="btn btn-default"
+           styles="margin-top:10px">
+
+    @*  <div class="col-md-10">
+        <input type="file" name="ImageFile" value="@thread.ImagePath" style="width:60%; height:100px; font-size:16px; margin-bottom:10px">
+        </div>*@
+
+
+}
+
+
+</td>
+
+
+
+
+@* <td>
+        @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+    </td>*@
+        </tr>
+    }
+
+</table>
+@*<div class="col-sm-8" style="float:left; border-right:20px, solid #f1f1f1">
+        <ul class="list-unstyled list-inline mb-0" style="width:100%">
+
+
+
+            @{
+                foreach (MainProgram.Edm.tbh_Replies item in ViewBag.reply)
+                {
+                    <li style="width:100%">
+
+                        <div class="aa-cartbox-info">
+
+                            <h4><b><a href="@Url.Action("Culture", "Pages", new { id = item.ReplyId })">@item.AspNetUser.UserName</a></b></h4>
+                            <p style="text-align:left; padding-left:15px;padding-right:15px; padding-top:0px">@item.ReplyText</p>
+
+                        </div>
+
+                    </li>
+
+                }
+            }
+        </ul>
+        <p><a href="http://asp.net" class="btn btn-light btn-lg" style="width:250px; height:40px">Learn more &raquo;</a></p>
+
+    </div>*@
+

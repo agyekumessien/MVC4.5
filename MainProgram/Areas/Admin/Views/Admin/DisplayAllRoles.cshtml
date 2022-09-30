@@ -1,0 +1,967 @@
+﻿@model IEnumerable<MainProgram.Models.ApplicationDbContext>
+
+
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+
+@using MainProgram.Models
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Dashboard </title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/Intellisence/css/jquery-ui.min.css" rel="stylesheet" />
+    <script src="~/Content/Intellisence/js/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/Intellisence/js/jquery-ui.min.js"></script>
+
+
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/Custom.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+    <!-- Bootstrap 3.3.2 -->
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- FontAwesome 4.3.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons 2.0.0 -->
+    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <!-- Theme style -->
+    <link href="~/Content/theme/dist/css/AdminLTE.min.css" rel="stylesheet" />
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link href="~/Content/theme/dist/css/skins/_all-skins.min.css" rel="stylesheet" />
+    <!-- iCheck -->
+    <link href="~/Content/theme/plugins/iCheck/flat/blue.css" rel="stylesheet" />
+
+    <!-- Morris chart -->
+    <link href="~/Content/theme/plugins/morris/morris.css" rel="stylesheet" />
+    <!-- jvectormap -->
+    <link href="~/Content/theme/plugins/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+    <!-- Date Picker -->
+    <link href="~/Content/theme/plugins/datepicker/datepicker3.css" rel="stylesheet" />
+    <!-- Daterange picker -->
+    <link href="~/Content/theme/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link href="~/Content/theme/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" />
+
+    @* <!-- <link rel="stylesheet" href="Content/theme/bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="Content/theme/themebower_components/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="Content/theme/bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="Content/theme/bower_components/Ionicons/css/ionicons.min.css">-->*@
+    <!-- Theme style -->
+    <link rel="stylesheet" href="Content/theme/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="Content/theme/dist/css/skins/_all-skins.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="Content/theme/plugins/iCheck/flat/blue.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <link rel="stylesheet" href="~/Content/theme/bower_components/fullcalendar/dist/fullcalendar.min.css">
+    <link rel="stylesheet" href="~/Content/theme/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
+    <!-- Th
+
+
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="~/Content/theme/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Content/theme/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="~/Content/theme/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/theme/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="~/Content/theme/dist/css/skins/_all-skins.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google Font -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    @*
+
+        <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="assets/css/horizontal-timeline.min.css">
+        <link rel="stylesheet" href="assets/css/weather-icons.min.css">
+        <link rel="stylesheet" href="assets/css/dropzone.min.css">
+        <link rel="stylesheet" href="assets/css/ion.rangeSlider.min.css">
+        <link rel="stylesheet" href="assets/css/ion.rangeSlider.skinFlat.min.css
+        <link rel=" stylesheet" href="assets/css/datatables.min.css">
+        <link rel="stylesheet" href="assets/css/fullcalendar.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">*@
+
+
+
+
+</head>
+<body class="skin-blue">
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="Index#" class="logo"><b>Admin</b>Dashboard</a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="label label-success">4</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 4 messages</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="menu">
+                                        <li>
+                                            <!-- start message -->
+                                            <a href="#">
+                                                <div class="pull-left">
+                                                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+                                                </div>
+                                                <h4>
+                                                    Support Team
+                                                    <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                                </h4>
+                                                <p>Why not buy a new awesome theme?</p>
+                                            </a>
+                                        </li><!-- end message -->
+                                        <li>
+                                            <a href="#">
+                                                <div class="pull-left">
+                                                    <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="user image" />
+                                                </div>
+                                                <h4>
+                                                    AdminLTE Design Team
+                                                    <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                                                </h4>
+                                                <p>Why not buy a new awesome theme?</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="pull-left">
+                                                    <img src="~/Content/theme/dist/img/user4-128x128.jpg" class="img-circle" alt="user image" />
+                                                </div>
+                                                <h4>
+                                                    Developers
+                                                    <small><i class="fa fa-clock-o"></i> Today</small>
+                                                </h4>
+                                                <p>Why not buy a new awesome theme?</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="pull-left">
+                                                    <img src="~/Content/theme/dist/img/user3-128x128.jpg" class="img-circle" alt="user image" />
+                                                </div>
+                                                <h4>
+                                                    Sales Department
+                                                    <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                                                </h4>
+                                                <p>Why not buy a new awesome theme?</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="pull-left">
+                                                    <img src="~/Content/theme/dist/img/user4-128x128.jpg" class="img-circle" alt="user image" />
+                                                </div>
+                                                <h4>
+                                                    Reviewers
+                                                    <small><i class="fa fa-clock-o"></i> 2 days</small>
+                                                </h4>
+                                                <p>Why not buy a new awesome theme?</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">See All Messages</a></li>
+                            </ul>
+                        </li>
+                        <!-- Notifications: style can be found in dropdown.less -->
+                        <li class="dropdown notifications-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="label label-warning">10</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 10 notifications</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="menu">
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the page and may cause design problems
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-users text-red"></i> 5 new members joined
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-user text-red"></i> You changed your username
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">View all</a></li>
+                            </ul>
+                        </li>
+                        <!-- Tasks: style can be found in dropdown.less -->
+                        <li class="dropdown tasks-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-flag-o"></i>
+                                <span class="label label-danger">9</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 9 tasks</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="menu">
+                                        <li>
+                                            <!-- Task item -->
+                                            <a href="#">
+                                                <h3>
+                                                    Design some buttons
+                                                    <small class="pull-right">20%</small>
+                                                </h3>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">20% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li><!-- end task item -->
+                                        <li>
+                                            <!-- Task item -->
+                                            <a href="#">
+                                                <h3>
+                                                    Create a nice theme
+                                                    <small class="pull-right">40%</small>
+                                                </h3>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">40% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li><!-- end task item -->
+                                        <li>
+                                            <!-- Task item -->
+                                            <a href="#">
+                                                <h3>
+                                                    Some task I need to do
+                                                    <small class="pull-right">60%</small>
+                                                </h3>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">60% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li><!-- end task item -->
+                                        <li>
+                                            <!-- Task item -->
+                                            <a href="#">
+                                                <h3>
+                                                    Make beautiful transitions
+                                                    <small class="pull-right">80%</small>
+                                                </h3>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">80% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li><!-- end task item -->
+                                    </ul>
+                                </li>
+                                <li class="footer">
+                                    <a href="#">View all tasks</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- User Account: style can be found in dropdown.less -->
+
+
+
+
+
+
+                        <li class="fa fa-Right">
+                        </li>
+
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <li role="presentation" class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                        @User.Identity.Name <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="@Url.Action("Profile", "User")"><i class="fa fa-user"></i> @Resource.Profile</a></li>
+                                        <li><a href="@Url.Action("Index", "Orders")"><i class="fa fa-list-alt fa-fw"></i> @Resource.Orders</a></li>
+                                        <li role="presentation" class="dropdown">
+                                            <a href="@Url.Action("LogOff", "Account")" class="text-center">@Resource.LogOut</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                            }
+                        }
+
+                        <li class="fa fa-Right">
+                        </li>
+
+
+                        <!-- Menu Body -->
+                        <li class="user-body">
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Followers</a>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Sales</a>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Friends</a>
+                            </div>
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+
+
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+        </header>
+
+        <div class="content-wrapper" style="width: 15%; margin-left: 0px; width:100%; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+
+
+            <section class="content-header" style="margin-left:0px; top:2px;">
+
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="#">
+                            <i class="headerA"></i>
+                        </a>
+                    </li>
+                    <li class="active"></li>
+                </ol>
+            </section>
+
+            <!-- left sidebar-->
+            <div class="left" style="width: 17%; float:left; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+                <div class="Container">
+                    <div class="col-md-4">
+                        <div class="container">
+
+
+                            <div class="panel panel-default" style="width: 17%">
+                                <div class=" panel-body  no-gutter">
+                                    <div col-md-4">
+                                        <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+                                            <!-- Left side column. contains the logo and sidebar -->
+                                            <aside class="main-sidebar">
+                                                <!-- sidebar: style can be found in sidebar.less -->
+                                                <section class="sidebar">
+                                                    <!-- Sidebar user panel -->
+                                                    <div class="user-panel">
+                                                        <div class="pull-left image">
+                                                            <img src="~/Content/theme/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+                                                        </div>
+                                                        <div class="pull-left info">
+                                                            <p>Alexander Pierce</p>
+                                                            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- search form -->
+                                                    <form action="#" method="get" class="sidebar-form">
+                                                        <div class="input-group">
+                                                            <input type="text" name="q" class="form-control" placeholder="Search..." />
+                                                            <span class="input-group-btn">
+                                                                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                                                            </span>
+                                                        </div>
+                                                    </form>
+                                                    <!-- /.search form -->
+                                                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                                                    <ul class="sidebar-menu">
+                                                        <li class="header">MAIN NAVIGATION</li>
+                                                        <li class="active treeview">
+                                                            <a href="#">
+                                                                <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+                                                            </a>
+
+                                                        </li>
+                                                        <li class="active treeview">
+                                                            <a href="#">
+                                                                <i class="fa fa-shopping-cart"></i><span>Ecommerce</span><i class="fa fa-angle-left pull-right"></i>
+                                                            </a>
+                                                            <ul class="treeview-menu">
+                                                                <li class="active">
+                                                                <li><a href="ecommerce.html"><i class="fa fa-circle-o"></i>  Dashboard</a></li>
+                                                                <li class="active">
+                                                                <li><a href="~/Admin/infoProducts/Index"><i class="fa fa-circle-o"></i>Products</a></li>
+                                                                <li class="active">
+                                                                <li><a href="products-edit.html"><i class="fa fa-circle-o"></i>Edit Products</a></li>
+                                                                <li class="active">
+                                                                <li><a href="~/Admin/Order/Index"><i class="fa fa-circle-o"></i>Orders</a></li>
+                                                                <li class="active">
+                                                                <li><a href="order-view.html"><i class="fa fa-circle-o"></i>Order View</a></li>
+                                                            </ul>
+                                                        </li>
+
+
+
+
+
+
+
+
+
+
+
+                                                        <li class="active treeview">
+                                                            <a href="#">
+                                                                <i class="fa fa-folder-o"></i><span>Applications</span><i class="fa fa-angle-left pull-right"></i>
+                                                            </a>
+
+                                                            <ul class="treeview-menu">
+                                                                <li><a href="http://localhost:54026/Content/theme/pages/calendar.html"><i class="fa fa-calendar"></i> <span>Calendar</span><i class="fa fa-angle-left pull-right"></i></a></li>
+
+                                                                <li>
+                                                                    <a href="http://localhost:54026/Content/theme/pages/mailbox/mailbox.html">
+                                                                        <i class="fa fa-envelope"></i>Mailbox
+
+                                                                        <i class="fa fa-angle-left pull-right"></i>
+
+                                                                    </a>
+                                                                    <ul class="treeview-menu">
+                                                                        <li>
+                                                                            <a href="http://localhost:54026/Content/theme/pages/mailbox/mailbox.html">
+                                                                                Inbox
+
+                                                                                <span class="label label-primary pull-right">13</span>
+
+                                                                            </a>
+                                                                        </li>
+                                                                        <li><a href="compose.html">Compose</a></li>
+                                                                        <li><a href="read-mail.html">Read</a></li>
+                                                                    </ul>
+                                                                </li>
+
+
+                                                                <li>
+                                                                    <a href="http://localhost:54026/Content/dadmin/chat.html">
+                                                                        <i class="far fa-comments"></i>
+                                                                        <span>Chat</span>
+                                                                    </a>
+                                                                </li>
+
+
+                                                            </ul>
+                                                        </li>
+
+
+
+                                                        <li class="active treeview">
+                                                            <a href="#">
+                                                                <i class="fa fa-shopping-cart"></i><span>Forum</span><i class="fa fa-angle-left pull-right"></i>
+                                                            </a>
+                                                            <ul class="treeview-menu">
+                                                                <li class="active">
+                                                                <li><a href="~/Post/Create"><i class="fa fa-circle-o"></i>Post</a></li>
+                                                                <li class="active">
+                                                                <li><a href="~/Post/Index"><i class="fa fa-circle-o"></i>Details Review</a></li>
+                                                                <li class="active">
+                                                            </ul>
+                                                        </li>
+
+
+
+
+
+
+
+                                                        <li><a href="pages/widgets.html"><i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">new</small></a></li>
+
+
+                                                    </ul>
+                                                </section>
+                                                <!-- /.sidebar -->
+                                            </aside>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+
+                        </div>
+                        <!--End of Container-->
+
+                        <hr />
+
+                        <!--Second-->
+                        <!--End of Third-->
+
+
+                    </div>
+                </div>
+            </div>
+            <!--End Of Left-->
+            <!-- Right-->
+            <div class="right" style="width: 21%; float:right; margin-right:8px; padding-right:8px; top:0px;">
+                <div class="Container">
+                    <div class="col-md-4">
+                        <div class="container">
+                            @* <h3>Current thread: @Html.DisplayFor(model => model.ThreadTitle), Posted by: @Html.DisplayFor(modelItem => Model.GetUserName)</h3>*@
+
+                            <div class="panel panel-default" style="width: 22%">
+                                <div class=" panel-body">
+                                    <div col-md-4">
+                                        <ul>
+                                            <li class="active treeview">
+                                                <a href="#">
+                                                    <i class="fa fa-folder-o"></i><span>Applications</span><i class="fa fa-angle-left pull-right"></i>
+                                                </a>
+                                            <li class="header">Construct</li>
+                                            <li class="active treeview">
+                                            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+                                            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+                                            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+                                            <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
+                                            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+
+
+
+                                            <li class="header">Layout Options</li>
+                                            <li class="active treeview">
+                                            <li><a href="~/Content/theme/pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
+                                            <li><a href="~/Content/theme/pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
+                                            <li><a href="~/Content/theme/pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
+                                            <li><a href="~/Content/theme/pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+                                            <li><a href="~/Content/theme/footer-light.html">Footer Light</a></li>
+                                            <li><a href="~/Content/theme/footer-dark.html">Footer Dark</a></li>
+                                            <li><a href="~/Content/theme/footer-transparent.html">Footer Transparent</a></li>
+
+
+
+
+
+
+                                            <li class="header">Admin Panel</li>
+                                            <li class="active treeview">
+                                            <li><a href="~/Admin/Admin/CreateUser"><i class="fa fa-circle-o"></i> Create User</a></li>
+                                            <li><a href="~/Admin/Admin/CreateRole"><i class="fa fa-circle-o"></i> Create Role</a></li>
+                                            <li><a href="~/Admin/Admin/AssignRole"><i class="fa fa-circle-o"></i> Assign Role</a></li>
+                                            <li><a href="~/Content/theme/pages/examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
+                                            <li><a href="~/Content/theme/pages/examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
+                                            <li><a href="~/Content/theme/pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
+                                            <li><a href="~/Content/theme/pages/examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
+                                            <li><a href="~/Content/theme/pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
+                                            <li><a href="~/Content/theme/pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
+
+
+
+                                            <li class="treeview">
+                                                <a href="#">
+                                                    <i class="fa fa-share"></i> <span>Multilevel</span>
+                                                    <i class="fa fa-angle-left pull-right"></i>
+                                                </a>
+                                                <ul class="treeview-menu">
+                                                    <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                                                    <li>
+                                                        <a href="#"><i class="fa fa-circle-o"></i> Level One <i class="fa fa-angle-left pull-right"></i></a>
+                                                        <ul class="treeview-menu">
+                                                            <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-circle-o"></i> Level Two <i class="fa fa-angle-left pull-right"></i></a>
+                                                                <ul class="treeview-menu">
+                                                                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                                                                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                                                </ul>
+                                            </li>
+
+
+                                            <li class="header"><a href="documentation/index.html"><i class="fa fa-book"></i>Documentation</a></li>
+                                            <li class="active treeview">
+                                            <li><a href="#"><i class="fa fa-circle-o text-danger"></i> Important</a></li>
+                                            <li><a href="#"><i class="fa fa-circle-o text-warning"></i> Warning</a></li>
+                                            <li><a href="#"><i class="fa fa-circle-o text-info"></i> Information</a></li>
+
+                                        </ul>
+
+                                    </div>
+
+
+                                </div>
+
+
+
+
+                            </div>
+
+
+                        </div>
+                        <!--End of Container-->
+
+                        <hr />
+
+
+                    </div>
+                </div>
+            </div><!--End Of Right-->
+            <!--MID Sidebar Main content-->
+            <div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+
+
+
+                <h2>Edit Role</h2>
+
+                <div class="login-page no-gutters no-padding margin-top-0 margin-top-15 bottom-0 border-bottom-0">
+                    <div class="login-box margin-bottom-0 no-gutters no-padding noUi-background">
+
+                        <div class="login-box-body">
+
+                            <div class="login-panel panel panel-default">
+
+                                <div class="panel-body">
+                                    <h2>Edit</h2>
+
+                                    @using (Html.BeginForm())
+                                    {
+                                        @Html.AntiForgeryToken()
+
+                                        <div class="form-horizontal">
+                                            <h2>DisplayAllRoles</h2>
+
+                                            <p>
+                                                @Html.ActionLink("Create New", "Create")
+                                            </p>
+                                            <table class="table">
+                                                <tr>
+                                                    <th>
+                                                        @Html.DisplayNameFor(model => model.Name)
+                                                    </th>
+                                                    <th></th>
+                                                </tr>
+
+                                                @foreach (var item in Model)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.Name)
+                                                        </td>
+                                                        <td>
+                                                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                                        </td>
+                                                    </tr>
+                                                }
+
+                                            </table>
+
+
+
+                                </div>
+
+
+
+
+
+                            
+                                <hr />
+                                <div class="margin text-center">
+                                    <span>Sign in using social networks</span>
+                                    <br />
+                                    <button class="btn bg-light-blue btn-circle"><i class="fa fa-facebook"></i></button>
+                                    <button class="btn bg-aqua btn-circle"><i class="fa fa-twitter"></i></button>
+                                    <button class="btn bg-red btn-circle"><i class="fa fa-google-plus"></i></button>
+                                </div>
+                              
+
+                                }
+                            </div>
+                        </div>
+
+                    </div><!-- /.login-box-body -->
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+        <!--End Of MID-->
+
+
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.0
+            </div>
+            <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
+        </footer>
+
+
+
+
+
+    </div>
+    </div>
+
+
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/ontent/theme/dist/js/demo.js" type="text/javascript"></script>
+    <script src="Content/theme/bower_components/moment/moment.js"></script>
+    <script src="~/Content/theme/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <link href="~/Content/theme/plugins/fullcalendar/fullcalendar.print.css" rel="stylesheet" />
+    <link href="~/Content/theme/plugins/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <script src="~/Content/theme/plugins/fullcalendar/fullcalendar.js"></script>
+
+    <link href="~/Content/theme/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" />
+
+    <!-- jQuery 3 -->
+    <script src="~/Content/theme/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="~/Content/theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/Content/theme/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/dist/js/adminlte.min.js"></script>
+
+    <script src="~/Content/theme/bower_components/chart.js/Chart.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="~/Content/theme/bower_components/fastclick/lib/fastclick.js"></script>
+
+    @*
+            <!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/jquery-ui.min.js"></script>
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
+            <script src="assets/js/perfect-scrollbar.min.js"></script>
+            <script src="assets/js/jquery.sparkline.min.js"></script>
+            <script src="assets/js/raphael.min.js"></script>
+            <script src="assets/js/morris.min.js"></script>
+            <script src="assets/js/select2.min.js"></script>
+            <script src="assets/js/jquery-jvectormap.min.js"></script>
+            <script src="assets/js/jquery-jvectormap-world-mill.min.js"></script>
+            <script src="assets/js/horizontal-timeline.min.js"></script>
+            <script src="assets/js/jquery.validate.min.js"></script>
+            <script src="assets/js/jquery.steps.min.js"></script>
+            <script src="assets/js/dropzone.min.js"></script>
+            <script src="assets/js/ion.rangeSlider.min.js"></script>
+            <script src="assets/js/datatables.min.js"></script>
+            <script src="assets/js/main.js"></script>
+            <!-- Page Level Scripts -->
+            <script src="assets/js/page/chat.js"></script>
+
+            @section ScriptsOrCss
+        {
+
+                <link href="~/Content/DataTable/new/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+                <script src="~/Content/DataTable/new/jquery.dataTables.min.js" type="text/javascript"></script>
+                <script src="~/Content/DataTable/new/dataTables.buttons.min.js" type="text/javascript"></script>
+                <script src="~/Content/DataTable/new/jszip.min.js" type="text/javascript"></script>
+                <script src="~/Content/DataTable/new/pdfmake.min.js" type="text/javascript"></script>
+                <script src="~/Content/DataTable/new/vfs_fonts.js" type="text/javascript"></script>
+                <script src="~/Content/DataTable/new/buttons.html5.min.js" type="text/javascript"></script>
+                <link href="~/Content/DataTable/new/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+                <link href="~/Content/DataTable/new/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+                <script src="~/Content/DataTable/new/buttons.print.min.js"></script>
+                <script src="~/Content/DataTable/new/buttons.colVis.min.js"></script>
+            }
+
+    *@
+    <style>
+        .content-wrapper {
+            margin-top: 0%;
+            margin-left: 0%;
+            background-position: top;
+        }
+
+        #left {
+            width: 17%;
+            margin-left: 0%;
+            margin-top: 0%;
+            background-position: top;
+            position: relative;
+            background-color: #eee3e3;
+        }
+
+
+
+        .Mid-sidebar {
+            content: " ";
+            position: relative;
+            margin-top: 0%;
+            width: 63%;
+            overflow: no-display;
+            padding-right: 0px;
+            margin-left: 18%;
+            margin-right: 0%;
+            background-position: top;
+            margin-bottom: 0px;
+            background-color: #fff;
+        }
+
+
+        .SiteT {
+            width: 100%;
+            border: none;
+            margin-right: 0px;
+            padding-right: 0px;
+        }
+
+
+
+
+        .main--container {
+            margin-left: 17px;
+        }
+    </style>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+
+
+    }
+
+
+
+
+    <style>
+        .login-logo,
+        .register-logo {
+            font-size: 35px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+            .login-logo a,
+            .register-logo a {
+                color: #444;
+            }
+
+        .login-page,
+        .register-page {
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            margin-bottom: 0px;
+            padding-top: 15px;
+            padding-bottom: 8%;
+            padding-top: 5%;
+        }
+
+        .login-box,
+        .register-box {
+            width: 425px;
+            margin: 7% auto;
+        }
+
+        .login-box-body,
+        .register-box-body {
+            background: #fff;
+            padding: 20px;
+            color: #444;
+            border-top: 0;
+            color: #666;
+            border-radius: 5px;
+        }
+
+            .login-box-body .form-control-feedback,
+            .register-box-body .form-control-feedback {
+                color: #777;
+            }
+
+        .login-box-msg,
+        .register-box-msg {
+            margin: 0;
+            text-align: center;
+            padding: 0 20px 20px 20px;
+        }
+
+
+        .login-box .h2 {
+            border-radius: 10px;
+        }
+    </style>
+
+
+</body>
+</html>

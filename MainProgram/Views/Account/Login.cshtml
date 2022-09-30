@@ -1,0 +1,424 @@
+﻿@using MainProgram.Core
+@using MainProgram.Models
+@model MainProgram.Core.LoginViewModel
+@using MainProgram.Core.Resources
+
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+
+
+
+
+
+
+
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+<meta name="viewport" content="width=device-width" />
+<title>Subscribe</title>
+@Styles.Render("~/Content/css")
+<link href="~/Content/Intellisence/css/jquery-ui.min.css" rel="stylesheet" />
+<script src="~/Content/Intellisence/js/jquery-1.10.2.min.js"></script>
+<script src="~/Content/Intellisence/js/jquery-ui.min.js"></script>
+
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/sweetalert/sweet-alert.css" rel="stylesheet" />
+<script src="https://lipis.github.io/bootstrap-sweetalert/lib/sweet-alert.js"></script>  
+
+
+
+<div id="bcolor" class=" content-wrapper" style="width: 15%; margin-left: 0px; width:100%; top:20px; ">
+
+
+   
+    <br />
+
+    <!-- left sidebar-->
+    <div class="left" style="width: 17%; float:left; top:0px;">
+
+    </div>
+    <!--End Of Left-->
+    <!-- Right-->
+    <div class="right" style="width: 21%; float:right; margin-right:8px; padding-right:8px; top:0px;">
+        <div class="Container">
+            <div class="col-md-4">
+                <!--End of Container-->
+
+
+
+
+            </div>
+        </div>
+    </div><!--End Of Right-->
+    <!--MID Sidebar Main content-->
+    <div class="Mid-sidebar" style="margin-right:10px; padding:10px; margin-top:30px; text-align:center">
+
+
+
+
+
+
+
+        <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+            <div class="breadcrumbs">
+                <ol class="breadcrumb">
+                    <li class="active" style="font-size:x-large"><b>@Resource.Login</b></li>
+                    <li type="button" class="close" data-dismiss="modal"><a href="~/Home/Index">×</a></li>
+                    <li style="float:left">
+                        <a href="~/Home/Index"><img src="/Content/images/icons-png/Home3.png" style="width:20px; height:20px;" /></a>
+                    </li>
+
+                </ol>
+            </div>
+
+
+
+            <div class="col-md-3 my-auto side-header" style="text-align: center; margin-left: 5px;">
+
+
+                <img src="~/Content/images/icons-png/fail-login.png" class="mx-auto d-block" />
+
+            </div>
+            <hr />
+
+
+
+
+            <fieldset style="width:auto">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+
+                    <hr />
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+                    <span>
+                        @Html.CheckBoxFor(a => a.RememberMe) @Resource.LabelRememberMe
+                    </span>
+                    <br /><br />
+                    @*  <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" class="btn btn-lg btn btn-default btn-block">@Resource.Login</button></div>*@
+
+                    <input type="submit" value="Login" id="Loginsubmit" class="btn btn-default"
+                           styles="margin-top:10px">
+                    if (ViewBag.Msg != null)
+                    {
+                        <span style="color:red;">
+                            @ViewBag.Msg
+                        </span> }
+
+                        <p> @Html.ActionLink("Forgot your password?", "ForgotPassword")</p>
+
+                        <a href="~/Account/Register" class="text-center">Register a new membership</a>
+
+                        @* Enable this once you have account confirmation enabled for password reset functionality
+                        <p>
+                            @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                        </p>*@
+                        <hr />
+                        <div class="margin text-center">
+                            <span>Sign in using social networks</span>
+                            <br />
+                            <button class="btn bg-light-blue btn-circle"><i class="fa fa-facebook"></i></button>
+                            <button class="btn bg-aqua btn-circle"><i class="fa fa-twitter"></i></button>
+                            <button class="btn bg-red btn-circle"><i class="fa fa-google-plus"></i></button>
+                        </div>
+
+                }
+
+            </fieldset>
+        </div>
+
+      <!--  <div class="modal-footer">
+
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>-->
+    </div>
+
+</div>
+
+    
+
+
+
+    <style>
+          #bcolor{
+            background-image:url(/Content/images/HomePic/bg.jpeg)
+        }
+
+
+       .content-wrapper {
+            margin-top: 0%;
+            margin-left: 0%;
+            background-position: top;
+              OVERFLOW: auto;
+            border: none;
+            WIDTH: 100%;
+            BORDER-BOTTOM: #000000 none;
+            HEIGHT: 700px;
+            max-height: 700px;
+            min-height: 700px;
+        }
+
+        #left {
+            width: 17%;
+            margin-left: 0%;
+            margin-top: 0%;
+            background-position: top;
+            position: relative;
+            background-color: #eee3e3;
+        }
+
+
+
+        .Mid-sidebar {
+            content: " ";
+            position: relative;
+            margin-top: 0%;
+            width: 43%;
+            overflow: no-display;
+            padding-right: 0px;
+            margin-left: 28%;
+            margin-right: 0%;
+            background-position: top;
+            margin-bottom: 0px;
+            background-color: #fff;
+        }
+
+
+        .SiteT {
+            width: 100%;
+            border: none;
+            margin-right: 0px;
+            padding-right: 0px;
+        }
+
+
+
+
+        .main--container {
+            margin-left: 17px;
+        }
+        
+           .card {
+                box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+                 background: #ffffff;
+            }
+
+
+            .col-lg-2 {
+                flex: 0 0 10% !important;
+                max-width: 20%;
+            }
+    </style>
+    
+
+
+@section Scripts
+ {
+   <script src="https://lipis.github.io/bootstrap-sweetalert/lib/sweet-alert.js"></script>
+
+    <script>
+        $(function () {
+            console.log("ready...!");
+            $("#Loginsubmit").on('click', (event) == {
+            event:preventDefault()
+        })
+            let postData = new FormData(event.target.form);
+
+            var LoginViewModel = { "Email": "", "Password": "", "RememberMe": false };
+
+            LoginViewModel.Email = postData.get("Email");
+            LoginViewModel.Password = postData.get("Password");
+            LoginViewModel.RememberMe = (postData.get("RememberMe") !== "false");
+
+
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("Login", "Account")',
+                data: JSON.stringify(LoginViewModel),
+                contentType: 'application/json',
+                headers: {
+                    'X-XSRF-TOKEN': getCookie("XSRF-TOKEN"),
+                },
+                success: function (result) {
+                    Swal.fire({
+                        title: 'Success',
+                        text: "Logged In Successfully",
+                        type: 'success',
+                        allowOutsideClick: false,
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(function (result) {
+                        if (result) {
+                            window.location = "/admin/home";
+                        }
+                    })
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+
+                    const errors = jqXHR.responseText.split(",");
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Login Failed',
+                        footer: makeArrayList(errors),
+                    })
+                }
+            })
+
+        });
+
+
+        function makeArrayList(array)
+        {
+            let list = document.createElement('ul');
+            list.className = "list-group";
+            for (let i = 0; i < array.length; i++) {
+
+                let item = document.createElement('li');
+                item.className = "list-group-item bg-danger text-white";
+                item.appendChild(document.createTextNode(array[i].replace(/[\[\]"]/g, '').replace(/[\[\]{]/g, '').replace(/[\[\]}]/g, '')));
+                list.appendChild(item);
+            }
+            return list;
+        }
+    </script>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@*
+
+    <div class="modal fade" id="tabModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style=" border-top-left-radius:10px; border-top-right-radius:10px;">
+                <div class="modal-header" style="background: deepskyblue; font-size: xx-large; border-top-left-radius:5px; border-top-right-radius:5px; text-align:center">
+                    <h4 class="modal-title" id="modal-basic-title">User SignIn</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+
+                <div class="modal-body">
+
+                    <!-- Tab Start Code -->
+                    <fieldset>
+
+                        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary("", new { @class = "text-danger" })
+
+
+
+                            <hr />
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group" style="text-align:center">
+                                <span style="text-align:center">
+                                    @Html.CheckBoxFor(a => a.RememberMe) @Resource.LabelRememberMe
+                                </span><br /><br />
+                                <span style="text-align:center">
+                                    <input type="submit" value="Login" class="btn btn-primary" /><br />
+
+
+                                    @if (ViewBag.Msg != null)
+                                    {
+                                        <span style="color:red;">
+                                            @ViewBag.Msg
+                                        </span>
+                                    }
+                                </span><br />
+                                <span>
+                                    @Html.ActionLink("Forgot your password?", "ForgotPassword", "Account")
+
+                                </span>
+
+
+                                Enable this once you have account confirmation enabled for password reset functionality
+                                <p>
+                                    @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                                </p>*
+
+                                <a href="~/Account/Register" class="text-center">Register a new membership</a>
+                                <hr />
+                                <div class="margin text-center">
+                                    <span>Sign in using social networks</span>
+                                    <br />
+                                    <button class="btn bg-light-blue btn-circle"><i class="fa fa-facebook"></i></button>
+                                    <button class="btn bg-aqua btn-circle"><i class="fa fa-twitter"></i></button>
+                                    <button class="btn bg-red btn-circle"><i class="fa fa-google-plus"></i></button>
+                                </div>
+                            </div>
+                        }
+                    </fieldset>
+                    <!-- Tab End Code -->
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+*@

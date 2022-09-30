@@ -1,0 +1,450 @@
+﻿@model MainProgram.Edm.tbl_Order
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+
+
+@{
+    ViewBag.Title = "GetPost";
+    Layout = "~/Views/Shared/_LayoutSub.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+
+
+
+
+    <!-- left sidebar-->
+
+
+    <div class="left" style="width: 8%; float:left; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+        <div class="Container">
+            <div class="col-md-4">
+                <div class="container">
+                    <div class="panel panel-default" style="width: 5%">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--End Of Left-->
+    <!-- Right-->
+
+
+    <div class="right"
+         style="width: 21%; float:right; margin-right:8px; padding-right:8px; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+        <div class="Container">
+            <div class="col-md-4">
+                <div class="container">
+                    <div class="panel panel-default" style="width: 22%">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--End Of Right-->
+    <!--MID Sidebar Main content-->
+    <div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+        <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+            <strong style="font-size:x-large"><b>Top questions</b></strong>
+            @using (Html.BeginForm("UserInformation", "Checkout", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <!-- / catg header banner section -->
+                <!-- Cart view section -->
+                <section id="checkout">
+                    <div class="breadcrumbs">
+                        <ol class="breadcrumb">
+                            <li><a href="@Url.Action("Index","Home")">@Resource.LabelHome</a></li>
+                            <li class="active">@Resource.LabelShoppingCart</li>
+                        </ol>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="  col-md-12">
+                                <div class="checkout-area">
+                                    <form action="Post">
+                                        <div class="row">
+                                            <div class=" col-md-10">
+                                                <div class="checkout-left">
+                                                    <div class="panel-group" id="accordion">
+                                                        <!-- Billing Details -->
+
+                                                        <fieldset>
+                                                            <legend>Shipping Information</legend>
+                                                            <div class="panel panel-default aa-checkout-billaddress">
+                                                                <div class="panel-heading">
+                                                                    <h4 class="panel-title">
+                                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                                                            Billing Details / Shippping Address
+                                                                        </a>
+                                                                    </h4>
+                                                                </div>
+
+                                                                <div class="panel-body">
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                            <div class="aa-checkout-single-bill">
+                                                                                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "FirstName*" } })
+                                                                                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="aa-checkout-single-bill">
+                                                                                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Last Name*" } })
+                                                                                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                            <div class="aa-checkout-single-bill">
+                                                                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Email*" } })
+                                                                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="aa-checkout-single-bill">
+                                                                                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Phone*" } })
+                                                                                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="aa-checkout-single-bill">
+                                                                                @Html.TextAreaFor(model => model.Street, new { @class = "blue col-md-12", @required = "required", @maxlength = "500", placeholder = "Address*" })
+                                                                                @Html.ValidationMessageFor(model => model.Street)
+
+
+
+
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="aa-checkout-single-bill">
+                                                                                <select name="Province">
+                                                                                    <option value="--">Select Your Country</option>
+                                                                                    <option value="North America">North America</option>
+                                                                                    <option value="Asia">Asia</option>
+                                                                                    <option value="Europe">EUEurope</option>
+                                                                                    <option value="South America">South America</option>
+                                                                                    <option value="Africa">Africa</option>
+
+
+                                                                                    @*
+                                                                                        new SelectListItem() {Text="Alabama", Value="AL"},
+                                                                                        new SelectListItem() { Text="Alaska", Value="AK"},
+                                                                                        new SelectListItem() { Text="Arizona", Value="AZ"},
+                                                                                        new SelectListItem() { Text="Arkansas", Value="AR"},
+                                                                                        new SelectListItem() { Text="California", Value="CA"},
+                                                                                        new SelectListItem() { Text="Colorado", Value="CO"},
+                                                                                        new SelectListItem() { Text="Connecticut", Value="CT"},
+                                                                                        new SelectListItem() { Text="District of Columbia", Value="DC"},
+                                                                                        new SelectListItem() { Text="Delaware", Value="DE"},
+                                                                                        new SelectListItem() { Text="Florida", Value="FL"},
+                                                                                        new SelectListItem() { Text="Georgia", Value="GA"},
+                                                                                        new SelectListItem() { Text="Hawaii", Value="HI"},
+                                                                                        new SelectListItem() { Text="Idaho", Value="ID"},
+                                                                                        new SelectListItem() { Text="Illinois", Value="IL"},
+                                                                                        new SelectListItem() { Text="Indiana", Value="IN"},
+                                                                                        new SelectListItem() { Text="Iowa", Value="IA"},
+                                                                                        new SelectListItem() { Text="Kansas", Value="KS"},
+                                                                                        new SelectListItem() { Text="Kentucky", Value="KY"},
+                                                                                        new SelectListItem() { Text="Louisiana", Value="LA"},
+                                                                                        new SelectListItem() { Text="Maine", Value="ME"},
+                                                                                        new SelectListItem() { Text="Maryland", Value="MD"},
+                                                                                        new SelectListItem() { Text="Massachusetts", Value="MA"},
+                                                                                        new SelectListItem() { Text="Michigan", Value="MI"},
+                                                                                        new SelectListItem() { Text="Minnesota", Value="MN"},
+                                                                                        new SelectListItem() { Text="Mississippi", Value="MS"},
+                                                                                        new SelectListItem() { Text="Missouri", Value="MO"},
+                                                                                        new SelectListItem() { Text="Montana", Value="MT"},
+                                                                                        new SelectListItem() { Text="Nebraska", Value="NE"},
+                                                                                        new SelectListItem() { Text="Nevada", Value="NV"},
+                                                                                        new SelectListItem() { Text="New Hampshire", Value="NH"},
+                                                                                        new SelectListItem() { Text="New Jersey", Value="NJ"},
+                                                                                        new SelectListItem() { Text="New Mexico", Value="NM"},
+                                                                                        new SelectListItem() { Text="New York", Value="NY"},
+                                                                                        new SelectListItem() { Text="North Carolina", Value="NC"},
+                                                                                        new SelectListItem() { Text="North Dakota", Value="ND"},
+                                                                                        new SelectListItem() { Text="Ohio", Value="OH"},
+                                                                                        new SelectListItem() { Text="Oklahoma", Value="OK"},
+                                                                                        new SelectListItem() { Text="Oregon", Value="OR"},
+                                                                                        new SelectListItem() { Text="Pennsylvania", Value="PA"},
+                                                                                        new SelectListItem() { Text="Rhode Island", Value="RI"},
+                                                                                        new SelectListItem() { Text="South Carolina", Value="SC"},
+                                                                                        new SelectListItem() { Text="South Dakota", Value="SD"},
+                                                                                        new SelectListItem() { Text="Tennessee", Value="TN"},
+                                                                                        new SelectListItem() { Text="Texas", Value="TX"},
+                                                                                        new SelectListItem() { Text="Utah", Value="UT"},
+                                                                                        new SelectListItem() { Text="Vermont", Value="VT"},
+                                                                                        new SelectListItem() { Text="Virginia", Value="VA"},
+                                                                                        new SelectListItem() { Text="Washington", Value="WA"},
+                                                                                        new SelectListItem() { Text="West Virginia", Value="WV"},
+                                                                                        new SelectListItem() { Text="Wisconsin", Value="WI"},
+                                                                                        new SelectListItem() { Text="Wyoming", Value="WY"}*@
+
+
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </fieldset>
+
+                                                        <!-- Coupon section -->
+                                                        <div class="panel panel-default aa-checkout-coupon">
+                                                            <div class="panel-heading">
+                                                               
+                                                                    <fieldset>
+
+                                                                        <legend>Coupon</legend>
+                                                                        <div class="panel-heading">
+                                                                            <h4 class="panel-title">
+                                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" style="color:black">
+                                                                                    Have a Coupon?
+                                                                                </a>
+                                                                            </h4>
+                                                                        </div>
+                                                                        <p>We're running a promotion: all Product is free with the promo code: "FREE"</p>
+                                                                        <div class="editor-label">
+                                                                            @Html.Label("Promo Code")
+                                                                        </div>
+                                                                        <div class="editor-field">
+                                                                            @Html.TextBox("PromoCode")
+
+                                                                        </div>
+                                                                    </fieldset>
+                                                               
+                                                            </div>
+                                                        </div>
+
+
+
+
+                                                        <!-- Billing Details -->
+
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+
+
+
+
+                                        <input type="submit" value="Submit Order" class="aa-browse-btn" style="color:black; border-color:none">
+
+
+
+
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- / Cart view section -->
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            @*
+                <strong style="font-size:x-large"><b>Address and Payment</b></strong>
+
+
+
+
+
+                <fieldset>
+                    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+                    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+                    @using (Html.BeginForm())
+                    {
+
+                        <h2>Address And Payment</h2>
+                        <fieldset style="width:100%">
+
+                            <span >Shipping Information</span>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                   Shippin @Html.EditorForModel( new { @class = "blue col-md-12"})
+                                    </div>
+                                </div>
+                              </fieldset>
+                        <fieldset>
+                            <legend>Payment</legend>
+                            <p>We're running a promotion: all music is free with the promo code: "FREE"</p>
+                            <div class="editor-label">
+                                @Html.Label("Promo Code")
+                            </div>
+                            <div class="editor-field">
+                                @Html.TextBox("PromoCode")
+                            </div>
+                        </fieldset>
+
+                        <input type="submit" value="Submit Order" />
+                    } (User, reader,
+
+
+
+
+
+
+
+
+
+                </fieldset>*@
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <style>
+        .content-wrapper {
+            margin-top: 0%;
+            margin-left: 0%;
+            background-position: top;
+        }
+
+        #left {
+            width: 20%;
+            margin-left: 0%;
+            margin-top: 0%;
+            background-position: top;
+            position: relative;
+            background-color: #eee3e3;
+        }
+
+
+
+        .Mid-sidebar {
+            content: " ";
+            position: relative;
+            margin-top: 0%;
+            width: 60%;
+            overflow: no-display;
+            padding-right: 0px;
+            margin-left: 20%;
+            margin-right: 0%;
+            background-position: top;
+            margin-bottom: 0px;
+            background-color: #fff;
+              HEIGHT: 1124px;
+            max-height: 1124px;
+            min-height: 1124px;
+        }
+
+
+        .SiteT {
+            width: 100%;
+            border: none;
+            margin-right: 0px;
+            padding-right: 0px;
+        }
+
+
+
+
+        .main--container {
+            margin-left: 17px;
+        }
+
+        .card {
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+            background: #ffffff;
+        }
+
+
+        .col-lg-2 {
+            flex: 0 0 10% !important;
+            max-width: 20%;
+        }
+    </style>
+
+</div>
+
+        

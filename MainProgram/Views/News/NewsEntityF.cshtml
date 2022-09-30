@@ -1,0 +1,321 @@
+﻿@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+
+
+
+@{
+    ViewBag.Title = "GetPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Intellisence/css/jquery-ui.min.css" rel="stylesheet" />
+<script src="~/Content/Intellisence/js/jquery-1.10.2.min.js"></script>
+<script src="~/Content/Intellisence/js/jquery-ui.min.js"></script>
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="hero is-info is-fullheight is-bold">
+
+
+    <div class="Main-Bar" style="width:100%; margin-right:0px; padding-right:0px; margin-top:20px; text-align:center; background-color:#fff">
+        <div class="panel2" style="width: 98.8%; padding-left: 0px; padding-right: 0px;">
+            <div class="row mt-4 mb-6 mb-12">
+
+                <div class="hero-body   mt-4 mb-6 mb-12" style="background-color: ghostwhite; margin-right:0px; padding-right:0px; text-align:center">
+
+                    <div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; margin-top:30px; background-color:white; border:none">
+
+
+
+
+                        <!-- left sidebar-->
+
+
+                        <div class="left" style="float:left; top:0px; background-color:white; border:none">
+                            <div class="Container">
+                                <div class="col-md-4">
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!--End Of Left-->
+                        <!-- Right-->
+
+
+                        <div class="right"
+                             style="float:right; margin-right:8px; padding-right:8px; top:0px; background-color:white; border:none">
+                            <div class="Container">
+                                <div class="col-md-4">
+
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+                        <!--End Of Right-->
+                        <!--MID Sidebar Main content-->
+                        <div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+                            <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <div class="card card-body block">
+                                    <div id="why_buy">
+                                        <div class="info_right">
+                                            <h5 class="text-center mb-3">News Post</h5>
+                                            <ul style="text-align:left; font-size:16px; margin:15px">
+
+                                                @{
+
+
+
+
+
+                                                    <li style="text-align:center"><br> <strong style="font-size:20px; color:red">What is Entity Framework?</strong><br><br></li>
+
+
+
+                                                    <li style="text-align:left"><strong style="font-size:20px; color:red">What is Entity Framework?</strong></li>
+
+
+                                                    <li style="text-align:left">
+                                                        Prior to .NET 3.5, we (developers) often used to write ADO.NET code or Enterprise Data Access Block to save or retrieve application data from the underlying database. We used to open a connection to the database, create a DataSet to fetch or submit the data to the database, convert data from the DataSet to .NET objects or vice-versa to apply business rules. This was a cumbersome and error prone process. Microsoft has provided a framework called "Entity Framework" to automate all these database related activities for your application.
+                                                        <br><br>
+                                                    </li>
+
+                                                    <li style="text-align:left">
+                                                        Entity Framework is an open-source ORM framework for .NET applications supported by Microsoft. It enables developers to work with data using objects of domain specific classes without focusing on the underlying database tables and columns where this data is stored. With the Entity Framework, developers can work at a higher level of abstraction when they deal with data, and can create and maintain data-oriented applications with less code compared with traditional applications.
+                                                        <br><br>
+                                                    </li>
+
+                                                    <li style="text-align:left">
+                                                        Official Definition: “Entity Framework is an object-relational mapper (O/RM) that enables .NET developers to work with a database using .NET objects. It eliminates the need for most of the data-access code that developers usually need to write.”
+
+                                                        The following figure illustrates where the Entity Framework fits into your application. As per the above figure, Entity Framework fits between the business entities (domain classes) and the database. It saves data stored in the properties of business entities and also retrieves data from the database and converts it to business entities objects automatically.
+                                                        <br><br>
+                                                    </li>
+
+                                                    <li style="text-align:left"><strong style="font-size:20px; color:red">Entity Framework Features</strong></li>
+
+
+                                                    <li style="text-align:left">
+                                                        Cross-platform: EF Core is a cross-platform framework which can run on Windows, Linux and Mac.
+                                                        Modelling: EF (Entity Framework) creates an EDM (Entity Data Model) based on POCO (Plain Old CLR Object) entities with get/set properties of different data types. It uses this model when querying or saving entity data to the underlying database.
+                                                        Querying: EF allows us to use LINQ queries (C#/VB.NET) to retrieve data from the underlying database. The database provider will translate this LINQ queries to the database-specific query language (e.g. SQL for a relational database). EF also allows us to execute raw SQL queries directly to the database.
+                                                        Change Tracking: EF keeps track of changes occurred to instances of your entities (Property values) which need to be submitted to the database.
+                                                        Saving: EF executes INSERT, UPDATE, and DELETE commands to the database based on the changes occurred to your entities when you call the SaveChanges() method. EF also provides the asynchronous SaveChangesAsync() method.
+                                                        Concurrency: EF uses Optimistic Concurrency by default to protect overwriting changes made by another user since data was fetched from the database.
+                                                        Transactions: EF performs automatic transaction management while querying or saving data. It also provides options to customize transaction management.
+                                                        Caching: EF includes first level of caching out of the box. So, repeated querying will return data from the cache instead of hitting the database.
+                                                        Built-in Conventions: EF follows conventions over the configuration programming pattern, and includes a set of default rules which automatically configure the EF model.
+                                                        Configurations: EF allows us to configure the EF model by using data annotation attributes or Fluent API to override default conventions.
+                                                        Migrations: EF provides a set of migration commands that can be executed on the NuGet Package Manager Console or the Command Line Interface to create or manage underlying database Schema.
+                                                        <br><br>
+                                                    </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                }
+
+
+
+
+
+
+
+
+
+
+
+
+                                            </ul>
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+                    <!--End Of MID-->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<style>
+    .content-wrapper {
+        margin-top: 0%;
+        margin-left: 0%;
+        background-position: top;
+        background: #d2d6de;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+
+    #left {
+        width: 10%;
+        margin-left: 0%;
+        margin-top: 0%;
+        background-position: top;
+        position: relative;
+        background-color: #eee3e3;
+    }
+
+    #Right {
+        width: 10%;
+        margin-right: 0%;
+        margin-top: 0%;
+        background-position: top;
+        position: relative;
+        background-color: #eee3e3;
+    }
+
+
+    .Mid-sidebar {
+        content: " ";
+        position: relative;
+        margin-top: 0%;
+        width: 80%;
+        overflow: no-display;
+        padding-right: 0px;
+        margin-left: 10%;
+        margin-right: 0%;
+        background-position: top;
+        margin-bottom: 0px;
+        background-color: #fff;
+    }
+
+
+    .SiteT {
+        width: 100%;
+        border: none;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
+
+
+
+    .main--container {
+        margin-left: 17px;
+    }
+
+    .card-body {
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+<style>
+    .blue {
+        height: 200px;
+        text-align: left;
+    }
+
+    .card {
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+        background: #ffffff;
+    }
+
+
+    .col-lg-2 {
+        flex: 0 0 10% !important;
+        max-width: 20%;
+    }
+</style>

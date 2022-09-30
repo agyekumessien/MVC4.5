@@ -1,0 +1,464 @@
+﻿@model IEnumerable<MainProgram.Edm.tbh_Departments>
+
+
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+
+@{
+    ViewBag.Title = "Books";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<div class="content-wrapper">
+
+
+  
+
+    <!-- left sidebar-->
+    <div class="left" style="width: 20%; margin-left: 1%; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+        <div class="col-md-4">
+
+            <img src="~/Content/img/ApparelImages/Essien.jpg" class="img-circle" alt="User Image" />
+            <p style="width:250px; height:auto; overflow-wrap:initial">You can easily fiesnd a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="@Url.Action("Index", "Blog")">check developer blog &raquo;</a></p>
+
+
+            <hr />
+            <ul>
+
+                <li><a href="@Url.Action("Index", "~/Home")"><i class="fa fa-reply"></i> <span>Home</span></a></li>
+
+
+                <li class="@(Request.Url.Segments[0].ToString().Trim().StartsWith("Category") ? "active" : "") treeview" style="width:250px;">
+
+                    <a href="#">
+                        <i class="fa fa-laptop"></i>
+                        <span>Product</span>
+
+
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <li>
+                            <a href="@Url.Action("Index", "Books")" style="width:250px;"></a>
+                        <li><a href="@Url.Action("Index", "Books", new { id = "Product" })"><i class="fa fa-circle-o"></i> Books</a></li>
+                        <li><a href="@Url.Action("Index", "Books", new { id = "Product" })"><i class="fa fa-circle-o"></i> Books</a></li>
+
+                    </ul>
+                </li>
+
+
+
+
+
+                <li class="@(Request.Url.Segments[0].ToString().Trim().StartsWith("Category") ? "active" : "") treeview" style="width:250px;">
+
+                    <a href="#">
+                        <i class="fa fa-laptop"></i>
+                        <span>Order</span>
+
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <li>
+                            <a href="@Url.Action("Index", "Order")" style="width:250px;">
+                                <i class="fa fa-circle-o"></i> List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="@(Request.Url.Segments[0].ToString().Trim().StartsWith("Category") ? "active" : "") treeview" style="width:250px;">
+
+                    <a href="#">
+                        <i class="fa fa-laptop"></i>
+                        <span>Account</span>
+
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <li>
+                            <a href="@Url.Action("login", "Account")" style="width:250px;">
+                                <i class="fa fa-circle-o"></i> login
+                            </a>
+                        </li>
+                        <li><a href="@Url.Action("Vendor", "Account")"><i class="fa fa-circle-o"></i> Vendors</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="@(Request.Url.Segments[0].ToString().Trim().StartsWith("Category") ? "active" : "") treeview" style="width:250px;">
+
+                    <a href="#">
+                        <i class="fa fa-laptop"></i>
+                        <span>Membership</span>
+
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="@Url.Action("Add", "MemberShip")"><i class="fa fa-circle-o"></i> Add</a></li>
+                        <li><a href="@Url.Action("Index", "MemberShip")"><i class="fa fa-circle-o"></i> List</a></li>
+                    </ul>
+                </li>
+
+                <li class="@(Request.Url.Segments[0].ToString().Trim().StartsWith("Category") ? "active" : "") treeview" style="width:250px;">
+
+                    <a href="#">
+                        <i class="fa fa-laptop"></i>
+                        <span>Pages</span>
+
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="@Url.Action("Index", "Page")"><i class="fa fa-circle-o"></i> List</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="@(Request.Url.Segments[0].ToString().Trim().StartsWith("Category") ? "active" : "") treeview" style="width:250px;">
+
+                    <a href="#">
+                        <i class="fa fa-laptop"></i>
+                        <span>Settings</span>
+
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="@Url.Action("Group", "Setting", new { id = "general" })"><i class="fa fa-circle-o"></i> General</a></li>
+                        <li><a href="@Url.Action("Group", "Setting", new { id = "paypal" })"><i class="fa fa-circle-o"></i> Paypal</a></li>
+                        <li><a href="@Url.Action("Group", "Setting", new { id = "social network" })"><i class="fa fa-circle-o"></i> Social Networks</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+
+            <hr />
+
+
+            <!--Second-->
+           @* <div id="accordian" class="panel-group category-products">
+                <!--category-productsr-->
+                <div class="panel panel-default" id="categoryMenu">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <ul class="nav nav-tabs aa-products-tab">
+                                <li>
+
+                                    @foreach (var item in Model.Where(x => x.tbh_SubDepartments == null))
+                                    {
+                                        if (Model.Any(a => a.tbh_SubDepartments == item.tbh_Departments1))
+                                        {
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a href="@Url.Action("Index","Home",new {id = item.DepartmentID})" class="categoryItem" data-id="@item.DepartmentID">
+                                                        @item.Name
+                                                    </a>
+                                                    <a href="javascript:void(0)">
+                                                        <span data-target="#@("Item_" + item.DepartmentID)" data-toggle="collapse" class="badge pull-right"><i fa fa-angle-left pull-right"></i></span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div class="panel-collapse collapse" id="@("Item_" + item.DepartmentID)">
+                                                <div class="panel-body">
+                                                    <ul>
+                                                        @foreach (var subItem in Model.Where(x => x.tbh_SubDepartments == item.tbh_Departments1))
+                                                        {
+                                                            <li><a href="@Url.Action("Index", "Home", new { id = subItem.DepartmentID})" class="categoryItem" data-id="@subItem.DepartmentID">@subItem.Name </a></li>
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title"><a href="@Url.Action("Index", "Home", new { id = item.DepartmentID})" class="categoryItem" data-id="@item.DepartmentID">@item.Name</a></h4>
+                                                </div>
+                                            </div>
+
+                                        }
+                                    }
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>*@
+            <!--End of second-->
+        </div>
+    </div>
+</div> <!--Main-->
+<!--Right Sidebar Main content-->
+<div class="right-sidebar" style="padding-right:15px;">
+
+
+
+   @* <div class="tab-pane fade" id="women">
+        <ul class="aa-product-catg">
+            <!-- start single product item -->
+            @foreach (var item in (List<MainProgram.Edm.tbh_Products>)@ViewBag.WomenProduct)
+            {
+                { Html.RenderPartial("_Product", item); }
+            }
+            <!-- end start single product item -->
+        </ul>
+        <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
+    </div>*@
+
+
+
+
+
+
+
+
+
+
+
+    <section class="dark-section">
+        <div class="col-sm-4">
+            <ul>
+
+                @{
+                    foreach (MainProgram.Edm.tbh_Products item in ViewBag.Women)
+                    {
+                        <li>
+                            <a href="@Url.Action("Women", "Pages", new { id = item.ProductID })" class="aa-cartbox-img"><img alt="@item.AltText" src="@item.FullImageUrl" style="width: 80px; height: 100px;padding-right:15px;padding-bottom:5px;float:left; "></a>
+                            <div class="aa-cartbox-info">
+                                <h4><b><a href="@Url.Action("Women", "Pages", new { id = item.ProductID })">@item.Name</a></b></h4>
+
+                                <p>@item.Content</p>
+                                <p><a class="btn btn-default" href="@Url.Action("Women", "Pages", new { id = item.ProductID })">Learn more &raquo;</a></p>
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="col-sm-4">
+            <ul>
+
+                @{
+                    foreach (MainProgram.Edm.tbh_Products item in ViewBag.Women)
+                    {
+                        <li>
+                            <a href="@Url.Action("Women", "Pages", new { id = item.ProductID })" class="aa-cartbox-img"><img alt="@item.AltText" src="@item.FullImageUrl" style="width: 80px; height: 100px;padding-right:15px;padding-bottom:5px;float:left; "></a>
+                            <div class="aa-cartbox-info">
+                                <h4><b><a href="@Url.Action("Women", "Pages", new { id = item.ProductID })">@item.Name</a></b></h4>
+
+                                <p>@item.Content</p>
+                                <p><a class="btn btn-default" href="@Url.Action("Women", "Pages", new { id = item.ProductID })">Learn more &raquo;</a></p>
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="col-sm-4">
+            <ul>
+
+                @{
+                    foreach (MainProgram.Edm.tbh_Products item in ViewBag.Women)
+                    {
+                        <li>
+                            <a href="@Url.Action("Women", "Pages", new { id = item.ProductID })" class="aa-cartbox-img"><img alt="@item.AltText" src="@item.FullImageUrl" style="width: 80px; height: 100px;padding-right:15px;padding-bottom:5px;float:left; "></a>
+                            <div class="aa-cartbox-info">
+                                <h4><b><a href="@Url.Action("Women", "Pages", new { id = item.ProductID })">@item.Name</a></b></h4>
+
+                                <p>@item.Content</p>
+                                <p><a class="btn btn-default" href="@Url.Action("Women", "Pages", new { id = item.ProductID })">Learn more &raquo;</a></p>
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+
+
+    </section>
+
+
+    <section class="dark-section">
+        <div class="col-sm-4">
+            <ul>
+
+                @{
+                    foreach (MainProgram.Edm.tbh_Products item in ViewBag.Women)
+                    {
+                        <li>
+                            <a href="@Url.Action("Women", "Pages", new { id = item.ProductID })" class="aa-cartbox-img"><img alt="@item.AltText" src="@item.FullImageUrl" style="width: 80px; height: 100px;padding-right:15px;padding-bottom:5px;float:left; "></a>
+                            <div class="aa-cartbox-info">
+                                <h4><b><a href="@Url.Action("Women", "Pages", new { id = item.ProductID })">@item.Name</a></b></h4>
+
+                                <p>@item.Content</p>
+                                <p><a class="btn btn-default" href="@Url.Action("Women", "Pages", new { id = item.ProductID })">Learn more &raquo;</a></p>
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="col-sm-4">
+            <ul>
+
+                @{
+                    foreach (MainProgram.Edm.tbh_Products item in ViewBag.Books)
+                    {
+                        <li>
+                            <a href="@Url.Action("Books", "Pages", new { id = item.ProductID })" class="aa-cartbox-img"><img alt="@item.AltText" src="@item.FullImageUrl" style="width: 80px; height: 100px;padding-right:15px;padding-bottom:5px;float:left; "></a>
+                            <div class="aa-cartbox-info">
+                                <h4><b><a href="@Url.Action("Books", "Pages", new { id = item.ProductID })">@item.Name</a></b></h4>
+
+                                <p>@item.Content</p>
+                                <p><a class="btn btn-default" href="@Url.Action("Books", "Pages", new { id = item.ProductID })">Learn more &raquo;</a></p>
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="col-sm-4">
+            <ul>
+
+                @{
+                    foreach (MainProgram.Edm.tbh_Products item in ViewBag.Women)
+                    {
+                        <li>
+                            <a href="@Url.Action("Women", "Pages", new { id = item.ProductID })" class="aa-cartbox-img"><img alt="@item.AltText" src="@item.FullImageUrl" style="width: 80px; height: 100px;padding-right:15px;padding-bottom:5px;float:left; "></a>
+                            <div class="aa-cartbox-info">
+                                <h4><b><a href="@Url.Action("Women", "Pages", new { id = item.ProductID })">@item.Name</a></b></h4>
+
+                                <p>@item.Content</p>
+                                <p><a class="btn btn-default" href="@Url.Action("Women", "Pages", new { id = item.ProductID })">Learn more &raquo;</a></p>
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+
+
+        <div class="col-sm-12" style="text-align: center; width: 100%; height: 80px;  background-image: url('../../Content/img/ApparelImages/back.jpg');">>test2</div>
+    </section>
+
+   
+
+
+
+
+
+
+
+
+    <section class="slide-block">
+        <div class="col-md-4">
+            <h2>Web Hosting29</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Web Hosting30</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Web Hosting31</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        .content-wrapper {
+            margin-top: 0%;
+            margin-left: 0%;
+            background-position: top;
+        }
+
+        .left {
+            width: 20%;
+            margin-left: 1%;
+            margin-top: 0%;
+            background-position: top;
+            position: relative;
+            background-color: #eee3e3;
+        }
+
+
+
+        .right-sidebar {
+            content: " ";
+            position: relative;
+            margin-top: 0%;
+            width: 80%;
+            overflow: no-display;
+            padding-right: 10px;
+            margin-left: 20%;
+            margin-right: 0%;
+            background-position: top;
+            margin-bottom: 0px;
+            background-color:white;
+        }
+
+
+
+
+
+    </style>
+
+
+
+
+
+
+

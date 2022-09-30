@@ -1,0 +1,343 @@
+﻿@*@model PagedList.IPagedList<MainProgram.Edm.Angular>*@
+@model MainProgram.Edm.tbh_Pages
+
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+
+
+
+@{
+    ViewBag.Title = "GetPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Intellisence/css/jquery-ui.min.css" rel="stylesheet" />
+<script src="~/Content/Intellisence/js/jquery-1.10.2.min.js"></script>
+<script src="~/Content/Intellisence/js/jquery-ui.min.js"></script>
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="hero is-info is-fullheight is-bold">
+
+
+    <div class="Main-Bar" style="width:100%; margin-right:0px; padding-right:0px; margin-top:20px; text-align:center; background-color:#fff">
+        <div class="panel2" style="width: 98.8%; padding-left: 0px; padding-right: 0px;">
+            <div class="row mt-4 mb-6 mb-12">
+
+                <div class="hero-body   mt-4 mb-6 mb-12" style="background-color: ghostwhite; margin-right:0px; padding-right:0px; text-align:center">
+
+                    <div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; margin-top:30px; background-color:white; border:none">
+
+
+
+
+
+
+
+                        <!-- left sidebar-->
+
+
+                        <div class="left" style="float:left; top:0px; background-color:white; border:none">
+                            <div class="Container">
+                                <div class="col-md-4">
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!--End Of Left-->
+                        <!-- Right-->
+
+
+                        <div class="right"
+                             style="float:right; margin-right:8px; padding-right:8px; top:0px; background-color:white; border:none">
+                            <div class="Container">
+                                <div class="col-md-4">
+
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+                        <!--End Of Right-->
+                        <!--MID Sidebar Main content-->
+                        <div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+                            <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                               
+                                    <div id="why_buy">
+                                        <div class="info_right">
+                                            <h5 class="text-center mb-3">News Post</h5>
+                                            <ul style="text-align:left; font-size:16px; margin:15px">
+
+                                                @{
+
+
+                                                    MainProgram.Edm.angulardemoEntities dbg = new MainProgram.Edm.angulardemoEntities();
+
+                                                    List<MainProgram.Edm.tbh_Pages> Modelg = dbg.tbh_Pages.ToList();
+
+
+
+
+
+                                                    foreach (MainProgram.Edm.tbh_Pages item in ViewBag.netCoreN)
+                                                    {
+
+
+                                                        <li style="text-align:center"><br> <strong style="font-size:20px; color:red">How to handle 404 error in ASP.NET Core 1.0</strong><br><br></li>
+
+
+
+                                                        <li style="text-align:left; margin-left:10px; margin-right:10px ">Prior versions of ASP.NET Core 1.0, have custom errors for error handling. With ASP.NET Core 1.0 and MVC, you can do the error handling via Middlwares. HTTP 404 is a very common error which comes when server can’t find the requested resource. In this post, we will see different ways to handle HTTP 404 error in ASP.NET Core 1.0 and MVC.  &#xa0;&#xa0;&#xa0;&#xa0; &#xa0;&#xa0;&#xa0;&#xa0; </li>
+
+
+                                                        <li style="text-align:left"><strong style="font-size:20px; color:red">How to handle 404 error in ASP.NET Core 1.0</strong></li>
+
+
+                                                        <li style="text-align:left">
+                                                            I found 2 ways to handle 404 error. In fact using these solution you can handle any HTTP status code errors. To handle the error, both the solution are using configure() method of Startup.cs class. For those who are not aware about Startup.cs, it is entry point for application itself. You can read this excellent post The Startup.cs File in ASP.NET Core 1.0. to know more about startup.cs. And within the startup.cs file, you will also find static void main() which generally you use with windows/console applications. Read my post Why static void main in ASP.NET 5 startup.cs
+
+                                                            Now coming back to our solution 1, within configure method define a custom middleware via app.Use which checks for status code value in response object. And if is 404 then it redirects to Home controller. See highlighted code.<br><br>
+                                                        </li>
+
+
+                                                        <li style="text-align:center;  margin-top:50px; margin-bottom:50px">
+                                                            &#8231;
+
+                                                            <img src="~/Content/img/FrontSlider/ErrorH.png" style="width: 800px; height: 800px;"><br /><br />
+                                                        </li>
+
+
+
+
+                                                        <li style="text-align:left"><strong style="font-size:20px; color:red">Solution 2</strong></li>
+
+                                                        <li style="text-align:left">
+                                                            The other solution is to use a built-in middlware StatusCodePagesMiddleware. This middleware can be used to handle the response status code is between 400 and 600. This middleware allows to return a generic error response or allows you to also redirect to any controller action or another middleware. See below all different variations of this middleware.
+                                                        </li>
+
+
+
+                                                        <li style="text-align:center;  margin-top:50px; margin-bottom:50px">
+
+
+                                                            <img src="~/Content/img/FrontSlider/ErrorH2.png" style="width: 800px; height: 800px;"><br /><br />
+                                                        </li>
+
+
+                                                        <li style="text-align:left; margin-left:10px; margin-right:10px">
+                                                            <br><br>
+                                                            So we are redirecting here to Home Controller and Errors action method. The {0} is nothing but the HTTP status error code. Below is the implementation of Errors action method.
+                                                            It adds the status code in ViewData and then returns to Error.cshtml shared view. You can also return to specific error page based on the error code.
+                                                            <br /><br />
+                                                            o, if the error code is 500 or 404 then return to Home/Error/500.cshtml or 404.cshtml.
+
+                                                            You must have seen on many websites, forums about app.UseErrorPage(); to handle the errors. But this is no longer available with RC1 release of ASP.NET Core 1.0. This was available until beta 5 or 6.
+
+                                                            If you come across any other solution, please mention in comments section or send it on twitter/facebook. All these solutions are based on RC1 release of ASP.NET Core. So if anything changes or broken please let us know. Keep visiting for updates and share this in your network.
+
+                                                            PS: If you found this content valuable and want to return the favour, then
+
+                                                        </li>
+
+
+
+
+
+
+
+
+
+
+                                                    }
+
+
+
+
+
+                                                }
+
+
+
+
+
+
+                                            </ul>
+
+
+
+
+
+                                      
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+                    <!--End Of MID-->
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<style>
+    .content-wrapper {
+        margin-top: 0%;
+        margin-left: 0%;
+        background-position: top;
+        background: #d2d6de;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+
+    #left {
+        width: 10%;
+        margin-left: 0%;
+        margin-top: 0%;
+        background-position: top;
+        position: relative;
+        background-color: #eee3e3;
+    }
+
+    #Right {
+        width: 10%;
+        margin-right: 0%;
+        margin-top: 0%;
+        background-position: top;
+        position: relative;
+        background-color: #eee3e3;
+    }
+
+
+    .Mid-sidebar {
+        content: " ";
+        position: relative;
+        margin-top: 0%;
+        width: 80%;
+        overflow: no-display;
+        padding-right: 0px;
+        margin-left: 10%;
+        margin-right: 0%;
+        background-position: top;
+        margin-bottom: 0px;
+        background-color: #fff;
+    }
+
+
+    .SiteT {
+        width: 100%;
+        border: none;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
+
+
+
+    .main--container {
+        margin-left: 17px;
+    }
+
+    .card-body {
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+<style>
+    .blue {
+        height: 200px;
+        text-align: left;
+    }
+
+    .card {
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+        background: #ffffff;
+    }
+
+
+    .col-lg-2 {
+        flex: 0 0 10% !important;
+        max-width: 20%;
+    }
+</style>

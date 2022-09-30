@@ -1,0 +1,228 @@
+﻿@model PagedList.IPagedList<MainProgram.Edm.NoteList>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+
+
+
+@{
+    ViewBag.Title = "GetPost";
+    Layout = "~/Views/Shared/_LayoutSub.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; top:0px;  background-color:#fff; border:none;">
+
+
+
+    <!-- left sidebar-->
+
+
+
+    <div class="left" style="width: 17%; float:left; top:0px;  background-color:#fff; border:none;">
+        <div class="Container">
+            <div class="col-md-4">
+                <div class="container">
+                    <div class="panel panel-default" style="width: 22%">
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--End Of Left-->
+<!-- Right-->
+
+<!--
+<div class="right"
+     style="width: 21%; float:right; margin-right:8px; padding-right:8px; top:0px; background-color:#fff; border:none;">
+    <div class="Container">
+        <div class="col-md-4">
+            <div class="container">
+                <div class="panel panel-default" style="width: 22%">
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+
+
+<!--End Of Right-->
+<!--MID Sidebar Main content-->
+<div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+    <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+        <strong style="font-size:x-large"><b>Advanced search</b></strong>
+
+
+        <hr />
+        <fieldset>
+            @using (Html.BeginForm("Index", "NoteList", FormMethod.Get))
+            {
+                <p>
+                    Find by words: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+                    <input type="submit" value="Search" />
+                </p>
+            }
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.ActionLink("NoteList", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                  
+                    <th></th>
+                </tr>
+
+
+                @foreach (var item in Model)
+                {
+
+                    <tr style="border:1px solid white">
+
+                        <td>
+
+
+                          
+                            <span style="margin-right:15px; font-size:16px; color:black">
+                                <b>@item.NoteListTitle</b>
+                            </span>
+                            <br />
+                            <span style="margin-right:15px; font-size:16px; color:black">
+                                <br /> @Html.Raw(@item.NoteListText)
+                            </span>
+
+
+
+                        </td>
+                        <td>test</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.NoteListId })
+                            @Html.ActionLink("Details", "Details", new { id = item.NoteListId })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.NoteListId })
+                        </td>
+
+                    </tr>
+
+                    
+                }
+
+            </table>
+
+
+            <br />
+            <ul>
+               @*<li>
+                    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+                </li>*@
+                <li>
+                    @Html.ActionLink("Full Page", "GetPosts", "NoteList")
+                </li>
+            </ul>
+
+
+
+
+        </fieldset>
+
+    </div>
+
+
+
+    <!--End Of MID-->
+
+    <style>
+        .content-wrapper {
+            margin-top: 0%;
+            margin-left: 0%;
+            background-position: top;
+        }
+
+        #left {
+            width: 20%;
+            margin-left: 0%;
+            margin-top: 0%;
+            background-position: top;
+            position: relative;
+            background-color: #eee3e3;
+        }
+
+
+
+        .Mid-sidebar {
+            content: " ";
+            position: relative;
+            margin-top: 0%;
+            width: 80%;
+            overflow: no-display;
+            padding-right: 0px;
+            margin-left: 20%;
+            margin-right: 0%;
+            background-position: top;
+            margin-bottom: 0px;
+            background-color: #fff;
+        }
+
+
+        .SiteT {
+            width: 100%;
+            border: none;
+            margin-right: 0px;
+            padding-right: 0px;
+        }
+
+
+
+
+        .main--container {
+            margin-left: 17px;
+        }
+    </style>
+
+
+</div>

@@ -1,0 +1,773 @@
+﻿@**@@model MainProgram.Models.ShoppingCart.ShoppingCartViewModel
+@*@model MainProgram.Models.ShoppingCart.ShoppingCartDetailsViewModel*@
+
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using MainProgram.Models
+@using MainProgram.Core.Provider
+@using MainProgram.Core
+
+@using PagedList.Mvc;
+
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using MainProgram.Models
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "Shopping Cart";
+    Layout = "~/Views/Shared/_LayoutSub.cshtml";
+}
+
+
+@{
+
+    var cartObj = Session[Constants.CookieCart];
+    var quantity = 0;
+    try
+    {
+        var cart = (MainProgram.Models.Orders.CartViewModel)cartObj;
+        quantity = cart == null || cart.tbh_Products1 == null ? 0 : cart.tbh_Products1.Count;
+    }
+    catch (Exception)
+    {
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@{
+    ViewBag.Title = "CustomerInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+@*<link href="~/Content/css/style.css" rel="stylesheet" />*@
+
+<div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; top:0px">
+
+
+   
+
+    <!-- left sidebar-->
+
+
+    <div class="left" style="width: 2%; float:left; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+        <div class="Container">
+            <div class="col-md-4">
+                <div class="container">
+                    <div class="panel panel-default" style="width: 2%">
+
+                        <div class=" panel-body  no-gutter">
+                            <div col-md-4">
+                                <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+
+
+
+
+
+
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--End Of Left-->
+    <!-- Right-->
+
+
+    <div class="right"
+         style="width: 31%; float:right; margin-right:8px; padding-right:8px; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+        <div class="Container">
+            <div class="col-md-4">
+                <div class="Container">
+                    <div class="col-md-4">
+                        <div class="container">
+                            <div>
+
+                                @* <div class="col-md-4">
+                                                            <h4>Order Summary</h4>
+                                                            <div class="aa-order-summary-area">
+                                                                <table class="table table-responsive">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Product</th>
+                                                                            <th>Total</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        @if (Session["username"] != null)
+                                                                        {
+                                                                            foreach (var item in Model.CartItems)
+                                                                            {
+
+                                                                                <tr>
+                                                                                    <td>@item.tbh_Products.Name <strong> x  @item.Quantity</strong></td>
+                                                                                    <td>@String.Format("{0:F}", @Model.CartTotal)</td>
+                                                                                </tr>
+                                                                            }
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <text>Please login to Checkout</text>
+                                                                        }
+                                                                    </tbody>
+                                                                    <tfoot>
+                                                                        <tr>
+                                                                            <th>Subtotal</th>
+                                                                            <td>@ViewBag.SubTotal</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            @Html.Hidden("discount", null, new { @value = ViewBag.Discount })
+                                                                            <th>Discount</th>
+                                                                            <td>@ViewBag.Discount</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            @Html.Hidden("totalAmount", null, new { @value = ViewBag.TotalAmount })
+                                                                            <th>Total</th>
+                                                                            <td>@String.Format("{0:F}", @Model.CartTotal)</td>
+                                                                        </tr>
+                                                                    </tfoot>
+                                                                </table>
+                                                            </div>
+                                                            <h4>Payment Method</h4>
+                                                            <div class="aa-payment-method" style="float:left">
+
+
+                                                                @* <div class="form-group">
+
+                                      <div class="col-md-10">
+                                            @Html.DropDownList("PayMethod", null, htmlAttributes: new { @class = "form-control", @name = "PaymentMethod" })
+
+                                        </div>
+                                    </div>
+                                                            </div>
+                                                            <br /><br />
+                                                            <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark">
+                                                            <input type="submit" value="Place Order" style="color:black">
+                                                                </div>*@
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+
+
+
+<!--End Of Right-->
+<!--MID Sidebar Main content-->
+<div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+    <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+
+        <!-- catg header banner section -->
+        @* <section id="aa-catg-head-banner">
+                <img src="~/Content/img/fashion/fashion-header-bg-8.jpg" alt="fashion img">
+                <div class="aa-catg-head-banner-area">
+                    <div class="container">
+                        <div class="aa-catg-head-banner-content">
+                            <h2>Checkout Page</h2>
+                            <ol class="breadcrumb">
+
+
+                                <li><a href="index.html">Home</a></li>
+                                <li class="active">Checkout</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>*@
+
+
+
+
+
+    @using (Html.BeginForm("OrderDetail", "Checkout", FormMethod.Post))
+    {
+                <!-- / catg header banner section -->
+                <!-- Cart view section -->
+            <section id="checkout">
+                <div class="breadcrumbs">
+                    <ol class="breadcrumb">
+                        <li><a href="@Url.Action("Index","Home")">@Resource.LabelHome</a></li>
+                        <li class="active">@Resource.LabelShoppingCart</li>
+                    </ol>
+                </div>
+                <div class="container">
+                    <div class="row">
+
+                        <div class="  col-md-12">
+                            <div class="checkout-area">
+                                <form action="Post">
+                                    <div class="row">
+                                        <div class=" col-md-10">
+                                            <div class="checkout-left">
+                                                <div class="panel-group" id="accordion">
+                                                    <!-- Billing Details -->
+                                                    
+                                                    <fieldset>
+                                                        <legend>Shipping Information</legend>
+                                                        <div class="panel panel-default aa-checkout-billaddress">
+                                                            <div class="panel-heading">
+                                                                <h4 class="panel-title">
+                                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                                                        Billing Details / Shippping Address
+                                                                    </a>
+                                                                </h4>
+                                                            </div>
+
+                                                            <div class="panel-body">
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="aa-checkout-single-bill">
+                                                                            <input name="FirstName" type="text" required placeholder="First Name*">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="aa-checkout-single-bill">
+                                                                            <input name="LastName" type="text" required placeholder="Last Name*">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="aa-checkout-single-bill">
+                                                                            <input name="Email" type="email" required placeholder="Email Address*">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="aa-checkout-single-bill">
+                                                                            <input name="Mobile" type="tel" required placeholder="Mobile*">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="aa-checkout-single-bill">
+                                                                            <textarea name="Address" cols="8" required rows="3" placeholder="Address*"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="aa-checkout-single-bill">
+                                                                            <select name="Province">
+                                                                                <option value="--">Select Your Country</option>
+                                                                                <option value="North America">North America</option>
+                                                                                <option value="Asia">Asia</option>
+                                                                                <option value="Europe">EUEurope</option>
+                                                                                <option value="South America">South America</option>
+                                                                                <option value="Africa">Africa</option>
+
+
+                                                                                @*
+                                new SelectListItem() {Text="Alabama", Value="AL"},
+                                new SelectListItem() { Text="Alaska", Value="AK"},
+                                new SelectListItem() { Text="Arizona", Value="AZ"},
+                                new SelectListItem() { Text="Arkansas", Value="AR"},
+                                new SelectListItem() { Text="California", Value="CA"},
+                                new SelectListItem() { Text="Colorado", Value="CO"},
+                                new SelectListItem() { Text="Connecticut", Value="CT"},
+                                new SelectListItem() { Text="District of Columbia", Value="DC"},
+                                new SelectListItem() { Text="Delaware", Value="DE"},
+                                new SelectListItem() { Text="Florida", Value="FL"},
+                                new SelectListItem() { Text="Georgia", Value="GA"},
+                                new SelectListItem() { Text="Hawaii", Value="HI"},
+                                new SelectListItem() { Text="Idaho", Value="ID"},
+                                new SelectListItem() { Text="Illinois", Value="IL"},
+                                new SelectListItem() { Text="Indiana", Value="IN"},
+                                new SelectListItem() { Text="Iowa", Value="IA"},
+                                new SelectListItem() { Text="Kansas", Value="KS"},
+                                new SelectListItem() { Text="Kentucky", Value="KY"},
+                                new SelectListItem() { Text="Louisiana", Value="LA"},
+                                new SelectListItem() { Text="Maine", Value="ME"},
+                                new SelectListItem() { Text="Maryland", Value="MD"},
+                                new SelectListItem() { Text="Massachusetts", Value="MA"},
+                                new SelectListItem() { Text="Michigan", Value="MI"},
+                                new SelectListItem() { Text="Minnesota", Value="MN"},
+                                new SelectListItem() { Text="Mississippi", Value="MS"},
+                                new SelectListItem() { Text="Missouri", Value="MO"},
+                                new SelectListItem() { Text="Montana", Value="MT"},
+                                new SelectListItem() { Text="Nebraska", Value="NE"},
+                                new SelectListItem() { Text="Nevada", Value="NV"},
+                                new SelectListItem() { Text="New Hampshire", Value="NH"},
+                                new SelectListItem() { Text="New Jersey", Value="NJ"},
+                                new SelectListItem() { Text="New Mexico", Value="NM"},
+                                new SelectListItem() { Text="New York", Value="NY"},
+                                new SelectListItem() { Text="North Carolina", Value="NC"},
+                                new SelectListItem() { Text="North Dakota", Value="ND"},
+                                new SelectListItem() { Text="Ohio", Value="OH"},
+                                new SelectListItem() { Text="Oklahoma", Value="OK"},
+                                new SelectListItem() { Text="Oregon", Value="OR"},
+                                new SelectListItem() { Text="Pennsylvania", Value="PA"},
+                                new SelectListItem() { Text="Rhode Island", Value="RI"},
+                                new SelectListItem() { Text="South Carolina", Value="SC"},
+                                new SelectListItem() { Text="South Dakota", Value="SD"},
+                                new SelectListItem() { Text="Tennessee", Value="TN"},
+                                new SelectListItem() { Text="Texas", Value="TX"},
+                                new SelectListItem() { Text="Utah", Value="UT"},
+                                new SelectListItem() { Text="Vermont", Value="VT"},
+                                new SelectListItem() { Text="Virginia", Value="VA"},
+                                new SelectListItem() { Text="Washington", Value="WA"},
+                                new SelectListItem() { Text="West Virginia", Value="WV"},
+                                new SelectListItem() { Text="Wisconsin", Value="WI"},
+                                new SelectListItem() { Text="Wyoming", Value="WY"}*@
+
+
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </fieldset>
+
+                                                    <!-- Coupon section -->
+                                                    <div class="panel panel-default aa-checkout-coupon">
+                                                        <div class="panel-heading">
+                                                            <h4 class="panel-title">
+                                                                <fieldset>
+                                                                    
+                                                                    <legend>Coupon</legend>
+                                                                    <div class="panel-heading">
+                                                                        <h4 class="panel-title">
+                                                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" style="color:black">
+                                                                                Have a Coupon?
+                                                                            </a>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <p>We're running a promotion: all Product is free with the promo code: "FREE"</p>
+                                                                    <div class="editor-label">
+                                                                        @Html.Label("Promo Code")
+                                                                    </div>
+                                                                    <div class="editor-field">
+                                                                        @Html.TextBox("PromoCode")
+
+                                                                    </div>
+                                                                </fieldset>
+                                                                 </h4>
+
+                                                        </div>
+                                                        </div>
+
+
+                                                          
+
+                                                                <!-- Billing Details -->
+                                                                
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                    </div>
+                                  
+                                   
+                                       
+                                            
+                                               
+                                   
+                                    <input type="submit" value="Submit Order" class="aa-browse-btn" style="color:black; border-color:none">
+
+                                    
+                                    
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                <!-- / Cart view section -->
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @*
+            <strong style="font-size:x-large"><b>Address and Payment</b></strong>
+
+
+
+
+
+            <fieldset>
+                <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+                <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+                @using (Html.BeginForm())
+                {
+
+                    <h2>Address And Payment</h2>
+                    <fieldset style="width:100%">
+
+                        <span >Shipping Information</span>
+
+                        <div class="form-group">
+                            <div class="col-md-10">
+                               Shippin @Html.EditorForModel( new { @class = "blue col-md-12"})
+                                </div>
+                            </div>
+                          </fieldset>
+                    <fieldset>
+                        <legend>Payment</legend>
+                        <p>We're running a promotion: all music is free with the promo code: "FREE"</p>
+                        <div class="editor-label">
+                            @Html.Label("Promo Code")
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBox("PromoCode")
+                        </div>
+                    </fieldset>
+
+                    <input type="submit" value="Submit Order" />
+                } (User, reader,
+
+
+
+
+
+
+
+
+
+            </fieldset>*@
+    </div>
+
+</div>
+<!--End Of MID-->
+
+
+
+
+
+
+
+
+
+<style>
+        .content-wrapper {
+            margin-top: 0%;
+            margin-left: 0%;
+            background-position: top;
+        }
+
+        #left {
+            width: 10%;
+            margin-left: 0%;
+            margin-top: 0%;
+            background-position: top;
+            position: relative;
+            background-color: #eee3e3;
+        }
+
+
+
+        .Mid-sidebar {
+            content: " ";
+            position: relative;
+            margin-top: 0%;
+            width: 70%;
+            overflow: no-display;
+            padding-right: 0px;
+            margin-left: 10%;
+            margin-right: 0%;
+            background-position: top;
+            margin-bottom: 0px;
+            background-color: #fff;
+        }
+
+
+        .SiteT {
+            width: 100%;
+            border: none;
+            margin-right: 0px;
+            padding-right: 0px;
+        }
+
+
+
+
+        .main--container {
+            margin-left: 17px;
+        }
+
+
+        .blue {
+            height: 200px;
+            text-align: left;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*==================
+     CHECKOUT PAGE
+    ====================*/
+
+        #checkout {
+            display: inline;
+            float: left;
+            width: 60%;
+        }
+
+            #checkout .checkout-area {
+                display: inline;
+                float: left;
+                padding: 50px 0;
+                width: 100%;
+            }
+
+                #checkout .checkout-area .checkout-left {
+                    display: inline;
+                    float: left;
+                    width: 80%;
+                }
+
+                    #checkout .checkout-area .checkout-left .panel-group .panel-default {
+                        border-radius: 0;
+                    }
+
+                        #checkout .checkout-area .checkout-left .panel-group .panel-default .panel-heading {
+                            background-color: transparent;
+                            padding: 0;
+                        }
+
+                            #checkout .checkout-area .checkout-left .panel-group .panel-default .panel-heading .panel-title {
+                                font-size: 18px;
+                                padding: 20px 15px;
+                            }
+
+                                #checkout .checkout-area .checkout-left .panel-group .panel-default .panel-heading .panel-title a {
+                                    display: block;
+                                }
+
+                    #checkout .checkout-area .checkout-left .panel-group .aa-checkout-coupon .aa-coupon-code {
+                        border: 1px solid #e5e5e5;
+                        color: #505050;
+                        font-size: 14px;
+                        font-weight: 700;
+                        letter-spacing: 2px;
+                        line-height: 25px;
+                        margin-bottom: 20px;
+                        margin-right: 20px;
+                        min-width: 250px;
+                        padding: 12px 30px;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        width: 100%;
+                    }
+
+                    #checkout .checkout-area .checkout-left .panel-group .aa-checkout-coupon input[type="submit"] {
+                        font-size: 14px;
+                    }
+
+                    #checkout .checkout-area .checkout-left .panel-group .aa-checkout-login input[type="text"],
+                    #checkout .checkout-area .checkout-left .panel-group .aa-checkout-login input[type="password"] {
+                        border: 1px solid #ccc;
+                        font-size: 14px;
+                        height: 40px;
+                        margin-bottom: 15px;
+                        padding: 10px;
+                        width: 100%;
+                    }
+
+                    #checkout .checkout-area .checkout-left .panel-group .aa-checkout-login label {
+                        cursor: pointer;
+                        font-weight: normal;
+                        margin-top: 8px;
+                    }
+
+                    #checkout .checkout-area .checkout-left .panel-group .aa-checkout-login input[type="checkbox"] {
+                        margin-top: 5px;
+                    }
+
+                    #checkout .checkout-area .checkout-left .panel-group .aa-checkout-login button {
+                        font-size: 14px;
+                        padding: 8px 20px;
+                        margin-right: 5px;
+                        float: left;
+                    }
+
+                    #checkout .checkout-area .checkout-left .panel-group .aa-checkout-login .aa-lost-password {
+                        color: #555;
+                        float: left;
+                        margin-top: 10px;
+                        width: 100%;
+                    }
+
+                        #checkout .checkout-area .checkout-left .panel-group .aa-checkout-login .aa-lost-password a {
+                            color: #555;
+                        }
+
+                    #checkout .checkout-area .checkout-left .panel-group .aa-checkout-billaddress .aa-checkout-single-bill {
+                        display: inline;
+                        width: 100%;
+                        margin-bottom: 15px;
+                        float: left;
+                    }
+
+                        #checkout .checkout-area .checkout-left .panel-group .aa-checkout-billaddress .aa-checkout-single-bill input {
+                            border: 1px solid #ccc;
+                            height: 40px;
+                            padding: 10px;
+                            width: 100%;
+                        }
+
+                        #checkout .checkout-area .checkout-left .panel-group .aa-checkout-billaddress .aa-checkout-single-bill textarea {
+                            border: 1px solid #ccc;
+                            color: #999;
+                            height: 150px;
+                            padding: 10px;
+                            width: 100%;
+                        }
+
+                        #checkout .checkout-area .checkout-left .panel-group .aa-checkout-billaddress .aa-checkout-single-bill select {
+                            border: 1px solid #ccc;
+                            color: #999;
+                            height: 40px;
+                            padding: 10px;
+                            width: 100%;
+                        }
+
+                #checkout .checkout-area .checkout-right {
+                    display: inline;
+                    float: left;
+                    width: 100%;
+                }
+
+                    #checkout .checkout-area .checkout-right h4 {
+                        margin-top: 0px;
+                    }
+
+                    #checkout .checkout-area .checkout-right .aa-order-summary-area {
+                        margin-bottom: 30px;
+                    }
+
+                        #checkout .checkout-area .checkout-right .aa-order-summary-area .table {
+                            border: 1px solid #ccc;
+                        }
+
+                            #checkout .checkout-area .checkout-right .aa-order-summary-area .table thead tr th {
+                                border: 1px solid #ccc;
+                                text-align: center;
+                            }
+
+                            #checkout .checkout-area .checkout-right .aa-order-summary-area .table tbody tr td {
+                                border-right: 1px solid #ccc;
+                                text-align: center;
+                            }
+
+                                #checkout .checkout-area .checkout-right .aa-order-summary-area .table tbody tr td strong {
+                                    margin-left: 5px;
+                                    font-size: 14px;
+                                }
+
+                            #checkout .checkout-area .checkout-right .aa-order-summary-area .table tfoot tr th {
+                                border-right: 1px solid #ccc;
+                                text-align: center;
+                            }
+
+                            #checkout .checkout-area .checkout-right .aa-order-summary-area .table tfoot tr td {
+                                text-align: center;
+                            }
+
+                    #checkout .checkout-area .checkout-right .aa-payment-method {
+                        border: 1px solid #ccc;
+                        padding: 15px;
+                    }
+
+                        #checkout .checkout-area .checkout-right .aa-payment-method label {
+                            width: 100%;
+                            font-weight: normal;
+                        }
+
+                        #checkout .checkout-area .checkout-right .aa-payment-method img {
+                            margin-top: -10px;
+                            width: 80%;
+                        }
+
+                        #checkout .checkout-area .checkout-right .aa-payment-method input[type="submit"] {
+                            display: block;
+                            margin-top: 15px;
+                            padding: 8px 12px;
+                            width: 100%;
+                        }
+
+        }
+</style>
+</div>

@@ -1,0 +1,66 @@
+﻿@model  IEnumerable<MainProgram.Edm.tblVideo>
+@using MainProgram.Helper_Code
+
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblVideo</h4>
+    <hr />
+    <fieldset>
+        <h2>Details</h2>
+        @using (Html.BeginForm("Index", "Video", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="file" name="postedFile" />
+            <input type="submit" id="btnUpload" value="Upload" />
+        }
+        <hr />
+
+        
+
+
+
+
+
+        <table cellpadding="0" cellspacing="0">
+            @if (Model != null)
+            {
+                foreach (var video in Model)
+                {
+                    <tr>
+                        <td>
+
+                            <div class="col-sm-4 col-md-4 col-xs-12">
+                                <div class="title">@video.Name</div>
+                                <div class="video-frame">
+                                    <video style="width:100%; height:auto;" controls>
+                                        <source src="@Url.Content(@video.FilePath)" type="video/mp4" />
+                                    </video>
+                                </div>
+                            </div>
+                            }
+
+
+
+
+                        </td>
+
+                    </tr>
+                }
+            }
+        </table>
+
+
+
+
+
+
+      
+
+    </fieldset>
+ </div>

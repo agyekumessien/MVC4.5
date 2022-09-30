@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MainProgram.Edm.tbh_Departments>
+@using MainProgram.Models
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "GetUsers";
+}
+
+@using (Html.BeginForm("GetUsers", "Post", FormMethod.Post))
+{
+    <div class="blockUser" style="width: 44%; margin: 16% 26%;">
+        <div style="margin-left: 23%;">
+            <input type="text" class="form-control input-lg" name="username" placeholder="Username" /><br />
+            <input type="submit" class="btn lightgrey btn-lg" value="Submit" style="width: 75%; color:black" />
+            <br />
+            
+            @if (ViewBag.Msg != null)
+            {
+                <div class="alert alert-danger" role="alert" style="width:75%; font-size:12px">Oups! @ViewBag.Msg @Html.ActionLink(" Click here to register", "Register", "Account"); </div>
+            }
+
+        </div>
+    </div>
+}
+
+

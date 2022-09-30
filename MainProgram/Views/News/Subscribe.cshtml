@@ -1,0 +1,492 @@
+﻿@model MainProgram.Edm.tbh_Subscribe
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Subscribe</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/Intellisence/css/jquery-ui.min.css" rel="stylesheet" />
+    <script src="~/Content/Intellisence/js/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/Intellisence/js/jquery-ui.min.js"></script>
+
+
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/Custom.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+   
+
+
+
+</head>
+<body class="skin-blue">
+    <div class="wrapper">
+
+      
+        <!--END SLIDER-->
+        <!--END Content Header (Page header) -->
+        <!-- Begins Content Body -->
+        <div class="content-wrapper" style="margin-left: 0px; width: 100%; top: 0px; margin:0px">
+
+
+            @* <section class="content-header" style="margin-left:0px; top:2px;">
+
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="#">
+                            <i class="headerA"></i>
+                        </a>
+                    </li>
+                    <li class="active"></li>
+                </ol>
+            </section>*@
+            <div class="Main-Bar" style="margin-right:0px; padding-right:0px; text-align:center; background-color:#e4dada">
+                <div class="panel panel-default" style="width: 100%; padding-left: 0px;">
+
+
+                    <div class="main--container">
+                        <!--MAIN-->
+
+                        <div class="row justify-content-md-center">
+                            <table class="SiteT" style="text-align:center">
+                                <tr style="border-left:0px inset #f1f1f1; border-top:1px inset #f1f1f1; width:100%; overflow:no-display">
+                                    <td>
+
+
+                                       
+
+                                        <!--END of LEFT-->
+                                        <!--Middle-->
+                                        <div class="Middle" style="width:59%; float:left; margin-left:20%; overflow:hidden;border-left:2px solid #f1f1f1; border-right:2px solid #f1f1f1; border-radius:8px; border-top:2px solid #f1f1f1; border-bottom:2px solid #f1f1f1; ">
+                                           @using (Html.BeginForm("Subscribe", "News", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                           {
+
+
+                                            <div class="col-md-12">
+                                                <div class="aa-subscribe-area">
+
+
+                                                    <fieldset>
+                                                        <h3>Subscribe this Site  news Post </h3>
+
+
+
+
+
+                                                        <div class="panel-body">
+
+                                                            <form action="Post">
+
+                                                                <div class="container">
+                                                                    <div class="row">
+
+
+                                                                        <div class="col-md-12">
+                                                                            <div class="aa-checkout-single-bill" style="width:68%; height:40px; font-size:12px">
+                                                                                @Html.EditorFor(model => model.emailid, new { htmlAttributes = new { @class = "form-control", name = "email", id = "", required = "required", maxlength = "250", placeholder = "Enter your Email", style = "width:100%", height = "40px", fontsize = "12px" } })
+                                                                                @Html.ValidationMessageFor(model => model.emailid, "", new { @class = "text-danger" })
+
+
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <input type="submit" value="Subscribe" class="btn btn-default"
+                                                                       styles="margin-top:15px">
+
+                                                            </form>
+                                                        </div>
+                                                    </fieldset>
+
+
+
+
+
+
+                                                    @* @using (Html.BeginForm("Subscribe", "News", FormMethod.Post))
+                                                        {
+
+                                                            // <textarea type="submit" name="TID" value="@thread.SubscribeId" id="Reply" required="required" maxlength="800" style="width:60%; height:100px; font-size:16px; margin-bottom:10px"></textarea>
+                                                             <input type="text" name="email" id="" required="required" maxlength="250" placeholder="Enter your Email" style="width:100%; height:40px; font-size:12px">
+                                                            <br />
+                                                            <br />
+                                                             <a href="/Home/Index">
+                                                                 <input type="submit" value="Subcribe" class="btn btn-default"
+                                                                        styles="margin-top:15px">
+                                                             </a>
+                                                         }*@
+
+
+
+
+
+
+
+                                                </div>
+
+                                            </div>
+
+
+                                           }
+ 
+
+                                        </div>
+
+
+
+
+
+
+
+                                        <div class="ScrollgridR2" style="margin-right:5px; width:19%; float:right; padding-right:15px; margin-top:2px; border:none; overflow:hidden">
+
+
+
+
+                                            
+
+                                        </div>
+
+
+                                    </td>
+                                </tr>
+
+
+
+                            </table>
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <style>
+                        .content-wrapper {
+                            margin-top: 0%;
+                            margin-left: 0%;
+                            background-position: top;
+                        }
+
+                        #left {
+                            width: 20%;
+                            margin-left: 0%;
+                            margin-top: 0%;
+                            background-position: top;
+                            position: relative;
+                            background-color: #eee3e3;
+                            HEIGHT: 750px;
+                            max-height: 750px;
+                            min-height: 750px;
+                        }
+
+
+                        .Middle {
+                            HEIGHT: 1124px;
+                            max-height: 1124px;
+                            min-height: 1124px;
+                        }
+
+
+                        .Right {
+                            HEIGHT: 700px;
+                            max-height: 700px;
+                            min-height: 700px;
+                        }
+
+
+
+                        .Main-Bar {
+                            content: " ";
+                            position: relative;
+                            margin-top: 0%;
+                            width: 100%;
+                            overflow: no-display;
+                            padding-right: 10px;
+                            margin-left: 0%;
+                            margin-right: 1%;
+                            background-position: top;
+                            margin-bottom: 0px;
+                            padding-left: 5px;
+                            background-color: #fff;
+                        }
+
+
+                        .SiteT {
+                            width: 100%;
+                            border: none;
+                            margin-right: 0px;
+                            padding-right: 0px;
+                            margin-bottom: 0px;
+                            border: none;
+                        }
+
+
+
+
+                        .main--container {
+                            margin-left: 17px;
+                        }
+
+
+                        .ScrollgridL {
+                            OVERFLOW: auto;
+                            border: none;
+                            border-top-left-radius: 20px;
+                            border-top-right-radius: 20px;
+                            WIDTH: 100%;
+                            BORDER-BOTTOM: #000000 none;
+                            HEIGHT: 750px;
+                            max-height: 750px;
+                            min-height: 750px;
+                            scrollbar-3dlight-color: none;
+                            scrollbar-arrow-color: #9C3842;
+                            scrollbar-base-color: #ffffff;
+                            scrollbar-darkshadow-color: none;
+                            scrollbar-face-color: transparent;
+                            scrollbar-highlight-color: #ffffff;
+                            scrollbar-shadow-color: #ffffff;
+                        }
+
+                        .ScrollgridR {
+                            OVERFLOW: auto;
+                            border: none;
+                            WIDTH: 100%;
+                            BORDER-BOTTOM: #000000 none;
+                            HEIGHT: 700px;
+                            max-height: 700px;
+                            min-height: 700px;
+                            scrollbar-3dlight-color: #fff;
+                            scrollbar-arrow-color: #9C3842;
+                            scrollbar-base-color: #003366;
+                            scrollbar-face-color: #ffffff;
+                            scrollbar-face-color: #ffffff;
+                            scrollbar-highlight-color: #ffffff;
+                            scrollbar-shadow-color: #ffffff;
+                        }
+
+                        .ScrollgridM {
+                            OVERFLOW: auto;
+                            border: none;
+                            WIDTH: 100%;
+                            BORDER-BOTTOM: #000000 none;
+                            HEIGHT: 700px;
+                            max-height: 700px;
+                            min-height: 700px;
+                            scrollbar-3dlight-color: #fff;
+                            scrollbar-arrow-color: #9C3842;
+                            scrollbar-base-color: #003366;
+                            scrollbar-face-color: #ffffff;
+                            scrollbar-face-color: #ffffff;
+                            scrollbar-highlight-color: #ffffff;
+                            scrollbar-shadow-color: #ffffff;
+                        }
+
+
+                        .carousel.fade {
+                            opacity: 1;
+                        }
+
+
+                            .carousel.fade .item {
+                                /* transition: opacity ease-out .7s;  can remove to stop 1st slide rapid changing */
+                                left: 0;
+                                top: 0;
+                                position: absolute;
+                                width: 100%;
+                                display: block;
+                            }
+
+                                .carousel.fade .item:first-child {
+                                    top: auto;
+                                    opacity: 1; /* show first slide */
+                                    position: relative;
+                                }
+
+                                .carousel.fade .item.active {
+                                    opacity: 1;
+                                }
+
+
+
+
+
+
+
+                        .carousel,
+                        .carousel-inner,
+                        .carousel-inner .item {
+                            height: 100%;
+                        }
+
+                        .item:nth-child(1) {
+                            background: #f1f1f1;
+                        }
+
+                        .item:nth-child(2) {
+                            background: #51BCE8;
+                        }
+
+                        .item:nth-child(3) {
+                            background: #E46653;
+                        }
+
+
+                        /*.carousel-fade   .carousel-inner  .item{
+
+                    transition-property: opacity;
+                }*/
+
+                        .item,
+                        .active.left,
+                        .active.right {
+                            opacity: 0;
+                        }
+
+                        .active,
+                        .next.left,
+                        .prev.right {
+                            opacity: 1;
+                        }
+
+                            .next,
+                            .prev,
+                            .active.left,
+                            .active.right {
+                                left: 0;
+                                transform: translate3d(0, 0, 0);
+                            }
+
+
+                        .carousel-control {
+                            z-index: 2;
+                        }
+            </style>
+            @Scripts.Render("~/bundles/bootstrap-file")
+
+            @Styles.Render("~/Content/Bootstrap-file/css")
+        </div>
+
+        
+
+
+     
+        <style>
+            .login-logo,
+            .register-logo {
+                font-size: 35px;
+                text-align: center;
+                margin-bottom: 25px;
+                font-weight: 300;
+            }
+
+                .login-logo a,
+                .register-logo a {
+                    color: #444;
+                }
+
+            .login-page,
+            .register-page {
+                background: #d2d6de;
+                width: 100%;
+                height: 100%;
+                margin-bottom: 0px;
+                padding-top: 15px;
+                padding-bottom: 8%;
+                padding-top: 5%;
+            }
+
+            .login-box,
+            .register-box {
+                width: 425px;
+                margin: 7% auto;
+            }
+
+            .login-box-body,
+            .register-box-body {
+                background: #fff;
+                padding: 20px;
+                color: #444;
+                border-top: 0;
+                color: #666;
+                border-radius: 5px;
+            }
+
+                .login-box-body .form-control-feedback,
+                .register-box-body .form-control-feedback {
+                    color: #777;
+                }
+
+            .login-box-msg,
+            .register-box-msg {
+                margin: 0;
+                text-align: center;
+                padding: 0 20px 20px 20px;
+            }
+
+
+            .login-box .h2 {
+                border-radius: 10px;
+            }
+
+            Search-page {
+                background: #d2d6de;
+            }
+
+               .card {
+                box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+                 background: #ffffff;
+            }
+
+
+            .col-lg-2 {
+                flex: 0 0 10% !important;
+                max-width: 20%;
+            }
+
+        </style>
+
+    </div>
+</body>
+</html>

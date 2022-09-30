@@ -1,0 +1,626 @@
+﻿@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@*@using Microsoft.AspNet.Identity*@
+@using MainProgram.Core.Provider
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    @*[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]*@
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="@Url.Content("~/Content/img/Icon")/Globe4.png" />
+    <title>@ViewBag.Title - ESSIEN.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="~/Content/js/jquery.min.js"></script>
+    <!-- Ad intellisence for searching products-->
+    <link href="~/Content/Intellisence/css/jquery-ui.min.css" rel="stylesheet" />
+    <script src="~/Content/Intellisence/js/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/Intellisence/js/jquery-ui.min.js"></script>
+    <script src="~/Content/js/mycustom.js"></script>
+    <link href="~/Content/css/Custom.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2015.2.805/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2015.2.805/styles/kendo.rtl.min.css" />
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2015.2.805/styles/kendo.default.min.css" />
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2015.2.805/styles/kendo.mobile.all.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2015.2.805/js/angular.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2015.2.805/js/jszip.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2015.2.805/js/kendo.all.min.js">
+    </script> 
+
+
+
+        @{
+        angulardemoEntities dbm = new angulardemoEntities();
+        var CSharpCat = dbm.CSharps.Where(c => c.DepartmentID == c.DepartmentID).ToList();
+    //      var DotNetCat = dbm.DotNets.Where(c => c.DepartmentID == c.DepartmentID).ToList();
+    //  var SqlCat = dbm.Databases.Where(c => c.DepartmentID == c.DepartmentID).ToList();
+    }
+
+        @{
+
+        var cartObj = Session[Constants.CookieCart];
+        var quantity = 0;
+        try
+        {
+            var cart = (MainProgram.Models.Orders.CartViewModel)cartObj;
+            quantity = cart == null || cart.tbh_Products1 == null ? 0 : cart.tbh_Products1.Count;
+        }
+        catch (Exception)
+        {
+        }
+    }
+
+
+
+
+
+        @*<script type="text/javascript">
+            $(function () {
+                $("#searchTxtBox").autocomplete({
+                    source: '@Url.Action("item","Product")'
+                });
+            });
+        </scrip>*@
+
+
+
+    @* <!--Menu drop down-->
+        <script>
+            $(document).ready(function () {
+                $('.nav li> .dropdown-menu').parent().hover(function () {
+                    var Model = $(this).children('.dropdown-menu');
+                    if ($(Model).is(':hidden')) {
+                        $(Model).slideDown(400);
+                        // $(Model).delay(2000);
+                        // $('.nav li').slideDown("slow");
+                    } else {
+                        $(Model).slideUp(400);
+                    }
+                });
+            })
+
+        </script>*@
+
+
+
+        <script type="text/javascript">
+            $(function () {
+                $("#category").change(function () {
+                    // alert("CSharp Seaching OK......");
+                    $("#form1").submit();
+                });
+            });
+    </script>
+
+
+</head>
+<body style="background-color: ghostwhite;">
+    <div class="menu-area no-padding no-gutter" style="width:100%; border:none; color:white">
+
+
+        
+
+
+
+
+
+        <div class="menu-area no-padding no-gutter" style="width:100%;  border-top:inset  1px; border-top-color:#fff; margin-top:2px; border-bottom:inset  1px; border-bottom-color:#fff; margin-bottom:2px ">
+            <!-- Navbar -->
+            <!-- logo  -->
+            <!-- Text based logo -->
+
+            <table style="text-align:center; width:100%;">
+                <tr>
+
+
+                    <td>
+
+
+                        <!-- Left nav -->
+                        <ul class="nav navbar-nav center-block  navbar-collapse  no-gutter no-padding" role="navigation" style="position: center; margin: auto;  background-color:#fcfafa;  color:black; border-bottom:outset 1px;">
+                          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <!--CSS-->
+                            <li class="aa-header-top-left" style="height:50px; border-color:none; color:black; float:left">
+
+
+                                <ul lass="navbar navbar-default" role="navigation" navbar-collapse=navbar-collapse no-gutter=no-gutter style="position: center; margin: auto;  background-color:#fcfafa;  color:black">
+
+                                    @{
+
+
+
+
+
+
+
+                                        <li role="presentation" class="dropdown" style="float:right; position:relative; color:black;  width:92px; margin-top:0px">
+
+                                            <div>
+
+
+
+
+                                                <br />
+
+                                                <a href="@Url.Action("GetPosts", "CSS")"><b style="color:black; font-family: Georgia,'Times New Roman',serif;"></b></a>
+                                            </div>
+
+                                            <a href="@Url.Action("Index","Home")">
+                                               <img src="/Content/images/icons-png/Home3.png" style="width:20px; height:20px;
+                                                        margin-bottom:20px" />
+                                                <c class="font-italic" style="color:black; text-decoration-line:none">
+                                                   
+                                                 
+                                                </c>
+                                               
+                                            </a>
+
+
+                                        </li>
+
+
+
+
+
+
+
+
+
+                                    }
+
+
+
+
+
+
+                                </ul>
+
+
+                            </li>
+
+                          
+                            
+
+
+                            PROGRAM AREA
+                          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <!--Search-->
+                        </ul>
+
+
+
+
+
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+    @RenderBody()
+    @*<footer id="aa-footer">*@
+    <div class="footer border-top shadow-sm" style="margin-bottom: 0px; border-top: solid 1px; border-color:#585858; width:100%">
+
+
+        <div class="row mt-4 mb-6 mb-12" style="background-color: #888">
+
+            <div class="col-md-2" style="text-align:left; padding-left:6%">
+
+                <div id="why_buy">
+                    <div class="info_right">
+                        <!-- <h5 class="text-center mb-3">Explore Home Features?</h5>-->
+                        <ul>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><b>About Us</b></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("Procedure", "Pages")" style="color:#fff;">Policies  </a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("Procedure", "Pages")" style="color:#fff;">Blog</a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("Photos", "Pages")" style="color:#fff;">Contributers</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-2" style="text-align:left; padding-left:6%">
+
+                <div id="why_buy">
+                    <div class="info_right">
+                        <!-- <h5 class="text-center mb-3">Explore Our Services?</h5>-->
+                        <ul>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><b>Services </b></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="#" style="color:#fff;">Photos </a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("AdminIndex", "NoteList")" style="color:#fff;">NoteList</a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("GetPosts", "NoteList")" style="color:#fff;">NoteList</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-2" style="text-align:left; padding-left:6%">
+
+                <div id="why_buy">
+                    <div class="info_right">
+                        <!-- <h5 class="text-center mb-3">Explore Our Services?</h5>-->
+                        <ul>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><b>Services</b></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="#" style="color:#fff;">Photos </a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("AdminIndex", "NoteList")" style="color:#fff;">NoteList</a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("GetPosts", "NoteList")" style="color:#fff;">NoteList</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-2" style="text-align:left; padding-left:6%">
+
+                <div id="why_buy">
+                    <div class="info_right">
+                        <!-- <h5 class="text-center mb-3">Programs?</h5>-->
+                        <ul>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><b>Store</b></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("Shop", "Home")" style="color:#fff;">Store</a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="#" style="color:#fff;">Orders </a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="#" style=" color:#fff;">Profile</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-2" style="text-align:left; padding-left:6%">
+
+                <div id="why_buy">
+                    <div class="info_right">
+                        <!-- <h5 class="text-center mb-3">Programs?</h5>-->
+                        <ul>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><b>Orders</b></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("Shop", "Home")" style="color:#fff;">Store</a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="#" style="color:#fff;">Orders </a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="#" style=" color:#fff;">Profile</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-2" style="text-align:left; padding-left:6%">
+
+                <div id="why_buy">
+                    <div class="info_right">
+                        <!--<h5 class="text-center mb-3">Information?</h5>-->
+                        <ul>
+                            <li>
+                                <a href="/DownLoadLink/downloadlink" title="List View" class="links" style="background-color:#888">
+                                    <img alt="List View" src="@Url.Content("~/Content/img/ApparelImages/Essien.jpg")" style="width:38px; height:38px; border-radius:50%" />
+                                </a>
+                            </li>
+
+                            <li><strong class="aa-footer-nav">Developer</strong></li>
+                            <li>
+                                <a href="/DownLoadLink/downloadlink" class="btn-rounded" style="background-color:#888; color:#fff">
+                                    <i class="fa fa-fa fa-arrow-right"></i><b style="color:white">View blog</b>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("Subscribe", "News")" class="btn-rounded" style="background-color:#888; color:#fff">
+                                    <i class="fa fa-fa fa-arrow-right"></i><b style="color:white"> Sign up!</b>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="row mt-4 mb-6 mb-12" style=" background-color: #585858;">
+
+            <div class="row mt-4 mb-6 mb-12">
+                <table style=" text-align:center; width:100%">
+                    <tr>
+                        <td style="margin-left:22px; float:left; padding-left:7% ">
+
+                            <div class="list-unstyled list-inline mb-0" style="margin-left:22px">
+                                <c style="color:inherit">
+                                    <b style="color:#fff"> Designed by</b>
+                                    <a href="http://www.facebook.com/">
+                                        <b style="color:inherit">Peter Agyekum Essien:</b>
+                                    </a>
+                                </c>
+                                <c style="color:#fff">Copyright <b style="color:inherit"> ©2020</b></c>
+
+                                <c style="color:#585858;">
+
+
+
+                                    <!-- BEGIN: Powered by Supercounters.com -->
+
+                                    <script type="text/javascript" src="//widget.supercounters.com/ssl/online_t.js"></script>
+
+
+
+                                    <script type="text/javascript">sc_online_t(1601083, "585858", "585858");</script><noscript><a href="https://www.supercounters.com/">supercounters.com</a></noscript>
+
+                                    <!-- END: Powered by Supercounters.com -->
+
+                                </c>
+
+
+                            </div>
+                        </td>
+
+
+
+
+                        <td style="float:none">
+                            <div class="list-unstyled list-inline mb-0">
+                                <a href="#"><span class="fa fa-cc-mastercard"></span></a>
+                                <a href="#"><span class="fa fa-cc-visa"></span></a>
+                                <a href="#"><span class="fa fa-paypal"></span></a>
+                                <a href="#"><span class="fa fa-cc-discover"></span></a>
+                            </div>
+                        </td>
+
+
+                        <td style="margin-right:50px; float:right">
+                            <div class="list-unstyled list-inline mb-0" style="margin-right:30px">
+                                <a href="@Url.Action("Admin", "Admin", "Admin")" style="color:inherit">
+                                    <span class="fa fa-cc-pricaycu" style="color:#fff"><i class="fa fa-user"></i>ADMIN</span>
+                                </a>
+                            </div>
+                        </td>
+                        <td style="margin-right:20px; float:right">
+                            <div class="list-unstyled list-inline mb-0">
+                                <a href="@Url.Action("Procedure", "Pages")" style="color:inherit"><span class="fa fa-cc-pricaycu"><a href="@Url.Action("Procedure", "Pages")">PRIVACY</a></span></a>
+                            </div>
+                        </td>
+                        <td style="margin-right:20px; float:right">
+                            <div class="list-unstyled list-inline mb-0">
+                                <a href="@Url.Action("Procedure", "Pages")">
+                                    <span class="fa fa-cc-pricaycu">POLICY</span>
+                                </a>
+                            </div>
+                        </td>
+                        @*     <td style="margin-right:10px;">
+                                <div class="list-unstyled list-inline mb-0">
+                                    <a href="@Url.Action("Procedure", "Pages")">
+                                        <span class="fa fa-cc-pricaycu">PRIVACY</span>
+                                    </a>
+                                </div>
+                            </td>*@
+                    </tr>
+                </table>
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <!-- / footer -->
+    <!-- Start header section -->
+    @Scripts.Render("~/Content/js")
+    @RenderSection("scripts", required: false)
+    <script src="~/Content/js/main.js"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560770f61b38eef5" async="async"></script>-->
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d6b94c29f26abc4"></script>
+
+
+</body>
+
+</html>
+
+
+
+<style>
+    #mySidenav {
+        margin-right: 100px;
+    }
+</style>
+
+
+
+
+<style>
+    /* enable absolute positioning */
+    .inner-addon {
+        position: relative;
+        border-radius: none;
+    }
+
+        /*Search style icon */
+        .inner-addon .fa-search {
+            position: absolute;
+            padding: 13px; /*move search button up and down */
+            pointer-events: initial;
+            color: black;
+            margin-right: -260px; /*move search button left and right */
+        }
+
+    /* align icon */
+    .left-addon .fa-search {
+        left: 0px;
+    }
+
+    .right-addon .fa-search {
+        right: 0px;
+    }
+
+    /* add padding  */
+    .left-addon input {
+        padding-left: 30px;
+    }
+
+    .right-addon input {
+        padding-right: 30px;
+    }
+
+    .inner-addon .form-control {
+        border-radius: none;
+    }
+
+
+
+
+    #footer {
+        background: #9154f3;
+        color: black;
+        box-sizing: border-box;
+        background-color: whitesmoke;
+        margin: 0px;
+    }
+
+
+    .mainbarbottom {
+        border: 0 solid #e1e1e1;
+        border-bottom-width: 1px;
+        height: 40px;
+        text-align: center;
+        padding: 0 0px;
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+        text-align: right;
+        float: right;
+    }
+
+      .card {
+                box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+                 background: #ffffff;
+            }
+
+
+            .col-lg-2 {
+                flex: 0 0 10% !important;
+                max-width: 20%;
+            }
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

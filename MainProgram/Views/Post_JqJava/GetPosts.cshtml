@@ -1,0 +1,412 @@
+﻿@model PagedList.IPagedList<MainProgram.Edm.Post_JqJava>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+
+
+
+@{
+    ViewBag.Title = "GetPost";
+    Layout = "~/Views/Shared/_LayoutSub.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+<section class="hero is-info is-fullheight is-bold">
+
+
+    <div class="hero-body   mt-4 mb-6 mb-12" style="background-color: ghostwhite; margin-right:0px; padding-right:0px; text-align:center">
+
+
+        <div class="Main-Bar" style="width:100%; margin-right:0px; padding-right:0px; margin-top:20px; text-align:center; background-color:#fff">
+            <div class="panel2" style="width: 98.8%; padding-left: 0px; padding-right: 0px;">
+                <div class="row mt-4 mb-6 mb-12">
+
+
+
+
+                    <div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+
+
+
+
+
+                        <!-- left sidebar-->
+
+
+                        <div id="fadeshow1" class="left" style="width: 17%; float:left; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+                            <div class="Container">
+                                <div class="col-md-4">
+                                    <div class="container">
+                                        <div class="panel panel-default" style="width: 22%">
+                                            <strong style="font-size:x-large"><b>Best Contributers</b></strong>
+                                            <div class=" panel-body  no-gutter">
+                                                <div col-md-4">
+                                                    <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+                                                        @using (Html.BeginForm("Index", "Post_JqJava", FormMethod.Get))
+                                                        {
+
+                                                        }
+                                                        <div class="table">
+                                                            <ul>
+                                                                <li>
+                                                                    @Html.ActionLink("Post_JqJava", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                                                                </li>
+                                                                <li>
+                                                                    First Name
+                                                                </li>
+                                                                <li>
+                                                                    @Html.ActionLink("PostDate", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+                                                                </li>
+
+
+
+                                                                @{
+
+
+                                                                    MainProgram.Edm.angulardemoEntities dbg3 = new MainProgram.Edm.angulardemoEntities();
+
+                                                                    List<MainProgram.Edm.Post_JqJava> Modelq = dbg3.Post_JqJava.ToList();
+
+                                                                    foreach (MainProgram.Edm.Post_JqJava item in Modelq)
+                                                                    {
+                                                                        <li>
+                                                                            <a href="@Url.Action("Details", "Post_JqJava", new { id = item.PostJqJavaId })" class="aa-cartbox-img"><img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /></a>
+                                                                            <a href="@Url.Action("Details", "Post_JqJava", new { id = item.PostJqJavaId })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                                                @item.AspNetUser.UserName
+
+                                                                            </a>
+
+                                                                            <br />
+                                                                            <a href="@Url.Action("Details", "Post_JqJava")">View</a>
+
+
+                                                                        </li>
+                                                                    }
+                                                                }
+
+
+
+
+
+                                                            </ul>
+
+                                                        </div>
+
+
+
+
+
+
+                                                    </div>
+                                                </div>
+
+
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <!--End Of Left-->
+                        <!-- Right-->
+
+
+                        <div id="fadeshow1" class="right"
+                             style="width: 21%; float:right; margin-right:8px; padding-right:8px; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+                            <div class="Container">
+                                <div class="col-md-4">
+                                    <div class="container">
+                                        <div class="panel panel-default" style="width: 22%">
+                                            <strong style="font-size:x-large"><b>Best Contributers</b></strong>
+                                            <div class=" panel-body  no-gutter">
+                                                <div col-md-4">
+                                                    <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+                                                        @using (Html.BeginForm("Index", "Post_JqJava", FormMethod.Get))
+                                                        {
+
+                                                        }
+                                                        <div class="table">
+                                                            <ul>
+                                                                <li>
+                                                                    @Html.ActionLink("Post_JqJava", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                                                                </li>
+                                                                <li>
+                                                                    First Name
+                                                                </li>
+                                                                <li>
+                                                                    @Html.ActionLink("PostDate", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+                                                                </li>
+
+
+
+                                                                @{
+
+
+                                                                    MainProgram.Edm.angulardemoEntities dbgr = new MainProgram.Edm.angulardemoEntities();
+
+                                                                    List<MainProgram.Edm.Post_JqJava> Modelr = dbgr.Post_JqJava.ToList();
+
+                                                                    foreach (MainProgram.Edm.Post_JqJava item in Modelr)
+                                                                    {
+                                                                        <li>
+                                                                            <a href="@Url.Action("Details", "Post_JqJava", new { id = item.PostJqJavaId })" class="aa-cartbox-img"><img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /></a>
+                                                                            <a href="@Url.Action("Details", "Post_JqJava", new { id = item.PostJqJavaId })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                                                @item.AspNetUser.UserName
+
+                                                                            </a>
+
+                                                                            <br />
+                                                                            <a href="@Url.Action("Details", "Post_JqJava")">View</a>
+
+
+                                                                        </li>
+                                                                    }
+                                                                }
+
+
+
+
+
+                                                            </ul>
+
+                                                        </div>
+
+
+
+
+
+
+                                                    </div>
+                                                </div>
+
+
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--End Of Right-->
+                        <!--MID Sidebar Main content-->
+                        <div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+                            <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+                                <strong style="font-size:x-large"><b> EntityFrameWork Top questions</b></strong>
+
+                                <p>
+
+                                    @Html.ActionLink("New Post", "Create", "Post_JqJava")
+
+                                </p>
+
+
+
+                                @*  <p>
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            @Html.ActionLink("New Post", "Create", "DotNet")
+                                        }
+                                        else
+                                        {
+                                            @Html.ActionLink("Reply to this Post", "GetUsers", "Post")
+
+
+                                        }
+
+                                    </p>*@
+                                <hr />
+                                <fieldset>
+                                    <strong style="font-size:x-large"><b>Recent Post</b></strong>
+                                    @using (Html.BeginForm("Index", "Post_JqJava", FormMethod.Get))
+                                    {
+                                        <p>
+                                            Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+                                            <input type="submit" value="Search" />
+                                        </p>
+                                    }
+                                    <div class="table">
+                                        <ul>
+                                            <li>
+                                                @Html.ActionLink("Post_JqJava", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </li>
+                                            <li>
+                                                First Name
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("PostDate", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+                                                <br />
+                                                <hr />
+                                            </li>
+
+
+
+                                            @{
+
+
+                                                MainProgram.Edm.angulardemoEntities dbg = new MainProgram.Edm.angulardemoEntities();
+
+                                                List<MainProgram.Edm.Post_JqJava> Modelg = dbg.Post_JqJava.ToList();
+
+                                                foreach (MainProgram.Edm.Post_JqJava item in Modelg)
+                                                {
+                                                    <li>
+                                                        <a href="@Url.Action("Details", "Post_JqJava", new { id = item.PostJqJavaId })" class="aa-cartbox-img"><img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /></a>
+                                                        <a href="@Url.Action("Details", "Post_JqJava", new { id = item.PostJqJavaId })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                            @item.AspNetUser.UserName
+
+                                                        </a>
+
+                                                        <br />
+                                                        <a href="@Url.Action("Details", "Post_JqJava")">View</a>
+
+
+                                                    </li>
+                                                }
+                                            }
+
+
+
+
+
+                                        </ul>
+
+                                    </div>
+
+
+
+
+
+
+                                </fieldset>
+                            </div>
+
+
+                            <br />
+                            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                            @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+
+
+                            <br /><br />
+
+                            <div>
+                                @Html.ActionLink("Back to HomePage", "Index", "Home")
+                            </div>
+
+
+
+                        </div>
+                        <!--End Of MID-->
+
+
+
+
+
+
+
+
+
+
+
+                        <style>
+                            .content-wrapper {
+                                margin-top: 0%;
+                                margin-left: 0%;
+                                background-position: top;
+                            }
+
+                            #left {
+                                width: 20%;
+                                margin-left: 0%;
+                                margin-top: 0%;
+                                background-position: top;
+                                position: relative;
+                                background-color: #eee3e3;
+                            }
+
+
+
+                            .Mid-sidebar {
+                                content: " ";
+                                position: relative;
+                                margin-top: 0%;
+                                width: 60%;
+                                overflow: no-display;
+                                padding-right: 0px;
+                                margin-left: 20%;
+                                margin-right: 0%;
+                                background-position: top;
+                                margin-bottom: 0px;
+                                background-color: #fff;
+                            }
+
+
+                            .SiteT {
+                                width: 100%;
+                                border: none;
+                                margin-right: 0px;
+                                padding-right: 0px;
+                            }
+
+
+
+
+                            .main--container {
+                                margin-left: 17px;
+                            }
+
+
+                            .card {
+                                box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+                                background: #ffffff;
+                            }
+
+
+                            .col-lg-2 {
+                                flex: 0 0 10% !important;
+                                max-width: 20%;
+                            }
+                        </style>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    @@media only screen and (max-width:1026px) {
+        #fadeshow1 {
+            display: none;
+        }
+    }
+</style>

@@ -1,0 +1,279 @@
+﻿@model PagedList.IPagedList<MainProgram.Edm.JqJava>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+
+
+
+@{
+    ViewBag.Title = "GetPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+<div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+
+
+   
+
+    <!-- left sidebar-->
+
+
+    <div class="left" style="width: 17%; float:left; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+        <div class="Container">
+            <div class="col-md-4">
+                <div class="container">
+                    <div class="panel panel-default" style="width: 22%">
+
+                        <div class=" panel-body  no-gutter">
+                            <div col-md-4">
+                                <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+
+
+
+
+
+
+                                </div>
+
+
+
+
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--End Of Left-->
+<!-- Right-->
+
+
+<div class="right"
+     style="width: 21%; float:right; margin-right:8px; padding-right:8px; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+    <div class="Container">
+        <div class="col-md-4">
+            <div class="container">
+                <div class="panel panel-default" style="width: 22%">
+
+                    <div class=" panel-body  no-gutter">
+                        <div col-md-4">
+                            <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+
+
+
+
+
+
+
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!--End Of Right-->
+    <!--MID Sidebar Main content-->
+    <div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+        <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+            <strong style="font-size:x-large"><b>Top questions</b></strong>
+
+
+
+            <h2>Post</h2>
+
+            <p>
+                @Html.ActionLink("New Post", "Create", "JqJa")
+            </p>
+            <hr />
+            <fieldset>
+                <form action="@Url.Action("CSharpIndex", "Search")" method="get" style="text-align:center">
+                    <div>
+                        <div>
+                            <input id="searchString" name="searchString" class="srchTxt" type="text" value="@ViewBag.searchString" placeholder="Enter your Search" style="width:100%; height:40px; width:300px;  font-size:12px" />
+
+
+
+
+
+                            <button type="submit" style="text-align:center; height:40px; width:35px; background-color:inherit; background-color:transparent; border:none;"><span class="fa fa-search" style="color:black"></span></button>
+                        </div>
+                    </div>
+
+
+                </form>
+                <br />
+                <table class="table">
+
+                    <tr>
+                        QUESTION
+
+                    </tr>
+
+
+
+
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td>
+                                <br />
+                                <span style="margin-right:15px; font-size:16px; color:black">
+                                    <br />
+                                    <b>@item.JqJavaTitle</b>
+                                </span>
+
+                                <br />
+                                <span style="margin-right:15px; font-size:16px; color:black">
+                                    <br /> @Html.Raw(@item.JqJavaText)
+                                </span>
+                                @*<td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.EntityFId }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.EntityFId }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.EntityFId })
+                            </td>*@
+                        </tr>
+                    }
+
+                </table>
+
+
+                <br />
+                <ul>
+                    <li>
+                        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                        @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+                    </li>
+                    <li>
+                        @Html.ActionLink("Full Page", "GetPosts", "JqJa")
+                    </li>
+                </ul>
+
+
+
+
+            </fieldset>
+
+
+
+            
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+    <br /><br />
+
+    <div>
+        @Html.ActionLink("Back to HomePage", "Index", "Home")
+    </div>
+
+
+
+
+    <!--End Of MID-->
+
+    <style>
+        .content-wrapper {
+            margin-top: 0%;
+            margin-left: 0%;
+            background-position: top;
+        }
+
+        #left {
+            width: 20%;
+            margin-left: 0%;
+            margin-top: 0%;
+            background-position: top;
+            position: relative;
+            background-color: #eee3e3;
+        }
+
+
+
+        .Mid-sidebar {
+            content: " ";
+            position: relative;
+            margin-top: 0%;
+            width: 60%;
+            overflow: no-display;
+            padding-right: 0px;
+            margin-left: 20%;
+            margin-right: 0%;
+            background-position: top;
+            margin-bottom: 0px;
+            background-color: #fff;
+        }
+
+
+        .SiteT {
+            width: 100%;
+            border: none;
+            margin-right: 0px;
+            padding-right: 0px;
+        }
+
+
+
+
+        .main--container {
+            margin-left: 17px;
+        }
+    </style>
+
+
+</div>

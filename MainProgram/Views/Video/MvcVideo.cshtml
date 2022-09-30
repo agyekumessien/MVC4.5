@@ -1,0 +1,331 @@
+﻿@model  IEnumerable<MainProgram.Edm.tblVideo>
+@using MainProgram.Helper_Code
+
+@{
+    ViewBag.Title = "DotNetVideo";
+}
+
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+
+
+
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+<div class="Main-Bar" style="width:100%; margin-right:0px; padding-right:0px; margin-top:20px; text-align:center; background-color:#fff">
+    <div class="panel2" style="width: 98.8%; padding-left: 0px; padding-right: 0px;">
+        <div class="row mt-4 mb-6 mb-12">
+
+            <div class="hero-body   mt-4 mb-6 mb-12" style="background-color: ghostwhite; margin-right:0px; padding-right:0px; text-align:center">
+
+                <div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; margin-top:30px; background-color:white; border:none">
+
+
+
+                    <br />
+                    <!-- left sidebar-->
+                    <div class="left" style="width: 22%; margin-left:0%; top:0px; border-right:none; border-bottom:none; border-top:none; border-left:none ">
+                        <div class="Container">
+                            <div class="col-md-4">
+                                <div class="container">
+
+                                    <div class="panel panel-default" style="width: 22%; margin-right:1px; border-right:none; border-bottom:none; border-top:none; border-left:none">
+
+                                        <strong style="font-size:x-large"><b>Statistics</b></strong>
+                                        <br />
+                                        <div class=" panel-body  no-gutter">
+                                            <div col-md-4">
+
+
+
+
+
+
+                                                <!--END-->
+
+                                            </div>
+
+
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--End Of Left-->
+                    <!-- Right-->
+                    <div class="ScrollgridR2" style="margin-right:5px; width:19%; float:right; padding-right:15px; margin-top:2px; border:none; overflow:hidden">
+
+
+
+
+                        <div class="panel panel-default" style="width: 100%; border-radius:8px">
+
+
+
+                            <strong style="font-size:x-large"><b>Related Topics</b></strong>
+
+
+
+
+
+                        </div>
+
+                    </div>
+                    <!--MID Sidebar Main content-->
+                    <div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+                        <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+                            <strong style="font-size:x-large"><b>Recommended Video tutorials</b></strong>
+
+
+
+
+                            <fieldset>
+                                @* @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    {
+                                        <input type="file" name="postedFile" />
+                                        <input type="submit" id="btnUpload" value="Upload" />
+                                    }*@
+                                <hr />
+
+                                @helper Video(string id, string mp4Path, string WebmPath = null, string ogvPath = null,
+                                         bool needsControls = true, int width = 500, int height = 200)
+{
+    var controlsString = string.Empty;
+    if (needsControls)
+    {
+        controlsString = "controls = 'contrlols'";
+    }
+
+
+    <video controls="controls" id="@id" width="@width" height="@height">
+        @if (!string.IsNullOrEmpty(mp4Path))
+        {
+            <source src="@mp4Path" type="video/mp4" />
+        }
+        @if (!string.IsNullOrEmpty(WebmPath))
+        {
+            <source src="@WebmPath" type="video/webm" />
+        }
+        @if (!string.IsNullOrEmpty(ogvPath))
+        {
+            <source src="@ogvPath" type="video/ogg" />
+        }
+        <source src="~/Content/Video/Ad.mp4" type="video/mp4" />
+        <source src="file.Webm" type="video/webm" />
+        <source src="file.egv" type="video/ogg" />
+
+    </video>
+
+}
+
+
+                                <div class="col-sm-8" style="float:left; border-right:2px, solid #f1f1f1">
+
+                                    <video id="myVideo1" poster="~/Content/Video/Movies_Frames/MVC_Video_First_Frame.png" width="790" height="450" controls>
+                                        @* <source src="~/Content/Video/Ad.mp4" type="video/mp4" />*@
+
+
+                                        <source src="~/VideoFileUpload/MVC_Video.mp4" type="video/mp4" />
+
+                                        <source src="file.Webm" type="video/webm" />
+                                        <source src="file.egv" type="video/ogg" />
+
+                                    </video>
+                                    @*
+                                                 <div>
+                                                @Video("myVideo1", "/Content/Video/Ad.mp4")
+                                            </div>
+
+                                            @GlobalHtmlHelpers.Video("myVideo1", "/Content/Video/Ad.mp4", width: 500, height: 200, needsControls: true)
+
+                                              <b>Fluent Helper</b><br />
+                                            <div>
+                                                @Html.FluentVideo("myVideo4").mp4("/Content/Video/Ad.mp4").width(500).height(200).controls(true))
+
+                                            </div>
+
+                                               <b>Static Helper</b><br />
+                                            <div>
+                                                @StaticHtml5Helpers.Video("myVideo3", "/Content/Video/Ad.mp4", width: 500, height: 200, needsControls: true)
+
+                                            </div>
+
+                                              <b>Global Helper</b><br />
+                                            <div>
+                                                @GlobalHtmlHelpers.Video("myVideo2", "/Content/Video/Ad.mp4", width: 500, height: 200, needsControls: true)
+                                            </div>
+                                              <b>Local Helper</b><br />
+                                            <div>
+                                                @Video("myVideo1", "/Content/Video/Ad.mp4")
+                                            </div>
+
+
+
+
+                                        <b>Extention Helper</b><br />
+                                        <div>
+                                            @Html.Video("myVideo3", "/VideoFileUpload/Ad3.mp4", width: 800, height: 400, needsControls: true)
+
+
+
+                                        </div> *@
+
+
+                                </div>
+
+
+
+                                @* <table cellpadding="0" cellspacing="0">
+                                        @if (Model.Count() > 0)
+                                        {
+                                            foreach (var file in Model)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        <u>
+                                                            @file.Name
+                                                        </u>
+                                                        <hr />
+
+                                                        <video id="VideoPlayer" src='@Url.Action("DownloadFile", "Video", new { fileId = @file.Name })' controls="controls"
+                                                               width="400" height="350" autoplay="autoplay" />
+                                                    </td>
+
+                                                </tr>
+                                            }
+                                        }
+                                    </table>*@
+
+
+
+
+
+
+
+
+
+                            </fieldset>
+
+
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+                        <style>
+                            .content-wrapper {
+                                margin-top: 0%;
+                                margin-left: 0%;
+                                background-position: top;
+                                OVERFLOW: auto;
+                                border: none;
+                                WIDTH: 100%;
+                                BORDER-BOTTOM: #000000 none;
+                                HEIGHT: 700px;
+                                max-height: 700px;
+                                min-height: 700px;
+                            }
+
+
+                            #left {
+                                width: 20%;
+                                margin-left: 0%;
+                                margin-top: 0%;
+                                background-position: top;
+                                position: relative;
+                                background-color: #eee3e3;
+                            }
+
+
+
+                            .Mid-sidebar {
+                                content: " ";
+                                position: relative;
+                                margin-top: 0%;
+                                width: 60%;
+                                overflow: no-display;
+                                padding-right: 0px;
+                                margin-left: 20%;
+                                margin-right: 0%;
+                                background-position: top;
+                                margin-bottom: 0px;
+                                background-color: #fff;
+                            }
+
+                            .ScrollgridR {
+                                OVERFLOW: auto;
+                                border: none;
+                                WIDTH: 100%;
+                                BORDER-BOTTOM: #000000 none;
+                                HEIGHT: 700px;
+                                max-height: 700px;
+                                min-height: 700px;
+                                scrollbar-3dlight-color: #fff;
+                                scrollbar-arrow-color: #9C3842;
+                                scrollbar-base-color: #003366;
+                                scrollbar-face-color: #ffffff;
+                                scrollbar-face-color: #ffffff;
+                                scrollbar-highlight-color: #ffffff;
+                                scrollbar-shadow-color: #ffffff;
+                            }
+
+
+
+
+                            .SiteT {
+                                width: 100%;
+                                border: none;
+                                margin-right: 0px;
+                                padding-right: 0px;
+                            }
+
+
+
+
+                            .main--container {
+                                margin-left: 17px;
+                            }
+                        </style>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</section>

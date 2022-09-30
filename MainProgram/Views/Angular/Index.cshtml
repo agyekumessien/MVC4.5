@@ -1,0 +1,280 @@
+﻿@model PagedList.IPagedList<MainProgram.Edm.Angular>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+
+
+
+@{
+    ViewBag.Title = "GetPost";
+    Layout = "~/Views/Shared/_LayoutSub.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; top:0px;  background-color:#fff; border:none;">
+
+
+
+    <!-- left sidebar-->
+
+
+
+    <div class="left" style="width: 17%; float:left; top:0px;  background-color:#fff; border:none;">
+        <div class="Container">
+            <div class="col-md-4">
+                <div class="container">
+                    <div class="panel panel-default" style="width: 22%">
+
+                        
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--End Of Left-->
+<!-- Right-->
+
+
+<div class="right"
+     style="width: 21%; float:right; margin-right:8px; padding-right:8px; top:0px; background-color:#fff; border:none;">
+    <div class="Container">
+        <div class="col-md-4">
+            <div class="container">
+                <div class="panel panel-default" style="width: 22%">
+
+                    
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--End Of Right-->
+<!--MID Sidebar Main content-->
+<div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+    <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+        <strong style="font-size:x-large"><b>Angular Top questions</b></strong>
+
+
+
+        <h2>Post</h2>
+
+        <p>
+            @Html.ActionLink("New Post", "Create", "Angular")
+        </p>
+        <hr />
+        <fieldset>
+            @using (Html.BeginForm("Index", "Angular", FormMethod.Get))
+            {
+                <p>
+                    Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+                    <input type="submit" value="Search" />
+                </p>
+            }
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.ActionLink("Angular", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        First Name
+                    </th>
+                    <th>
+                        @Html.ActionLink("PostDate", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th></th>
+                </tr>
+
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        @*  <td>
+                                @Html.DisplayFor(modelItem => item.ImagePath)
+                            </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AngularTitle)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AngularText)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PostDate)
+                        </td>
+                        @* <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.DotNetId }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.DotNetId }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.DotNetId })
+                            </td>*@
+                    </tr>
+                }
+
+            </table>
+
+
+            <br />
+            <ul>
+                <li>
+                    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+                </li>
+                <li>
+                    @Html.ActionLink("Full Page", "GetPosts", "Angular")
+                </li>
+            </ul>
+
+
+
+
+        </fieldset>
+
+        @*   <div class="Scrollgrid" style="width: 100%; margin-left: 0px; overflow:scroll">
+            <strong style="font-size:x-large"><b>Recent Post</b></strong>
+            <ul>
+                @{
+
+
+                    MainProgram.Edm.angulardemoEntities dbg = new MainProgram.Edm.angulardemoEntities();
+
+                    List<MainProgram.Edm.DotNet> Modelg = dbg.DotNets.ToList();
+
+                    foreach (MainProgram.Edm.DotNet item in Modelg)
+                    {
+                        <li>
+                            <a href="@Url.Action("Details", "DotNet", new { id = item.DotNetId })" class="aa-cartbox-img"><img src="@item.ImagePath" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; vertical-align:sub" multiple /></a>
+                            <a href="@Url.Action("Details", "DotNet", new { id = item.DotNetId })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                @item.DotNetTitle
+
+                            </a>
+
+                            <br />
+                            <a href="@Url.Action("Details", "DotNet")">View</a>
+
+                            <br /><br />
+
+                            @*<p style="text-align:left; padding-left:15px; padding-right:15px; padding-top:10px">@item.ThreadText</p>*@
+        @* =><a href="@Url.Action("Details", "Post", new { id = ViewBag.ThreadId })" style=""></a>*@
+        @*<a href="/Women/pages">@item.ThreadTitle</a>*@
+        @*@Html.DisplayFor(model => item.ThreadText)*@
+        @* @Html.ActionLink("Reply to this thread", "Create", "Post")model => item.ThreadText)
+                        </li>
+                    }
+                }
+
+
+
+
+
+            </ul>*@
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--End Of MID-->
+
+    <style>
+        .content-wrapper {
+            margin-top: 0%;
+            margin-left: 0%;
+            background-position: top;
+        }
+
+        #left {
+            width: 20%;
+            margin-left: 0%;
+            margin-top: 0%;
+            background-position: top;
+            position: relative;
+            background-color: #eee3e3;
+        }
+
+
+
+        .Mid-sidebar {
+            content: " ";
+            position: relative;
+            margin-top: 0%;
+            width: 60%;
+            overflow: no-display;
+            padding-right: 0px;
+            margin-left: 20%;
+            margin-right: 0%;
+            background-position: top;
+            margin-bottom: 0px;
+            background-color: #fff;
+        }
+
+
+        .SiteT {
+            width: 100%;
+            border: none;
+            margin-right: 0px;
+            padding-right: 0px;
+        }
+
+
+
+
+        .main--container {
+            margin-left: 17px;
+        }
+    </style>
+
+
+</div>

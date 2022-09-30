@@ -1,0 +1,87 @@
+﻿
+@model MainProgram.Edm.EntityFrameWork
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>EntityFId</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.EntityFId)
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EntityFTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EntityFTitle, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EntityFTitle, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EntityFText, htmlAttributes: new { placeholder = "NoteListText", @class = "control-label col-md-2" })
+            <div class="dib col-md-10" style="text-align:left">
+
+                @Html.TextAreaFor(model => model.EntityFText, new { @class = "blue col-md-12", @required = "required", @autofocus = "true", @align = "left", })
+
+                @Html.ValidationMessageFor(model => model.EntityFText, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+
+}
+
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<style>
+    .blue {
+        height: 200px;
+        width: 100%;
+        white-space: pre-wrap;
+        text-align: left;
+    }
+</style>
+
+<p id="paragraph">
+
+</p>
+<script>
+        var ContentFromTextArea = "dib";
+        ContentFromTextArea.replace("\r", "<br />", "text-align left");
+        ContentFromTextArea.replace("\n", "<br />");
+        $("#paragraph").html(ContentFromTextArea);
+        $("#blue").html("text-align left");
+</script>
+

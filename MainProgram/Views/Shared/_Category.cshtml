@@ -1,0 +1,278 @@
+﻿@model MainProgram.Edm.tbh_Category
+
+
+
+
+@*
+
+<li style="width:100%">
+    <div class="col-lg-4" style="float:left; border-right:2px, solid #f1f1f1; ">
+        <div class="card">
+
+            <div class="card-body block text-center" style="margin-bottom:15px; padding-bottom:10px">
+
+
+
+
+
+                <a href="@Url.Action("Details", "Home", new { id = Model.CategoryID })">
+                    <img  src="@Model.CatImage" style="width: 200px; height: 200px;padding-right:15px; padding-left:15px; padding-top:10px;  padding-bottom:5px; text-align:center">
+                </a>
+
+
+                <p class="aa-product-view-content" style="">
+                    <h3><strong> @Model.Name</strong></h3>
+                </p>
+               
+                <p class="aa-product-rating">
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        if (ViewBag.AvgRate >= i)
+                        {
+                            <span class="fa fa-star" style="color: #ff6600"></span>
+                        }
+                        else
+                        {
+                            <span class="fa fa-star-o" style="color: #ff6600"></span>
+                        }
+                    }
+                </p>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+</li>*@
+
+
+
+
+<div class="table">
+    <ul>
+
+        @{
+
+
+            MainProgram.Edm.angulardemoEntities dbg = new MainProgram.Edm.angulardemoEntities();
+
+            List<MainProgram.Edm.tbh_Category> Modelg = dbg.tbh_Category.ToList();
+
+
+            <li>
+                <table class="table text-center;" style="width:100%; margin:0%; text-align:center">
+
+                    @foreach (MainProgram.Edm.tbh_Category item in Modelg.Distinct())
+                    {
+
+                        <tr style="border:1px solid white">
+
+                            <td>
+
+        @*<img src=" data:image;base64,@system.convert.tobase64string(@item.catimage)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /><br />*@ 
+                                <a href="@Url.Action("Details", "Home", new { id = Model.CategoryID })">
+                                    <img src="data:image;base64,@system.convert.tobase64string(@Model.FullImageUrl)" style="width: 200px; height: 200px;padding-right:15px; padding-left:15px; padding-top:10px;  padding-bottom:5px; text-align:center">
+                                </a>
+                                <span style="margin-right:5px; font-size:16px; color:black">
+                                    <b style="color:black; float:left"> @item.Name</b>
+                                </span>
+
+
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </table>
+
+
+            </li>
+        }
+
+    </ul>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li style="width:100%">
+    <div class="col-lg-4" style="float:left; border-right:2px, solid #f1f1f1; ">
+        <div class="card">
+
+            <div class="card-body block text-center" style="margin-bottom:15px; padding-bottom:10px">
+                <ul>
+
+                    @{
+
+
+    MainProgram.Edm.angulardemoEntities dbg = new MainProgram.Edm.angulardemoEntities();
+
+                        List<MainProgram.Edm.tbh_Category> Modelg = dbg.tbh_Category.ToList();
+
+
+                        <li>
+                            <table class="table text-center;" style="width:100%; margin:0%; text-align:center">
+
+                                @foreach (MainProgram.Edm.tbh_Category item in Modelg.Distinct())
+                                {
+
+                                    <tr style="border:1px solid white">
+
+                                        <td>
+
+
+                                            <span>
+                                                <img src="data:image;base64,@System.Convert.ToBase64String(Model.CatImage)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /><br />
+                                                
+                                           
+                                             </span>
+                                           
+
+
+                                        </td>
+
+                                    </tr>
+                                }
+
+                            </table>
+
+
+                        </li>
+                    }
+
+                </ul>
+
+
+
+
+
+
+
+
+
+              @*  <a href="@Url.Action("Details", "Home", new { id = Model.CategoryID })">
+    <img src="data:image;base64,@System.Convert.ToBase64String(@Model.MenuUrl)" style="width: 200px; height: 200px;padding-right:15px; padding-left:15px; padding-top:10px;  padding-bottom:5px; text-align:center">
+           
+                
+                </a>*@*
+
+
+                    <p class="aa-product-view-content" style="">
+                        <h3><strong> @Model.Name</strong></h3>
+                    </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

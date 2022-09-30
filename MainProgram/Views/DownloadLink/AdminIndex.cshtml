@@ -1,0 +1,232 @@
+﻿@using MainProgram.Core.Resources
+@using MainProgram.Edm
+
+
+@{
+    ViewBag.Title = "Procedure";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+@{
+    ViewBag.Title = "DownloadLink";
+}
+
+
+
+
+
+
+@using MainProgram.Models
+
+@model MainProgram.Core.ImgViewModel
+
+@{
+    ViewBag.Title = "ASP.NET MVC5: Upload Image into Database";
+}
+
+
+
+
+<br />
+
+<div class="row">
+    <div class="col-md-6 col-md-push-2">
+        <section>
+            @using (Html.BeginForm("DownloadLink", "DownloadLink", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="well bs-component">
+                    <br />
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-8 col-md-push-2">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <span class="btn btn-default btn-file">
+                                            Browse&hellip;
+                                            @Html.TextBoxFor(m => m.FileAttach, new { type = "file",  required="required", placeholder = Html.DisplayNameFor(m => m.FileAttach), @class = "form-control" })
+                                        </span>
+                                    </span>
+                                    <input type="text" class="form-control" readonly>
+                                </div>
+                                @Html.ValidationMessageFor(m => m.FileAttach, "", new { @class = "text-danger custom-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-5 col-md-10">
+                            <input type="submit" class="btn btn-danger" value="Upload"  />
+                        </div>
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+</div>
+
+<hr />
+
+
+
+<div class="row">
+    <div class="col-md-offset-4 col-md-8">
+        <h3>List of Imagess </h3>
+    </div>
+</div>
+
+<hr />
+
+@if (Model.ImgLst != null &&
+     Model.ImgLst.Count > 0)
+{
+
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <section>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;">Sr.</th>
+                            <th style="text-align: center;">Image Name</th>
+                            <th style="text-align: center;"></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @for (int i = 0; i < Model.ImgLst.Count; i++)
+                        {
+                            <tr>
+                                <td style="text-align: center;">@(i + 1)</td>
+
+                                <td style="text-align: center;">
+                                    <div class="input-group" style="height:40px;">
+                                        <i class="fa fa-2x fa-paperclip text-navy"></i>
+                                        <a class="download-file1" href="@Url.Action("DownloadLinkFile", "DownloadLink", new { fileId = @Model.ImgLst[i].FileId })" target="_blank">
+                                            @Model.ImgLst[i].FileName
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td style="text-align: center;">
+                                    <div>
+                                        <img src="@Url.Action("DownloadLinkFile", "DownloadLink", new { fileId = @Model.ImgLst[i].FileId })" width="100" height="100" />
+                                    </div>
+                                </td>
+
+
+
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = Model.ImgLst[i].FileId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = Model.ImgLst[i].FileId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = Model.ImgLst[i].FileId })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+}
+
+
+
+
+    @*<fieldset>
+           @for (int i = 0; i < Model.ImgLst.Count; i++)
+            {
+
+               <table>
+                   <tr>
+
+
+
+
+
+
+                        <td>
+                            @Model.ImgLst[i].FileName
+                        </td>
+
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = Model.ImgLst[i].FileId }) |
+                            @Html.ActionLink("Details", "Details", new { id = Model.ImgLst[i].FileId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = Model.ImgLst[i].FileId })
+                        </td>
+                    </tr>
+                   </table>
+                }
+
+
+            <br />
+
+
+
+
+        </fieldset><!--End Of MID-->*@
+
+    <div class=" col-sm-6" style="float:left">
+
+
+
+
+        @{
+
+
+
+
+
+
+            @*for (int i = 0; i < Model.ImgLst.Count; i++)*@
+
+
+
+            foreach (MainProgram.Edm.tbh_Documents item in ViewBag.Essien)
+            {
+
+
+
+                <viewbag.essien class="fa fa-2x fa-paperclip text-navy"></viewbag.essien>
+                <a href="@Url.Action("DownloadLinkFile", "DownloadLink", new { fileId =@item.file_id})">
+                    @item.file_name
+
+
+            </a>
+            }
+
+        }
+
+
+
+        }
+
+    </div>
+
+
+    @section Scripts
+{
+        @*Scripts*@
+        @Scripts.Render("~/bundles/bootstrap-file")
+
+        @*Styles*@
+        @Styles.Render("~/Content/Bootstrap-file/css")
+    }
+

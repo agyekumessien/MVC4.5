@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2428af7b390b40e6854dabd966b8fc21" Name="Diagram1">
+        <EntityTypeShape EntityType="angulardemoModel.C__MigrationHistory" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.AddressDto" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Ajax" Width="1.5" PointX="5.25" PointY="274" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.AjaxReply" Width="1.5" PointX="31.5" PointY="251.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.AngularReply" Width="1.5" PointX="8.25" PointY="274.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Angular" Width="1.5" PointX="11.25" PointY="274" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.AspNetRole" Width="1.5" PointX="0.75" PointY="277.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="292.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="294.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.AspNetUser" Width="1.5" PointX="3" PointY="266.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.AspWebFormReply" Width="1.5" PointX="8.25" PointY="266.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.AspWebform" Width="1.5" PointX="5.25" PointY="264.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.AzureReply" Width="1.5" PointX="8.25" PointY="282.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Azure" Width="1.5" PointX="5.25" PointY="283" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.C" Width="1.5" PointX="14.25" PointY="274" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.C__" Width="1.5" PointX="11.25" PointY="265" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.C__Replies" Width="1.5" PointX="31.5" PointY="282.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Cart" Width="1.5" PointX="20.25" PointY="315.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.CreateMessage" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.CReply" Width="1.5" PointX="34.5" PointY="258.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.CSharp" Width="1.5" PointX="11.25" PointY="282.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.CSReply" Width="1.5" PointX="34.5" PointY="292.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.CSS" Width="1.5" PointX="14.25" PointY="265" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.CSSReply" Width="1.5" PointX="31.5" PointY="290.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Databa" Width="1.5" PointX="14.25" PointY="282.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.DBAReply" Width="1.5" PointX="17.25" PointY="274.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.DBA" Width="1.5" PointX="17.25" PointY="265" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.DBReply" Width="1.5" PointX="37.5" PointY="289.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.DotNetReply" Width="1.5" PointX="17.25" PointY="282.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.DotNet" Width="1.5" PointX="20.25" PointY="274" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.EntityFrameWork" Width="1.5" PointX="20.25" PointY="264.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.EntityFReply" Width="1.5" PointX="34.5" PointY="283.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.ErrorViewModel" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.FilePath" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.File" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.FileType" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.genMainSlider" Width="1.5" PointX="8.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.genPromoRight" Width="1.5" PointX="18" PointY="312" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.JavaReply" Width="1.5" PointX="20.25" PointY="283.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Java" Width="1.5" PointX="8.25" PointY="257" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.JqJavaReply" Width="1.5" PointX="8.25" PointY="290.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.JqJava" Width="1.5" PointX="17.25" PointY="291" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Manufacturer" Width="1.5" PointX="15.75" PointY="311.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.MembersDto" Width="1.5" PointX="2.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.MemberUpdateDto" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.MVCReply" Width="1.5" PointX="20.25" PointY="291.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.MVC" Width="1.5" PointX="5.25" PointY="256" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.NetCoreReply" Width="1.5" PointX="23.25" PointY="274.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.NetCore" Width="1.5" PointX="11.25" PointY="256" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.NLReply" Width="1.5" PointX="5.25" PointY="473.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.NoSqlReply" Width="1.5" PointX="11.25" PointY="292.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.NoSql" Width="1.5" PointX="14.25" PointY="256" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.NoteListReply" Width="1.5" PointX="14.25" PointY="292.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.NoteList" Width="1.5" PointX="23.25" PointY="265" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.NotesPageReply" Width="1.5" PointX="23.25" PointY="282.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.NotesPage" Width="1.5" PointX="17.25" PointY="256" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.PhotoDto" Width="1.5" PointX="5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.PhotoForApprovalDto" Width="1.5" PointX="13.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post_CSharp" Width="1.5" PointX="20.25" PointY="255.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post_CSReplies" Width="1.5" PointX="31.5" PointY="266" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post_CSS" Width="1.5" PointX="23.25" PointY="290.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post_CSSReplies" Width="1.5" PointX="40.5" PointY="283.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post_Databases" Width="1.5" PointX="23.25" PointY="255.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post_DBA" Width="1.5" PointX="26.25" PointY="273.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post_DBAReplies" Width="1.5" PointX="37.5" PointY="281.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post_DBReplies" Width="1.5" PointX="34.5" PointY="267" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post_EntityFrameWorks" Width="1.5" PointX="26.25" PointY="264.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post_EntityFReplies" Width="1.5" PointX="37.5" PointY="272.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post_JqJava" Width="1.5" PointX="26.25" PointY="282.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post_JqJavaReplies" Width="1.5" PointX="37.5" PointY="264.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post_Mvc" Width="1.5" PointX="26.25" PointY="255.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post_MvcReplies" Width="1.5" PointX="34.5" PointY="275" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post_QReplies" Width="1.5" PointX="26.25" PointY="292.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post_Question" Width="1.5" PointX="5.25" PointY="297.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post_Webform" Width="1.5" PointX="29.25" PointY="273.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post_WebformReplies" Width="1.5" PointX="40.5" PointY="274.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Post" Width="1.5" PointX="8.25" PointY="298.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.PostTag" Width="1.5" PointX="34.5" PointY="301.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.PostVideo" Width="1.5" PointX="10.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Producer" Width="1.5" PointX="15.75" PointY="314.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.ProfileModel" Width="1.5" PointX="13.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.ReactReply" Width="1.5" PointX="29.25" PointY="265.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.React" Width="1.5" PointX="29.25" PointY="283" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Search" Width="1.5" PointX="31.5" PointY="299.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.SenderPhotoUrl" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Student" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Album" Width="1.5" PointX="2.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Blog" Width="1.5" PointX="4.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Brand" Width="1.5" PointX="15.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Category" Width="1.5" PointX="15.75" PointY="317" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_CommentLike" Width="1.5" PointX="12" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Comments" Width="1.5" PointX="9.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Communications" Width="1.5" PointX="5.25" PointY="225.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_CompanyStory" Width="1.5" PointX="15.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_ContactUs" Width="1.5" PointX="5.25" PointY="649.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_ContactUsEnquiry" Width="1.5" PointX="15.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Coupon" Width="1.5" PointX="5.25" PointY="654.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Departments" Width="1.5" PointX="3" PointY="223.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Documents" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_DSReplies" Width="1.5" PointX="19.5" PointY="303.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Faq" Width="1.5" PointX="16.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_FeeEnquiry" Width="1.5" PointX="6.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_FrontSlider" Width="1.5" PointX="14.25" PointY="249.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Gallery" Width="1.5" PointX="5.25" PointY="230.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_InstallmentStatus" Width="1.5" PointX="17.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Language" Width="1.5" PointX="3" PointY="243.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Media" Width="1.5" PointX="8.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Membership" Width="1.5" PointX="2.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_MenuMaster" Width="1.5" PointX="0.75" PointY="299" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_MenuPermission" Width="1.5" PointX="17.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_OrderDetails" Width="1.5" PointX="9.75" PointY="460.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Pages" Width="1.5" PointX="17.25" PointY="246.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Payments" Width="1.5" PointX="5.25" PointY="458.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_PaymentTypes" Width="1.5" PointX="3" PointY="459.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_PostCategory" Width="1.5" PointX="10.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_PostLike" Width="1.5" PointX="31.5" PointY="303.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_PostMeta" Width="1.5" PointX="17.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_ProductBrand" Width="1.5" PointX="17.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_ProductCart" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_ProductCoupon" Width="1.5" PointX="0.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_productpic" Width="1.5" PointX="20.25" PointY="321.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Products" Width="1.5" PointX="18" PointY="315.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_ProductsDetails" Width="1.5" PointX="20.25" PointY="327" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_ProductSize" Width="1.5" PointX="2.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_ReadPost" Width="1.5" PointX="8.25" PointY="251.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_RecentlyViews" Width="1.5" PointX="20.25" PointY="299.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Replies" Width="1.5" PointX="29.25" PointY="257.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_ReplyLike" Width="1.5" PointX="31.5" PointY="259.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Reviews" Width="1.5" PointX="17.25" PointY="300.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Services" Width="1.5" PointX="5.25" PointY="236.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Setting" Width="1.5" PointX="19.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_SettingMeta" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_ShippingDetails" Width="1.5" PointX="5.25" PointY="462.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Shop" Width="1.5" PointX="15.75" PointY="322.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Slider" Width="1.5" PointX="4.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_SliderItem" Width="1.5" PointX="7" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Social" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_SocialLink" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_SubCategory" Width="1.5" PointX="15.75" PointY="328.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_SubDepartments" Width="1.5" PointX="3" PointY="290.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Subscribe" Width="1.5" PointX="5.25" PointY="679.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Tag" Width="1.5" PointX="32.25" PointY="310" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbh_Wishlist" Width="1.5" PointX="11.25" PointY="300.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbl_file" Width="1.5" PointX="19.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tbl_Order" Width="1.5" PointX="7.5" PointY="456.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.tblVideo" Width="1.5" PointX="29.25" PointY="292.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Thread" Width="1.5" PointX="29.25" PointY="298.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.UserDto" Width="1.5" PointX="19.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Vendor" Width="1.5" PointX="15.75" PointY="332.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.WCFReply" Width="1.5" PointX="29.25" PointY="249.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.WCF" Width="1.5" PointX="23.25" PointY="300" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.WebApiReply" Width="1.5" PointX="14.25" PointY="300.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.WebApi" Width="1.5" PointX="5.25" PointY="247" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.webpages_Membership" Width="1.5" PointX="12.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.webpages_OAuthMembership" Width="1.5" PointX="14.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.webpages_Roles" Width="1.5" PointX="4.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.webpages_UsersInRoles" Width="1.5" PointX="7" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.Wishlist" Width="1.5" PointX="26.25" PointY="300.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.WPFReply" Width="1.5" PointX="11.25" PointY="247.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="angulardemoModel.WPF" Width="1.5" PointX="32.25" PointY="274" IsExpanded="true" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Ajaxes_dbo_Ajaxes_AjaxId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Ajaxes_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Ajaxes_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Ajaxes_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Ajaxes_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AjaxReplies_dbo_Ajaxes_AjaxId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AjaxReplies_dbo_AjaxReplies_AjaxReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AjaxReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AjaxReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AjaxReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AjaxReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AngularReplies_dbo_AngularReplies_AngularReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AngularReplies_dbo_Angulars_AngularId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AngularReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AngularReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AngularReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AngularReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Angulars_dbo_Angulars_AngularId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Angulars_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Angulars_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Angulars_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Angulars_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AspWebFormReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AspWebforms_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AzureReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Azures_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_C___dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_C__Replies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_C_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSharps_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSSes_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSSReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Databas_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DBAReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DBAs_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DBReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DotNetReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DotNets_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_EntityFrameWorks_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_EntityFReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_JavaReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Javas_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_JqJavaReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_JqJavas_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_MVCReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_MVCs_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NetCoreReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NetCores_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NLReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoSqlReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoSqls_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoteListReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoteLists_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NotesPageReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NotesPages_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSharp_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSS_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSSReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Databases_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_DBA_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_DBAReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_DBReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_EntityFrameWorks_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_EntityFReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_JqJava_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_JqJavaReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Mvc_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_MvcReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_QReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Question_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Webform_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_WebformReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Posts_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_ReactReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Reacts_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_ContactUs_dbo_AspNetUsers_AspNetUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Coupon_dbo_AspNetUsers_AspNetUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_DSReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_ReadPost_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_RecentlyViews_dbo_AspNetUsers_ApplicationUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Replies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Reviews_dbo_AspNetUsers_AspNetUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Subscribe_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Wishlist_dbo_AspNetUsers_AspNetUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbl_Order_dbo_AspNetUsers_AspNetUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tblVideos_dbo_AspNetUsers_AspNetUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Threads_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WCFReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WCFs_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WebApiReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WebApis_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Wishlists_dbo_AspNetUsers_AspNetUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WPFReplies_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WPFs_dbo_AspNetUsers_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AspWebFormReplies_dbo_AspWebFormReplies_AspWebFormReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AspWebFormReplies_dbo_AspWebforms_AspWebform_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AspWebFormReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AspWebFormReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AspWebFormReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AspWebforms_dbo_AspWebforms_AspWebform2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AspWebforms_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AspWebforms_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AspWebforms_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AzureReplies_dbo_AzureReplies_AzureReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AzureReplies_dbo_Azures_AzureId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AzureReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AzureReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_AzureReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Azures_dbo_Azures_AzureId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Azures_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Azures_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Azures_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_C_dbo_C_CId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_C_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_C_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_C_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CReplies_dbo_C_CId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_C___dbo_C___C__Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_C___dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_C___dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_C___dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_C__Replies_dbo_C___C__Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_C__Replies_dbo_C__Replies_C__Replies2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_C__Replies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_C__Replies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_C__Replies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Carts_dbo_Carts_Cart2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Carts_dbo_tbh_Products_tbh_Products_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CReplies_dbo_CReplies_CReplies2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSharps_dbo_CSharps_CSharp2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSharps_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSharps_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSharps_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSReplies_dbo_CSharps_CSharp_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Searches_dbo_CSharps_CSharp_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSReplies_dbo_CSReplies_CSReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSSes_dbo_CSSes_CSSId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSSes_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSSes_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSSes_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSSReplies_dbo_CSSes_CSSId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSSReplies_dbo_CSSReplies_CSSReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSSReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSSReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_CSSReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Databas_dbo_Databas_Databas1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Databas_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Databas_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Databas_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DBReplies_dbo_Databas_Databas_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Searches_dbo_Databas_Databas_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DBAReplies_dbo_DBAReplies_DBAReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DBAReplies_dbo_DBAs_DBAId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DBAReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DBAReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DBAReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DBAs_dbo_DBAs_DBAId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DBAs_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DBAs_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DBAs_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DBReplies_dbo_DBReplies_DBReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DBReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DBReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DBReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DotNetReplies_dbo_DotNetReplies_DotNetReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DotNetReplies_dbo_DotNets_DotNetId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DotNetReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DotNetReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DotNetReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DotNets_dbo_DotNets_DotNetId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DotNets_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DotNets_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_DotNets_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_EntityFrameWorks_dbo_EntityFrameWorks_EntityFrameWork2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_EntityFrameWorks_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_EntityFrameWorks_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_EntityFrameWorks_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_EntityFReplies_dbo_EntityFrameWorks_EntityFrameWork_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_EntityFReplies_dbo_EntityFReplies_EntityFReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_EntityFReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_EntityFReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_EntityFReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_genPromoRights_dbo_tbh_Category_tbh_Category_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_JavaReplies_dbo_JavaReplies_JavaReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_JavaReplies_dbo_Javas_JavaId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_JavaReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_JavaReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_JavaReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Javas_dbo_Javas_JavaId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Javas_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Javas_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Javas_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_JqJavaReplies_dbo_JqJavaReplies_JqJavaReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_JqJavaReplies_dbo_JqJavas_JqJavaId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_JqJavaReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_JqJavaReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_JqJavaReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_JqJavas_dbo_JqJavas_JqJavaId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_JqJavas_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_JqJavas_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_JqJavas_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Products_dbo_Manufacturers_ManufacturerId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_PhotoDtoes_dbo_MembersDtoes_MembersDto_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_MVCReplies_dbo_MVCReplies_MVCReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_MVCReplies_dbo_MVCs_MVCId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_MVCReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_MVCReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_MVCReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_MVCs_dbo_MVCs_MVCId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_MVCs_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_MVCs_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_MVCs_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NetCoreReplies_dbo_NetCoreReplies_NetCoreReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NetCoreReplies_dbo_NetCores_NetCoreId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NetCoreReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NetCoreReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NetCoreReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NetCores_dbo_NetCores_NetCoreId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NetCores_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NetCores_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NetCores_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NLReplies_dbo_NLReplies_NLReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoSqlReplies_dbo_NoSqlReplies_NoSqlReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoSqlReplies_dbo_NoSqls_NoSqlId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoSqlReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoSqlReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoSqlReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoSqls_dbo_NoSqls_NoSqlId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoSqls_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoSqls_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoSqls_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoteListReplies_dbo_NoteListReplies_NoteListReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoteListReplies_dbo_NoteLists_NoteListId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoteListReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoteListReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoteListReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoteLists_dbo_NoteLists_NoteListId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoteLists_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoteLists_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NoteLists_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NotesPageReplies_dbo_NotesPageReplies_NotesPageReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NotesPageReplies_dbo_NotesPages_NotesPageId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NotesPageReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NotesPageReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NotesPageReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NotesPages_dbo_NotesPages_NotesPageId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NotesPages_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NotesPages_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_NotesPages_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_PhotoDtoes_dbo_tbh_Membership_tbh_Membership_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSharp_dbo_Post_CSharp_Post_CSharp2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSharp_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSharp_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSharp_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSReplies_dbo_Post_CSharp_Post_CSharp_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSReplies_dbo_Post_CSReplies_Post_CSReplies2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSS_dbo_Post_CSS_Post_CSS2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSS_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSS_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSS_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSSReplies_dbo_Post_CSS_Post_CSS_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSSReplies_dbo_Post_CSSReplies_Post_CSSReplies2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSSReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSSReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_CSSReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Databases_dbo_Post_Databases_Post_Databases2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Databases_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Databases_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Databases_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_DBReplies_dbo_Post_Databases_Post_Databases_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_DBA_dbo_Post_DBA_Post_DBA2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_DBA_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_DBA_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_DBA_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_DBAReplies_dbo_Post_DBA_Post_DBA_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_DBAReplies_dbo_Post_DBAReplies_Post_DBAReplies2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_DBAReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_DBAReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_DBAReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_DBReplies_dbo_Post_DBReplies_Post_DBReplies2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_DBReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_DBReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_DBReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_EntityFrameWorks_dbo_Post_EntityFrameWorks_Post_EntityFrameWorks2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_EntityFrameWorks_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_EntityFrameWorks_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_EntityFrameWorks_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_EntityFReplies_dbo_Post_EntityFrameWorks_Post_EntityFrameWorks_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_EntityFReplies_dbo_Post_EntityFReplies_Post_EntityFReplies2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_EntityFReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_EntityFReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_EntityFReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_JqJava_dbo_Post_JqJava_Post_JqJava2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_JqJava_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_JqJava_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_JqJava_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_JqJavaReplies_dbo_Post_JqJava_Post_JqJava_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_JqJavaReplies_dbo_Post_JqJavaReplies_Post_JqJavaReplies2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_JqJavaReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_JqJavaReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_JqJavaReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Mvc_dbo_Post_Mvc_Post_Mvc2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Mvc_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Mvc_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Mvc_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_MvcReplies_dbo_Post_Mvc_Post_Mvc_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_MvcReplies_dbo_Post_MvcReplies_Post_MvcReplies2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_MvcReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_MvcReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_MvcReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_QReplies_dbo_Post_QReplies_Post_QReplies2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_QReplies_dbo_Post_Question_Post_Question_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_QReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_QReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_QReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Question_dbo_Post_Question_Post_Question2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Question_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Question_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Question_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Webform_dbo_Post_Webform_Post_Webform2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Webform_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Webform_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_Webform_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_WebformReplies_dbo_Post_Webform_Post_Webform_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_WebformReplies_dbo_Post_WebformReplies_Post_WebformReplies2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_WebformReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_WebformReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Post_WebformReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Posts_dbo_Posts_PostId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Posts_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Posts_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_DSReplies_dbo_Posts_PostId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_PostLike_dbo_Posts_PostId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_PostTags_dbo_tbh_Tag_tbh_Tag_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_PostTags_dbo_Threads_ThreadId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Products_dbo_Producers_Producer_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_ReactReplies_dbo_ReactReplies_ReactReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_ReactReplies_dbo_Reacts_ReactId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_ReactReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_ReactReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_ReactReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Reacts_dbo_Reacts_ReactId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Reacts_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Reacts_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Reacts_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Searches_dbo_Searches_SearchId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Category_dbo_tbh_Category_tbh_Category2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Products_dbo_tbh_Category_tbh_Category_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_SubCategory_dbo_tbh_Category_tbh_Category_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_CommentLike_dbo_tbh_Comments_tbh_Comments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Communications_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbl_Order_dbo_tbh_Coupon_tbh_Coupon_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Departments_dbo_tbh_Departments_tbh_Departments2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_DSReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_FrontSlider_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Gallery_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Pages_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Products_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Replies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Services_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Shop_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_SubDepartments_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbl_Order_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tblVideos_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Threads_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WCFReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WCFs_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WebApiReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WebApis_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WPFReplies_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WPFs_dbo_tbh_Departments_tbh_Departments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_DSReplies_dbo_tbh_DSReplies_tbh_DSReplies2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_DSReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_DSReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_FrontSlider_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Replies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Threads_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WCFReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WCFs_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WebApiReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WebApis_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WPFReplies_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WPFs_dbo_tbh_Language_tbh_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_SubDepartments_dbo_tbh_MenuMaster_tbh_MenuMaster_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_OrderDetails_dbo_tbh_Products_tbh_Products_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_OrderDetails_dbo_tbl_Order_OrderId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Pages_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Payments_dbo_tbh_PaymentTypes_tbh_PaymentTypes_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbl_Order_dbo_tbh_Payments_tbh_Payments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_PostLike_dbo_Threads_Thread_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_PostLike_dbo_Threads_Thread_Id1" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_PostLike_dbo_Threads_Thread1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_PostLike_dbo_Threads_ThreadId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_productpic_dbo_tbh_productpic_tbh_productpic2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_productpic_dbo_tbh_Products_tbh_Products_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Products_dbo_tbh_Products_tbh_Products2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Products_dbo_tbh_Shop_tbh_Shop_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Products_dbo_tbh_SubCategory_tbh_SubCategory_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Products_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Products_dbo_Vendors_Vendor_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_ProductsDetails_dbo_tbh_Products_tbh_Products_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_RecentlyViews_dbo_tbh_Products_tbh_Products_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Reviews_dbo_tbh_Products_tbh_Products_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Wishlist_dbo_tbh_Products_tbh_Products_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Wishlists_dbo_tbh_Products_tbh_Products_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_ReadPost_dbo_tbh_Replies_tbh_Replies_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_ReadPost_dbo_Threads_ThreadId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Replies_dbo_tbh_Replies_tbh_Replies2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Replies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_Replies_dbo_Threads_ThreadId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_ReplyLike_dbo_tbh_Replies_tbh_Replies_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_SettingMeta_dbo_tbh_SettingMeta_tbh_SettingMeta2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbl_Order_dbo_tbh_ShippingDetails_tbh_ShippingDetails_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_SliderItem_dbo_tbh_Slider_tbh_Slider_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_SocialLink_dbo_tbh_Social_tbh_Social_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbh_SubDepartments_dbo_tbh_SubDepartments_tbh_SubDepartments2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbl_Order_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tblVideos_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Threads_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WCFReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WCFs_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WebApiReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WebApis_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WPFReplies_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WPFs_dbo_tbh_SubDepartments_tbh_SubDepartments_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tbl_Order_dbo_tbl_Order_tbl_Order2_OrderId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_tblVideos_dbo_tblVideos_tblVideo2_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_Threads_dbo_Threads_ThreadId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WCFReplies_dbo_WCFReplies_WCFReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WCFReplies_dbo_WCFs_WCFId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WCFs_dbo_WCFs_WCFId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WebApiReplies_dbo_WebApiReplies_WebApiReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WebApiReplies_dbo_WebApis_WebApiId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WebApis_dbo_WebApis_WebApiId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_webpages_UsersInRoles_dbo_webpages_Roles_webpages_Roles_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WPFReplies_dbo_WPFReplies_WPFReply1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WPFReplies_dbo_WPFs_WPFId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.FK_dbo_WPFs_dbo_WPFs_WPFId" ManuallyRouted="false" />
+        <AssociationConnector Association="angulardemoModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,51 @@
+﻿@model MainProgram.Edm.AspNetUser
+
+@{
+    ViewBag.Title = "UserProfile";
+}
+
+<h2>UserProfile</h2>
+@{
+
+using (Html.BeginForm("GetUserProfile", "User", FormMethod.Get))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>User</h4>
+        <hr />
+       
+
+            <img src="@Html.DisplayFor(model => model.UserPhoto)" width="150" height="100" style="padding-right:15px; padding-left:15px; float:left; font-family:Arial;  font-size: 12px" multiple />
+      
+            <hr />
+
+            <div class="dl-horizontal">
+
+
+
+                <span>
+                    @Html.DisplayFor(model => model.UserName)
+                </span>
+
+
+
+             
+
+
+
+                <span>
+                    @Html.DisplayFor(model => model.FullName)
+                </span>
+
+
+
+
+
+            </div>
+               
+        }
+
+</div>
+}
+}

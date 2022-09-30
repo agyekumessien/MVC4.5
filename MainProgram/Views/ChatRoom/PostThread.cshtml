@@ -1,0 +1,56 @@
+﻿@model MainProgram.Edm.Thread
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+
+@{
+    ViewBag.Title = "PostThread";
+}
+
+<table class="pull-right" style="width:25%; margin-left:1%; margin-right:5%;  text-align:center">
+
+
+
+
+    <tr style="border:1px solid black">
+
+
+
+
+
+        <td>
+
+            <br /><br />
+            @using (Html.BeginForm("PostThread", "ChatRoom", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ImagePath, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <input type="file" name="ImageFile" required>
+                        </div>
+                    </div>
+                    <input type="text" name="ThreadText" placeholder="Type new Thread....."
+                           style="width:90%; height:100px; font-size:16px; margin-bottom:10px">
+                    <br />
+                    <input type="submit" value="post  Thread" class="btn btn-default"
+                           styles="margin-top:10px; margin-bottom:10px">
+
+                    </div>
+                    }
+
+
+</td>
+
+
+
+
+
+    </tr>
+    }
+
+</table>

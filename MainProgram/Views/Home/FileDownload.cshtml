@@ -1,0 +1,169 @@
+﻿@model MainProgram.Edm.tbh_Documents
+@*@model IEnumerable<MainProgram.Edm.tbh_Documents>*@
+    @*@model List<string>*@
+
+@{
+    ViewBag.Title = "FileDownload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Intellisence/css/jquery-ui.min.css" rel="stylesheet" />
+<script src="~/Content/Intellisence/js/jquery-1.10.2.min.js"></script>
+<script src="~/Content/Intellisence/js/jquery-ui.min.js"></script>
+
+
+<h2>Downloads</h2>
+
+
+
+
+@*<table class="tblFiles">
+    <tr>
+        <th>File Name</th>
+        <th>Link</th>
+    </tr>
+    @for (var i = 0; i <= Model.Count - 1; i++)
+    {
+        <tr>
+            <td>@Model[i].ToString() </td>
+            <td>@Html.ActionLink("Download", "FileDownload", "Home", new { FileName = @Model[i].ToString() }) </td>
+        </tr>
+    }
+</table>*@
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+    function AppendRow(id, FileName) {
+    var data = new FormData();
+    var files = $("#tblFiles tbody tr:last-child").get(0).files;
+    // Add the uploaded image content to the form data collection
+    if (files.length > 0) {
+        data.append("this.FileName", files[0]);
+    };
+};
+ </script>
+
+
+    <script type="text/javascript">
+            $(function(){
+                GetFiles();
+            });
+    function GetFiles() {
+        $.ajax({
+            type: "GET",
+            url: "/Home/FileDownload",
+            data: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (files) {
+                $.each(files, function () {
+                    AppendRow(this.id, this.FileName);
+                });
+            },
+            failure: function (r) {
+                alert(r.d);
+            },
+            error: function (r) {
+                alert(r.d);
+            }
+        });
+    };
+</script>
+
+    @*
+        function AppendRow(id, name) {
+            var row = $("#tblFiles tbody tr:last-child");
+
+            //Remove if the row is dummy row.
+            if (row.find("td:empty").length > 0) {
+                row.remove();
+            }
+
+            row = row.clone();
+            $("td", row).eq(0).html(id);
+            $("td", row).eq(1).html(name);
+            $("td", row).eq(2).html("");
+            var a = $("<a />");
+            a[0].href = '@Url.Content("~/Home/FileDownload?FileName=")' + id;
+            a.html("Download");
+            $("td", row).eq(2).append(a);
+            $("#tblFiles tbody").append(row);
+        };
+
+        $("body").on("click", "#btnUpload", function () {
+            $.ajax({
+                url: '@Url.Content("~/api/FileAPI/SaveFile")',
+                type: 'POST',
+                data: new FormData($('form')[0]),
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    $("#fileProgress").hide();
+                    AppendRow(response.id, response.Name);
+                },
+                xhr: function() {
+                    var fileXhr = $.ajaxSettings.xhr();
+                    if (fileXhr.upload) {
+                        $("progress").show();
+                        fileXhr.upload.addEventListener("progress", function (e) {
+                            if (e.lengthComputable) {
+                                $("#fileProgress").attr({
+                                    value: e.loaded,
+                                    max: e.total
+                                });
+                            }
+                        } , false);
+                    }
+                    return fileXhr;
+                }
+            });
+        });
+</script>
+
+<table class="tblFiles">
+    <tr>
+        <th>File Name</th>
+        <th>Link</th>
+    </tr>
+    @for (var i = 0; i <= MainProgram.Edm.tbh_Documents.Count - 1; i++)
+   {
+        <tr>
+            <td>@MainProgram.Edm.tbh_Documents.items[i].ToString() </td>
+            <td>@Html.ActionLink("Download", "FileDownload", "Home", new { FileName = @MainProgram.Edm.tbh_Documents.items[i].ToString() }) </td>
+        </tr>
+    }
+</table>*@
+
+
+
+<table class="table table-bordered">
+    <tr>
+        <th class="col-md-4">
+            @Html.DisplayNameFor(model => model.FileName)
+        </th>
+
+        <th class="col-md-2"></th>
+    </tr>
+
+    @for (var i = 0; i <= MainProgram.Edm.tbh_Documents.Count - 1; i++)
+    {
+        <tr>
+            <td>@MainProgram.Edm.tbh_Documents.items[i].ToString() </td>
+            <td>@Html.ActionLink("Download", "FileDownload", "Home", new { FileName = @MainProgram.Edm.tbh_Documents.items[i].ToString() }) </td>
+        </tr>
+    }
+    
+    }
+
+</table> 
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+}
+

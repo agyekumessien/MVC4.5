@@ -1,0 +1,34 @@
+﻿@{
+    Layout = null;
+}
+
+@helper Video(string id, string mp4Path, string WebmPath = null, string ogvPath = null,
+                                         bool needsControls = true, int width = 500, int height = 200)
+{
+    var controlsString = string.Empty;
+    if (needsControls)
+    {
+        controlsString = "controls = 'contrlols'";
+    }
+
+
+    <video controls="controls" id="@id" width="@width" height="@height">
+        @if (!string.IsNullOrEmpty(mp4Path))
+        {
+            <source src="@mp4Path" type="video/mp4" />
+        }
+        @if (!string.IsNullOrEmpty(WebmPath))
+        {
+            <source src="@WebmPath" type="video/webm" />
+        }
+        @if (!string.IsNullOrEmpty(ogvPath))
+        {
+            <source src="@ogvPath" type="video/ogg" />
+        }
+        <source src="~/Content/Video/Ad.mp4" type="video/mp4" />
+        <source src="file.Webm" type="video/webm" />
+        <source src="file.egv" type="video/ogg" />
+
+    </video>
+
+}

@@ -1,0 +1,640 @@
+﻿@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+
+@model IEnumerable<MainProgram.Edm.tbh_Departments>
+@using MainProgram.Models
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Dashboard </title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/Intellisence/css/jquery-ui.min.css" rel="stylesheet" />
+    <script src="~/Content/Intellisence/js/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/Intellisence/js/jquery-ui.min.js"></script>
+
+
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/Custom.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+    <!-- Bootstrap 3.3.2 -->
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- FontAwesome 4.3.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons 2.0.0 -->
+    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <!-- Theme style -->
+    <link href="~/Content/theme/dist/css/AdminLTE.min.css" rel="stylesheet" />
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link href="~/Content/theme/dist/css/skins/_all-skins.min.css" rel="stylesheet" />
+    <!-- iCheck -->
+    <link href="~/Content/theme/plugins/iCheck/flat/blue.css" rel="stylesheet" />
+
+    <!-- Morris chart -->
+    <link href="~/Content/theme/plugins/morris/morris.css" rel="stylesheet" />
+    <!-- jvectormap -->
+    <link href="~/Content/theme/plugins/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+    <!-- Date Picker -->
+    <link href="~/Content/theme/plugins/datepicker/datepicker3.css" rel="stylesheet" />
+    <!-- Daterange picker -->
+    <link href="~/Content/theme/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link href="~/Content/theme/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" />
+
+  
+
+   
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google Font -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    @{
+       
+        Layout = "~/Views/Shared/_LayoutN.cshtml";
+    }
+
+</head>
+<body class="skin-blue">
+    <div class="wrapper">
+
+      
+
+        <div class="content-wrapper" style="width: 15%; margin-left: 0px; width:100%; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+
+
+            <section class="content-header" style="margin-left:0px; top:2px;">
+
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="#">
+                            <i class="headerA"></i>
+                        </a>
+                    </li>
+                    <li class="active"></li>
+                </ol>
+            </section>
+
+            <!-- left sidebar-->
+            <div class="left" style="width: 15%; float:left; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+                <div class="Container">
+                    <div class="col-md-4">
+                        <div class="container">
+
+
+                            <div class="panel panel-default" style="width: 15%">
+                                <div class=" panel-body  no-gutter">
+                                    <div col-md-4">
+                                        <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+                                            <!-- Left side column. contains the logo and sidebar -->
+                                            <aside class="main-sidebar">
+                                                <!-- sidebar: style can be found in sidebar.less -->
+                                                <section class="sidebar" style="width:100%">
+
+                                                    <!-- Sidebar user panel -->
+                                                    <div class="user-panel">
+                                                        <div class="pull-left image">
+                                                            <img src="~/Content/theme/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+                                                        </div>
+                                                        <div class="pull-left info">
+                                                            <p>Alexander Pierce</p>
+                                                            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- search form -->
+                                                    <form action="#" method="get" class="sidebar-form">
+                                                        <div class="input-group">
+                                                            <input type="text" name="q" class="form-control" placeholder="Search..." />
+                                                            <span class="input-group-btn">
+                                                                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                                                            </span>
+                                                        </div>
+                                                    </form>
+                                                    <!-- /.search form -->
+                                                    <!-- sidebar menu: : style can be found in sidebar.less -->
+
+                                                    
+
+
+
+                                                    <ul class="sidebar-menu">
+                                                        <li class="header">MAIN NAVIGATION</li>
+                                                        <li class="active treeview">
+                                                            <a href="#">
+                                                                <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+                                                            </a>
+
+                                                        </li>
+                                                        <li class="active treeview">
+                                                            <a href="#">
+                                                                <i class="fa fa-folder-open"></i><span>JavaScript</span><i class="fa fa-angle-left pull-right"></i>
+                                                            </a>
+                                                            <ul class="treeview-menu">
+                                                                <li class="active">
+                                                                <li><a href="~/Admin/infoProducts/Index"><i class="fa fa-fa fa-arrow-right"></i>Introduction</a></li>
+                                                                <li class="active">
+                                                                <li><a href="products-edit.html"><i class="fa fa-fa fa-arrow-right"></i>Explain JavaScript</a></li>
+                                                                <li class="active">
+                                                                <li><a href="~/Admin/Order/Index"><i class="fa fa-fa fa-arrow-right"></i>Evironmental Setup</a></li>
+                                                                <li class="active">
+                                                                <li><a href="order-view.html"><i class="fa fa-fa fa-arrow-right"></i>Html</a></li>
+
+                                                                <li><a href="~/Admin/infoProducts/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScrit Syntax</a></li>
+                                                                <li class="active">
+                                                                <li><a href="products-edit.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Pop Message</a></li>
+                                                                <li class="active">
+                                                                <li><a href="~/Admin/Order/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Variables</a></li>
+                                                                <li class="active">
+                                                                <li><a href="order-view.html"><i class="fa fa-fa fa-arrow-right"></i>Javascript Operators</a></li>
+
+
+                                                                <li><a href="~/Admin/infoProducts/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Data Types</a></li>
+                                                                <li class="active">
+                                                                <li><a href="products-edit.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript String</a></li>
+                                                                <li class="active">
+                                                                <li><a href="~/Admin/Order/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScript String Methods</a></li>
+                                                                <li class="active">
+                                                                <li><a href="order-view.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Numbers</a></li>
+
+                                                                <li><a href="~/Admin/infoProducts/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Booleans</a></li>
+                                                                <li class="active">
+                                                                <li><a href="products-edit.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Objects</a></li>
+                                                                <li class="active">
+                                                                <li><a href="~/Admin/Order/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Date</a></li>
+                                                                <li class="active">
+                                                                <li><a href="order-view.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Array</a></li>
+
+
+
+                                                                <li><a href="~/Admin/infoProducts/Index"><i class="fa fa-fa fa-arrow-right"></i>Array Methods Reference</a></li>
+                                                                <li class="active">
+                                                                <li><a href="products-edit.html"><i class="fa fa-fa fa-arrow-right"></i>null and undefined in JavaScript</a></li>
+                                                                <li class="active">
+                                                                <li><a href="~/Admin/Order/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Functions</a></li>
+                                                                <li class="active">
+                                                                <li><a href="order-view.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript if else Condition</a></li>
+
+                                                                <li><a href="~/Admin/infoProducts/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScript switch</a></li>
+                                                                <li class="active">
+                                                                <li><a href="products-edit.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript for Loop</a></li>
+                                                                <li class="active">
+                                                                <li><a href="~/Admin/Order/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScript - While Loop</a></li>
+                                                                <li class="active">
+                                                                <li><a href="order-view.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Array</a></li>
+
+
+
+                                                                <li><a href="~/Admin/infoProducts/Index"><i class="fa fa-fa fa-arrow-right"></i>Scope in JavaScript</a></li>
+                                                                <li class="active">
+                                                                <li><a href="products-edit.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript eval</a></li>
+                                                                <li class="active">
+                                                                <li><a href="~/Admin/Order/Index"><i class="fa fa-fa fa-arrow-right"></i>Error handling in JavaScript</a></li>
+                                                                <li class="active">
+                                                                <li><a href="order-view.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript strict mode</a></li>
+
+
+                                                                <li><a href="~/Admin/infoProducts/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Hoisting</a></li>
+
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <i class="fa fa-folder-open"></i>
+                                                                        <span>Advance JavaScript</span><i class="fa fa-angle-left pull-left"></i>
+                                                                    </a>
+                                                                </li>
+
+                                                                <li class="active">
+                                                                <li><a href="products-edit.html"><i class="fa fa-fa fa-arrow-right"></i>Define Class in JavaScript</a></li>
+                                                                <li class="active">
+                                                                <li><a href="~/Admin/Order/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Object in Depth</a></li>
+                                                                <li class="active">
+                                                                <li><a href="order-view.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript - this Keyword</a></li>
+
+
+                                                                <li><a href="products-edit.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript new Keyword</a></li>
+                                                                <li class="active">
+                                                                <li><a href="~/Admin/Order/Index"><i class="fa fa-fa fa-arrow-right"></i>Inheritance in JavaScript</a></li>
+                                                                <li class="active">
+                                                                <li><a href="order-view.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Closure</a></li>
+                                                                <li><a href="order-view.html"><i class="fa fa-fa fa-arrow-right"></i>Function Expression - IIFE</a></li>
+                                                            </ul>
+                                                        </li>
+
+                                                    </ul>
+
+
+                                                </section>
+                                                <!-- /.sidebar -->
+                                            </aside>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+
+                        </div>
+                        <!--End of Container-->
+
+                        <hr />
+
+                        <!--Second-->
+                        <!--End of Third-->
+
+
+                    </div>
+                </div>
+            </div>
+            <!--End Of Left-->
+            <!-- Right-->
+            <!--End Of Right-->
+            <!--MID Sidebar Main content-->
+            <div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+               
+                <!-- Content Wrapper. Contains page content -->
+                <div class="content-wrapper">
+                    <!-- Content Header (Page header) -->
+                    
+                    <!-- Main content -->
+                    <section class="content">
+                        <div class="row">
+                            
+                            <!-- /.col -->
+                            <div class="  col-md-12">
+                                <div class="box box-primary">
+                                    <div class="box-header with-border">
+                                      
+                                        
+                                        <!-- /.box-tools -->
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <div class="box-body no-padding">
+                                        <div class="mailbox-controls">
+                                            <!-- Check all button -->
+                                            <button type="button" class="btn btn-default btn-sm checkbox-toggle">
+                                                <i class="fa fa-square-o"></i>
+                                            </button>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
+                                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
+                                            </div>
+                                            <!-- /.btn-group -->
+                                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                                            <div class="pull-right">
+                                                1-50/200
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                                                </div>
+                                                <!-- /.btn-group -->
+                                            </div>
+                                            <!-- /.pull-right -->
+                                        </div>
+                                        <div class="table-responsive mailbox-messages">
+                                            <table class="table table-hover table-striped">
+                                                <tbody>
+                                                    <tr>
+                                                        <td><input type="checkbox"></td>
+                                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                                        <td class="mailbox-name"><a href="readmail">Alexander Pierce</a></td>
+                                                        <td class="mailbox-subject">
+                                                            <b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
+                                                        </td>
+                                                        <td class="mailbox-attachment"></td>
+                                                        <td class="mailbox-date">5 mins ago</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox"></td>
+                                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                                        <td class="mailbox-name"><a href="readmail">Alexander Pierce</a></td>
+                                                        <td class="mailbox-subject">
+                                                            <b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
+                                                        </td>
+                                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                                        <td class="mailbox-date">28 mins ago</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox"></td>
+                                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                                        <td class="mailbox-name"><a href="readmail">Alexander Pierce</a></td>
+                                                        <td class="mailbox-subject">
+                                                            <b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
+                                                        </td>
+                                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                                        <td class="mailbox-date">11 hours ago</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox"></td>
+                                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                                        <td class="mailbox-name"><a href="readmail">Alexander Pierce</a></td>
+                                                        <td class="mailbox-subject">
+                                                            <b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
+                                                        </td>
+                                                        <td class="mailbox-attachment"></td>
+                                                        <td class="mailbox-date">15 hours ago</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox"></td>
+                                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                                        <td class="mailbox-name"><a href="readmail">Alexander Pierce</a></td>
+                                                        <td class="mailbox-subject">
+                                                            <b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
+                                                        </td>
+                                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                                        <td class="mailbox-date">Yesterday</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox"></td>
+                                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                                        <td class="mailbox-name"><a href="readmail">Alexander Pierce</a></td>
+                                                        <td class="mailbox-subject">
+                                                            <b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
+                                                        </td>
+                                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                                        <td class="mailbox-date">2 days ago</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox"></td>
+                                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                                        <td class="mailbox-name"><a href="readmail">Alexander Pierce</a></td>
+                                                        <td class="mailbox-subject">
+                                                            <b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
+                                                        </td>
+                                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                                        <td class="mailbox-date">2 days ago</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox"></td>
+                                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                                        <td class="mailbox-name"><a href="rreadmail">Alexander Pierce</a></td>
+                                                        <td class="mailbox-subject">
+                                                            <b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
+                                                        </td>
+                                                        <td class="mailbox-attachment"></td>
+                                                        <td class="mailbox-date">2 days ago</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox"></td>
+                                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                                        <td class="mailbox-name"><a href="readmail">Alexander Pierce</a></td>
+                                                        <td class="mailbox-subject">
+                                                            <b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
+                                                        </td>
+                                                        <td class="mailbox-attachment"></td>
+                                                        <td class="mailbox-date">2 days ago</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox"></td>
+                                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                                        <td class="mailbox-name"><a href="readmail">Alexander Pierce</a></td>
+                                                        <td class="mailbox-subject">
+                                                            <b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
+                                                        </td>
+                                                        <td class="mailbox-attachment"></td>
+                                                        <td class="mailbox-date">2 days ago</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox"></td>
+                                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                                        <td class="mailbox-name"><a href="read-mail">Alexander Pierce</a></td>
+                                                        <td class="mailbox-subject">
+                                                            <b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
+                                                        </td>
+                                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                                        <td class="mailbox-date">4 days ago</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox"></td>
+                                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                                        <td class="mailbox-name"><a href="read-mail">Alexander Pierce</a></td>
+                                                        <td class="mailbox-subject">
+                                                            <b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
+                                                        </td>
+                                                        <td class="mailbox-attachment"></td>
+                                                        <td class="mailbox-date">12 days ago</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox"></td>
+                                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                                        <td class="mailbox-name"><a href="read-mail">Alexander Pierce</a></td>
+                                                        <td class="mailbox-subject">
+                                                            <b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
+                                                        </td>
+                                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                                        <td class="mailbox-date">12 days ago</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox"></td>
+                                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                                        <td class="mailbox-name"><a href="read-mail">Alexander Pierce</a></td>
+                                                        <td class="mailbox-subject">
+                                                            <b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
+                                                        </td>
+                                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                                        <td class="mailbox-date">14 days ago</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox"></td>
+                                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                                        <td class="mailbox-name"><a href="read-mail">Alexander Pierce</a></td>
+                                                        <td class="mailbox-subject">
+                                                            <b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
+                                                        </td>
+                                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                                        <td class="mailbox-date">15 days ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <!-- /.table -->
+                                        </div>
+                                        <!-- /.mail-box-messages -->
+                                    </div>
+                                    <!-- /.box-body -->
+                                    <div class="box-footer no-padding">
+                                        <div class="mailbox-controls">
+                                            <!-- Check all button -->
+                                            <button type="button" class="btn btn-default btn-sm checkbox-toggle">
+                                                <i class="fa fa-square-o"></i>
+                                            </button>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
+                                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
+                                            </div>
+                                            <!-- /.btn-group -->
+                                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                                            <div class="pull-right">
+                                                1-50/200
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                                                </div>
+                                                <!-- /.btn-group -->
+                                            </div>
+                                            <!-- /.pull-right -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /. box -->
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                    </section>
+                    <!-- /.content -->
+                </div>
+                <!-- /.content-wrapper -->
+
+            </div>
+        </div><!--End Of MID-->
+
+
+
+
+
+
+
+    </div>
+
+
+   
+
+
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/ontent/theme/dist/js/demo.js" type="text/javascript"></script>
+    <script src="Content/theme/bower_components/moment/moment.js"></script>
+    <script src="~/Content/theme/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <link href="~/Content/theme/plugins/fullcalendar/fullcalendar.print.css" rel="stylesheet" />
+    <link href="~/Content/theme/plugins/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <script src="~/Content/theme/plugins/fullcalendar/fullcalendar.js"></script>
+
+    <link href="~/Content/theme/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" />
+
+    <!-- jQuery 3 -->
+    <script src="~/Content/theme/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="~/Content/theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/Content/theme/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/dist/js/adminlte.min.js"></script>
+
+    <script src="~/Content/theme/bower_components/chart.js/Chart.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="~/Content/theme/bower_components/fastclick/lib/fastclick.js"></script>
+
+    @*
+            <!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/jquery-ui.min.js"></script>
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
+            <script src="assets/js/perfect-scrollbar.min.js"></script>
+            <script src="assets/js/jquery.sparkline.min.js"></script>
+            <script src="assets/js/raphael.min.js"></script>
+            <script src="assets/js/morris.min.js"></script>
+            <script src="assets/js/select2.min.js"></script>
+            <script src="assets/js/jquery-jvectormap.min.js"></script>
+            <script src="assets/js/jquery-jvectormap-world-mill.min.js"></script>
+            <script src="assets/js/horizontal-timeline.min.js"></script>
+            <script src="assets/js/jquery.validate.min.js"></script>
+            <script src="assets/js/jquery.steps.min.js"></script>
+            <script src="assets/js/dropzone.min.js"></script>
+            <script src="assets/js/ion.rangeSlider.min.js"></script>
+            <script src="assets/js/datatables.min.js"></script>
+            <script src="assets/js/main.js"></script>
+            <!-- Page Level Scripts -->
+            <script src="assets/js/page/chat.js"></script>
+
+            @section ScriptsOrCss
+        {
+
+                <link href="~/Content/DataTable/new/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+                <script src="~/Content/DataTable/new/jquery.dataTables.min.js" type="text/javascript"></script>
+                <script src="~/Content/DataTable/new/dataTables.buttons.min.js" type="text/javascript"></script>
+                <script src="~/Content/DataTable/new/jszip.min.js" type="text/javascript"></script>
+                <script src="~/Content/DataTable/new/pdfmake.min.js" type="text/javascript"></script>
+                <script src="~/Content/DataTable/new/vfs_fonts.js" type="text/javascript"></script>
+                <script src="~/Content/DataTable/new/buttons.html5.min.js" type="text/javascript"></script>
+                <link href="~/Content/DataTable/new/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+                <link href="~/Content/DataTable/new/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+                <script src="~/Content/DataTable/new/buttons.print.min.js"></script>
+                <script src="~/Content/DataTable/new/buttons.colVis.min.js"></script>
+            }
+
+    *@
+    <style>
+        .content-wrapper {
+            margin-top: 0%;
+            margin-left: 0%;
+            background-position: top;
+        }
+
+        #left {
+            width: 20%;
+            margin-left: 0%;
+            margin-top: 0%;
+            background-position: top;
+            position: relative;
+            background-color: #eee3e3;
+        }
+
+
+
+        .Mid-sidebar {
+            content: " ";
+            position: relative;
+            margin-top: 0%;
+            width: 80%;
+            overflow: no-display;
+            padding-right: 0px;
+            margin-left: 20%;
+            margin-right: 0%;
+            background-position: top;
+            margin-bottom: 0px;
+            background-color: #fff;
+            height:1000px;
+        }
+
+
+        .SiteT {
+            width: 100%;
+            border: none;
+            margin-right: 0px;
+            padding-right: 0px;
+        }
+
+
+
+
+        .main--container {
+            margin-left: 17px;
+        }
+    </style>
+
+
+
+
+
+
+ 
+</body>
+</html>
+

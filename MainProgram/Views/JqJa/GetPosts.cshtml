@@ -1,0 +1,518 @@
+﻿@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+
+@model MainProgram.Edm.JqJava
+@using MainProgram.Models
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Dashboard </title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/Intellisence/css/jquery-ui.min.css" rel="stylesheet" />
+    <script src="~/Content/Intellisence/js/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/Intellisence/js/jquery-ui.min.js"></script>
+
+
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/Custom.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+    <!-- Bootstrap 3.3.2 -->
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- FontAwesome 4.3.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons 2.0.0 -->
+    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <!-- Theme style -->
+    <link href="~/Content/theme/dist/css/AdminLTE.min.css" rel="stylesheet" />
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link href="~/Content/theme/dist/css/skins/_all-skins.min.css" rel="stylesheet" />
+    <!-- iCheck -->
+    <link href="~/Content/theme/plugins/iCheck/flat/blue.css" rel="stylesheet" />
+
+    <!-- Morris chart -->
+    <link href="~/Content/theme/plugins/morris/morris.css" rel="stylesheet" />
+    <!-- jvectormap -->
+    <link href="~/Content/theme/plugins/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+    <!-- Date Picker -->
+    <link href="~/Content/theme/plugins/datepicker/datepicker3.css" rel="stylesheet" />
+    <!-- Daterange picker -->
+    <link href="~/Content/theme/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link href="~/Content/theme/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" />
+
+
+
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google Font -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    @{
+
+        Layout = "~/Views/Shared/_LayoutN.cshtml";
+    }
+
+</head>
+<body>
+    <section class="hero is-info is-fullheight is-bold">
+
+
+
+
+
+
+
+
+        <div style="width:100%; margin-right:0px; padding-right:0px; margin-top:10px; text-align:center; background-color:#fff">
+            <div class="panel2" style="width: 100%; padding-left: 0px; padding-right: 0px;">
+                <div class="row mt-4 mb-6 mb-12">
+
+                    <div class="hero-body   mt-4 mb-6 mb-12" style="background-color: #fff; margin-right:0px; padding-right:0px; text-align:center">
+
+                        <div class="wrapper">
+
+
+
+                            <div class="content-wrapper" style=" margin-left: 0px; width:100%; top:0px;">
+
+
+
+
+                                <!-- left sidebar-->
+                                <div id="fadeshow1" class="left" style="width: 30%;  float:left; top:0px; background-color:#fff">
+                                    <aside style="background-color:#fff">
+                                        <!-- sidebar: style can be found in sidebar.less -->
+                                        <section style="background-color:#fff; padding-left:10px; padding-right:30px">
+                                            <!-- search form -->
+
+                                            <fieldset style="padding-right:20px; margin-left:20px; background-color:#f1f1f1; border:solid thin 1px; border-color:#fff">
+                                                <div class="input-group" style="width:100%;background-color:white;color:black">
+                                                    <form action="#" method="get" class="sidebar-form" style="width:100%; float:left ; padding-left:0px; padding-right:0px; padding-top:0px">
+
+                                                        <div class="input-group" style="border:solid thin 2px;">
+                                                            <input type="text" name="q" class="form-control" placeholder="Search..." style="border:none">
+                                                            <span class="input-group-btn" style="background-color:white">
+                                                                <button type="submit" name="search" id="search-btn" class="btn btn-flat" style="background-color:#fff;">
+                                                                    <i class=" fa fa-search">
+                                                                    </i>
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </form>
+                                                    <hr style="color:#000; width:100%" />
+                                                    <strong style="font-size:x-large; color:black; float:left; text-decoration:underline"><b>JAVASCRIPT CONCEPTS</b></strong>
+                                                    <div>
+
+                                                        <ul class=" sidebar-menu pull-left" style="width:100%; ">
+
+
+                                                            <li class="active treeview pull-left" style="width:100%; text-align:left">
+
+                                                                <ul class="treeview-menu pull-left" style="width:100%; text-align:left">
+                                                                    <li>
+                                                                        <a href="~/JqJa/GetPosts">
+                                                                            <i class="fa fa-fa fa-arrow-right"></i>
+                                                                            <span>JavaScript Interviews Questions</span><i class="caret" style="float:right"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li><a href="~/JqJa/Tutorial"><i class="fa fa-fa fa-arrow-right"></i>JavaScrit Tutorial</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="#" style="color:#000"><i class="fa fa-dot-circle-o"></i>Introduction</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="#" style="color:#000"><i class="fa fa-dot-circle-o"></i>Explain JavaScript</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="#" style="color:#000"><i class="fa fa-dot-circle-o"></i>Evironmental Setup</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="#" style="color:#000"><i class="fa fa-dot-circle-o"></i>Evironmental Setup</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="#" style="color:#000"><i class="fa fa-dot-circle-o"></i>Html</a></li>
+
+
+                                                                    <li><a href="~/JqJa/Syntax"><i class=" fa fa-fa fa-arrow-right"></i>JavaScrit Syntax</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="#" style="color:#000"><i class="fa fa-dot-circle-o"></i>JavaScript Pop Message</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="#" style="color:#000"><i class="fa fa-dot-circle-o"></i>JavaScript Variables</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="#" style="color:#000"><i class="fa fa-dot-circle-o"></i>Javascript Operators</a></li>
+
+
+                                                                    <li><a href="#" style="color:#000"><i class="fa fa-dot-circle-o"></i>JavaScript Data Types</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="products-edit.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript String</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="~/Admin/Order/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScript String Methods</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="order-view.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Numbers</a></li>
+
+                                                                    <li><a href="~/Admin/infoProducts/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Booleans</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="products-edit.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Objects</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="~/Admin/Order/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Date</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="order-view.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Array</a></li>
+
+
+
+                                                                    <li><a href="~/Admin/infoProducts/Index"><i class="fa fa-fa fa-arrow-right"></i>Array Methods Reference</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="products-edit.html"><i class="fa fa-fa fa-arrow-right"></i>null and undefined in JavaScript</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="~/Admin/Order/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Functions</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="order-view.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript if else Condition</a></li>
+
+                                                                    <li><a href="~/Admin/infoProducts/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScript switch</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="products-edit.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript for Loop</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="~/Admin/Order/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScript - While Loop</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="order-view.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Array</a></li>
+
+
+
+                                                                    <li><a href="~/Admin/infoProducts/Index"><i class="fa fa-fa fa-arrow-right"></i>Scope in JavaScript</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="products-edit.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript eval</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="~/Admin/Order/Index"><i class="fa fa-fa fa-arrow-right"></i>Error handling in JavaScript</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="order-view.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript strict mode</a></li>
+
+
+                                                                    <li><a href="~/Admin/infoProducts/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Hoisting</a></li>
+
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <i class="fa fa-folder-open"></i>
+                                                                            <span>Advance JavaScript</span><i class="fa fa-angle-left pull-left"></i>
+                                                                        </a>
+                                                                    </li>
+
+                                                                    <li class="active">
+                                                                    <li><a href="products-edit.html"><i class="fa fa-fa fa-arrow-right"></i>Define Class in JavaScript</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="~/Admin/Order/Index"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Object in Depth</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="order-view.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript - this Keyword</a></li>
+
+
+                                                                    <li><a href="products-edit.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript new Keyword</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="~/Admin/Order/Index"><i class="fa fa-fa fa-arrow-right"></i>Inheritance in JavaScript</a></li>
+                                                                    <li class="active">
+                                                                    <li><a href="order-view.html"><i class="fa fa-fa fa-arrow-right"></i>JavaScript Closure</a></li>
+                                                                    <li><a href="order-view.html"><i class="fa fa-fa fa-arrow-right"></i>Function Expression - IIFE</a></li>
+                                                                </ul>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div style="width: 100%;  padding-left: 8px; padding-right:8px; border:none; text-align:left; padding-left:10px; background-color:#000; padding-bottom:-30px">
+
+                                                    <strong style="font-size:x-large; color:white"><b>Related Topics</b></strong>
+                                                    @{
+
+
+                                                        MainProgram.Edm.angulardemoEntities dbgr = new MainProgram.Edm.angulardemoEntities();
+
+                                                        List<MainProgram.Edm.JqJava> Modelr = dbgr.JqJavas.ToList();
+
+                                                        foreach (MainProgram.Edm.JqJava item in Modelr)
+                                                        {
+                                                            <ul>
+                                                                <li>
+
+                                                                    <a href="@Url.Action("Details", "JqJava", new { id = item.JqJavaId })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                                        @item.JqJavaTitle
+
+                                                                    </a>
+
+
+                                                                </li>
+                                                            </ul>
+                                                        }
+                                                    }
+
+
+
+
+
+
+
+                                                </div>
+                                            </fieldset>
+
+                                        </section>
+                                        <!-- /.sidebar -->
+                                    </aside>
+                                </div>
+                                <!--End Of Left-->
+                                <!--MID Sidebar Main content-->
+                                <!-- Content Wrapper. Contains page content -->
+                                <div id="fadeshow1" class="Mid-sidebar" style=" border-radius:0px">
+
+                                    <!-- Main content -->
+                                    <section>
+                                        <div style="border-radius:0px">
+
+                                            <!-- /.col -->
+                                            <div>
+                                                <div>
+                                                    <div style="width: 100%; margin-left: 0px; border-radius:0px">
+                                                       
+                                                            <strong style="font-size:x-large"><b> JqJava Top questions</b></strong>
+                                                            <hr />
+
+                                                            <fieldset>
+                                                                @using (Html.BeginForm("Index", "JqJava", FormMethod.Get))
+                                                                {
+                                                                    <p>
+                                                                        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+                                                                        <input type="submit" value="Search" />
+                                                                    </p>
+                                                                }
+
+
+                                                                <br />
+
+
+
+
+
+                                                            </fieldset>
+
+                                                    
+
+
+                                                            <p>
+
+                                                                @Html.ActionLink("New Post", "Create", "JqJava")
+
+                                                            </p>
+
+
+
+                                                            <fieldset>
+                                                                <strong style="font-size:x-large"><b>Recent Post</b></strong>
+
+                                                                <div class="table">
+                                                                    <ul>
+
+                                                                        @{
+
+
+                                                                            MainProgram.Edm.angulardemoEntities dbg = new MainProgram.Edm.angulardemoEntities();
+
+                                                                            List<MainProgram.Edm.JqJava> Modelg = dbg.JqJavas.ToList();
+
+
+                                                                            <li>
+                                                                                <table class="table text-center;" style="width:100%; margin:0%; text-align:center">
+
+
+                                                                                    @foreach (MainProgram.Edm.JqJava item in Modelg.Distinct())
+                                                                                    {
+
+                                                                                        <tr style="border:1px solid white">
+
+                                                                                            <td>
+
+
+                                                                                                <span>
+                                                                                                    <img src="~/Content/images/user/anonymous.png" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /><br />
+
+                                                                                                    @*<img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /><br />*@
+
+
+                                                                                                </span>
+                                                                                                <span style="margin-right:5px; font-size:16px; color:black">
+                                                                                                    <b style="color:black; float:left"> @item.AspNetUser.UserName</b>
+                                                                                                </span>
+                                                                                                <span style="margin-right:15px; font-size:16px; color:black">
+                                                                                                    <b>@item.JqJavaTitle</b>
+                                                                                                </span>
+                                                                                                <br />
+                                                                                                <span style="margin-right:15px; font-size:16px; color:black">
+                                                                                                    <br /> @Html.Raw(@item.JqJavaText)
+                                                                                                </span>
+
+
+
+                                                                                            </td>
+
+                                                                                        </tr>
+                                                                                    }
+
+                                                                                </table>
+
+
+                                                                            </li>
+                                                                        }
+
+
+
+
+
+
+                                                                    </ul>
+
+
+
+                                                                </div>
+
+
+
+
+
+
+                                                            </fieldset>
+
+
+                                                       
+
+
+
+
+                                                        <br />
+
+
+                                                        <div>
+                                                            @Html.ActionLink("Back to HomePage", "Index", "Home")
+                                                        </div>
+                                                    </div>
+                                                    <!-- /. box -->
+                                                </div>
+                                                <!-- /.col -->
+                                            </div>
+                                        </div>
+                                        <!-- /.row -->
+                                    </section>
+                                    <!-- /.content -->
+                                </div>
+                                <!-- /.content-wrapper -->
+
+                            </div>
+                        </div><!--End Of MID-->
+
+
+
+
+
+
+
+                    </div>
+
+
+                    <style>
+                        @@media only screen and (max-width:1026px) {
+                            #fadeshow1 {
+                                display: none;
+                            }
+                        }
+                    </style>
+
+
+                    <style>
+                        .content-wrapper {
+                            margin-top: 0%;
+                            margin-left: 0%;
+                            background-position: top;
+                        }
+
+                        #left {
+                            width: 30%;
+                            margin-left: 0%;
+                            margin-top: 0%;
+                            background-position: top;
+                            position: relative;
+                            background-color: #eee3e3;
+                        }
+
+
+
+                        .Mid-sidebar {
+                            content: " ";
+                            position: relative;
+                            margin-top: 0%;
+                            width: 72%;
+                            overflow: no-display;
+                            padding-right: 30px;
+                            margin-left: 28%;
+                            margin-right: 0%;
+                            background-position: top;
+                            margin-bottom: 0px;
+                            background-color: #fff;
+                        }
+
+
+                        .SiteT {
+                            width: 100%;
+                            border: none;
+                            margin-right: 0px;
+                            padding-right: 0px;
+                        }
+
+
+
+                        #bcolor {
+                            background-image: url(/Content/images/HomePic/bg.jpeg);
+                        }
+                    </style>
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+</body>
+</html>
+
+<!-- AdminLTE for demo purposes -->
+<script src="~/ontent/theme/dist/js/demo.js" type="text/javascript"></script>
+
+
+
+<script src="Content/theme/bower_components/moment/moment.js"></script>
+<script src="~/Content/theme/plugins/fullcalendar/fullcalendar.min.js"></script>
+<link href="~/Content/theme/plugins/fullcalendar/fullcalendar.print.css" rel="stylesheet" />
+<link href="~/Content/theme/plugins/fullcalendar/fullcalendar.css" rel="stylesheet" />
+<script src="~/Content/theme/plugins/fullcalendar/fullcalendar.js"></script>
+
+<link href="~/Content/theme/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" />
+
+<!-- jQuery 3 -->
+<script src="~/Content/theme/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="~/Content/theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="~/Content/theme/bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="~/dist/js/adminlte.min.js"></script>
+
+<script src="~/Content/theme/bower_components/chart.js/Chart.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="~/Content/theme/bower_components/fastclick/lib/fastclick.js"></script>

@@ -1,0 +1,271 @@
+﻿@using MainProgram.Core.Resources
+@model MainProgram.Controllers.CategoryViewModel
+@using MainProgram.Core
+@using MainProgram.Models
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+
+
+@{
+    ViewBag.Title = "Create Category";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Subscribe</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/Intellisence/css/jquery-ui.min.css" rel="stylesheet" />
+    <script src="~/Content/Intellisence/js/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/Intellisence/js/jquery-ui.min.js"></script>
+
+
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/Custom.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body class="skin-blue">
+    <br />
+
+    <div class="wrapper">
+
+
+
+        <div class="content-wrapper" style="width: 15%; margin-left: 0px; width:100%; top:0px; background: #d2d6de; ">
+
+
+            <br />
+            <!-- left sidebar-->
+            <div class="left" style="width: 17%; float:left; top:0px;">
+
+            </div>
+            <!--End Of Left-->
+            <!-- Right-->
+            <div class="right" style="width: 21%; float:right; margin-right:8px; padding-right:8px; top:0px;">
+                <div class="Container">
+                    <div class="col-md-4">
+                        <!--End of Container-->
+
+
+
+
+                    </div>
+                </div>
+            </div><!--End Of Right-->
+            <!--MID Sidebar Main content-->
+            <div class="Mid-sidebar" style="margin-right:10px; padding:10px; text-align:center">
+
+
+
+
+
+
+
+                <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+                    <div class="breadcrumbs">
+                        <ol class="breadcrumb">
+                            <li class="active" style="font-size:x-large"><b>Create Category</b></li>
+                        </ol>
+                    </div>
+
+                    <fieldset>
+                        @using (Html.BeginForm("UploadCatImage", "Product", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary("", new { @class = "text-danger" })
+
+
+
+                            <hr />
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+                            @*@<div class="form-group">
+                                    @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.FullName, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Phone, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Address, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>*@
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.CatImage, new { @class = "control-label col-md-2" })
+                                @Html.ValidationMessageFor(m => m.CatImage, "", new { @class = "text-danger" })
+                                <div class="col-md-10">
+                                    <input type="file" name="CatImage" id="fileUpload" accept=".png,.jpg,.jpeg,.gif,.tif" required />
+                                    <!-- <input type="file" name="UserPhoto" id="fileUpload" accept="image/*" required />-->
+                                </div>
+                            </div>
+
+                            <br />
+
+
+                            <input type="submit" value="Submit" class="btn btn-default"
+                                   styles="margin-top:10px">
+
+                            if (ViewBag.Msg != null)
+                            {<span style="color:red;">
+                                <script type="text/javascript">
+                                    $(function () {
+                                        alert("@ViewBag.Message")
+                                    });
+                                </script>
+                            </span> }
+
+                        }
+
+
+                    </fieldset>
+
+                </div>
+
+            </div>
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+    <style>
+        .content-wrapper {
+            margin-top: 0%;
+            margin-left: 0%;
+            background-position: top;
+              OVERFLOW: auto;
+            border: none;
+            WIDTH: 100%;
+            BORDER-BOTTOM: #000000 none;
+            HEIGHT: 700px;
+            max-height: 700px;
+            min-height: 700px;
+        }
+
+        #left {
+            width: 17%;
+            margin-left: 0%;
+            margin-top: 0%;
+            background-position: top;
+            position: relative;
+            background-color: #eee3e3;
+        }
+
+
+
+        .Mid-sidebar {
+            content: " ";
+            position: relative;
+            margin-top: 0%;
+            width: 43%;
+            overflow: no-display;
+            padding-right: 0px;
+            margin-left: 28%;
+            margin-right: 0%;
+            background-position: top;
+            margin-bottom: 0px;
+            background-color: #fff;
+        }
+
+
+        .SiteT {
+            width: 100%;
+            border: none;
+            margin-right: 0px;
+            padding-right: 0px;
+        }
+
+
+
+
+        .main--container {
+            margin-left: 17px;
+        }
+
+   .card {
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+            background: #ffffff;
+        }
+
+
+        .col-lg-2 {
+            flex: 0 0 10% !important;
+            max-width: 20%;
+        }
+    </style>
+    
+
+
+</body>
+</html>

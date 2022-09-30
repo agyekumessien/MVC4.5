@@ -1,0 +1,571 @@
+﻿@model MainProgram.Edm.EntityFrameWork
+
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+@using MainProgram.Core
+
+
+
+
+
+@{
+    ViewBag.Title = "GetPost";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-modal/bootstrap-modal.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="hero is-info is-fullheight is-bold">
+
+
+    <div class="hero-body   mt-4 mb-6 mb-12" style="background-color: ghostwhite; margin-right:0px; padding-right:0px; text-align:center">
+
+
+        <div class="Main-Bar" style="width:100%; margin-right:0px; padding-right:0px; margin-top:10px; text-align:center; background-color:#e4dada">
+            <div class="panel2" style="width: 98.8%; padding-left: 0px; padding-right: 0px;">
+                <div class="row mt-4 mb-6 mb-12" style="background-color: ghostwhite;">
+
+                    <!-- left sidebar-->
+
+
+                    <div class="left" style="width: 17%; float:left; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+                        <div class="Container">
+                            <div class="col-md-4">
+                                <div class="container">
+                                    <div class="panel panel-default" style="width: 22%; text-align: center">
+                                        <strong style="font-size:medium; text-align:center"><b>The Highest Post</b></strong>
+                                        <div class=" panel-body  no-gutter">
+                                            <div col-md-4">
+
+                                                <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+                                                    <div class="panel-footer">
+                                                        <p class="box-title"><b>Total Post till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">Peter Agyekum: <strong>@ViewBag.UserCount</strong></span></p>
+                                                    </div>
+
+                                                    <div class="panel-footer">
+                                                        <p class="box-title"><b>Total Post till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">Samuel Kodi: <strong>@ViewBag.UserKodi</strong></span></p>
+                                                    </div>
+
+                                                    @*<div class="panel-footer">
+                                                            <p class="box-title"><b>Total Post till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">Jessy Suvan: <strong>@ViewBag.UserJessy</strong></span></p>
+                                                        </div>
+
+                                                        <br />
+
+                                                        <div class="panel-footer">
+                                                            <p class="box-title"><b>Total Post till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">Peter Agyekum: <strong>@ViewBag.UserCount</strong></span></p>
+                                                        </div>
+
+                                                        <br />
+
+                                                        <div class="panel-footer">
+                                                            <p class="box-title"><b>Total Post till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">Mercy Soya: <strong>@ViewBag.UserSoya</strong></span></p>
+                                                        </div>
+
+                                                        <br />
+
+                                                        <div class="panel-footer">
+                                                            <p class="box-title"><b>Total Post till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">Jay Man: <strong>@ViewBag.UserJay</strong></span></p>
+                                                        </div>
+
+                                                        <br />
+
+                                                        <div class="panel-footer">
+                                                            <p class="box-title"><b>Total Post till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">Jonathan JeBrown: <strong>@ViewBag.UserJonathan</strong></span></p>
+                                                        </div>
+
+                                                        <br />
+
+                                                        <div class="panel-footer">
+                                                            <p class="box-title"><b>Total Post till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">Samson Koa: <strong>@ViewBag.UserKoa</strong></span></p>
+                                                        </div>
+
+                                                        <br />*@
+
+                                                    @using (Html.BeginForm("AdminIndex", "EntityF", FormMethod.Get))
+                                                    {
+
+                                                    }
+                                                    <div class="table">
+                                                        <ul>
+
+
+
+
+                                                            @{
+
+                                                                MainProgram.Edm.angulardemoEntities dbg3 = new MainProgram.Edm.angulardemoEntities();
+
+                                                                List<MainProgram.Edm.EntityFrameWork> Modelq = dbg3.EntityFrameWorks.ToList();
+
+
+                                                                {
+                                                                    <li>
+
+                                                                        @* var query = from p in db.Categories
+                                                                            where p.ParentCategoryId != null
+                                                                            select new CategoryModel()
+                                                                            {
+                                                                            CategoryId = p.CategoryId,
+                                                                            Name = p.Name,
+                                                                            Description = p.Description,
+                                                                            MasterCategory = new List<mastercategorymodel>
+                                                                                ((from c in db.Categories where c.CategoryId == p.ParentCategoryId select new MasterCategoryModel { CategoryId = c.CategoryId, Name = c.Name, Description = c.Description}).AsEnumerable().ToList())
+                                                                                };*@
+
+
+
+
+                                                                    </li>
+                                                                }
+                                                            }
+
+
+
+
+                                                        </ul>
+
+
+
+                                                        @* <table id="tfhover" class="tftable" border="1">
+                                                                <tr>
+                                                                    <th>
+                                                                        @Html.DisplayNameFor(UserCount => UserCount)
+                                                                    </th>
+                                                                    <th></th>
+                                                                </tr>
+
+                                                                @foreach (var item in ViewBag.UserCount)
+                                                                {
+
+
+                                                                    <tr>
+                                                                        <td>
+                                                                            @Html.DisplayFor(modelItem =>new  id = @item.UserId)
+                                                                        </td>
+                                                                        <td>
+                                                                            @Html.ActionLink("Edit", "Edit", new { id = item.UserId }) |
+                                                                            @Html.ActionLink("Details", "Details", new { id = item.UserId })
+                                                                            @*  @Html.ActionLink("Delete", "Delete", new { id=item.ModelID })
+                                                                        </td>
+                                                                    </tr>
+                                                                }
+
+                                                            </table>*@
+
+
+
+
+
+
+
+                                                        <br />
+                                                        <div class="panel-footer">
+                                                            <p class="box-title"><b>Total Participant for Reply  Posting @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">@Modelq.Count.ToString()</span></p>
+                                                        </div>
+
+
+
+
+                                                        @*  <div class="commHeader">
+                                                                @{
+                                                                    MainProgram.Edm.angulardemoEntities dbg4 = new MainProgram.Edm.angulardemoEntities();
+
+                                                                    List<MainProgram.Edm.AspNetUser> Modelq2 = dbg4.AspNetUsers.ToList();
+
+                                                                    {
+
+                                                                        if (Model.Count() == 1)
+                                                                        {<a>@Model.Count() Comment </a>}
+
+
+
+
+
+
+
+
+
+
+                                                                        <table class="table table-bordered table-responsive table-hover">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th> Statistics </th>
+
+                                                                                </tr>
+                                                                            </thead>
+
+                                                                            <tfoot>
+
+                                                                                <tr>
+                                                                                    <td>Count</td>
+                                                                                    <td>@Modelq.Count.ToString()</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>Avg</td>
+                                                                                    <td>@Modelq.Average(i => i.UserId).ToString("0.00")</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>Min</td>
+                                                                                    <td>@Modelq.Min(i => i.UserId)</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>Max</td>
+                                                                                    <td>@Modelq.Max(i => i.UserId)</td>
+
+                                                                                <tr></tr>
+                                                                            </tfoot>
+                                                                        </table>
+
+                                                                    }
+                                                                }
+                                                            </div>*@
+                                                    </div>
+                                                </div>
+
+
+
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!--End Of Left-->
+                    <!-- Right-->
+
+
+                    <div class="right"
+                         style="width: 21%; float:right; margin-right:8px; padding-right:8px; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+                        <div class="Container">
+                            <div class="col-md-4">
+                                <div class="container">
+                                    <div class="panel panel-default" style="width: 22%">
+                                        <strong style="font-size:x-large"><b>Best Contributers</b></strong>
+                                        <div class=" panel-body  no-gutter">
+                                            <div col-md-4">
+                                                <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+                                                    @using (Html.BeginForm("AdminIndex", "EntityF", FormMethod.Get))
+                                                    {
+
+                                                    }
+                                                    <div class="table">
+                                                        <ul>
+                                                            <li>
+                                                                @Html.ActionLink("EntityF", "AdminIndex", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                                                            </li>
+                                                            <li>
+                                                                First Name
+                                                            </li>
+                                                            <li>
+                                                                @Html.ActionLink("PostDate", "AdminIndex", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+                                                            </li>
+
+
+
+                                                            @{
+
+
+                                                                MainProgram.Edm.angulardemoEntities dbgr = new MainProgram.Edm.angulardemoEntities();
+
+                                                                List<MainProgram.Edm.EntityFrameWork> Modelr = dbgr.EntityFrameWorks.ToList();
+
+                                                                foreach (MainProgram.Edm.EntityFrameWork item in Modelr)
+                                                                {
+                                                                    <li>
+                                                                        <a href="@Url.Action("Details", "EntityF", new { id = item.EntityFId })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                                            @item.EntityFTitle
+
+                                                                        </a>
+
+
+                                                                    </li>
+                                                                }
+                                                            }
+
+
+
+
+
+                                                        </ul>
+
+                                                    </div>
+
+
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--End Of Right-->
+                    <!--MID Sidebar Main content-->
+                    <div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+                        <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+                            <strong style="font-size:x-large"><b> Entity Framework Top questions</b></strong>
+
+
+                            <p>
+
+                                @Html.ActionLink("New Post", "Create", "EntityF")
+
+                            </p>
+
+
+
+
+
+                            <fieldset>
+                                @using (Html.BeginForm("AdminIndex", "EntityF", FormMethod.Get))
+                                {
+                                    <p>
+                                        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+                                        <input type="submit" value="Search" />
+                                    </p>
+                                }
+
+
+                                <br />
+
+
+
+
+
+                            </fieldset>
+                            <hr />
+                            <fieldset>
+                                <strong style="font-size:x-large"><b>Recent Post</b></strong>
+                                @using (Html.BeginForm("AdminView", "EntityF", FormMethod.Get))
+                                {
+                                    @* <p>
+                                            Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+                                            <input type="submit" value="Search" />
+                                        </p>*@
+                                }
+                                <div class="table">
+                                    <ul>
+
+                                        @{
+
+
+                                            MainProgram.Edm.angulardemoEntities dbg = new MainProgram.Edm.angulardemoEntities();
+
+                                            List<MainProgram.Edm.EntityFrameWork> Modelg = dbg.EntityFrameWorks.ToList();
+
+
+                                            <li>
+                                                <table class="table text-center;" style="width:100%; margin:0%; text-align:center">
+                                                    @foreach (MainProgram.Edm.EntityFrameWork item in Modelg)
+                                                    {
+
+                                                        <tr style="border:1px solid white">
+
+                                                            <td>
+
+
+                                                                <span>
+                                                                    <img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /><br />
+
+                                                                </span>
+                                                                <span style="margin-right:5px; font-size:16px; color:black">
+                                                                    <b style="color:black; float:left"> @item.AspNetUser.UserName</b>
+                                                                </span>
+                                                                <span style="margin-right:15px; font-size:16px; color:black">
+                                                                    <b>@item.EntityFTitle</b>
+                                                                </span>
+                                                                <br />
+                                                                <span style="margin-right:15px; font-size:16px; color:black">
+                                                                    <br /> @Html.Raw(@item.EntityFText)
+                                                                </span>
+
+
+
+                                                            </td>
+
+                                                        </tr>
+                                                    }
+
+                                                </table>
+
+
+                                            </li>
+                                        }
+
+
+
+
+
+
+                                    </ul>
+
+
+
+                                </div>
+
+
+
+
+
+
+                            </fieldset>
+                        </div>
+
+
+                        <br />
+                        @*      Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                                @Html.PagedListPager(Model, page => Url.Action("Index",
+                            new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@
+
+
+                        <br /><br />
+
+                        <div>
+                            @Html.ActionLink("Back to HomePage", "AdminIndex", "Home")
+                        </div>
+
+
+
+                    </div>
+                    <!--End Of MID-->
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+<style>
+    .content-wrapper {
+        margin-top: 0%;
+        margin-left: 0%;
+        background-position: top;
+    }
+
+    #left {
+        width: 20%;
+        margin-left: 0%;
+        margin-top: 0%;
+        background-position: top;
+        position: relative;
+        background-color: #eee3e3;
+    }
+
+
+
+    .Mid-sidebar {
+        content: " ";
+        position: relative;
+        margin-top: 0%;
+        width: 60%;
+        overflow: no-display;
+        padding-right: 0px;
+        margin-left: 20%;
+        margin-right: 0%;
+        background-position: top;
+        margin-bottom: 0px;
+        background-color: #fff;
+    }
+
+
+    .SiteT {
+        width: 100%;
+        border: none;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
+
+
+
+    .main--container {
+        margin-left: 17px;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    .blue {
+        height: 200px;
+        text-align: left;
+    }
+
+
+
+    .card {
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+        background: #ffffff;
+    }
+
+
+    .col-lg-2 {
+        flex: 0 0 10% !important;
+        max-width: 20%;
+    }
+</style>
+
+

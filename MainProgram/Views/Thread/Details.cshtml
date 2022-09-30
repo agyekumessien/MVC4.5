@@ -1,0 +1,436 @@
+﻿@model MainProgram.Edm.Thread
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+
+
+
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+<section class="hero is-info is-fullheight is-bold">
+
+
+    <div class="hero-body   mt-4 mb-6 mb-12" style="background-color: ghostwhite; margin-right:0px; padding-right:0px; text-align:center">
+
+
+        <div class="Main-Bar" style="width:100%; margin-right:0px; padding-right:0px; margin-top:20px; text-align:center; background-color:#fff">
+            <div class="panel2" style="width: 98.8%; padding-left: 0px; padding-right: 0px;">
+                <div class="row mt-4 mb-6 mb-12">
+
+
+
+
+                    <!-- left sidebar-->
+                    <div class="left" style="width: 20%; float:left; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+                        <div class="Container">
+                            <div class="col-md-4">
+                                <div class="container">
+                                    @* <h3>Current thread: @Html.DisplayFor(model => model.ThreadTitle), Posted by: @Html.DisplayFor(modelItem => Model.GetUserName)</h3>*@
+
+                                    <div class="panel panel-default" style="width: 22%">
+                                        <div class=" panel-body  no-gutter">
+                                            <div col-md-4">
+
+                                                <div>
+                                                    <img src="~/Content/img/ApparelImages/Essien.jpg" class="img-circle" alt="User Image" />
+                                                    <p style="width:250px; height:auto; overflow-wrap:initial">You can easily fiesnd a web hosting company that offers the right mix of features and price for&raquo; your applications.</p>
+                                                    <p><a class="btn btn-default" href="@Url.Action("Index", "Blog")">check developer blog &raquo;</a></p>
+                                                </div>
+
+
+
+                                                <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+                                                    <strong style="font-size:x-large"><b>Top questions</b></strong>
+                                                    <ul>
+                                                        @{
+                                                            angulardemoEntities obj = new angulardemoEntities();
+
+                                                            List<MainProgram.Edm.Thread> Model = obj.Threads.ToList();
+
+                                                            foreach (MainProgram.Edm.Thread item in Model)
+                                                            {
+                                                                <li>
+                                                                    =><a href="/Home/@item.MenuURL">@item.ThreadTitle</a>
+                                                                    <a href="@Url.Action("Women", "Pages", new { id = ViewBag.ThreadId })" style=""></a>
+                                                                    @*<a href="/Women/pages">@item.ThreadTitle</a>*@
+                                                                    @*@Html.DisplayFor(model => item.ThreadText)*@
+                                                                    @* @Html.ActionLink("Reply to this thread", "Create", "Post")model => item.ThreadText)*@
+                                                                </li>
+                                                            }
+                                                        }
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class=" panel-body">
+                                            <div col-md-4">
+                                                <div class="thumbnail">
+                                                    <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                                                    <p class="text-center">
+                                                        @*@Html.DisplayFor(model => model.ThreadText)*@
+                                                        @Html.ActionLink("Reply to this thread", "Create", "Post")
+                                                        @Html.ActionLink("Back to List", "Index")
+                                                    </p>
+
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class=" panel-body">
+                                            <div col-md-4">
+                                                <div class="thumbnail">
+                                                    <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                                                    <p class="text-center">
+                                                        @*Html.DisplayFor(model => model.ThreadText)*@
+                                                        @Html.ActionLink("Reply to this thread", "Create", "Post")
+
+                                                    </p>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <p class="text-center">
+                                            @Html.ActionLink("Reply to this thread", "Create", "Post")
+                                            @Html.ActionLink("Back to List", "Index")
+                                        </p>
+
+                                    </div>
+
+
+                                </div>
+                                <!--End of Container-->
+
+                                <hr />
+
+                                <!--Second-->
+                                <!--End of Third-->
+
+
+                            </div>
+                        </div>
+                    </div> <!--Main-->
+
+                    <div class="right" style="width: 21%; float:right; margin-right:8px; padding-right:8px; top:0px;">
+                        <div class="Container">
+                            <div class="col-md-4">
+                                <div class="container">
+                                    @* <h3>Current thread: @Html.DisplayFor(model => model.ThreadTitle), Posted by: @Html.DisplayFor(modelItem => Model.GetUserName)</h3>*@
+
+                                    <div class="panel panel-default" style="width: 22%">
+                                        <div class=" panel-body  no-gutter">
+                                            <div col-md-4">
+
+                                                <div>
+                                                    <img src="~/Content/img/ApparelImages/Essien.jpg" class="img-circle" alt="User Image" />
+                                                    <p style="width:250px; height:auto; overflow-wrap:initial">You can easily fiesnd a web hosting company&raquo; that offers the right mix of features and price for&raquo; your applications.</p>
+                                                    <p><a class="btn btn-default" href="@Url.Action("Index", "Blog")">check developer blog &raquo;</a></p>
+                                                </div>
+
+
+
+                                                @* <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+                                                    <strong style="font-size:x-large"><b>Top questions</b></strong>
+                                                    <ul>
+                                                        @{
+
+
+                                                            ApplicationDbContext obj = new ApplicationDbContext();
+
+                                                            List<MainProgram.Models.Thread> Model = obj.Threads.ToList();
+
+                                                            foreach (MainProgram.Models.Thread item in Model)
+                                                            {
+                                                                <li>
+                                                                    =><a href="/Home/@item.MenuURL">@item.ThreadTitle</a>
+                                                                    <a href="@Url.Action("Women", "Pages", new { id = ViewBag.ThreadId })" style=""></a>
+                                                                    @*<a href="/Women/pages">@item.ThreadTitle</a>*@
+                                                @*@Html.DisplayFor(model => item.ThreadText)*@
+                                                @* @Html.ActionLink("Reply to this thread", "Create", "Post")model => item.ThreadText)
+                                                                    </li>
+                                                                }
+                                                            }
+
+
+
+                                                        </ul>
+
+                                                    </div>*@
+
+
+
+
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+                                        <div class=" panel-body">
+                                            <div col-md-4">
+                                                <div class="thumbnail">
+                                                    <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                                                    <p class="text-center">
+                                                        @*@Html.DisplayFor(model => model.ThreadText)*@
+                                                        @Html.ActionLink("Reply to this thread", "Create", "Post")
+                                                        @Html.ActionLink("Back to List", "Index")
+                                                    </p>
+
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class=" panel-body">
+                                            <div col-md-4">
+                                                <div class="thumbnail">
+                                                    <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                                                    <p class="text-center">
+                                                        @*Html.DisplayFor(model => model.ThreadText)*@
+                                                        @Html.ActionLink("Reply to this thread", "Create", "Post")
+
+                                                    </p>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <p class="text-center">
+                                            @Html.ActionLink("Reply to this thread", "Create", "Post")
+                                            @Html.ActionLink("Back to List", "Index")
+                                        </p>
+
+                                    </div>
+
+
+                                </div>
+                                <!--End of Container-->
+
+                                <hr />
+
+
+                                <!--Second-->
+                                <!--End of Third-->
+                                <!---->
+                                <!--End-->
+                                <!--End of Third-->
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!--MID Sidebar Main content-->
+                    <div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+
+                        <div class="Search-page" style=" width: 100%; margin-left: 0px;">
+
+                            <hr />
+
+                            <fieldset>
+                                <h2>Details</h2>
+
+                                <div>
+
+                                    <img src="@Html.DisplayFor(model => model.ImagePath)" width="40" height="40" h style="padding-right:15px; padding-left:15px; float:left" multiple />
+                                    Thread
+                                    <hr />
+
+
+
+
+                                    @*  <div>
+                                            <ul>
+
+
+                                                @{
+                                                    foreach (MainProgram.Edm.Thread item in Model)
+                                                    {
+                                                        <li>
+                                                            <a href="@Url.Action("Details", "Post", new { id = item.ThreadId })" class="aa-cartbox-img"><img src="@item.ImagePath" width="75" height="75" multiple />
+                                                            <div class="aa-cartbox-info">
+
+                                                                <h4><b><a href="@Url.Action("Details", "Post", new { id = item.ThreadId })">@item.ThreadTitle</a></b></h4>
+                                                                <p no-padding no-gutter style="text-align:left; font-size:14px; padding-left:15px;padding-right:15px; padding-top:0px">@item.ThreadText</p>
+                                                            </div>
+
+                                                        </li>
+
+                                                    }
+                                                }
+                                            </ul>
+                                        </div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    <dl class="dl-horizontal">
+
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.ThreadTitle)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => model.ThreadTitle)
+                                        </dd>
+
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.ThreadText)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => model.ThreadText)
+                                        </dd>
+
+
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.FirstName)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => model.FirstName)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.LastName)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => model.LastName)
+                                        </dd>
+
+                                    </dl>
+                                </div>
+
+
+                                <br />
+                                <div>
+                                    @Html.ActionLink("More Details", "Q100", "Home")
+
+                                </div>
+
+                                <div>
+
+                                    @Html.ActionLink("Back to Home", "Index", "Home")
+                                </div>
+
+
+
+
+
+
+
+                            </fieldset>
+
+
+
+
+
+
+
+
+
+
+
+                            <style>
+                                .content-wrapper {
+                                    margin-top: 0%;
+                                    margin-left: 0%;
+                                    background-position: top;
+                                }
+
+                                #left {
+                                    width: 20%;
+                                    margin-left: 0%;
+                                    margin-top: 0%;
+                                    background-position: top;
+                                    position: relative;
+                                    background-color: #eee3e3;
+                                }
+
+
+
+                                .Mid-sidebar {
+                                    content: " ";
+                                    position: relative;
+                                    margin-top: 0%;
+                                    width: 60%;
+                                    overflow: no-display;
+                                    padding-right: 0px;
+                                    margin-left: 20%;
+                                    margin-right: 0%;
+                                    background-position: top;
+                                    margin-bottom: 0px;
+                                    background-color: #fff;
+                                }
+
+
+                                .SiteT {
+                                    width: 100%;
+                                    border: none;
+                                    margin-right: 0px;
+                                    padding-right: 0px;
+                                }
+
+
+
+
+                                .main--container {
+                                    margin-left: 17px;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>

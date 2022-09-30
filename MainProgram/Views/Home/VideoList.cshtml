@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MainProgram.Edm.tblVideo>
+@*@model Videos_EntityFramework_MVC.tblFile*@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VideoList</title>
+</head>
+<body>
+
+    @* <video id="VideoPlayer" src='@Url.Action("DownloadFile", "Home", new {fileId = file.id})' controls="controls"
+        width="400" height="350" autoplay="autoplay" />*@
+
+
+    <ul>
+        <!--Post_EntityFrameWork-->
+        @{
+
+
+            
+            MainProgram.Edm.angulardemoEntities vd = new MainProgram.Edm.angulardemoEntities();
+
+            List<MainProgram.Edm.tblVideo> vdModel = vd.tblVideos.ToList();
+
+            foreach (MainProgram.Edm.tblVideo item in vdModel)
+            {
+                <li>
+                    <a href="@Url.Action("Details", "Home", new { id = item.id })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                        <br /><br />
+                        @item.Name
+
+
+                    </a>
+                    <br /><br /><br /><br />
+                </li>
+            }
+        }
+
+    </ul>
+</body>
+</html>

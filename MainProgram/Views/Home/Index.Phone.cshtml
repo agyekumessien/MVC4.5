@@ -1,0 +1,1240 @@
+﻿@model IEnumerable<MainProgram.Edm.tbh_Departments>
+@using MainProgram.Helper_Code
+@using MainProgram.Models
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "../Shared/_Layout.Phone.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+@*@Html.Partial("_getMenuList")*@
+
+
+@*<!-- Start slider -->
+    <section id="aa-slider">
+        <div class="aa-slider-area">
+            <div id="sequence" class="seq">
+                <div class="seq-screen">
+                    <ul class="seq-canvas">
+                        <!-- single slide item -->
+                        @foreach (var item in @ViewBag.Slider)
+                        {
+                            <li>
+                                <div class="seq-model">
+                                    <img data-seq src="@item.ImageURL" alt="@item.AltText" />
+                                </div>
+                                <div class="seq-title">
+                                    @* <span data-seq>@item.OfferTag</span>*@
+@*<h2 data-seq>@item.Title</h2>*@
+@*<p data-seq style="font-size:50px">@item.Description</p      open this one when open tp work*@
+@* <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">@item.BtnText</a>
+                                </div>
+                            </li>
+                        }
+                        <!-- end single slide item -->
+                    </ul>
+                </div>
+                <!-- slider navigation btn -->
+                <fieldset class="seq-nav" aria-controls="sequence" aria-label="Slider buttons">
+                    <a type="button" href="" class="seq-prev" aria-label="Previous"><span class="fa fa-angle-left"></span></a>
+                    <a type="button" href="" class="seq-next" aria-label="Next"><span class="fa fa-angle-right"></span></a>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+*@
+
+
+<!--END SLIDER-->
+<!--END Content Header (Page header) -->
+<!-- Begins Content Body -->
+<div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+
+
+    <section class="content-header" style="margin-left:0px; top:2px;">
+
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">
+                    <i class="headerA"></i>
+                </a>
+            </li>
+            <li class="active"></li>
+        </ol>
+    </section>
+
+    <!-- left sidebar-->
+    <div class="left" style="width: 22%; margin-left: 0%; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+        <div class="Container">
+            <div class="col-md-4">
+                <div class="container">
+                    @* <h3>Current thread: @Html.DisplayFor(model => model.ThreadTitle), Posted by: @Html.DisplayFor(modelItem => Model.GetUserName)</h3>*@
+
+                    <div class="panel panel-default" style="width: 22%;">
+                        <div class=" panel-body  no-gutter">
+                            <div col-md-4">
+
+                                <div style="margin-right:2px">
+                                    <strong style="font-size:x-large"><b>DEVELOPER</b></strong>
+                                    <img src="~/Content/img/ApparelImages/Essien.jpg" class="img-circle" alt="User Image" />
+                                    <p style="width:250px; height:auto; overflow-wrap:initial">
+                                       FOR Phone View
+
+                                        <a class="btn lightgrey btn-lg" href="@Url.Action("DownLoadLink", "DownLoadLink")">View My Blog &raquo;</a>
+                                        <a class="btn btn-default" href="@Url.Action("DownloadLink", "DownLoadLink")"><b style="background-color:white; border:1px solid outset">Download my Resume &raquo;</b></a>
+                                    </p>
+
+                                    <!--End of download-->
+
+
+
+
+                                </div>
+
+                                <hr />
+
+                                <div class="ScrollgridL" style="width: 100%; margin-left: 0px; overflow:scroll">
+                                    <strong style="font-size:large; text-decoration:underline">
+                                        <b>Reply to these Post</b>
+                                        <br />
+                                    </strong>
+                                    <ul>
+                                        @{
+
+
+                                            MainProgram.Edm.angulardemoEntities dbg = new MainProgram.Edm.angulardemoEntities();
+
+                                            List<MainProgram.Edm.Thread> Modelg = dbg.Threads.ToList();
+
+                                            foreach (MainProgram.Edm.Thread item in Modelg)
+                                            {
+
+                                                <li style="background-color:#fcfafa; border:1px solid outset; padding-bottom:2px; border-radius:5px">
+                                                    <br />
+                                                    <a href="@Url.Action("details", "Post", new { id = item.ThreadId })" class="aa-cartbox-img">
+                                                        <img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple />
+                                                    </a>
+                                                    <a href="@Url.Action("details", "Post", new { id = item.ThreadId })" class="aa-cartbox-img" style="text-align:left; margin-left:8px; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                        <br /><br />
+                                                        @item.ThreadTitle
+
+                                                    </a>
+                                                    <br /><br /><br />
+
+                                                    @*<p style="text-align:left; padding-left:15px; padding-right:15px; padding-top:10px">@item.ThreadText</p>*@
+                                                    @* =><a href="@Url.Action("Details", "Post", new { id = ViewBag.ThreadId })" style=""></a>*@
+                                                    @*<a href="/Women/pages">@item.ThreadTitle</a>*@
+                                                    @*@Html.DisplayFor(model => item.ThreadText)*@
+                                                    @* @Html.ActionLink("Reply to this thread", "Create", "Post")model => item.ThreadText)*@
+                                                </li>
+                                            }
+
+                                        }
+
+
+
+
+                                        <ul />
+
+
+                                        <!--Post_CSharp-->
+                                        @{
+
+
+                                            MainProgram.Edm.angulardemoEntities pcs = new MainProgram.Edm.angulardemoEntities();
+
+                                            List<MainProgram.Edm.Post_CSharp> pcsModel = pcs.Post_CSharp.ToList();
+
+                                            foreach (MainProgram.Edm.Post_CSharp item in pcsModel)
+                                            {
+
+                                                <li style="background-color:rgba(246, 243, 243, 0.86); border:1px solid outset; margin-top:5px; border-radius:5px">
+                                                    <a href="@Url.Action("Details", "Post_CSharp", new { id = item.PostCSId })" class="aa-cartbox-img"><img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /></a>
+                                                    <a href="@Url.Action("Details", "Post_CSharp", new { id = item.PostCSId })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                        <br /><br />
+                                                        @item.PostCSharpTitle
+
+
+                                                    </a>
+                                                    <br /><br /><br />
+
+
+                                                </li>
+                                            }
+                                        }
+
+                                        <!--Post_Databases-->
+                                        @{
+
+
+                                            MainProgram.Edm.angulardemoEntities pdb = new MainProgram.Edm.angulardemoEntities();
+
+                                            List<MainProgram.Edm.Post_Databases> pdbModel = pdb.Post_Databases.ToList();
+
+                                            foreach (MainProgram.Edm.Post_Databases item in pdbModel)
+                                            {
+
+                                                <li style="background-color:#fcfafa; border:1px solid outset; margin-top:5px; border-radius:5px">
+                                                    <a href="@Url.Action("Details", "Post_Databases", new { id = item.PostDbId })" class="aa-cartbox-img"><img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /></a>
+                                                    <a href="@Url.Action("Details", "Post_Databases", new { id = item.PostDbId })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                        <br /><br />
+                                                        @item.PostDatabasesTitle
+
+
+                                                    </a>
+
+                                                    <br /><br /><br />
+
+                                                </li>
+                                            }
+                                        }
+
+                                        <!--Post_CSS-->
+                                        @{
+
+
+                                            MainProgram.Edm.angulardemoEntities pcss = new MainProgram.Edm.angulardemoEntities();
+
+                                            List<MainProgram.Edm.Post_CSS> pcssModel = pcss.Post_CSS.ToList();
+
+                                            foreach (MainProgram.Edm.Post_CSS item in pcssModel)
+                                            {
+                                                <li style="background-color:#fcfafa; border:1px solid outset; margin-top:5px; border-radius:5px">
+                                                    <a href="@Url.Action("Details", "Post_CSS", new { id = item.PostCSSId })" class="aa-cartbox-img"><img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /></a>
+                                                    <a href="@Url.Action("Details", "Post_CSS", new { id = item.PostCSSId })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                        <br /><br />
+                                                        @item.PostCSSTitle
+
+
+                                                    </a>
+                                                    <br /><br /><br />
+                                                </li>
+                                            }
+                                        }
+
+
+                                        <!--Post_EntityFrameWork-->
+                                        @{
+
+
+                                            MainProgram.Edm.angulardemoEntities pef = new MainProgram.Edm.angulardemoEntities();
+
+                                            List<MainProgram.Edm.Post_EntityFrameWorks> pefModel = pef.Post_EntityFrameWorks.ToList();
+
+                                            foreach (MainProgram.Edm.Post_EntityFrameWorks item in pefModel)
+                                            {
+                                                <li style="background-color:#fcfafa; border:1px solid outset; margin-top:5px; border-radius:5px">
+                                                    <a href="@Url.Action("Details", "Post_EntityFrameWorks", new { id = item.PostEfId })" class="aa-cartbox-img"><img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /></a>
+                                                    <a href="@Url.Action("Details", "Post_EntityFrameWorks", new { id = item.PostEfId })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                        <br /><br />
+                                                        @item.PostEfTitle
+
+
+                                                    </a>
+                                                    <br /><br />
+                                                </li>
+                                            }
+                                        }
+
+
+
+
+                                        <!--Post_JqJava-->
+                                        @{
+
+
+                                            MainProgram.Edm.angulardemoEntities pjqj = new MainProgram.Edm.angulardemoEntities();
+
+                                            List<MainProgram.Edm.Post_JqJava> pjqjModel = pjqj.Post_JqJava.ToList();
+
+                                            foreach (MainProgram.Edm.Post_JqJava item in pjqjModel)
+                                            {
+                                                <li style="background-color:#fcfafa; border:1px solid outset; margin-top:5px; border-radius:5px">
+                                                    <a href="@Url.Action("Details", "Post_JqJava", new { id = item.PostJqJavaId })" class="aa-cartbox-img"><img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /></a>
+                                                    <a href="@Url.Action("Details", "Post_JqJava", new { id = item.PostJqJavaId })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                        <br /><br />
+                                                        @item.PostJqJavaTitle
+
+
+                                                    </a>
+                                                    <br /><br /><br />
+                                                </li>
+                                            }
+                                        }
+
+
+
+
+                                        <!--Post_DBA-->
+                                        @{
+
+
+                                            MainProgram.Edm.angulardemoEntities pdba = new MainProgram.Edm.angulardemoEntities();
+
+                                            List<MainProgram.Edm.Post_DBA> pdbaModel = pdba.Post_DBA.ToList();
+
+                                            foreach (MainProgram.Edm.Post_DBA item in pdbaModel)
+                                            {
+                                                <li style="background-color:#fcfafa; border:1px solid outset; margin-top:5px; border-radius:5px">
+                                                    <a href="@Url.Action("Details", "Post_DBA", new { id = item.PostDBAId })" class="aa-cartbox-img"><img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /></a>
+                                                    <a href="@Url.Action("Details", "Post_DBA", new { id = item.PostDBAId })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                        <br /><br />
+                                                        @item.PostDBATitle
+
+
+                                                    </a>
+                                                    <br /><br /><br />
+                                                </li>
+                                            }
+                                        }
+
+
+
+                                        <!--Post_DBA-->
+                                        @{
+
+
+                                            MainProgram.Edm.angulardemoEntities pwf = new MainProgram.Edm.angulardemoEntities();
+
+                                            List<MainProgram.Edm.Post_Webform> pwfModel = pwf.Post_Webform.ToList();
+
+                                            foreach (MainProgram.Edm.Post_Webform item in pwfModel)
+                                            {
+                                                <li style="background-color:#fcfafa; border:1px solid outset; margin-top:5px; border-radius:5px">
+                                                    <a href="@Url.Action("Details", "Post_Webform", new { id = item.PostWformId })" class="aa-cartbox-img"><img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /></a>
+                                                    <a href="@Url.Action("Details", "Post_Webform", new { id = item.PostWformId })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                        <br /><br />
+                                                        @item.PostWformTitle
+
+
+                                                    </a>
+                                                    <br /><br /><br />
+                                                </li>
+                                            }
+                                        }
+
+
+
+                                        <!--END-->
+                                    </ul>
+                                </div>
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--END of LEFT-->
+    <!--Right Sidebar Main content-->
+    <div class="right-sidebar" style="margin-right:10px; padding-right:15px; text-align:center">
+
+
+
+
+
+
+        <div class="jumbotron" style="margin-right: 0px; border-radius:1px; text-align: center;  width:100%;  font:lighter 12px arial verdana}">
+
+
+
+
+
+            <ul>
+
+
+                @{
+                    foreach (MainProgram.Edm.tbh_Pages item in ViewBag.Welcome)
+                    {
+                        <li>
+                            <a href="@Url.Action("Women", "Pages", new { id = item.PageID })" class="aa-cartbox-img"><img alt="@item.AltText" src="@item.FullImageUrl" style="width:360px; height: 200px; padding-right:15px;padding-left:15px;float:right;"></a>
+
+                            <div class="aa-cartbox-info">
+
+                                <h4><b><a href="@Url.Action("Culture", "Pages", new { id = item.PageID })">@item.Name</a></b></h4>
+                                <p no-padding no-gutter style="text-align:left; font-size:14px; padding-left:15px;padding-right:15px; padding-top:0px">@item.Content</p>
+                            </div>
+
+                        </li>
+
+                    }
+                }
+            </ul>
+
+
+
+        </div>
+
+        <div class="main--container">
+            <!--MAIN-->
+
+            <div class="row justify-content-md-center">
+                <table class="SiteT" style="text-align:center ">
+                    <tr style="border-left:1px outset #f1f1f1; border-top:1px outset #f1f1f1;  margin-right:0px; width:100%; overflow:hidden">
+                        <td>
+
+                            <!--Main2-->
+                            <div style="width:78%; float:left; overflow:hidden;border-right:2px solid #f1f1f1  ">
+                                <div style="border-bottom:2px solid #f1f1f1; width:100%; float:left; overflow:hidden">
+
+                                    <div class=" col-sm-6" style="float:left">
+                                        <strong style="font-size:x-large"><b>MVC tutorials</b></strong>
+                                        <video id="myVideo1" poster="~/Content/Video/Movies_Frames/MVC_Video_First_Frame.png" width="370" height="170" controls>
+                                            @* <source src="~/Content/Video/Ad.mp4" type="video/mp4" />*@
+
+
+                                            <source src="~/VideoFileUpload/MVC_Video.mp4" type="video/mp4" />
+
+                                            <source src="file.Webm" type="video/webm" />
+                                            <source src="file.egv" type="video/ogg" />
+
+                                        </video>
+                                        <br /><br />
+                                        <p><a class="btn btn-default" href="@Url.Action("DotNetVideo","Video")"><strong style="margin-top:10px">Learn more &raquo;</strong></a></p>
+                                    </div>
+
+                                    <div class=" col-sm-6" style="float:left; border-right:2px, solid #f1f1f1">
+                                        <ul class="list-unstyled list-inline mb-0" style="width:100%">
+
+
+
+                                            @{
+                                                foreach (MainProgram.Edm.tbh_Pages item in ViewBag.ShopF)
+                                                {
+                                                    <li style="width:100%">
+
+                                                        <h4><b><a href="http://localhost:1088/Home/Shop">@item.Name</a></b></h4>
+                                                    </li>
+                                                    <li style="width:100%">
+                                                        <a href="http://localhost:1088/Home/Shop"><img alt="@item.AltText" src="@item.Picture1" style="width: 150px; height: 100px;padding-right:15px; padding-left:15px; padding-top:10px;  padding-bottom:5px;float:left; "></a>
+
+                                                        <div class="aa-cartbox-info">
+
+
+                                                            <p style="text-align:left; padding-left:15px;padding-right:15px; padding-top:0px">@item.Content</p>
+                                                        </div>
+
+                                                    </li>
+
+                                                }
+                                            }
+                                        </ul>
+
+
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+                                <!--End of Section1-->
+                                <div style="border-bottom:2px solid #f1f1f1;width:100%; float:left; overflow:hidden">
+                                    <div class="col-sm-4" style="float:left; border-right:2px, solid #f1f1f1">
+
+
+                                        <strong style="font-size:x-large"><b>Knowledge Base</b></strong>
+                                        <div class=" panel no-gutter">
+                                            <div col-sm-6">
+                                                <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+                                                    @using (Html.BeginForm("Index", "Post_CSS", FormMethod.Get))
+                                                    {
+
+                                                    }
+                                                    <div class="table">
+                                                        <ul>
+
+                                                            @{
+                                                                foreach (MainProgram.Edm.tbh_Pages item in ViewBag.Ideas)
+                                                                {
+                                                                    <li style="width:100%">
+                                                                        <a href="@Url.Action("Ideas", "Pages", new { id = item.PageID })" class="aa-cartbox-img">
+                                                                            <img alt="@item.AltText" src="@item.FullImageUrl" style="width: 200px; height: 100px;padding-right:5px; padding-left:5px; float:left;">
+                                                                        </a><br /><br /><br /><br /><br />
+
+                                                                        <div class="aa-cartbox-info">
+
+
+                                                                            <p style="text-align:left; padding-left:15px;padding-right:15px; padding-top:10px">@item.ShortDescription</p>
+                                                                        </div>
+
+                                                                    </li>
+
+                                                                }
+                                                            }
+
+
+
+                                                        </ul>
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="col-sm-8" style="float:left; border-right:2px, solid #f1f1f1">
+                                        <strong style="font-size:x-large"><b>Recommended Video tutorials</b></strong>
+                                        <div class="table">
+                                            <ul class="list-group-item-success" style="width:100%; text-align:left">
+                                                <li>
+                                                    &nbsp; . <a href="@Url.Action("DotNetVideo","Video")">
+                                                        <strong class="font-italic" style="color:blue">DotNet inpirational  Tutorial Video, WATCH </strong>&nbsp;&nbsp;<img src="~/Content/images/icons-png/video-black.png " style=" width:15px; height:15px" />
+                                                    </a>
+
+                                                </li>
+                                                <li>
+                                                    &nbsp; . <a href="@Url.Action("MvcVideo", "Video")">
+                                                        <strong style="font-family: Georgia,'Times New Roman',serif;" color:#003366">MVC Tutorial Video, WATCH &nbsp;&nbsp;<img src="~/Content/images/icons-png/video-black.png" style="width:15px; height:15px" /></strong>
+                                                    </a>
+
+
+                                                </li>
+                                                <li>
+                                                    &nbsp; . <a href="@Url.Action("SQLServerVideo", "Video")">
+                                                        <strong class="font-italic" style="color:#003366">SQLServer Tutorial Video, WATCH </strong>&nbsp;&nbsp;<img src="~/Content/images/icons-png/video-black.png" style="width:15px; height:15px" />
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    &nbsp; . <a href="@Url.Action("AspNetVideo", "Video")">
+                                                        <strong class="font-italic" style="color:#003366">Asp.Net Video Tutorial Video, WATCH </strong>&nbsp;&nbsp;<img src="~/Content/images/icons-png/video-black.png" style="width:15px; height:15px" />
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    &nbsp; . <a href="@Url.Action("Asp.NetVideo", "Video")">
+                                                        <strong class="font-italic" style="color:#003366">DotNet Tutorial Video, WATCH </strong>&nbsp;&nbsp;<img src="~/Content/images/icons-png/video-black.png" style="width:15px; height:15px" />
+                                                    </a>
+                                                </li>
+
+
+
+
+
+
+
+
+                                            </ul>
+
+                                        </div>
+
+
+
+
+
+                                        @*  <div class="col-sm-8" style="float:left; border-right:20px, solid #f1f1f1">
+                                                <strong style="font-size:x-large"><b>Recommended reading</b></strong>
+
+                                                <div class="list-group-item-success" style="width: 100%; margin-left: 0px;">
+
+                                                    @{
+
+                                                        MainProgram.Edm.angulardemoEntities vd = new MainProgram.Edm.angulardemoEntities();
+
+                                                       // List<MainProgram.Edm.tblVideo> vdModel = vd.tblVideos.ToList();
+
+                                                        foreach (MainProgram.Edm.tblVideo item in vd.tblVideos)
+                                                        {
+                                                            <div class="table">
+                                                                <ul class="list-group-item-success" style="width:100%; text-align:left">
+                                                                    <li style="text-align:left">
+                                                                        <a href="@Url.Action("Details", "Video", new { id = @item.Name })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                                            <img alt="@item.VideoTitle">
+                                                                        </a>
+                                                                    </li>
+
+                                                                </ul>
+
+                                                            </div>
+
+
+
+
+
+                                                        }
+
+
+                                                    }
+
+
+                                                </div>
+
+
+
+                                            </div>*@
+
+
+
+
+                                        @helper Video(string id, string mp4Path, string WebmPath = null, string ogvPath = null,
+                                         bool needsControls = true, int width = 500, int height = 200)
+{
+    var controlsString = string.Empty;
+    if (needsControls)
+    {
+        controlsString = "controls = 'contrlols'";
+    }
+
+
+    <video controls="controls" id="@id" width="@width" height="@height">
+        @if (!string.IsNullOrEmpty(mp4Path))
+        {
+            <source src="@mp4Path" type="video/mp4" />
+        }
+        @if (!string.IsNullOrEmpty(WebmPath))
+        {
+            <source src="@WebmPath" type="video/webm" />
+        }
+        @if (!string.IsNullOrEmpty(ogvPath))
+        {
+            <source src="@ogvPath" type="video/ogg" />
+        }
+        <source src="~/Content/Video/Ad.mp4" type="video/mp4" />
+        <source src="file.Webm" type="video/webm" />
+        <source src="file.egv" type="video/ogg" />
+
+    </video>
+
+}
+
+
+                                        @*1) standard
+                                                                            <video controls="controls" id="myVideo1" width="500" height="200">
+                                                <source src="~/Content/Video/Ad.mp4" type="video/mp4" />
+                                                <source src="file.Webm" type="video/webm" />
+                                                <source src="file.egv" type="video/ogg" />
+
+                                            </video>
+
+                                                 <div>
+                                                @Video("myVideo1", "/Content/Video/Ad.mp4")
+                                            </div>
+
+                                            @GlobalHtmlHelpers.Video("myVideo1", "/Content/Video/Ad.mp4", width: 500, height: 200, needsControls: true)
+
+                                              <b>Fluent Helper</b><br />
+                                            <div>
+                                                @Html.FluentVideo("myVideo4").mp4("/Content/Video/Ad.mp4").width(500).height(200).controls(true))
+
+                                            </div>
+
+                                               <b>Static Helper</b><br />
+                                            <div>
+                                                @StaticHtml5Helpers.Video("myVideo3", "/Content/Video/Ad.mp4", width: 500, height: 200, needsControls: true)
+
+                                            </div>
+
+                                              <b>Global Helper</b><br />
+                                            <div>
+                                                @GlobalHtmlHelpers.Video("myVideo2", "/Content/Video/Ad.mp4", width: 500, height: 200, needsControls: true)
+                                            </div>
+                                              <b>Local Helper</b><br />
+                                            <div>
+                                                @Video("myVideo1", "/Content/Video/Ad.mp4")
+                                            </div>
+
+                                        *@
+
+                                        <video id="myVideo1" poster="~/Content/Video/Movies_Frames/Ad_Frame.png" width="500" height="200" controls>
+                                            <source src="~/Content/Video/Ad.mp4" type="video/mp4" />
+                                            <source src="file.Webm" type="video/webm" />
+                                            <source src="file.egv" type="video/ogg" />
+
+                                        </video>
+
+
+                                        @*   <b>Extention Helper</b><br />
+                                            <div>
+                                                @Html.Video("myVideo3", "/VideoFileUpload/Ad3.mp4", width: 500, height: 200, needsControls: true)
+
+
+
+                                            </div>*@
+
+
+                                    </div>
+
+
+
+
+
+                                </div>
+                                <!--End of Section2-->
+                                <!-- Subscribe section -->
+
+                                <div class="col-md-12">
+                                    <div class="aa-subscribe-area">
+
+
+
+                                        <div class="table">
+                                            <ul class="list-group-item-success" style="width:100%; text-align:left">
+                                                <li>
+                                                    &nbsp; . <a href="@Url.Action("DotNetVideo","Video")">
+
+                                                        How do I make the most of the available hardware? How can I improve performance? In the modern world, users expect more and more from their applications and devices, and multi-core hardware has the potential to provide it. But it takes carefully crafted code to turn that potential into responsive, scalable applications.
+                                                        memory management, and exception handling. FCL and CLR together constitute .NET Framework. FCL provides user interface, data access, database connectivity, cryptography, web application development, numeric algorithms, and network communications.
+                                                    </a>
+                                                </li>
+                                                @*   <li>
+                                                        &nbsp; . <a href="@Url.Action("MvcVideo", "Video")">
+                                                            <strong style="font-family: Georgia,'Times New Roman',serif;" color:#003366">MVC Tutorial Video, WATCH &nbsp;&nbsp;<img src="~/Content/images/icons-png/video-black.png" style="width:15px; height:15px" /></strong>
+                                                        </a>
+
+
+                                                    </li>
+                                                    <li>
+                                                        &nbsp; . <a href="@Url.Action("SQLServerVideo", "Video")">
+                                                            <strong class="font-italic" style="color:#003366">SQLServer Tutorial Video, WATCH </strong>&nbsp;&nbsp;<img src="~/Content/images/icons-png/video-black.png" style="width:15px; height:15px" />
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        &nbsp; . <a href="@Url.Action("AspNetVideo", "Video")">
+                                                            <strong class="font-italic" style="color:#003366">Asp.Net Video Tutorial Video, WATCH </strong>&nbsp;&nbsp;<img src="~/Content/images/icons-png/video-black.png" style="width:15px; height:15px" />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        &nbsp; . <a href="@Url.Action("Asp.NetVideo", "Video")">
+                                                            <strong class="font-italic" style="color:#003366">DotNet Tutorial Video, WATCH </strong>&nbsp;&nbsp;<img src="~/Content/images/icons-png/video-black.png" style="width:15px; height:15px" />
+                                                        </a>
+                                                    </li>*@
+
+
+
+
+
+
+
+
+                                            </ul>
+
+                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        @* <div class="aa-banner-area">
+                                                <a href="#"><img src="~/Content/img/Books/FBooks/book5.png" alt=" fashion banner img"></a>
+
+                                             </div>
+
+
+
+
+
+
+
+
+                                            <fieldset style="width:50%">
+                                                <legend style="font-family:Arial Black;color:blue">Company Founder Using Image Carousel</legend>
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-md-5 col-md-offset-2">
+                                                            <div id="imageCarousel" class="carousel slide" data-interval="2000"
+                                                                 data-ride="carousel" data-pause="hover" data-wrap="true">
+
+                                                                <ol class="carousel-indicators">
+                                                                    <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
+                                                                    <li data-target="#imageCarousel" data-slide-to="1"></li>
+                                                                    <li data-target="#imageCarousel" data-slide-to="2"></li>
+                                                                    <li data-target="#imageCarousel" data-slide-to="3"></li>
+                                                                </ol>
+
+                                                                <div class="carousel-inner">
+                                                                    <div class="item active">
+                                                                        <img src="Images/2.png" class="img-responsive">
+                                                                        <div class="carousel-caption">
+                                                                            <h3></h3>
+                                                                            <p style="font-weight: bold; color:yellow;font-size:small">Mahesh Chand's S/W Developer Community</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item">
+                                                                        <img src="Images/4.png" class="img-responsive">
+                                                                        <div class="carousel-caption">
+                                                                            <h3></h3>
+                                                                            <p style="font-weight: bold; color:yellow;font-size:small">Bill Gates's Software Company</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item">
+                                                                        <img src="Images/5.png" class="img-responsive">
+                                                                        <div class="carousel-caption">
+                                                                            <h3></h3>
+                                                                            <p style="font-weight: bold; color:yellow;font-size:small">Larry Page's Search Engine Company</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item">
+                                                                        <img src="Images/6.jpg" class="img-responsive">
+                                                                        <div class="carousel-caption">
+                                                                            <h3></h3>
+                                                                            <p style="font-weight: bold; color:yellow;font-size:small">Jack Dorsey's Social Networking Company</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div style="width:50%">
+                                                                    <a href="#imageCarousel" class="carousel-control left" data-slide="prev">
+                                                                        <span class="glyphicon glyphicon-hand-left"></span>
+                                                                    </a>
+                                                                    <a href="#imageCarousel" class="carousel-control right" data-slide="next">
+                                                                        <span class="glyphicon glyphicon-hand-right"></span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>*@
+
+
+
+
+
+
+                                        @* <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                                <div class="carousel-inner">
+                                                    @{
+                                                        var first = true;
+                                                    }
+                                                    @foreach (var item in ViewBag.Images)
+                                                    {
+                                                        <div class="carousel-item @(first?Html.Raw("active"):Html.Raw(""))">
+                                                            <img class="d-block w-100" src="@item.Name" alt="@item.Name">
+                                                        </div>
+                                                        first = false;
+                                                    }
+                                                </div>
+                                                <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                                                   data-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                                <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                                                   data-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </div>*@
+
+
+                                    </div>
+
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <div>
+
+                                </div>
+
+                            </div>
+
+                            <!--End Maim 1 RIGHT-->
+
+                            <div class="ScrollgridR" style="margin-right:20px; width:20%; float:right; padding-right:5px; margin-top:1px; overflow:scroll">
+
+
+
+                                <div col-md-4">
+
+
+
+
+
+
+
+                                    <div class="panel panel-default" style="width: 100%; margin-left: 2px;">
+                                        <strong style="font-size:x-large"><b>E-COMMERCE</b></strong>
+                                        <br />
+
+                                        &nbsp;  <a href="http://localhost:1088/Home/Shop">
+                                            <strong class="font-italic" style="color:#003366">
+                                            </strong>&nbsp;&nbsp;<img src="~/Content/images/HomePic/basket2.jpg" width="100" height="100" style=" border-radius:40px;  text-align:center" multiple />
+                                        </a>
+
+                                        <hr />
+                                        <strong style="font-size:large"><b>STORE CORNERS</b></strong>
+                                        <ul>
+
+
+
+                                            @{
+                                                foreach (MainProgram.Edm.tbh_Products item in ViewBag.McM)
+                                                {
+                                                    <li style="width:100%">
+                                                        <div class="aa-cartbox-info">
+
+                                                            <h4><b><a href="http://localhost:1088/Home/Details/1">@item.Name</a></b></h4>
+                                                        </div>
+
+
+                                                        <a href="http://localhost:1088/Home/Details/1">
+                                                            <img alt="@item.AltText" src="@item.FullImageUrl" style="width: 180px; height: 100px; padding-bottom:5px">
+                                                        </a>
+
+                                                        <div class="aa-cartbox-info">
+
+                                                            <p style="text-align:center">@item.ShortDescription</p>
+                                                        </div>
+
+                                                    </li>
+
+                                                }
+                                            }
+
+
+
+
+                                        </ul>
+
+                                        <hr />
+
+                                        <ul>
+
+
+
+                                            @{
+                                                foreach (MainProgram.Edm.tbh_Products item in ViewBag.whitney)
+                                                {
+                                                    <li style="width:100%">
+                                                        <div class="aa-cartbox-info">
+
+                                                            <h4><b><a href="http://localhost:1088/Home/Details/8">@item.Name</a></b></h4>
+                                                        </div>
+                                                        <a href="http://localhost:1088/Home/Details/8">
+                                                            <img alt="@item.AltText" src="@item.FullImageUrl" style="width: 180px; height: 100px">
+                                                        </a>
+
+                                                        <div class="aa-cartbox-info">
+
+                                                            <p style="text-align:center">@item.ShortDescription</p>
+                                                        </div>
+
+                                                    </li>
+
+                                                }
+                                            }
+
+
+
+
+                                        </ul>
+                                        <hr />
+
+                                        <ul>
+
+
+
+                                            @{
+                                                foreach (MainProgram.Edm.tbh_Products item in ViewBag.dk)
+                                                {
+                                                    <li style="width:100%">
+
+                                                        <div class="aa-cartbox-info">
+
+                                                            <h4><b><a href="http://localhost:1088/Home/Details/7">@item.Name</a></b></h4>
+                                                        </div>
+
+                                                        <a href="http://localhost:1088/Home/Details/7">
+                                                            <img alt="@item.AltText" src="@item.FullImageUrl" style="width: 180px; height: 100px">
+                                                        </a>
+
+                                                        <div class="aa-cartbox-info">
+
+                                                            <p style="text-align:center">@item.ShortDescription</p>
+                                                        </div>
+
+                                                    </li>
+
+                                                }
+                                            }
+
+
+
+
+                                        </ul>
+
+
+
+
+                                    </div>
+
+                                </div>
+
+
+
+
+
+
+
+
+
+
+                            </div>
+
+
+
+
+                        </td>
+                    </tr>
+
+
+
+                </table>
+
+
+
+                <div class="container" style="width:100%" ; float:left; background-color:#fcfafa; border:1px solid outset; margin-top:5px; border-radius:5px">
+
+                    <div class="col-md-11">
+
+
+                        <div class="well">
+                            <div id="myCarousel" class="carousel slide">
+
+                                <!-- Carousel items -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <a href="/CSharp/GetPosts"><img src="~/Content/images/HomePic/CSharp.png" alt="Image" class="img-responsive" style="border-radius:8px"></a>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a href="/EntityF/GetPosts"><img src="~/Content/images/HomePic/EntityF.jpg" alt="Image" class="img-responsive" style="border-radius:8px"></a>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a href="/Databases/GetPosts"><img src="~/Content/images/HomePic/Database2.jpg" alt="Image" class="img-responsive" style="border-radius:8px"></a>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a href="/JqJa/GetPosts"><img src="~/Content/images/HomePic/JQuery.png" class="img-responsive" style="border-radius:8px"></a>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a href="/CSS/GetPosts"><img src="~/Content/images/HomePic/CSS.png" alt="Image" class="img-responsive" style="border-radius:8px"></a>
+                                            </div>
+
+
+                                            <div class="col-sm-2">
+                                                <a href="/MVC/GetPosts"><img src="~/Content/images/HomePic/MVC.jpg" alt="Image" class="img-responsive" style="border-radius:8px"></a>
+                                            </div>
+                                        </div>
+                                        <!--/row-->
+                                    </div>
+
+                                    <div class="item">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <a href="#x"><img src="~/Content/images/HomePic/CSharp.png" alt="Image" class="img-responsive" style="border-radius:8px"></a>
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <a href="#x"><img src="~/Content/images/HomePic/EntityF.jpg" alt="Image" class="img-responsive" style="border-radius:8px"></a>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a href="#x"><img src="~/Content/images/HomePic/Database2.jpg" alt="Image" class="img-responsive" style="border-radius:8px"></a>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a href="#x"><img src="~/Content/images/HomePic/JQuery.png" alt="Image" class="img-responsive" style="border-radius:8px"></a>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a href="#x"><img src="~/Content/images/HomePic/CSS.png" class="img-responsive" style="border-radius:8px"></a>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a href="#x"><img src="~/Content/images/HomePic/MVC.jpg" class="img-responsive" style="border-radius:8px"></a>
+                                            </div>
+                                        </div>
+                                        <!--/row-->
+                                    </div>
+                                    <!--/item-->
+                                </div>
+                                <!--/carousel-inner--> <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+
+                                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+                            </div>
+                            <!--/myCarousel-->
+                        </div>
+                        <!--/well-->
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        .content-wrapper {
+            margin-top: 0%;
+            margin-left: 0%;
+            background-position: top;
+        }
+
+        #left {
+            width: 20%;
+            margin-left: 0%;
+            margin-top: 0%;
+            background-position: top;
+            position: relative;
+            background-color: #eee3e3;
+        }
+
+
+
+        .right-sidebar {
+            content: " ";
+            position: relative;
+            margin-top: 0%;
+            width: 80%;
+            overflow: no-display;
+            padding-right: 10px;
+            margin-left: 20%;
+            margin-right: 2%;
+            background-position: top;
+            margin-bottom: 0px;
+            background-color: #fff;
+        }
+
+
+        .SiteT {
+            width: 100%;
+            border: none;
+            margin-right: 0px;
+            padding-right: 0px;
+            margin-bottom: 5px;
+        }
+
+
+
+
+        .main--container {
+            margin-left: 17px;
+        }
+
+
+        .ScrollgridL {
+            OVERFLOW: auto;
+            BORDER-LEFT: none;
+            WIDTH: 100%;
+            BORDER-BOTTOM: #000000 none;
+            HEIGHT: 980px;
+            scrollbar-3dlight-color: none;
+            scrollbar-arrow-color: #9C3842;
+            scrollbar-base-color: #ffffff;
+            scrollbar-darkshadow-color: none;
+            scrollbar-face-color: transparent;
+            scrollbar-highlight-color: #ffffff;
+            scrollbar-shadow-color: #ffffff;
+        }
+
+        .ScrollgridR {
+            OVERFLOW: auto;
+            BORDER-LEFT: none;
+            WIDTH: 1000px;
+            BORDER-BOTTOM: #000000 none;
+            HEIGHT: 780px;
+            scrollbar-3dlight-color: #fff;
+            scrollbar-arrow-color: #9C3842;
+            scrollbar-base-color: #003366;
+            scrollbar-face-color: #ffffff;
+            scrollbar-face-color: #ffffff;
+            scrollbar-highlight-color: #ffffff;
+            scrollbar-shadow-color: #ffffff;
+        }
+    </style>
+
+
+
+</div>
+@Scripts.Render("~/bundles/bootstrap-file")
+
+@Styles.Render("~/Content/Bootstrap-file/css")

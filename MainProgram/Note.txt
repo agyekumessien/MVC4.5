@@ -1,0 +1,105 @@
+﻿MIGRATION
+
+Console - type :enable-migrations
+this create migration folder in your application
+add-migration Files
+Add-migration AddedFieldintable 
+this add more attribute such as fullname or address, 
+
+update-database
+This apply changes into your database
+
+
+add-migration ChangedtableName
+This change table name and Id in database
+
+update-dataabase
+This apply changes into your database
+
+
+Removing and Resetting Migrations
+
+Remove the _MigrationHistory table from the Database
+Remove the individual migration files in your project's Migrations folder
+Enable-Migrations in Package Manager Console
+Enable-Migrations -ContextTypeName MainProgram.Models.ApplicationDbContext
+
+Enable-Migrations -ContextTypeName MusicStore.EntityContext.MusicStoreEntities
+MusicStore.EntityContext.MusicStoreEntities
+
+Add-migration Initial in PMC
+Comment out the code inside of the Up method in the Initial Migration
+Update-database in PMC (does nothing but creates Migration Entry)
+
+
+
+
+To enable migrations for 'Mvc5Project.Models.ApplicationDbContext', use Enable-Migrations -ContextTypeName Mvc5Project.Models.ApplicationDbContext.
+To enable migrations for 'Mvc5Project.Models.FormExampleDbContext', use Enable-Migrations -ContextTypeName Mvc5Project.Models.FormExampleDbContext.
+To enable migrations for 'Mvc5Project.Models.BlogDbContext', use Enable-Migrations -ContextTypeName Mvc5Project.Models.BlogDbContext.
+Enable-Migrations -ContextTypeName MainProgram.CustomsMigration.angulardemoEntities
+
+enable-migrations
+Checking if the context targets an existing database...
+Code First Migrations enabled for project MainProgram.
+PM> add-migration IdentityFiles
+Scaffolding migration 'IdentityFiles'.
+
+
+Add-migration UserDefined
+Unable to generate an explicit migration because the following explicit migrations are pending: [202209092044275_IdentityFiles]. Apply the pending explicit migrations to database first
+ before attempting to generate a new explicit migration.
+
+PM> Update-Database -TargetMigration IdentityFiles
+Update-Database -TargetMigration AddedUserDefined
+
+Specify the '-Verbose' flag to view the SQL statements being applied to the target database.
+Applying explicit migrations: [202209092044275_IdentityFiles].
+Applying explicit migration: 202209092044275_IdentityFiles.
+PM> Add-migration AddedUserDefined
+Scaffolding migration 'AddedUserDefined'.
+
+
+Update-Database -TargetMigration AddedUserDefined
+
+
+dotnet ef database drop angulardemo2
+dotnet ef database drop -p MainProgram -s ../MainProgram
+
+
+
+
+To enable migrations for 'Mvc5Project.Models.ApplicationDbContext', use Enable-Migrations -ContextTypeName Mvc5Project.Models.ApplicationDbContext.
+To enable migrations for 'Mvc5Project.Models.FormExampleDbContext', use Enable-Migrations -ContextTypeName Mvc5Project.Models.FormExampleDbContext.
+To enable migrations for 'Mvc5Project.Models.BlogDbContext', use Enable-Migrations -ContextTypeName Mvc5Project.Models.BlogDbContext.
+
+
+
+
+update-database -ConfigurationTypeName Mvc5Project.Migrations.ApplicationDbContext.Configuration
+
+update-database -ConfigurationTypeName Mvc5Project.Migrations.FormExampleDbContext.Configuration
+
+update-database -ConfigurationTypeName Mvc5Project.Migrations.BlogDbContext.Configuration
+
+
+
+Enable-Migrations -ProjectName "SubMainP" -StartUpProjectName "SubMainP"
+
+ public string Title { get; set; }
+        [DisplayName("Upload File")]
+        public string ImagePath { get; set; }
+
+        public HttpPostedFileBase ImageFile { get; set; }
+
+
+
+How to delete Mutipple table using ssms
+
+First, go to SSMS and select the menu View and there select the option “Object Explorer Details”. Alternatively, you can also hit keyboard option F7 and it will open up Object Explorer Details.
+In Object Explorer Details, select the tables which you want to delete and either hit the keyboard button DELETE or just go right click on the tables and select the option DELETE.
+
+
+<h2>Enabling and Disabling text field using JavaScript</h2> <form id="registration-form"> Enter your name: <input type="text" id="name"> </form> <button onclick="disable()">Disable the text field</button> <button onclick="enable()">Enable the text field</button> <script> function disable() { document.getElementById("name").disabled = true; } function enable() { document.getElementById("name").disabled = false; } </script>
+
+Read more: https://javarevisited.blogspot.com/2017/08/how-to-enable-disable-element-using-jQuery-JavaScript-example.html#ixzz6DnHzsOwd

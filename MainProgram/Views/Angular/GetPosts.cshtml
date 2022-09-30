@@ -1,0 +1,427 @@
+﻿@*@model PagedList.IPagedList<MainProgram.Edm.Angular>*@
+@model MainProgram.Edm.Angular
+
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@using MainProgram.Core.Resources
+@using MainProgram.Helper_Code
+@using MainProgram.Models
+
+
+@using MainProgram.Core
+@using MainProgram.Models
+@using MainProgram.Core.Resources
+
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+
+
+
+
+
+
+@{
+    ViewBag.Title = "GetPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-modal/bootstrap-modal.css" rel="stylesheet" />
+
+
+
+
+<section class="hero is-info is-fullheight is-bold">
+
+
+    <div class="hero-body   mt-4 mb-6 mb-12" style="background-color: ghostwhite; margin-right:0px; padding-right:0px; text-align:center">
+
+
+        <div class="Main-Bar" style="width:100%; margin-right:0px; padding-right:0px; margin-top:20px; text-align:center; background-color:#fff">
+            <div class="panel2" style="width: 98.8%; padding-left: 0px; padding-right: 0px;">
+                <div class="row mt-4 mb-6 mb-12">
+
+                    <div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; margin-top:30px; background-color:white; border:none">
+
+
+
+
+
+                        <!-- left sidebar-->
+
+
+                        <div id="fadeshow1" class="left" style="width: 20%; float:left; padding-top:10px; background-color:white; border:none">
+                            <div class="Container">
+                                <div class="col-md-2">
+                                    <div class="container">
+                                        <div class="panel panel-default" style="width: 25%; text-align: center; border:none">
+                                            <strong style="font-size:medium; text-align:center"><b>The Highest Post</b></strong>
+                                            <div class=" panel-body  no-gutter">
+                                                <div col-md-4">
+
+                                                    <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none">
+
+                                                        <div class="panel-footer">
+                                                            <p class="box-title"><b>Total Post till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">Peter Agyekum: <strong>@ViewBag.UserCount</strong></span></p>
+                                                        </div>
+
+
+                                                        <div class="table">
+                                                            <ul>
+                                                                @{
+
+                                                                    MainProgram.Edm.angulardemoEntities dbg3 = new MainProgram.Edm.angulardemoEntities();
+
+                                                                    List<MainProgram.Edm.DotNet> Modelq = dbg3.DotNets.ToList();
+
+
+                                                                    {
+                                                                        <li>
+
+
+                                                                        </li>
+                                                                    }
+                                                                }
+
+
+
+
+                                                            </ul>
+
+
+
+
+                                                            <div class="panel-footer">
+                                                                <p class="box-title"><b>Total Participant for Reply  Posting @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">@Modelq.Count.ToString()</span></p>
+                                                            </div>
+
+
+
+
+                                                        </div>
+                                                    </div>
+
+
+
+
+
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!--End Of Left-->
+                        <!-- Right-->
+
+
+                        <div id="fadeshow1" class="right"
+                             style="width: 21%; float:right; margin-right:8px; padding-right:8px; padding-top:10px; background-color:white; border-left:none">
+                            <div class="Container">
+                                <div class="col-md-4">
+                                    <div class="container">
+                                        <div class="panel panel-default" style="width: 21%; border:none">
+                                            <strong style="font-size:x-large"><b>Related Topics</b></strong>
+                                            <div class=" panel-body  no-gutter">
+                                                <div col-md-3">
+                                                    <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none; text-align:left">
+
+
+                                                        @{
+
+
+                                                            MainProgram.Edm.angulardemoEntities dbgr = new MainProgram.Edm.angulardemoEntities();
+
+                                                            List<MainProgram.Edm.Angular> Modelr = dbgr.Angulars.ToList();
+
+                                                            foreach (MainProgram.Edm.Angular item in Modelr)
+                                                            {
+                                                                <li>
+
+                                                                    <a href="@Url.Action("Details", "Angular", new { id = item.AngularId })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                                        @item.AngularTitle
+
+                                                                    </a>
+
+
+                                                                </li>
+                                                            }
+                                                        }
+
+
+
+
+
+                                                        </ul>
+
+                                                    </div>
+
+
+
+                                                </div>
+
+
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--End Of Right-->
+                        <!--MID Sidebar Main content-->
+                        <div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+                            <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+                                
+                                    <strong style="font-size:x-large"><b> Angular Top questions</b></strong>
+                                    <hr />
+
+                                    <fieldset>
+                                        @using (Html.BeginForm("Index", "Angular", FormMethod.Get))
+                                        {
+                                            <p>
+                                                Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+                                                <input type="submit" value="Search" />
+                                            </p>
+                                        }
+
+
+                                        <br />
+
+
+
+
+
+                                    </fieldset>
+
+                                    @*  <p>
+
+
+
+
+                            <input type="button" class="btn btn-primary" data-toggle="modal" data-target="#angularModal" value="Create New">
+                        </p>*@
+
+
+                                    <p>
+
+                                        @Html.ActionLink("New Post", "Create", "Angular")
+
+                                    </p>
+
+
+
+
+                                    <fieldset>
+                                        <strong style="font-size:x-large"><b>Recent Post</b></strong>
+
+                                        <div class="table">
+                                            <ul>
+
+                                                @{
+
+
+                                                    MainProgram.Edm.angulardemoEntities dbg = new MainProgram.Edm.angulardemoEntities();
+
+                                                    List<MainProgram.Edm.Angular> Modelg = dbg.Angulars.ToList();
+
+
+                                                    <li>
+                                                        <table class="table text-center;" style="width:100%; margin:0%; text-align:center">
+
+
+                                                            @foreach (MainProgram.Edm.Angular item in Modelg.Distinct())
+                                                            {
+
+                                                                <tr style="border:1px solid white">
+
+                                                                    <td>
+
+
+                                                                        <span>
+
+                                                                            <img src="~/Content/images/user/anonymous.png" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /><br />
+
+                                                                            @*<img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /><br />*@
+
+                                                                        </span>
+                                                                        <span style="margin-right:5px; font-size:16px; color:black">
+                                                                            <b style="color:black; float:left"> @item.AspNetUser.UserName</b>
+                                                                        </span>
+                                                                        <span style="margin-right:15px; font-size:16px; color:black">
+                                                                            <b>@item.AngularTitle</b>
+                                                                        </span>
+                                                                        <br />
+                                                                        <span class="blue" style="margin-right:15px; font-size:16px; color:black; text-align:left">
+                                                                            <br /> @Html.Raw(@item.AngularText)
+                                                                        </span>
+
+
+
+                                                                    </td>
+
+                                                                </tr>
+                                                            }
+
+                                                        </table>
+
+
+                                                    </li>
+                                                }
+
+
+
+
+
+
+                                            </ul>
+
+
+
+                                        </div>
+
+
+
+
+
+
+                                    </fieldset>
+
+
+                                </div>
+
+                            
+                        
+                         </div>
+
+
+
+
+
+
+
+                            <br />
+                            @* Users @(Model.TotalItemCount < Model.TotalItemCount ? 0 : Model.TotalItemCount) of @Model.TotalItemCount
+                      Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                <!---->      @Html.PagedListPager(Model, page => Url.Action("Index",
+                  new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@
+
+
+                            <br /><br />
+
+
+
+
+                        
+                        <!--End Of MID-->
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+
+
+                <div>
+                    @Html.ActionLink("Back to HomePage", "Index", "Home")
+                </div>
+
+
+
+
+
+
+                    <style>
+                        .content-wrapper {
+                            margin-top: 0%;
+                            margin-left: 0%;
+                            background-position: top;
+                        }
+
+                        #left {
+                            width: 20%;
+                            margin-left: 0%;
+                            margin-top: 0%;
+                            background-position: top;
+                            position: relative;
+                            background-color: #eee3e3;
+                        }
+
+
+
+                        .Mid-sidebar {
+                            content: " ";
+                            position: relative;
+                            margin-top: 0%;
+                            width: 60%;
+                            overflow: no-display;
+                            padding-right: 0px;
+                            margin-left: 20%;
+                            margin-right: 0%;
+                            background-position: top;
+                            margin-bottom: 0px;
+                            background-color: #fff;
+                        }
+
+
+                        .SiteT {
+                            width: 100%;
+                            border: none;
+                            margin-right: 0px;
+                            padding-right: 0px;
+                        }
+
+
+
+
+                        .main--container {
+                            margin-left: 17px;
+                        }
+                    </style>
+
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+ </section>
+
+<style>
+    @@media only screen and (max-width:1026px) {
+        #fadeshow1 {
+            display: none;
+        }
+    }
+</style>
+
+
+    <script>
+        var ContentFromTextArea = "dib";
+        ContentFromTextArea.replace("\r", "<br />", "text-align left");
+        ContentFromTextArea.replace("\n", "<br />");
+        $("#span").html(ContentFromTextArea);
+        $("#blue").html("text-align left");
+    </script>

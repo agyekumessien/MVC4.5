@@ -1,0 +1,1295 @@
+﻿@using MainProgram.Core.Resources
+@using MainProgram.Edm
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="keywords" content="mobile skin" />
+    <meta http-equiv="description" content="This is the Mobile version of my site" />
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/bundles/MobileCSS")
+    @Styles.Render("~/bundles/MobileJS")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="~/Content/js/jquery.min.js"></script>
+    <!-- Ad intellisence for searching products-->
+    <link href="~/Content/css/Phone.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/css/Custom.css" rel="stylesheet" />
+    <link href="~/Content/Intellisence/css/jquery-ui.min.css" rel="stylesheet" />
+    <script src="~/Content/Intellisence/js/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/Intellisence/js/jquery-ui.min.js"></script>
+    <script src="~/Content/js/mycustom.js"></script>
+
+
+    <!-- Favicon for Iphon, Ipod, Browser, Android Devies etc -->
+    <link rel="apple-touch-icon" sizes="57x57" href="~/Content/themefront/assets/img/fav/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="~/Content/themefront/assets/img/fav/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="~/Content/themefront/assets/img/fav/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="~/Content/themefront/assets/img/fav/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="~/Content/themefront/assets/img/fav/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="~/Content/themefront/assets/img/fav/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="~/Content/themefront/assets/img/fav/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="~/Content/themefront/assets/img/fav/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Content/themefront/assets/img/fav/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="~/Content/themefront/assets/img/fav/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Content/themefront/assets/img/fav/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="~/Content/themefront/assets/img/fav/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/themefront/assets/img/fav/favicon-16x16.png" />
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        $(function () {
+            $("#searchTxtBox").autocomplete({
+                source: '@Url.Action("item","Product")'
+            });
+        });
+    </script>
+
+
+    @* <script type="text/javascript">
+        $(document).ready(function () {
+            $(".trigger").click(function () {
+                $("#nav-sidebar").toggle("fast");
+                $("#nav-sidebar").toggleClass("active");
+                return false;
+            });
+        });
+
+        //Toggle Hide/Show sidebar slowy
+        $(document).ready(function () {
+            $('#toggleNav').click(function (e) {
+                e.preventDefault();
+                $('#nav-sidebar').toggle('slow');
+                $('#toggleNav').toggleClass('extended-panel');
+            });
+        });
+
+
+        </script>*@
+
+
+
+
+
+    <script>
+        $(function () {
+            @* $("#aa-header").click(function () {
+            $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/green-theme.css")'
+            );
+        });*@
+            $("#aa-main").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                );
+            });
+
+            $("#nav").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                   );
+            });
+
+
+            $("#navbar-default").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                   );
+            });
+
+
+            $("#dropdown-menu").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                    );
+            });
+
+            $("#aa-header-top-right").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                   );
+            });
+
+
+
+            $("#aa-header3").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                     );
+            });
+
+
+
+
+            $("#aa-header2").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+
+               );
+            });
+
+        })
+    </script>
+
+
+
+
+</head>
+<body>
+
+
+
+
+
+    <section id="menu" style="margin-bottom: 1px; background-image: url('../../Content/img/slider/Nyork.jpg');">
+
+        <header id="aa-header3" style="height:40px; color:black">
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="aa-header-bottom-area" style="text-align:center; color:black">
+
+
+                            <table style="text-align:center; width:100%">
+                                <tr>
+                                    <td style="margin-left:0px; float:left; text-align:center; color:black">
+
+                                        <ul class="list-unstyled list-inline mb-0">
+
+                                            <li class="fa fa-left">
+                                                <nav class="nav-main">
+                                                    <div class="btn-toggle-nav" onclick="toggleNav()" style="color:white; overflow:hidden; background-position:top"></div>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="@Url.Action("Index","Home")">
+                                                                <img src="~/Content/img/ApparelImages/Globe4.png"
+                                                                     style="width:50px; height:50px" />
+                                                                <strong class="font-italic" style="color:#fff">StockWell</strong><strong class="font-italic" style="color:#fff">.LLC</strong>
+
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <aside class="nav-sidebar" style="overflow:hidden; background-position:top">
+                                                        <ul>
+                                                            <li><span>Projects</span></li>
+                                                            <li><a href="#">Making a website</a></li>
+                                                            <li><a href="#">Creating a video</a></li>
+                                                            <li><a href="#">SEO optimizing a website</a></li>
+                                                            <li><a href="#">Walking through a park</a></li>
+                                                            <li><a href="#">Just another day</a></li>
+                                                        </ul>
+
+                                                    </aside>
+                                                </nav>
+                                            </li>
+
+
+                                            <li class="fa fa-cc-year">
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                    <li><a href="#"><img src="~/Content/img/flag/french.jpg" alt="" />FRENCH</a></li>
+                                                    <li><a href="#"><img src="~/Content/img/flag/english.jpg" alt="" />ENGLISH</a></li>
+                                                </ul>
+
+                                            </li>
+                                            <li class="fa fa-money">
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                    <li><a href="#"><i class="fa fa-euro"></i>EURO</a></li>
+                                                    <li><a href="#"><i class="fa fa-usd"></i>USD</a></li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="fa fa-cc-year">
+                                                <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                    <i class="fa fa-money"></i>PKR
+
+                                                </a>
+                                            </li>
+                                        </ul>
+
+
+                                    </td>
+
+
+                                    <td style="float:none; text-align:right; color:black">
+
+                                        <p>
+
+                                            <span class="fa fa-phone" style="color:black; font-size:25px"></span><a href="http://www.facebook.com/zulfiqar.akram366"><b style="color:black; font-size:25px">(021)-6558-6588</b></a>
+                                            <a href="https://mdbootstrap.com/material-design-for-bootstrap/"> <b style="color:black"> - Contact </b></a>
+
+
+
+                                            @*<ul class="list-unstyled list-inline mb-0">
+                                                    <li class="fa fa-cc-mastercard">
+                                                    </li>
+                                                    <li class="fa fa-cc-visa"></li>
+                                                    <li class="fa fa-paypal"></li>
+                                                    <li class="fa fa-cc-discover"></li>
+                                                </ul>*@
+                                        </p>
+
+                                    </td>
+
+
+
+                                    <td style="margin-right:0px; float:right; height:40px; color:white; background-color:none">
+                                        <div class="aa-header-top-right" style="height:35px; border-color:none; color:white">
+
+                                            <ul class="list-unstyled list-inline mb-0">
+
+                                                <li class="fa fa-Right">
+                                                </li>
+
+                                                <li class="hidden-xs">
+                                                </li>
+                                                <li><a href="@Url.Action("WishList", "WishList")"><b style="color:white; font-family: Georgia,'Times New Roman',serif;"><i class="fa fa-user"></i> @Resource.User</b></a></li>
+                                                @*  Wishlist @if (@ViewBag.WlItemsNo > 0)
+                                                    { <text>(@ViewBag.WlItemsNo)</text> }*>
+
+
+                                                    @* <li><a href="@Url.Action("ViewCart","Orders")"><i class="fa fa-shopping-cart"></i> @Resource.Cart<span class="badge" id="cart-quantity">@quantity </span></a></li>*@
+                                                @if (User.Identity.IsAuthenticated)
+                                                {
+                                                    <li role="presentation" class="dropdown">
+                                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                                            @User.Identity.Name <span class="caret"></span>
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a href="@Url.Action("Profile", "User")"><i class="fa fa-user"></i> @Resource.Profile</a></li>
+                                                            <li><a href="@Url.Action("Index", "Orders")"><i class="fa fa-list-alt fa-fw"></i> @Resource.Orders</a></li>
+                                                            <li role="presentation" class="dropdown">
+                                                                <a href="@Url.Action("SignOut", "User")"><i class="fa  fa-sign-out"></i>@Resource.LogOut</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                }
+                                                else
+                                                {
+                                                    <li style="background-color:none"><a href="@Url.Action("Login", "UserLogin")"><b style="color:white"><i class="fa fa-lock"></i></b> <b style="color:white;font-family: Georgia,'Times New Roman',serif; "> @Resource.Login</b></a></li>
+                                                }
+
+
+                                            </ul>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+
+
+
+
+
+
+
+        <header class="navbar-collapse collapse" id="aa-header" style="height: 40px; color: white; position:relative;">
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="aa-header-bottom-area" style="text-align:right; color:white">
+
+
+                            <table style="text-align:center; width:100%">
+                                <tr>
+                                    @* <td style="margin-left:0px; float:left; text-align:right; color:white">
+
+
+                                            <ul class="navbar-nav pull-left col-lg-12 no-padding no-gutter">
+                                                <li>
+                                                    <a href="@Url.Action("Index","Home")">
+                                                        <img src="~/Content/img/ApparelImages/Globe4.png"
+                                                             style="width:50px; height:50px" />
+                                                        <strong class="font-italic" style="color:#fff">StockWell Business</strong><strong class="font-italic" style="color:#fff">.LLC</strong>
+
+                                                    </a>
+                                                </li>
+                                            </ul>
+
+
+                                        </td>*@
+
+
+
+
+
+
+
+
+
+
+                                    @* <span class="fa fa-phone" style="color:black; font-size:25px"></span><a href="http://www.facebook.com/zulfiqar.akram366"><b style="color:black; font-size:25px">(021)-6558-6588</b></a>
+                                        <a href="https://mdbootstrap.com/material-design-for-bootstrap/"> <b style="color:black"> - Contact </b></a>*@
+
+
+                                    <td style="float:none; text-align:center; color:white">
+
+
+
+                                        <ul class="list-unstyled list-inline mb-0">
+
+                                            <li class="fa fa-Right">
+                                                <form action="@Url.Action("Search","item")" method="get">
+                                                    <input type="text" name="product" id="searchTxtBox" placeholder="Search product here . . . " style="width:500px; background-color:lightgray; height:40px" />
+                                                    <button type="submit" style="height:40px; width:40px; background-image: url(Content/img/Slider/Nyork.jpg)"><span class="fa fa-search"></span></button>
+                                                </form>
+
+
+                                            </li>
+
+
+                                        </ul>
+
+
+
+                                    </td>
+
+
+
+
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </header>
+
+
+        @*   <div class="menu-area no-padding no-gutter" style="width:100%; border:none; color:white">
+                <!-- Navbar -->
+                <!-- logo  -->
+                <!-- Text based logo -->
+
+                <table style="text-align:center; width:100%">
+                    <tr>
+                        <td style="margin-left:0px; float:left; text-align:center; color:white">
+
+                            <p style="color:white">
+                                <ul class="navbar-nav pull-left col-lg-12 no-padding no-gutter">
+                                    <li>
+                                        <a href="@Url.Action("Index","Home")">
+
+                                            <img src="~/Content/img/ApparelImages/home_icon4.png" style="width:20px; height:20px; margin-top:8px" />
+
+                                        </a>
+                                    </li>
+                                </ul>
+                            </p>
+                        </td>
+                        <!-- img based logo -->
+                        <!-- <a href="index.html"><img src="~/Content/img/logo.jpg" alt="logo img"></a> -->
+                        <td class="nav-table" style="margin-right:0px; float:none; width:100%; height:30px; color:white; border-color:none; border:none; display:inline">
+
+                            <p class="P-menu no-gutter no-padding">
+                                <!-- Left nav -->
+                                <ul class="nav navbar-nav center-block  navbar-collapse  no-gutter no-padding" role="navigation" style="position: center; margin: auto; border-radius:15px; background-image: url('../../Content/img/slider/Nyork.jpg');">
+                                    @{
+
+                                        foreach (var item in Model)
+                                        {
+                                            <li class="center-block" style="float:right; position:relative;  width:92px; margin-top:15px">
+                                                <a href="/Departments/@item.MenuURL">@item.Name</a>
+                                                @if (item.tbh_SubDepartments.Count > 0)
+                                                {
+                                                    <ul class="dropdown-menu" style="background-image: url('../../Content/img/slider/Nyork.jpg');">
+                                                        @foreach (var item2 in item.tbh_SubDepartments)
+                                                        {
+                                                            <li><a href="/Pages/@item2.MenuURL/@item2.SubDepartmentID">@item2.Name</a></li>
+                                                        }
+                                                    </ul>
+
+                                                }
+                                            </li>
+                                        }
+                                    }
+
+
+
+                                </ul>
+                            </p>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>*@
+        <!--/.nav-collapse
+        <!-- / search box -->
+
+    </section>
+
+
+    <br /><br /><br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*  @Html.Partial("_getMenuList")*@
+
+
+
+
+    <!-- / header section -->
+    <!-- menu -->
+    @RenderBody()
+
+    <footer id="aa-footer">
+
+        <!-- footer bottom -->
+        <div class="aa-footer-top">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="aa-footer-top-area">
+
+                            <div class="row">
+
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="aa-footer-widget">
+                                        <div class="aa-footer-widget" style="color:white">
+                                            <h3>Main Menu</h3>
+                                            <ul class="aa-footer-nav">
+                                                <li><a href="#">Home</a></li>
+                                                <li><a href="#">Our Services</a></li>
+                                                <li><a href="#">Our Products</a></li>
+                                                <li><a href="#">About Us</a></li>
+                                                <li><a href="#">Contact Us</a></li>
+                                                <li><a href="#">Delivery</a></li>
+                                                <li><a href="#">Returns</a></li>
+                                                <li><a href="#">Services</a></li>
+                                                <li><a href="#">Discount</a></li>
+                                                <li><a href="#">Special Offer</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="aa-footer-widget">
+                                        <div class="aa-footer-widget" style="color:white">
+                                            <h3>Knowledge Base</h3>
+                                            <ul class="aa-footer-nav">
+                                                <li><a href="#">Search</a></li>
+                                                <li><a href="#">Advanced Search</a></li>
+                                                <li><a href="#">Suppliers</a></li>
+                                                <li><a href="#">FAQ</a></li>
+                                                <li><a href="#">Special Offer</a></li>
+                                                <li><a href="#">Delivery</a></li>
+                                                <li><a href="#">Returns</a></li>
+                                                <li><a href="#">Services</a></li>
+                                                <li><a href="#">Discount</a></li>
+                                                <li><a href="#">Special Offer</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="aa-footer-widget">
+                                        <div class="aa-footer-widget" style="color:white">
+                                            <h3>Contact Us</h3>
+                                            <address>
+                                                <p>Suit#007, Sharae Faisal ,Karachi</p>
+                                                <p><span class="fa fa-phone"></span>021-6558-6588</p>
+                                                <p><span class="fa fa-envelope"></span>help@Khareedo.com.pk</p>
+                                                <p>Suit#007, Sharae Faisal ,Karachi</p>
+                                                <p><span class="fa fa-phone"></span>021-6558-6588</p>
+                                                <p><span class="fa fa-envelope"></span>help@Khareedo.com.pk</p>
+                                                <p><span class="fa fa-phone"></span>021-6558-6588</p>
+                                                <p><span class="fa fa-envelope"></span>help@Khareedo.com.pk</p>
+                                            </address>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="aa-footer-widget">
+                                        <div class="aa-footer-widget">
+
+                                            <h3>Social Media</h3>
+
+                                            <div class="aa-footer-social">
+
+                                                <p>
+                                                    <ul class=" list-inline" style="border:none">
+
+                                                        <li style="border:none; color:#222">
+                                                            <a target="_blank" href="https://facebook.com/sharer.php?u=http://arunendapally.com/post/protect-your-source-code-from-decompiling-or-reverse-engineering" class="social facebook"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://arunendapally.com/post/protect-your-source-code-from-decompiling-or-reverse-engineering&amp;title=Protect your source code from decompiling or reverse engineering" class="social linkedin"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a target="_blank" href="https://twitter.com/intent/tweet?url=http://arunendapally.com/post/protect-your-source-code-from-decompiling-or-reverse-engineering&amp;text=Protect your source code from decompiling or reverse engineering&amp;via=arunendapally" class="social twitter"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a target="_blank" href="https://plus.google.com/share?url=http://arunendapally.com/post/protect-your-source-code-from-decompiling-or-reverse-engineering" class="social googleplus"></a>
+                                                        </li>
+                                                    </ul>
+
+
+
+                                                </p>
+
+
+
+                                                <p>
+                                                    <ul class="list-unstyled list-inline mb-0">
+                                                        <li class="fa fa-cc-mastercard">
+                                                        </li>
+                                                        <li class="fa fa-cc-visa"></li>
+                                                        <li class="fa fa-paypal"></li>
+                                                        <li class="fa fa-cc-discover"></li>
+                                                    </ul>
+                                                </p>
+
+
+
+
+
+
+                                                <p>
+                                                    <ul class="list-unstyled list-inline mb-0">
+                                                        <li class="list-inline-item">
+                                                            <h5 class="mb-1">Register for free</h5>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a href="#!" class="btn btn-danger btn-rounded">Sign up!</a>
+                                                        </li>
+                                                    </ul>
+                                                </p>
+
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+        <div class="aa-footer-bottom">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="aa-footer-bottom-area" style="text-align:center; color:white">
+
+
+                            <table style="text-align:center; width:100%">
+                                <tr>
+                                    <td style="margin-left:0px; float:left">
+                                        <p style="color:white">
+                                            Designed by: <a href="http://www.facebook.com/zulfiqar.akram366"><b style="color:white">Peter Agyekum Essien</b></a>
+                                            <a href="https://mdbootstrap.com/material-design-for-bootstrap/"> <b style="color:white"> - essien.net </b></a>
+
+
+                                        </p>
+
+
+                                    </td>
+
+
+                                    <td style="float:none">
+                                        <p>
+                                            <ul class="list-unstyled list-inline mb-0">
+
+                                                <li class="fa fa-Right"></li>Copyright
+                                                <li class="fa fa-cc-year"> ©2019</li>
+                                            </ul>
+                                        </p>
+
+                                    </td>
+
+
+
+                                    <td style="margin-right:0px; float:right">
+                                        <p>
+                                            <ul class="list-unstyled list-inline mb-0">
+                                                <li class="fa fa-cc-mastercardcu">
+                                                    SITEMAP
+                                                </li>
+                                                <li class="fa fa-cc-pricaycu">PRIVACY</li>
+                                                <li class="fa fa-paypalcu">POLICY</li>
+
+                                            </ul>
+                                        </p>
+
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+
+
+
+
+    <!-- / footer -->
+    @*
+
+
+        <!-- wpf loader Two -->
+        <div id="wpf-loader-two">
+            <div class="wpf-loader-two-inner">
+                <span>Loading</span>
+            </div>
+        </div>
+        <!-- / wpf loader Two -->
+        <!-- SCROLL TOP BUTTON -->
+        <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
+        <!-- END SCROLL TOP BUTTON -->
+    *@
+
+    <!-- Start header section -->
+    @Scripts.Render("~/Content/js")
+    @RenderSection("scripts", required: false)
+    <script src="~/Content/js/main.js"></script>
+
+
+
+    <style>
+        #menu {
+            display: inline;
+            float: left;
+            margin-left: 0px;
+            margin-right: 0px;
+            width: 100%;
+            font-size: 18px;
+            text-align: center;
+        }
+
+            #menu .dropdown-menu {
+                font-size: 18px;
+                border: thin;
+                background-image: url(Content/img/Slider/Nyork.jpg);
+            }
+
+
+
+            #menu .menu-area .aa-logo {
+                float: left;
+            }
+
+                #menu .menu-area .aa-logo a {
+                    font-family: "Raleway", sans-serif;
+                    font-size: 18px;
+                    color: white;
+                }
+
+                    #menu .menu-area .aa-logo a:hover {
+                    }
+
+                    #menu .menu-area .aa-logo a span {
+                        display: inline-block;
+                        float: left;
+                        font-size: 18px;
+                    }
+
+                    #menu .menu-area .aa-logo a p {
+                        display: inline-block;
+                        float: left;
+                        font-weight: bold;
+                        margin-bottom: 0;
+                        margin-left: 5px;
+                        margin-top: -5px;
+                    }
+
+                        #menu .menu-area .aa-logo a p span {
+                            display: block;
+                            font-size: 12px;
+                            font-weight: normal;
+                            letter-spacing: 1.5px;
+                            text-transform: uppercase;
+                        }
+
+            #menu .container {
+                height: 100%;
+                margin: 0px;
+                width: 100%;
+            }
+
+        .center-block {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            float: none;
+        }
+
+        #menu .dropdown-menu {
+            font-size: 12px;
+            width: auto;
+            color: white;
+            background-image: url(Content/img/Slider/Nyork.jpg);
+        }
+
+
+        #menu .nav {
+            text-align: center;
+            font-size: 12px;
+        }
+
+
+
+        #menu .navbar-default {
+            background-color: transparent;
+            font-size: 12px;
+            border: none;
+        }
+
+        #menu .navbar-nav {
+            width: auto;
+            text-align: center;
+        }
+
+        #menu ul li a {
+            width: auto;
+            height: 40px;
+            display: block;
+            text-decoration: none;
+            text-align: left;
+            font-family: Georgia,'Times New Roman',serif;
+            color: #ffffff;
+            border: none;
+        }
+
+
+
+
+
+
+        #menu ul li:hover ul {
+            visibility: visible;
+        }
+
+
+
+        #menu li:hover {
+            background-image: url(Content/img/Slider/Nyork.jpg);
+            width: auto;
+        }
+
+
+
+        #menu ul li:hover ul li a:hover {
+            background-image: url(Content/img/Slider/Nyork.jpg);
+            width: auto;
+        }
+
+
+
+        #menu a:hover {
+            background-image: url(Content/img/Slider/Nyork.jpg);
+        }
+
+
+
+
+
+
+
+
+        /*TOGGLER*/
+        .nav-main {
+            position: fixed;
+            top: 0px;
+            background-image: url('../../Content/img/slider/Nyork.jpg');
+            width: auto;
+            height: 40px;
+            background-color: #0b193b;
+            flex-wrap: wrap;
+            z-index: 1000;
+        }
+
+        .btn-toggle-nav {
+            width: 60px;
+            height: 100%;
+            background-color: #0b193b;
+            background-image: url('../../Content/css/img-Toggler/Menu2.png');
+            background-repeat: no-repeat;
+            background-size: 80%;
+            background-position: center;
+            cursor: pointer;
+        }
+
+
+            .btn-toggle-nav:hover {
+                opacity: 0.5;
+                background-color: #0b193b;
+            }
+
+
+
+
+
+        .nav-main ul {
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 15px;
+        }
+
+            .nav-main ul li {
+                list-style: none;
+                line-height: 60px;
+            }
+
+                .nav-main ul li a {
+                    display: block;
+                    height: 100%;
+                    padding: 0 0px;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    color: #111;
+                    font-family: Arial;
+                    font-size: 16px;
+                }
+
+        .nav-sidebar {
+            position: fixed;
+            left: 0px;
+            bottom: 0px;
+            width: 1px;
+            padding: 0 0px;
+            height: calc(100vh - 60px);
+            background-color: #1b1b1b;
+            z-index: 1000;
+            transition: all 0.3s ease-in-out;
+        }
+
+            .nav-sidebar ul {
+                overflow: hidden;
+                visibility: hidden;
+                background-repeat: no-repeat;
+            }
+
+                .nav-sidebar ul li {
+                    line-height: 60px;
+                    list-style: none;
+                }
+
+                    .nav-sidebar ul li span, .nav-sidebar ul li a {
+                        display: block;
+                        height: 60px;
+                        padding: 0 10px;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        color: #fff;
+                        font-family: Arial;
+                        font-size: 16px;
+                        white-space: nowrap;
+                        opacity: 0;
+                        transition: all 0.3s ease-in-out;
+                    }
+
+
+                        .nav-sidebar ul li a:hover {
+                            background-color: #222;
+                        }
+
+        /*END Of toggle*/
+
+
+        #aa-header2 {
+            display: inline;
+            float: left;
+            width: 100%;
+        }
+
+        #aa-header3 {
+            display: inline;
+            float: left;
+            width: 100%;
+        }
+
+
+
+
+
+        #aa-footer {
+            background-color: #222;
+            display: inline;
+            float: left;
+            width: 100%;
+            color: white;
+        }
+
+            #aa-footer .aa-footer-top .aa-footer-top-area .aa-footer-widget .aa-footer-social a {
+                color: white;
+            }
+
+        .aa-footer-top {
+            color: white;
+        }
+
+
+
+        /*==================
+            FOOTER SECTION
+            ====================*/
+
+        #aa-footer {
+            background-color: #222;
+            display: inline;
+            float: left;
+            width: 100%;
+        }
+
+            #aa-footer .aa-footer-top {
+                display: inline;
+                float: left;
+                padding: 50px 0;
+                width: 100%;
+                min-height: 100px;
+            }
+
+                #aa-footer .aa-footer-top .aa-footer-top-area {
+                    display: inline;
+                    float: left;
+                    width: 100%;
+                }
+
+                    #aa-footer .aa-footer-top .aa-footer-top-area .aa-footer-widget {
+                        display: block;
+                    }
+
+                        #aa-footer .aa-footer-top .aa-footer-top-area .aa-footer-widget h3 {
+                            color: #fff;
+                        }
+
+                        #aa-footer .aa-footer-top .aa-footer-top-area .aa-footer-widget .aa-footer-nav li a {
+                            color: #888;
+                            -webkit-transition: all 0.5s;
+                            -moz-transition: all 0.5s;
+                            -ms-transition: all 0.5s;
+                            -o-transition: all 0.5s;
+                            transition: all 0.5s;
+                        }
+
+                            #aa-footer .aa-footer-top .aa-footer-top-area .aa-footer-widget .aa-footer-nav li a:hover, #aa-footer .aa-footer-top .aa-footer-top-area .aa-footer-widget .aa-footer-nav li a:focus {
+                                color: #fff;
+                            }
+
+                        #aa-footer .aa-footer-top .aa-footer-top-area .aa-footer-widget address p {
+                            margin-bottom: 5px;
+                            color: #888;
+                        }
+
+                            #aa-footer .aa-footer-top .aa-footer-top-area .aa-footer-widget address p span {
+                                margin-right: 5px;
+                            }
+
+                        #aa-footer .aa-footer-top .aa-footer-top-area .aa-footer-widget .aa-footer-social a {
+                            color: #888;
+                            display: inline-block;
+                            font-size: 18px;
+                            padding: 2px 0;
+                            text-align: center;
+                            width: 35px;
+                            -webkit-transition: all 0.5s;
+                            -moz-transition: all 0.5s;
+                            -ms-transition: all 0.5s;
+                            -o-transition: all 0.5s;
+                            transition: all 0.5s;
+                        }
+
+                            #aa-footer .aa-footer-top .aa-footer-top-area .aa-footer-widget .aa-footer-social a:hover {
+                                color: #fff;
+                                border-color: #fff;
+                            }
+
+            #aa-footer .aa-footer-bottom {
+                border-top: 1px solid #333;
+                display: inline;
+                float: left;
+                width: 100%;
+            }
+
+                #aa-footer .aa-footer-bottom .aa-footer-bottom-area {
+                    display: inline;
+                    float: left;
+                    width: 100%;
+                }
+
+                    #aa-footer .aa-footer-bottom .aa-footer-bottom-area > p {
+                        color: #888;
+                        display: inline-block;
+                        float: left;
+                        font-size: 14px;
+                        font-weight: bold;
+                        letter-spacing: 1px;
+                        margin-bottom: 0;
+                    }
+
+                        #aa-footer .aa-footer-bottom .aa-footer-bottom-area > p a {
+                            color: #888;
+                            -webkit-transition: all 0.5s;
+                            -moz-transition: all 0.5s;
+                            -ms-transition: all 0.5s;
+                            -o-transition: all 0.5s;
+                            transition: all 0.5s;
+                        }
+
+
+                    #aa-footer .aa-footer-bottom .aa-footer-bottom-area > p2 {
+                        color: #888;
+                        display: inline-block;
+                        float: right;
+                        font-size: 14px;
+                        font-weight: bold;
+                        letter-spacing: 1px;
+                        margin-bottom: 0;
+                    }
+
+                    #aa-footer .aa-footer-bottom .aa-footer-bottom-area > footer-copyright {
+                        color: #888;
+                        border-top: thin;
+                        width: 100%;
+                        -webkit-transition: all 0.5s;
+                        -moz-transition: all 0.5s;
+                        -ms-transition: all 0.5s;
+                        -o-transition: all 0.5s;
+                        transition: all 0.5s;
+                    }
+
+
+
+
+
+                    #aa-footer .aa-footer-bottom .aa-footer-bottom-area .aa-footer-payment {
+                        float: right;
+                    }
+
+                        #aa-footer .aa-footer-bottom .aa-footer-bottom-area .aa-footer-payment span {
+                            color: #888;
+                            margin-left: 8px;
+                        }
+
+                            #aa-footer .aa-footer-bottom .aa-footer-bottom-area .aa-footer-payment span:hover {
+                                color: #fff;
+                            }
+
+
+        /* ALL SECTION */
+        /*scrol to top*/
+        .scrollToTop {
+            bottom: 60px;
+            color: #fff;
+            display: none;
+            font-size: 23px;
+            height: 50px;
+            line-height: 45px;
+            position: fixed;
+            right: 20px;
+            text-align: center;
+            text-decoration: none;
+            -webkit-transition: all 0.5s ease 0s;
+            -moz-transition: all 0.5s ease 0s;
+            -ms-transition: all 0.5s ease 0s;
+            -o-transition: all 0.5s ease 0s;
+            transition: all 0.5s ease 0s;
+            width: 50px;
+            z-index: 999;
+        }
+
+            .scrollToTop:hover,
+            .scrollToTop:focus {
+                background-color: #FFF;
+                text-decoration: none;
+                outline: none;
+            }
+
+
+
+
+        #wpf-loader-two {
+            height: 100%;
+            bottom: 0;
+            left: 0;
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: 99999;
+        }
+
+            #wpf-loader-two .wpf-loader-two-inner {
+                border: 2px solid #fff;
+                border-radius: 50%;
+                height: 100px;
+                left: 46%;
+                position: absolute;
+                top: 40%;
+                width: 100px;
+                text-align: center;
+            }
+
+                #wpf-loader-two .wpf-loader-two-inner:before {
+                    content: "";
+                    height: 57%;
+                    left: -204px;
+                    position: absolute;
+                    top: -5px;
+                    transition: all 0.5s ease 0s;
+                    width: 200px;
+                    -webkit-animation-name: loader-two-before-transition;
+                    -webkit-animation-duration: 1.5s;
+                    -webkit-animation-timing-function: linear;
+                    -webkit-animation-iteration-count: infinite;
+                    animation-name: loader-two-before-transition;
+                    animation-duration: 1.5s;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+                }
+
+                #wpf-loader-two .wpf-loader-two-inner:after {
+                    content: "";
+                    height: 57%;
+                    left: 104%;
+                    position: absolute;
+                    top: 50%;
+                    transition: all 0.5s ease 0s;
+                    width: 200px;
+                    -webkit-animation-name: loader-two-after-transition;
+                    -webkit-animation-duration: 1.5s;
+                    -webkit-animation-timing-function: linear;
+                    -webkit-animation-iteration-count: infinite;
+                    animation-name: loader-two-after-transition;
+                    animation-duration: 1.5s;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+                }
+
+                #wpf-loader-two .wpf-loader-two-inner span {
+                    color: #fff;
+                    display: inline-block;
+                    margin-top: 42%;
+                }
+
+
+        .list-inline {
+            list-style: outside none none;
+            margin-left: -5px;
+            padding-left: 0;
+        }
+
+            .list-inline > li {
+                display: inline-block;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+        .social {
+            background: url('http://arunendapally.com/themes/CustomTheme/ss.png');
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+            background-repeat: no-repeat;
+        }
+
+        .facebook {
+            background-position: -0px -0px;
+        }
+
+        .linkedin {
+            background-position: -0px -42px;
+        }
+
+        .twitter {
+            background-position: -0px -84px;
+        }
+
+        .googleplus {
+            background-position: -0px -126px;
+        }
+
+        .navbar-light .navbar-toggler {
+            border: 0;
+        }
+
+        .navbar-light .navbar-toggler-icon {
+            display: inline-block;
+            font: normal normal normal 20px/1 Font-awesome;
+            font-size: inherit;
+            text-rendering: auto;
+            background-image: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+            .navbar-light .navbar-toggler-icon:before {
+                content: "\f07b";
+            }
+
+        .navbar-light .navbar-toggler[aria-expanded=true] .navbar-toggler-icon:before {
+            content: "\f07c";
+        }
+    </style>
+
+</body>
+
+</html>

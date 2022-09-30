@@ -1,0 +1,651 @@
+﻿@model MainProgram.Edm.React
+@using PagedList.Mvc;
+@using MainProgram.Core.Resources
+@using PagedList.Mvc;
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+
+
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutSub.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+<!--END SLIDER-->
+<!--END Content Header (Page header) -->
+<!-- Begins Content Body -->
+<div class="content-wrapper" style="margin-left: 0px; width: 100%; top: 0px; margin:0px">
+
+
+    @* <section class="content-header" style="margin-left:0px; top:2px;">
+
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">
+                        <i class="headerA"></i>
+                    </a>
+                </li>
+                <li class="active"></li>
+            </ol>
+        </section>*@
+    <div class="Main-Bar" style="margin-right:0px; padding-right:0px; text-align:center; background-color:#e4dada">
+        <div class="panel panel-default" style="width: 100%; padding-left: 0px;">
+
+
+            <div class="main--container">
+                <!--MAIN-->
+
+                <div class="row justify-content-md-center">
+                    <table class="SiteT" style="text-align:center">
+                        <tr style="border-left:0px inset #f1f1f1; border-top:1px inset #f1f1f1; width:100%; overflow:no-display">
+                            <td>
+
+
+                                <!-- left sidebar-->
+                                <div class="left" style="width: 22%; margin-left:0%; top:0px; border-right:none; border-bottom:none; border-top:none; border-left:none ">
+                                    <div class="Container">
+                                        <div class="col-md-4">
+                                            <div class="container">
+
+                                                <div class="panel panel-default" style="width: 22%; margin-right:1px; border-right:none; border-bottom:none; border-top:none; border-left:none">
+
+                                                    <strong style="font-size:x-large"><b>Statistics</b></strong>
+                                                    <br />
+                                                    <div class=" panel-body  no-gutter">
+                                                        <div col-md-4">
+
+
+
+
+                                                            <div class="ScrollgridL" style="width: 100%; margin-left: 0px; min-height:370px;   overflow:hidden">
+
+                                                                <strong style="font-size:medium; text-align:center"><b>The Highest Post</b></strong>
+                                                                <div class=" panel-body  no-gutter">
+                                                                    <div col-md-4">
+
+                                                                        <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+                                                                            <div class="panel-footer">
+                                                                                <p class="box-title"><b>Total Post till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">Peter Agyekum: <strong>@ViewBag.UserCount</strong></span></p>
+                                                                            </div>
+
+                                                                            <div class="panel-footer">
+                                                                                <p class="box-title"><b>Total Post till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">James Say: <strong>@ViewBag.UserJames</strong></span></p>
+                                                                            </div>
+
+                                                                            <br />
+
+                                                                            <div class="panel-footer">
+                                                                                <p class="box-title"><b>Total Post till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">Peter Agyekum: <strong>@ViewBag.UserCount</strong></span></p>
+                                                                            </div>
+
+                                                                            <br />
+
+                                                                            <div class="panel-footer">
+                                                                                <p class="box-title"><b>Total Post till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">Mercy Soya: <strong>@ViewBag.UserSoya</strong></span></p>
+                                                                            </div>
+
+                                                                            <br />
+
+                                                                            <div class="panel-footer">
+                                                                                <p class="box-title"><b>Total Post till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">Jay Man: <strong>@ViewBag.UserJay</strong></span></p>
+                                                                            </div>
+
+                                                                            <br />
+
+                                                                            <div class="panel-footer">
+                                                                                <p class="box-title"><b>Total Post till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">Jonathan JeBrown: <strong>@ViewBag.UserJonathan</strong></span></p>
+                                                                            </div>
+
+                                                                            <br />
+
+                                                                            <div class="panel-footer">
+                                                                                <p class="box-title"><b>Total Post till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">Samson Koa: <strong>@ViewBag.UserKoa</strong></span></p>
+                                                                            </div>
+
+                                                                            <br />
+
+
+                                                                            <div class="table">
+                                                                                <ul>
+
+
+
+
+                                                                                    @{
+
+                                                                                        MainProgram.Edm.angulardemoEntities dbg3 = new MainProgram.Edm.angulardemoEntities();
+
+                                                                                        List<MainProgram.Edm.React> Modelq = dbg3.Reacts.ToList();
+
+
+                                                                                        {
+                                                                                            <li>
+
+                                                                                                @* var query = from p in db.Categories
+                                                                                                    where p.ParentCategoryId != null
+                                                                                                    select new CategoryModel()
+                                                                                                    {
+                                                                                                    CategoryId = p.CategoryId,
+                                                                                                    Name = p.Name,
+                                                                                                    Description = p.Description,
+                                                                                                    MasterCategory = new List<mastercategorymodel>
+                                                                                                        ((from c in db.Categories where c.CategoryId == p.ParentCategoryId select new MasterCategoryModel { CategoryId = c.CategoryId, Name = c.Name, Description = c.Description}).AsEnumerable().ToList())
+                                                                                                        };*@
+
+
+
+
+                                                                                            </li>
+                                                                                        }
+                                                                                    }
+
+
+
+
+                                                                                </ul>
+
+                                                                                <br />
+                                                                                <div class="panel-footer">
+                                                                                    <p class="box-title"><b>Total Participant for Reply  Posting @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">@Modelq.Count.ToString()</span></p>
+                                                                                </div>
+
+
+
+
+                                                                                <div class="commHeader">
+                                                                                    @{
+                                                                                        MainProgram.Edm.angulardemoEntities dbg5 = new MainProgram.Edm.angulardemoEntities();
+
+                                                                                        List<MainProgram.Edm.AspNetUser> Modelq3 = dbg5.AspNetUsers.ToList();
+
+                                                                                        {
+
+                                                                                            <table class="table table-bordered table-responsive table-hover">
+                                                                                                <thead>
+                                                                                                    <tr>
+                                                                                                        <th> Statistics </th>
+
+                                                                                                    </tr>
+                                                                                                </thead>
+
+                                                                                                <tfoot>
+
+                                                                                                    <tr>
+                                                                                                        <td>Count</td>
+                                                                                                        <td>@Modelq.Count.ToString()</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>Avg</td>
+                                                                                                        <td>@Modelq.Average(i => i.UserId).ToString("0.00")</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>Min</td>
+                                                                                                        <td>@Modelq.Min(i => i.UserId)</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>Max</td>
+                                                                                                        <td>@Modelq.Max(i => i.UserId)</td>
+
+                                                                                                    <tr></tr>
+                                                                                                </tfoot>
+                                                                                            </table>
+
+                                                                                        }
+                                                                                    }
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+
+
+
+
+
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--END-->
+
+                                                        </div>
+
+
+
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!--END of LEFT-->
+                                <!--Middle-->
+                                <div class="Middle" style="width:59%; float:left; margin-left:14%; overflow:hidden;border-left:2px solid #f1f1f1; border-right:2px solid #f1f1f1; border-radius:8px; border-top:2px solid #f1f1f1; border-bottom:2px solid #f1f1f1; ">
+                                    <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+                                        <strong style="font-size:x-large"><b> React Top questions</b></strong>
+                                        <fieldset>
+                                            <h2>Details</h2>
+
+                                            <div>
+
+
+
+
+
+                                                <hr />
+
+                                                <div class="dl-horizontal">
+
+                                                    <span>
+                                                        <img src="~/Content/images/user/anonymous.png" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /><br />
+
+                                                        @*<img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /><br />*@
+
+
+                                                    </span>
+
+                                                    <span>
+                                                        @Html.DisplayFor(model => model.AspNetUser.UserName)
+                                                    </span>
+
+
+
+                                                    <spn>
+                                                        @Html.DisplayFor(model => model.ReactTitle)
+                                                    </spn>
+
+
+
+
+                                                    <span>
+                                                        @Html.DisplayFor(model => model.ReactText)
+                                                    </span>
+
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+                                            <div>
+                                                @Html.ActionLink("Post Reply", "Details", "React")
+                                            </div>
+
+
+                                        </fieldset>
+
+
+
+                                    </div>
+
+
+
+
+                                    <div>
+                                        @Html.ActionLink("Back to HomePage", "Index", "Home")
+                                    </div>
+
+
+
+                                </div>
+                                <!--End Of MID-->
+
+
+
+
+
+
+
+
+
+
+                                <div class="ScrollgridR2" style="margin-right:5px; width:19%; float:right; padding-right:15px; margin-top:2px; border:none; overflow:hidden">
+
+                                    <strong style="font-size:x-large"><b>Related Topics</b></strong>
+                                    <div class=" panel-body  no-gutter">
+                                        <div col-md-4">
+                                            <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none">
+
+                                                @using (Html.BeginForm("Index", "React", FormMethod.Get))
+                                                {
+
+                                                }
+                                                <div class="table">
+                                                    <ul>
+
+
+
+
+
+
+                                                        @{
+
+
+                                                            MainProgram.Edm.angulardemoEntities dbgr = new MainProgram.Edm.angulardemoEntities();
+
+                                                            List<MainProgram.Edm.React> Modelr = dbgr.Reacts.ToList();
+
+                                                            foreach (MainProgram.Edm.React item in Modelr)
+                                                            {
+                                                                <li>
+
+                                                                    <a href="@Url.Action("Details", "React", new { id = item.ReactId })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                                        @item.ReactTitle
+
+                                                                    </a>
+
+
+                                                                </li>
+                                                            }
+                                                        }
+
+
+
+
+
+                                                    </ul>
+
+                                                </div>
+
+
+
+
+
+
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+                                    </div>
+
+
+
+
+                                </div>
+
+
+                            </td>
+                        </tr>
+
+
+
+                    </table>
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        .content-wrapper {
+            margin-top: 0%;
+            margin-left: 0%;
+            background-position: top;
+        }
+
+        #left {
+            width: 20%;
+            margin-left: 0%;
+            margin-top: 0%;
+            background-position: top;
+            position: relative;
+            background-color: #eee3e3;
+            HEIGHT: 750px;
+            max-height: 750px;
+            min-height: 750px;
+        }
+
+
+        .Middle {
+            HEIGHT: 1124px;
+            max-height: 1124px;
+            min-height: 1124px;
+        }
+
+
+        .Right {
+            HEIGHT: 700px;
+            max-height: 700px;
+            min-height: 700px;
+        }
+
+
+
+        .Main-Bar {
+            content: " ";
+            position: relative;
+            margin-top: 0%;
+            width: 100%;
+            overflow: no-display;
+            padding-right: 10px;
+            margin-left: 0%;
+            margin-right: 1%;
+            background-position: top;
+            margin-bottom: 0px;
+            padding-left: 5px;
+            background-color: #fff;
+        }
+
+
+        .SiteT {
+            width: 100%;
+            border: none;
+            margin-right: 0px;
+            padding-right: 0px;
+            margin-bottom: 0px;
+            border: none;
+        }
+
+
+
+
+        .main--container {
+            margin-left: 17px;
+        }
+
+
+        .ScrollgridL {
+            OVERFLOW: auto;
+            border: none;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            WIDTH: 100%;
+            BORDER-BOTTOM: #000000 none;
+            HEIGHT: 750px;
+            max-height: 750px;
+            min-height: 750px;
+            scrollbar-3dlight-color: none;
+            scrollbar-arrow-color: #9C3842;
+            scrollbar-base-color: #ffffff;
+            scrollbar-darkshadow-color: none;
+            scrollbar-face-color: transparent;
+            scrollbar-highlight-color: #ffffff;
+            scrollbar-shadow-color: #ffffff;
+        }
+
+        .ScrollgridR {
+            OVERFLOW: auto;
+            border: none;
+            WIDTH: 100%;
+            BORDER-BOTTOM: #000000 none;
+            HEIGHT: 700px;
+            max-height: 700px;
+            min-height: 700px;
+            scrollbar-3dlight-color: #fff;
+            scrollbar-arrow-color: #9C3842;
+            scrollbar-base-color: #003366;
+            scrollbar-face-color: #ffffff;
+            scrollbar-face-color: #ffffff;
+            scrollbar-highlight-color: #ffffff;
+            scrollbar-shadow-color: #ffffff;
+        }
+
+        .ScrollgridM {
+            OVERFLOW: auto;
+            border: none;
+            WIDTH: 100%;
+            BORDER-BOTTOM: #000000 none;
+            HEIGHT: 700px;
+            max-height: 700px;
+            min-height: 700px;
+            scrollbar-3dlight-color: #fff;
+            scrollbar-arrow-color: #9C3842;
+            scrollbar-base-color: #003366;
+            scrollbar-face-color: #ffffff;
+            scrollbar-face-color: #ffffff;
+            scrollbar-highlight-color: #ffffff;
+            scrollbar-shadow-color: #ffffff;
+        }
+
+
+        .carousel.fade {
+            opacity: 1;
+        }
+
+
+            .carousel.fade .item {
+                /* transition: opacity ease-out .7s;  can remove to stop 1st slide rapid changing */
+                left: 0;
+                top: 0;
+                position: absolute;
+                width: 100%;
+                display: block;
+            }
+
+                .carousel.fade .item:first-child {
+                    top: auto;
+                    opacity: 1; /* show first slide */
+                    position: relative;
+                }
+
+                .carousel.fade .item.active {
+                    opacity: 1;
+                }
+
+
+
+
+
+
+
+        .carousel,
+        .carousel-inner,
+        .carousel-inner .item {
+            height: 100%;
+        }
+
+        .item:nth-child(1) {
+            background: #f1f1f1;
+        }
+
+        .item:nth-child(2) {
+            background: #51BCE8;
+        }
+
+        .item:nth-child(3) {
+            background: #E46653;
+        }
+
+
+        /*.carousel-fade   .carousel-inner  .item{
+
+            transition-property: opacity;
+        }*/
+
+        .item,
+        .active.left,
+        .active.right {
+            opacity: 0;
+        }
+
+        .active,
+        .next.left,
+        .prev.right {
+            opacity: 1;
+        }
+
+            .next,
+            .prev,
+            .active.left,
+            .active.right {
+                left: 0;
+                transform: translate3d(0, 0, 0);
+            }
+
+
+        .carousel-control {
+            z-index: 2;
+        }
+
+   .card {
+                box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+                 background: #ffffff;
+            }
+
+
+            .col-lg-2 {
+                flex: 0 0 10% !important;
+                max-width: 20%;
+            }
+    </style>
+
+
+
+
+    @Scripts.Render("~/bundles/bootstrap-file")
+
+    @Styles.Render("~/Content/Bootstrap-file/css")
+</div>

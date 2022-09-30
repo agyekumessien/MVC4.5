@@ -1,0 +1,2701 @@
+﻿@*@@model IEnumerable<MainProgram.Edm.tbh_Departments>*@
+@using MainProgram.Helper_Code
+@using MainProgram.Models
+
+
+@using MainProgram.Core
+@using MainProgram.Models
+@using MainProgram.Core.Resources
+
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+
+
+
+
+
+
+
+
+
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "../Shared/_Layout.Mobile.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-modal/bootstrap-modal.css" rel="stylesheet" />
+
+<section class="hero is-info is-fullheight is-bold">
+
+
+    <div class="hero-body   mt-4 mb-6 mb-12" style="background-color: ghostwhite; margin-right:0px; padding-right:0px; text-align:center">
+
+        <div class="jumbotron2" style="margin-right: 0px; padding-left:0px;  text-align: center;  width:100%;  font-size: 12px; margin-top:2px;  border-top:inset  1px; border-top-color:#fff;">
+
+
+
+
+
+            <div id="myCarousel" class="carousel slide fade" data-ride="carousel" style="margin-top:0px; box-shadow:none">
+
+
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li>
+                </ol>
+
+
+
+                <div class="carousel-inner" role="listbox" style="margin: 0px; padding: 0px; border: 0px; height:100%">
+
+                    <div class="item active">
+                        <!--1-->
+                        @{
+                            foreach (MainProgram.Edm.tbh_FrontSlider item in ViewBag.Welcome)
+                            {
+
+                                <div class="item">
+                                    <!--1-->
+                                    <a href="#" class="aa-cartbox-img">
+                                        <img class="d-block w-100" src="@item.FullImageUrl" alt="Second slide" style="width:100%; height:300px; margin-top:10px;">
+
+                                        @* <img alt="@item.AltText" src="@item.FullImageUrl" style="width:360px; height: 200px; padding-right:15px;padding-left:15px; padding-bottom:20px; float:right;">*@
+                                    </a>
+
+
+                                    <div class="carousel-caption d-none d-md-block">
+                                        @*<h3>@item.Name</h3>*@
+                                        <h3>@item.OfferTag</h3>
+                                        @*  <h2>@item.AltText</h2>*@
+                                        <p>@item.ShortDescription.</p>
+                                    </div>
+
+
+                                </div>
+
+
+                            }
+                        }
+
+
+                    </div>
+
+
+
+                    <div class="item">
+
+
+                        <!--2-->
+                        @{
+                            foreach (MainProgram.Edm.tbh_FrontSlider item in ViewBag.Welcome)
+                            {
+                                <div class="item">
+                                    <!--1-->
+                                    <a href="#" class="aa-cartbox-img">
+                                        <img class="d-block w-100" src="@item.FullImageUrl" alt="Second slide" style="width:100%; height:300px; margin-top:10px;">
+
+                                        @* <img alt="@item.AltText" src="@item.FullImageUrl" style="width:360px; height: 200px; padding-right:15px;padding-left:15px; padding-bottom:20px; float:right;">*@
+                                    </a>
+
+
+
+                                    @*<div class="carousel-caption d-none d-md-block">
+                                         @*<h3>@item.Name</h3
+                                         <h3>@item.OfferTag</h3>
+                                         <h2>@item.AltText</h2>
+                                        @* <p>@item.ShortDescription.</p*@
+                                    <h2>@item.AltText</h2>
+                                    <h2>@item.BtnText</h2>
+                                </div>
+
+
+
+
+
+                            }
+                        }
+
+
+                    </div>
+
+
+
+
+                    <div class="item">
+
+
+                        <!--2-->
+                        @{
+                            foreach (MainProgram.Edm.tbh_FrontSlider item in ViewBag.Gift)
+                            {
+
+                                <div class="item">
+                                    <!--1-->
+                                    <a href="#">
+                                        <img class="d-block w-100" src="@item.FullImageUrl" alt="Second slide" style="width:100%; height:300px; margin-top:10px;">
+
+                                        @* <img alt="@item.AltText" src="@item.FullImageUrl" style="width:360px; height: 200px; padding-right:15px;padding-left:15px; padding-bottom:20px; float:right;">*@
+                                    </a>
+
+
+
+                                    <div class="carousel-caption d-none d-md-block">
+                                        @*<h3>@item.Name</h3>
+                                            <h3>@item.OfferTag</h3>
+                                            <h2>@item.AltText</h2>*@
+                                        <p style="padding-bottom:300px">@item.ShortDescription.</p>
+                                        <h2 style="padding-bottom:200px">@item.AltText</h2>
+                                        <h2 style="padding-bottom:100px">@item.BtnText</h2>
+
+                                    </div>
+
+
+                                </div>
+
+
+                            }
+                        }
+
+
+                    </div>
+
+
+
+
+
+
+
+                    <div class="item">
+                        <!--2-->
+                        @{
+                            foreach (MainProgram.Edm.tbh_FrontSlider item in ViewBag.Students1)
+                            {
+
+
+                                <div class="item">
+                                    <!--1-->
+                                    <a href="#">
+                                        <img class="d-block w-100" src="@item.FullImageUrl" alt="Second slide" style="width:100%; height:300px; margin-top:10px;">
+
+                                        @* <img alt="@item.AltText" src="@item.FullImageUrl" style="width:360px; height: 200px; padding-right:15px;padding-left:15px; padding-bottom:20px; float:right;">*@
+                                    </a>
+
+
+
+                                    <div class="carousel-caption d-none d-md-block">
+                                        @*<h3>@item.Name</h3>*@
+                                        <p style="padding-bottom:300px">@item.ShortDescription.</p>
+                                        <h2 style="padding-bottom:200px">@item.AltText</h2>
+                                        <h2 style="padding-bottom:100px">@item.BtnText</h2>
+
+                                    </div>
+
+
+                                </div>
+
+
+                            }
+                        }
+
+
+                    </div>
+
+
+
+
+                    <div class="item">
+                        <!--3-->
+                        @{
+                            foreach (MainProgram.Edm.tbh_FrontSlider item in ViewBag.business)
+                            {
+
+
+                                <div class="item">
+                                    <!--1-->
+                                    <a href="#">
+                                        <img class="d-block w-100" src="@item.FullImageUrl" alt="Second slide" style="width:100%; height:300px; margin-top:10px;">
+
+                                        @* <img alt="@item.AltText" src="@item.FullImageUrl" style="width:360px; height: 200px; padding-right:15px;padding-left:15px; padding-bottom:20px; float:right;">*@
+                                    </a>
+
+
+
+                                    <div class="carousel-caption d-none d-md-block">
+                                        @*<h3>@item.Name</h3>
+                                            <h3>@item.BtnText</h3>
+                                            <h2>@item.AltText</h2>*@
+                                        <p style="padding-bottom:300px">@item.ShortDescription.</p>
+                                        <h2 style="padding-bottom:200px">@item.AltText</h2>
+                                        <h2 style="padding-bottom:100px">@item.BtnText</h2>
+
+                                    </div>
+
+
+                                </div>
+
+
+                            }
+                        }
+
+                        }
+
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <div class="item">
+
+
+                        <!--2-->
+                        @{
+                            foreach (MainProgram.Edm.tbh_FrontSlider item in ViewBag.Pillow)
+                            {
+
+                                <div class="item">
+                                    <!--1-->
+                                    @* <a href="@Url.Action("Women", "Pages", new { id = item.FsID })" class="aa-cartbox-img">*@
+                                    <a href="#" class="aa-cartbox-img">
+                                        <img class="d-block w-100" src="@item.FullImageUrl" alt="Second slide" style="width:100%; height:300px;  margin-top:10px;">
+
+                                        @* <img alt="@item.AltText" src="@item.FullImageUrl" style="width:360px; height: 200px; padding-right:15px;padding-left:15px; padding-bottom:20px; float:right;">*@
+                                    </a>
+
+
+
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h3>@item.Name</h3>
+                                        @*<h3>@item.OfferTag</h3>
+                                            <h2>@item.AltText</h2>*@
+                                        <p style="padding-bottom:300px">@item.ShortDescription.</p>
+
+                                        <h2 style="padding-bottom:200px">@item.AltText</h2>
+                                        <h2 style="padding-bottom:100px">@item.BtnText</h2>
+                                    </div>
+
+
+                                </div>
+
+
+                            }
+                        }
+
+
+                    </div>
+
+
+
+
+                    <a class=" left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+
+                        <span class="sr-only">Previous</span>
+
+                    </a>
+
+                    <a class=" right carousel-control" href="#myCarousel" role="button" data-slide="next">
+
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+
+                        <span class="sr-only">Next</span>
+
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--END SLIDER-->
+        <!--END Content Header (Page header) -->
+        <!-- Begins Content Body -->
+
+
+        <div class="Main-Bar" style="width:100%; margin-right:0px; padding-right:0px; margin-top:10px; text-align:center; background-color:#fff">
+            <div class="panel2" style="width: 98.8%; padding-left: 0px; padding-right: 0px;">
+                <div class="row mt-4 mb-6 mb-12">
+
+
+
+
+                    <!--LEFT-->
+                    <div class="col-sm-3">
+
+                        <div class="card card-body block">
+
+                            <strong style="font-size:x-large"><b>DEVELOPER</b></strong>
+                            <br />
+                            <div style="margin-right:2px">
+
+                                <img src="~/Content/img/ApparelImages/Essien.jpg" class="img-circle" alt="User Image" />
+                                <p style="width:250px; height:auto; overflow-wrap:initial">
+                                   Mobile View
+                                    <a class="btn lightgrey btn-lg" href="/DownLoadLink/downloadlink">
+
+                                        View My Blog &raquo;
+                                    </a>
+                                    @* <a class="btn btn-default" href="@Url.Action(" downloadlink", "DownLoadLink" )"><b style="background-color:white; border:1px solid outset">Download my Resume &raquo;</b></a>*@
+                                </p>
+
+                                <!--End of download-->
+
+
+
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="card card-body block">
+                            <div id="why_buy">
+                                <div class="info_right">
+                                    <h5 class="text-center mb-3">Reply to these Post</h5>
+                                    <ul>
+                                        @{
+
+
+                                            MainProgram.Edm.angulardemoEntities dbg = new MainProgram.Edm.angulardemoEntities();
+
+                                            List
+                                            <MainProgram.Edm.Post_Mvc>
+                                                Modelg = dbg.Post_Mvc.ToList();
+
+                                            foreach (MainProgram.Edm.Post_Mvc item in Modelg)
+                                            {
+
+                                                <li style="background-color:#fcfafa; border:1px solid outset; padding-bottom:2px; border-radius:5px">
+                                                    <br />
+
+                                                    <a href="/Post_Mvc/details">
+                                                        <img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:0px; margin-bottom:0px; padding-bottom:0px; border-radius:50%; text-align:left; float:left; vertical-align:sub" multiple />
+                                                    </a>
+                                                    <a href="/Post_Mvc/details" style="text-align:left; margin-left:8px; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                        <br /><br />
+
+                                                        @item.PostMvcTitle
+
+                                                    </a>
+                                                    <br /><br />
+
+                                                    @*<p style="text-align:left; padding-left:15px; padding-right:15px; padding-top:10px">@item.ThreadText</p>*@
+                                                    @* =><a href="@Url.Action(" details", "Post" , new { id=ViewBag.ThreadId })" style=""></a>*@
+                                                    @*<a href="/Women/pages">@item.ThreadTitle</a>*@
+                                                    @*@Html.DisplayFor(model => item.ThreadText)*@
+                                                    @* @Html.ActionLink("Reply to this thread", "Create", "Post")model => item.ThreadText)*@
+                                                </li>
+                                            }
+
+                                        }
+
+
+
+
+
+
+                                        <!--Post_CSharp-->
+                                        @{
+
+
+                                            MainProgram.Edm.angulardemoEntities pcs = new MainProgram.Edm.angulardemoEntities();
+
+                                            List<MainProgram.Edm.Post_CSharp>
+                                                pcsModel = pcs.Post_CSharp.ToList();
+
+                                            foreach (MainProgram.Edm.Post_CSharp item in pcsModel)
+                                            {
+
+                                                <li style="background-color:rgba(246, 243, 243, 0.86); border:1px solid outset; margin-top:5px; border-radius:5px">
+                                                    <a href="/Post_CSharp/details"><img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="55" height="60" style="padding-right:0px; margin-bottom:0px; padding-bottom:0px; border-radius:50%; text-align:left; float:left; vertical-align:sub" multiple /></a>
+                                                    <a href="/Post_CSharp/details" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                        <br /><br />
+                                                        @item.PostCSharpTitle
+
+
+                                                    </a>
+                                                    <br /><br />
+
+
+                                                </li>
+                                            }
+                                        }
+
+                                        <!--Post_Databases-->
+                                        @{
+
+
+                                            MainProgram.Edm.angulardemoEntities pdb = new MainProgram.Edm.angulardemoEntities();
+
+                                            List<MainProgram.Edm.Post_Databases>
+                                                pdbModel = pdb.Post_Databases.ToList();
+
+                                            foreach (MainProgram.Edm.Post_Databases item in pdbModel)
+                                            {
+
+                                                <li style="background-color:#fcfafa; border:1px solid outset; margin-top:5px; border-radius:5px">
+                                                    <a href="/Post_Databases/details"><img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="55" height="60" style="padding-right:0px; margin-bottom:0px; padding-bottom:0px; border-radius:50%; text-align:left; float:left; vertical-align:sub" multiple /></a>
+                                                    <a href="/Post_Databases/details" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                        <br /><br />
+                                                        @item.PostDatabasesTitle
+
+
+                                                    </a>
+
+                                                    <br /><br />
+
+                                                </li>
+                                            }
+                                        }
+
+                                        <!--Post_CSS-->
+                                        @{
+
+
+                                            MainProgram.Edm.angulardemoEntities pcss = new MainProgram.Edm.angulardemoEntities();
+
+                                            List<MainProgram.Edm.Post_CSS>
+                                                pcssModel = pcss.Post_CSS.ToList();
+
+                                            foreach (MainProgram.Edm.Post_CSS item in pcssModel)
+                                            {
+                                                <li style="background-color:#fcfafa; border:1px solid outset; margin-top:5px; border-radius:5px">
+                                                    <a href="/Post_CSS/details"><img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="55" height="60" style="padding-right:0px; margin-bottom:0px; padding-bottom:0px; border-radius:50%; text-align:left; float:left; vertical-align:sub" multiple /></a>
+                                                    <a href="/Post_CSS/details" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                        <br /><br />
+                                                        @item.PostCSSTitle
+
+
+                                                    </a>
+                                                    <br /><br />
+                                                </li>
+                                            }
+                                        }
+
+
+                                        <!--Post_EntityFrameWork-->
+                                        @{
+
+
+                                            MainProgram.Edm.angulardemoEntities pef = new MainProgram.Edm.angulardemoEntities();
+
+                                            List<MainProgram.Edm.Post_EntityFrameWorks>
+                                                pefModel = pef.Post_EntityFrameWorks.ToList();
+
+                                            foreach (MainProgram.Edm.Post_EntityFrameWorks item in pefModel)
+                                            {
+                                                <li style="background-color:#fcfafa; border:1px solid outset; margin-top:5px; border-radius:5px">
+                                                    <a href="/Post_EntityFrameWorks/details"><img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="55" height="60" style="padding-right:0px; margin-bottom:0px; padding-bottom:0px; border-radius:50%; text-align:left; float:left; vertical-align:sub" multiple /></a>
+                                                    <a href="/Post_EntityFrameWorks/details" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                        <br /><br />
+                                                        @item.PostEfTitle
+
+
+                                                    </a>
+                                                    <br /><br />
+                                                </li>
+                                            }
+                                        }
+
+
+
+
+                                        <!--Post_JqJava-->
+                                        @{
+
+
+                                            MainProgram.Edm.angulardemoEntities pjqj = new MainProgram.Edm.angulardemoEntities();
+
+                                            List<MainProgram.Edm.Post_JqJava>
+                                                pjqjModel = pjqj.Post_JqJava.ToList();
+
+                                            foreach (MainProgram.Edm.Post_JqJava item in pjqjModel)
+                                            {
+                                                <li style="background-color:#fcfafa; border:1px solid outset; margin-top:5px; border-radius:5px">
+                                                    <a href="/Post_JqJava/details"><img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="55" height="60" style="padding-right:0px; margin-bottom:0px; padding-bottom:0px; border-radius:50%; text-align:left; float:left; vertical-align:sub" multiple /></a>
+                                                    <a href="/Post_JqJava/details" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                        <br /><br />
+                                                        @item.PostJqJavaTitle
+
+
+                                                    </a>
+                                                    <br /><br />
+                                                </li>
+                                            }
+                                        }
+
+
+
+
+                                        <!--Post_DBA
+                                        @{
+
+
+                                            MainProgram.Edm.angulardemoEntities pdba = new MainProgram.Edm.angulardemoEntities();
+
+                                            List<MainProgram.Edm.Post_DBA>
+                                                pdbaModel = pdba.Post_DBA.ToList();
+
+                                            foreach (MainProgram.Edm.Post_DBA item in pdbaModel)
+                                            {
+                                                <li style="background-color:#fcfafa; border:1px solid outset; margin-top:5px; border-radius:5px">
+                                                    <a href="/Post_DBA/details"><img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="55" height="60" style="padding-right:0px; margin-bottom:0px; padding-bottom:0px; border-radius:50%; text-align:left; float:left; vertical-align:sub" multiple /></a>
+                                                    <a href="/Post_DBA/details" class=" aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                        <br /><br />
+                                                        @item.PostDBATitle
+
+
+                                                    </a>
+                                                    <br /><br />
+                                                </li>
+                                            }
+                                        }-->
+                                        <!--Post_Webform-->
+                                        @{
+
+
+                                            MainProgram.Edm.angulardemoEntities pwf = new MainProgram.Edm.angulardemoEntities();
+
+                                            List<MainProgram.Edm.Post_Webform>
+                                                pwfModel = pwf.Post_Webform.ToList();
+
+                                            foreach (MainProgram.Edm.Post_Webform item in pwfModel)
+                                            {
+                                                <li style="background-color:#fcfafa; border:1px solid outset; margin-top:5px; border-radius:5px">
+                                                    <a href="/Post_Webform/details"><img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="55" height="60" style="padding-right:0px; margin-bottom:0px; padding-bottom:0px; border-radius:50%; text-align:left; float:left; vertical-align:sub" multiple /></a>
+                                                    <a href="/Post_Webform/details" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                        <br /><br /><br />
+                                                        @item.PostWformTitle
+
+
+                                                    </a>
+
+                                                </li>
+                                            }
+                                        }
+
+
+
+
+
+
+
+                                    </ul>
+
+
+
+
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card card-body block">
+
+                            <strong style="font-size:x-large"><b>SHOPPING CENTER</b></strong>
+                            <br />
+                            <div style="margin-right:2px">
+                                @{
+                                    foreach (MainProgram.Edm.tbh_Products item in ViewBag.McM)
+                                    {
+                                        <a href=" ../Product/GetProductsByCategory?categoryName=Books">
+                                            <img alt="@item.AltText" src="@item.FullImageUrl" style="width: 60px; height: 80px;padding-right:6px;float:left; ">
+
+                                        </a>
+
+                                        <p style="width:250px; height:auto; overflow-wrap:initial">
+                                            <b><a href=" ../Product/GetProductsByCategory?categoryName=Books">@item.Name</a></b>
+
+
+                                            @* <a class="btn btn-default" href="@Url.Action(" downloadlink", "DownLoadLink" )"><b style="background-color:white; border:1px solid outset">Download my Resume &raquo;</b></a>*@
+                                        </p>
+
+
+                                        <p style="width:250px; height:auto; overflow-wrap:initial"><b> @item.ShortDescription</b></p>
+
+                                            <!--End of download-->
+                                    }
+                                }
+                            </div>
+
+
+
+
+
+
+                            <hr />
+
+
+                            <br />   <br />   <br />
+                            <div style="margin-right:2px">
+                                @{
+                                    foreach (MainProgram.Edm.tbh_Products item in ViewBag.whitney)
+                                    {
+                                        <a href=" ../Product/GetProductsByCategory?categoryName=Books">
+                                            <img alt="@item.AltText" src="@item.FullImageUrl" style="width: 60px; height: 80px;padding-right:6px;float:left; ">
+
+                                        </a>
+
+                                        <p style="width:250px; height:auto; overflow-wrap:initial">
+                                            <b><a href=" ../Product/GetProductsByCategory?categoryName=Books">@item.Name</a></b>
+
+
+                                            @* <a class="btn btn-default" href="@Url.Action(" downloadlink", "DownLoadLink" )"><b style="background-color:white; border:1px solid outset">Download my Resume &raquo;</b></a>*@
+                                        </p>
+
+
+                                        <p style="width:250px; height:auto; overflow-wrap:initial"><b> @item.ShortDescription</b></p>
+
+                                            <!--End of download-->
+                                    }
+                                }
+                            </div>
+
+
+                            <!--Best Contri-->
+
+
+                            <c class="list-unstyled list-inline mb-0" style="width:100%">
+
+                                @{
+                                    foreach (MainProgram.Edm.tbh_FrontSlider item in ViewBag.Corporate2)
+                                    {
+
+                                        <c style="width:100%; text-align:center">
+                                            <a href="/Home/shop">
+
+                                                <div class=" panel-body  no-gutter">
+                                                    <div col-md-4">
+
+                                                        <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+                                                            <b class="text-center mb-3">Best Contributer</b>
+                                                            <div class="panel-footer">
+                                                                <p class="box-title">
+                                                                    <b>Congraturation!!</b><br />
+                                                                    <span class="label label-primary">Peter Agyekum: <strong>@ViewBag.UserCount</strong></span>
+                                                                </p>
+                                                            </div>
+                                                            <!-- <div class="panel-footer">
+                                                                 <b>Congraturation!!</b><br />
+                                                                 <span class="label label-primary">James Say: <strong>@ViewBag.UserJames</strong></span>
+                                                             </div>-->
+                                                            <!-- <div class="panel-footer">
+                                                                <b>Congraturation!!</b><br />
+                                                                <span class="label label-primary">Mercy Soya: <strong>@ViewBag.UserSoya</strong></span>
+                                                            </div>
+
+
+
+                                                            <div class="panel-footer">
+                                                                <b>Congraturation!!</b><br />
+                                                                <span class="label label-primary">Jay Man: <strong>@ViewBag.UserJay</strong></span>
+                                                            </div>
+
+
+
+                                                            <div class="panel-footer">
+                                                                <b>Congraturation!!</b><br />
+                                                                <span class="label label-primary">Jonathan JeBrown: <strong>@ViewBag.UserJonathan</strong></span>
+                                                            </div>
+
+
+
+                                                            <div class="panel-footer">
+                                                                <b>Congraturation!!</b><br />
+                                                                <span class="label label-primary">Samson Koa: <strong>@ViewBag.UserKoa</strong></span>
+                                                            </div>
+
+                                                            <div class="panel-footer">
+                                                                <b>Congraturation!!</b><br />
+                                                                <span class="label label-primary">Antonita Seed: <strong>@ViewBag.UserKoa</strong></span>
+                                                            </div>-->
+
+
+
+
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </a>
+
+
+                                        </c>
+
+                                    }
+                                }
+                            </c>
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                    <!--MID-->
+
+                    <div class="row mt-4 mb-6 mb-12 col-lg-9">
+
+                        <div class="card card-body block" style="background-color:white; width:100%">
+                            <div class="row mt-4 mb-6 mb-12" style="background-color: white;">
+
+                                <div class="  col-md-12" style="float:left; border-right:2px, solid #f1f1f1">
+
+                                    <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none;margin-bottom:5px">
+                                        <strong style="font-size:medium"><b>Message: Please read</b></strong>
+                                        <br />
+                                        @using (Html.BeginForm("Index", "Post_CSS", FormMethod.Get))
+                                        {
+                                            <ul>
+                                                @{
+                                            foreach (MainProgram.Edm.tbh_Pages item in ViewBag.ShopF)
+                                            {
+
+                                                <li style="width:100%">
+
+
+                                                    <div class="aa-cartbox-info">
+
+
+                                                        <p style="text-align:left; padding-left:15px;padding-right:15px; padding-top:0px">
+                                                            The purpose of this site is to implement online learning platform for all users visiting this Site. I am very sorry if this site does not convey a meaningful expectations such as, language,
+                                                            skills, and material or content used that you are looking for. Me as a developer, my aim is to provide a content base on my course of study, and my skills set. Please, if you have any question,
+                                                            contributions, concerns, support or help, you can contact me through my blog and I am willing to work with you so that we can make this site more meaningful, user friendly for all users coming to visit
+                                                            and looking for a right information.
+                                                        </p>
+                                                    </div>
+
+                                                </li>
+
+                                            }
+                                                }
+                                            </ul>
+                                        }
+                                    </div>
+
+
+                                </div>
+
+                            </div><!--Message-->
+                            <!--end-->
+
+                            <div class="row mt-4 mb-6 mb-12" style="background-color: ghostwhite;">
+
+                                <div class="col-lg-4" style="float:left; border-right:2px, solid #f1f1f1">
+                                    <div class="card">
+
+                                        <div class="card-body text-center">
+                                            <strong style="font-size:x-large"><b>Learning Center</b></strong>
+
+                                            <hr />
+                                            <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none">
+
+                                                <ul style="width: 100%; max-height: 225px; min-height:225px">
+                                                    @{
+                                                        foreach (MainProgram.Edm.tbh_Pages item in ViewBag.Ideas)
+                                                        {
+
+                                                            <li style="width:100%">
+                                                                <a href="#">
+                                                                    <img alt="@item.AltText" src="~/Content/img/Books/FBooks/child.jpg" style="width: 100%; height: 225px;padding-right:5px; padding-left:10px; padding-top:10px;  padding-bottom:10px">
+                                                                </a>
+                                                            </li>
+
+                                                        }
+                                                    }
+                                                </ul>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-4" style="float:left; border-right:2px, solid #f1f1f1">
+                                    <div class="card">
+
+                                        <div class="card-body text-center">
+                                            <strong style="font-size:x-large"><b>JQuery Java Script</b></strong>
+
+                                            <hr />
+                                            <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none">
+
+                                                @using (Html.BeginForm("Index", "Post_CSS", FormMethod.Get))
+                                                {
+                                                    <ul style="width: 100%; max-height: 225px; min-height:225px">
+                                                        @{
+                                                    foreach (MainProgram.Edm.tbh_Pages item in ViewBag.Ideas)
+                                                    {
+
+                                                        <li style="width:100%">
+                                                            <a href="/JqJa/GetPosts"><img src="~/Content/images/HomePic/Jq.jpg" style="width: 120px; height: 80px;padding-right:15px; padding-left:15px; padding-top:10px;  padding-bottom:5px; border-radius:8px; float:left; "></a>
+
+                                                            <div class="aa-cartbox-info">
+
+
+                                                                <p style="text-align:left; padding-left:15px;padding-right:15px; padding-top:0px">
+                                                                    With JQuery is a multi-browser library for .Net developments. With JQuery, you to write fewer lines of code than JavaScript. Pure JavaScript is faster in accessing the DOM (document object model.)
+                                                                    <a class="" href="/JqJa/GetPosts">&nbsp;&nbsp;Learn more &raquo;</a>
+                                                                </p>
+                                                            </div>
+
+                                                        </li>
+
+                                                    }
+                                                        }
+                                                    </ul>
+                                                }
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-4" style="float:left; border-right:2px, solid #f1f1f1">
+                                    <div class="card">
+
+                                        <div class="card-body text-center">
+                                            <strong style="font-size:x-large"><b>Angular</b></strong>
+
+                                            <hr />
+                                            <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none">
+                                                @using (Html.BeginForm("Index", "Post_CSS", FormMethod.Get))
+                                                {
+                                                    <ul style="width: 100%; max-height: 225px; min-height:225px">
+                                                        @{
+                                                    foreach (MainProgram.Edm.tbh_Pages item in ViewBag.Ideas)
+                                                    {
+
+                                                        <li style="width:100%">
+                                                            <a href="/Angular/GetPosts"><img src="~/Content/img/FrontSlider/Angular.png" style="width: 120px; height: 80px;padding-right:15px; padding-left:15px; padding-top:10px;  padding-bottom:5px; border-radius:8px; float:left; "></a>
+
+                                                            <div class="aa-cartbox-info">
+
+
+                                                                <p style="text-align:left; padding-left:15px;padding-right:15px; padding-top:0px">
+                                                                    Angular is a platform and framework for building single-page application using Typescript.
+                                                                    It implements core and optional functionality such as a set of Typescript libraries that you import into your apps.
+                                                                    <a class="" href="/Angular/GetPosts">&nbsp;&nbsp;Learn more &raquo;</a>
+                                                                </p>
+                                                            </div>
+
+                                                        </li>
+
+                                                    }
+                                                        }
+                                                    </ul>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!--end-->
+
+
+
+
+
+                            <div class="row mt-4 mb-6 mb-12" style="background-color: ghostwhite;">
+                                <div class="col-lg-4" style="float:left; border-right:2px, solid #f1f1f1">
+                                    <div class="card">
+
+                                        <div class="card-body text-center">
+                                            <strong style="font-size:x-large"><b> Entity Framework</b></strong>
+
+                                            <hr />
+                                            <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none">
+                                                @using (Html.BeginForm("Index", "Post_CSS", FormMethod.Get))
+                                                {
+                                                    <ul>
+                                                        @{
+                                                    foreach (MainProgram.Edm.tbh_Pages item in ViewBag.Ideas)
+                                                    {
+
+                                                        <li style="width:100%">
+                                                            <a href="/News/NewsEntityF"><img src="~/Content/images/HomePic/Ef.png" style="width: 120px; height: 80px;padding-right:15px; padding-left:15px; padding-top:10px;  padding-bottom:5px;float:left; "></a>
+
+                                                            <div class="aa-cartbox-info">
+
+
+                                                                <p style="text-align:left; padding-left:15px;padding-right:15px; padding-top:0px">
+                                                                    Entity framework is an open-source ORM (Object Relational Mapping) that offers a mechanism for storing and accessing  data in the database without focusing on underlying database.
+                                                                    <a class="" href="/News/NewsEntityF">&nbsp;&nbsp;Learn more &raquo;</a>
+                                                                </p>
+                                                            </div>
+
+                                                        </li>
+
+                                                    }
+                                                        }
+                                                    </ul>
+
+                                                }
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-4" style="float:left; border-right:2px, solid #f1f1f1">
+                                    <div class="card">
+
+                                        <div class="card-body text-center">
+                                            <strong style="font-size:x-large"><b>Html & CSS</b></strong>
+
+                                            <hr />
+                                            <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none">
+                                                @using (Html.BeginForm("Index", "Post_CSS", FormMethod.Get))
+                                                {
+                                                    <ul>
+                                                        @{
+                                                    foreach (MainProgram.Edm.tbh_Pages item in ViewBag.Ideas)
+                                                    {
+
+                                                        <li style="width:100%">
+                                                            <a href="/CSS/GetPosts"><img src="~/Content/images/HomePic/CSS2.png" style="width: 120px; height: 80px;padding-right:15px; padding-left:15px; padding-top:10px;  padding-bottom:5px;float:left; "></a>
+
+                                                            <div class="aa-cartbox-info">
+
+
+                                                                <p style="text-align:left; padding-left:15px;padding-right:15px; padding-top:0px">
+                                                                    HTML (Hypertext Markup Language) and CSS (Cascading Style Sheets) are both technologies for building Web pages. HTML provides the structure of the page, CSS is visual layout.
+                                                                    <a class="" href="/CSS/GetPosts">&nbsp;&nbsp;Learn more &raquo;</a>
+                                                                </p>
+                                                            </div>
+
+                                                        </li>
+
+                                                    }
+                                                        }
+                                                    </ul>
+
+                                                }
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+
+
+
+
+
+
+
+
+                                </div>
+
+                                <div class="col-lg-4" style="float:left; border-right:2px, solid #f1f1f1">
+                                    <div class="card">
+
+                                        <div class="card-body text-center">
+                                            <strong style="font-size:x-large"><b>React</b></strong>
+
+                                            <hr />
+                                            <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none">
+                                                @using (Html.BeginForm("Index", "Post_CSS", FormMethod.Get))
+                                                {
+                                                    <ul>
+                                                        @{
+                                                    foreach (MainProgram.Edm.tbh_Pages item in ViewBag.Ideas)
+                                                    {
+
+                                                        <li style="width:100%">
+                                                            <a href="/React/GetPosts"><img src="~/Content/img/FrontSlider/React.png" style="width: 120px; height: 80px;padding-right:15px; padding-left:15px; padding-top:10px;  padding-bottom:5px;float:left; "></a>
+
+                                                            <div class="aa-cartbox-info">
+
+
+                                                                <p style="text-align:left; padding-left:15px;padding-right:15px; padding-top:0px">
+                                                                    React is an open-source, front end, JavaScript library for building rich, scalable and user interfaces specifically for single-page application. It also allows for creating reusable UI components.
+                                                                    <a class="" href="/React/GetPosts">&nbsp;&nbsp;Learn more &raquo;</a>
+                                                                </p>
+                                                            </div>
+
+                                                        </li>
+
+                                                    }
+                                                        }
+                                                    </ul>
+
+                                                }
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+
+
+
+
+
+
+
+
+                                </div>
+
+                            </div>
+                            <!--New #2-->
+
+
+
+
+                            <div class="row mt-4 mb-6 mb-12" style="background-color: ghostwhite;">
+
+                                <div class="col-lg-4">
+                                    <div class="card">
+
+                                        <div class="card-body text-center">
+                                            <strong style="font-size:x-large"><b>Recommended Video</b></strong>
+
+                                            <hr />
+                                            <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none">
+
+                                                <ul class="list-group" style="text-align:left">
+
+                                                    <li class="list-group-item">
+
+
+
+
+                                                        <ul>
+
+                                                            @{
+                                                                foreach (MainProgram.Edm.tbh_Pages item in ViewBag.Ideas)
+                                                                {
+                                                                    <li style="width:100%;">
+                                                                        <a href="#">
+
+                                                                            <img alt="@item.AltText" src="~/Content/img/FrontSlider/cvideo.jpg" style="width: 100%; height: 150px;padding-right:5px; padding-bottom:10px; padding-left:10px;">
+                                                                        </a>
+
+
+
+                                                                    </li>
+
+                                                                }
+                                                            }
+
+
+
+                                                        </ul>
+
+
+                                                    </li>
+
+                                                    <li class="list-group-item">
+                                                        <a href="~/Video/dotnetvideo">
+                                                            <strong class="font-italic" style="color:#003366">DotNet Tutorial Video, WATCH </strong>&nbsp;&nbsp;<img src="~/Content/images/icons-png/video-black.png " style=" width:15px; height:15px; float:right" />
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="list-group-item">
+                                                        <a href="~/Video/mvcvideo">
+                                                            <strong class="font-italic" style="color:#003366">MVC Tutorial Video, WATCH &nbsp;&nbsp;<img src="~/Content/images/icons-png/video-black.png" style="width:15px; height:15px; float:right" /></strong>
+                                                        </a>
+
+                                                    </li>
+
+                                                    <li class="list-group-item">
+                                                        <a href="/Video/sqlservervideo">
+                                                            <strong class="font-italic" style="color:#003366">SQLServer Tutorial Video, WATCH </strong>&nbsp;&nbsp;<img src="~/Content/images/icons-png/video-black.png" style="width:15px; height:15px; float:right" />
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="list-group-item">
+                                                        <a href="/Video/aspnetvideo">
+                                                            <strong class="font-italic" style="color:#003366">Asp.Net Tutorial Video, WATCH </strong>&nbsp;&nbsp;<img src="~/Content/images/icons-png/video-black.png" style="width:15px; height:15px; float:right" />
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <a href="/Video/dotnetvideo">
+                                                            <strong class="font-italic" style="color:#003366">DotNet  Tutorial Video, WATCH </strong>&nbsp;&nbsp;<img src="~/Content/images/icons-png/video-black.png " style=" width:15px; height:15px; float:right" />
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <a href="/Video/mvcvideo">
+                                                            <strong class="font-italic" style="color:#003366">MVC Tutorial Video, WATCH &nbsp;&nbsp;<img src="~/Content/images/icons-png/video-black.png" style="width:15px; height:15px; float:right" /></strong>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <a href="/Video/mvcvideo">
+                                                            <strong class="font-italic" style="color:#003366">MVC Tutorial Video, WATCH &nbsp;&nbsp;<img src="~/Content/images/icons-png/video-black.png" style="width:15px; height:15px; float:right" /></strong>
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+
+
+
+
+
+
+
+
+
+                                                <a href="#" class="btn btn-warning">More info</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="card">
+
+                                        <div class="card-body text-center">
+                                            <strong style="font-size:x-large"><b>Asp.Net Core</b></strong>
+
+                                            <hr />
+                                            <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none">
+
+                                                <ul class="list-group" style="text-align:left">
+
+                                                    <li class="list-group-item">
+
+
+
+
+                                                        <ul>
+
+                                                            @{
+                                                                foreach (MainProgram.Edm.tbh_Pages item in ViewBag.Ideas)
+                                                                {
+                                                                    <li style="width:100%;">
+                                                                        <a href="#">
+                                                                            <img alt="@item.AltText" src="~/Content/img/FrontSlider/nCore.jpg" style="width: 100%; height: 150px;padding-right:5px; padding-bottom:10px; padding-left:10px;">
+                                                                        </a>
+
+
+
+                                                                    </li>
+
+                                                                }
+                                                            }
+
+
+
+                                                        </ul>
+
+
+                                                    </li>
+
+                                                    <li class="list-group-item" style="text-align:center">
+                                                        <c class="font-italic" style="color:#003366">What is New and Features</c>&nbsp;&nbsp;
+                                                    </li>
+
+                                                    <li class="list-group-item" style="color:#000">
+                                                        <a href="~/News/NetCoreNews1">
+
+                                                            <c style="color:#000">ASP.NET Core is faster, more</c> &nbsp;&nbsp;
+                                                            <img src="~/Content/img/FrontSlider/collect.jpg" style="width:20px; height:20px; float:right" />
+
+                                                        </a>
+
+                                                    </li>
+
+                                                    <li class="list-group-item" style="color:#000">
+                                                        <a href="~/Video/mvcvideo">
+                                                            <c style="color:#000">Cross-platform, more</c> &nbsp;&nbsp;
+                                                            <img src="~/Content/img/FrontSlider/collect.jpg" style="width:20px; height:20px; float:right" />
+
+                                                        </a>
+
+                                                    </li>
+
+                                                    <li class="list-group-item" style="color:#000">
+                                                        <a href="~/Video/mvcvideo">
+
+                                                            <c style="color:#000">Flexible deployment, more</c> &nbsp;&nbsp;
+                                                            <img src="~/Content/img/FrontSlider/collect.jpg" style="width:20px; height:20px; float:right" />
+
+                                                        </a>
+
+                                                    </li>
+                                                    <li class="list-group-item" style="color:#000">
+                                                        <a href="~/Video/mvcvideo">
+
+                                                            <c style="color:#000">Command line tool, more</c> &nbsp;&nbsp;
+                                                            <img src="~/Content/img/FrontSlider/collect.jpg" style="width:20px; height:20px; float:right" />
+
+                                                        </a>
+
+                                                    </li>
+                                                    <li class="list-group-item" style="color:#000">
+                                                        <a href="~/Video/mvcvideo">
+
+                                                            <c style="color:#000">Cloud ready, more</c> &nbsp;&nbsp;
+                                                            <img src="~/Content/img/FrontSlider/collect.jpg" style="width:20px; height:20px; float:right" />
+                                                        </a>
+
+                                                    </li>
+                                                    <li class="list-group-item" style="color:#000">
+                                                        <a href="~/Video/mvcvideo">
+
+                                                            <c style="color:#000"> Unified Programming Model, more</c> &nbsp;&nbsp;
+                                                            <img src="~/Content/img/FrontSlider/collect.jpg" style="width:20px; height:20px; float:right" />
+
+                                                        </a>
+
+                                                    </li>
+
+                                                </ul>
+
+
+
+
+
+
+
+
+
+                                                <a href="#" class="btn btn-warning">More info</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-lg-4">
+                                    <div class="card">
+
+                                        <div class="card-body text-center">
+                                            <strong style="font-size:x-large"><b>Important Focuse</b></strong>
+
+                                            <hr />
+                                            <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none">
+
+                                                <ul class="list-group" style="text-align:left">
+
+                                                    <li class="list-group-item">
+
+
+
+
+                                                        <ul>
+
+                                                            @{
+                                                                foreach (MainProgram.Edm.tbh_Pages item in ViewBag.Ideas)
+                                                                {
+                                                                    <li style="width:100%;">
+                                                                        <a href="#">
+                                                                            <img alt="@item.AltText" src="~/Content/img/FrontSlider/Learners.jpg" style="width: 100%; height: 150px;padding-right:5px; padding-bottom:10px; padding-left:10px;">
+                                                                        </a>
+
+                                                                    </li>
+
+                                                                }
+                                                            }
+
+
+
+                                                        </ul>
+
+
+                                                    </li>
+
+                                                    <li class="list-group-item" style="text-align:center">
+                                                        <c class="font-italic" style="color:#003366">What to Watch (Tips)</c>&nbsp;&nbsp;
+                                                    </li>
+
+                                                    <li class="list-group-item" style="color:#000">
+                                                        <a href="~/News/ErrorHandling">
+
+                                                            <c style="color:#000">
+                                                                Handling error 404 (Core 1.0)
+                                                            </c> &nbsp;&nbsp;
+                                                            <img src="~/Content/img/FrontSlider/Collect2.png" style="width:20px; height:20px; float:right" />
+
+                                                        </a>
+
+                                                    </li>
+
+                                                    <li class="list-group-item" style="color:#000">
+                                                        <a href="~/News/NetCoreNews1">
+
+                                                            <c style="color:#000">
+                                                                .NET Core and .NET Framework
+                                                            </c> &nbsp;&nbsp;
+                                                            <img src="~/Content/img/FrontSlider/Collect2b.png" style="width:20px; height:20px; float:right" />
+
+                                                        </a>
+
+                                                    </li>
+
+                                                    <li class="list-group-item" style="color:#000">
+                                                        <a href="~/News/SolidPrinciples">
+
+                                                            <c style="color:#000">Solid Principles</c> &nbsp;&nbsp;
+                                                            <img src="~/Content/img/FrontSlider/Collect2b.png" style="width:20px; height:20px; float:right" />
+
+                                                        </a>
+
+                                                    </li>
+                                                    <li class="list-group-item" style="color:#000">
+                                                        <a href="~/Video/mvcvideo">
+
+                                                            <c style="color:#000">ASP.NET Core is faster, more</c> &nbsp;&nbsp;
+                                                            <img src="~/Content/img/FrontSlider/Collect2b.png" style="width:20px; height:20px; float:right" />
+
+                                                        </a>
+
+                                                    </li>
+                                                    <li class="list-group-item" style="color:#000">
+                                                        <a href="~/Video/mvcvideo">
+
+                                                            <c style="color:#000">ASP.NET Core is faster, more</c> &nbsp;&nbsp;
+                                                            <img src="~/Content/img/FrontSlider/Collect2b.png" style="width:20px; height:20px; float:right" />
+
+                                                        </a>
+
+                                                    </li>
+                                                    <li class="list-group-item" style="color:#000">
+                                                        <a href="~/Video/mvcvideo">
+
+                                                            <c style="color:#000">ASP.NET Core is faster, more</c> &nbsp;&nbsp;
+                                                            <img src="~/Content/img/FrontSlider/Collect2b.png" style="width:20px; height:20px; float:right" />
+
+                                                        </a>
+
+                                                    </li>
+
+                                                </ul>
+
+
+
+
+
+
+
+
+
+                                                <a href="#" class="btn btn-warning">More info</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="row mt-4 mb-6 mb-12" style="background-color: ghostwhite;">
+
+                                <div class="col-lg-4" style="float:left; border-right:2px, solid #f1f1f1">
+
+                                    <div class="card">
+
+                                        <div class="card-body text-center">
+                                            <strong style="font-size:x-large"><b>MVC</b></strong>
+
+                                            <hr />
+                                            <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none">
+
+                                                @using (Html.BeginForm("Index", "Post_CSS", FormMethod.Get))
+                                                {
+                                                    <ul>
+                                                        @{
+                                                    foreach (MainProgram.Edm.tbh_Pages item in ViewBag.Ideas)
+                                                    {
+
+                                                        <li style="width:100%">
+                                                            <a href="/MVC/GetPosts">
+                                                                <img alt="@item.AltText" src="~/Content/img/FrontSlider/mvc2.png" style=" width: 120px; height: 80px;padding-right:15px; padding-left:15px; padding-top:10px; padding-bottom:5px; border-radius:8px; float:left; ">
+                                                            </a>
+
+                                                            <div class="aa-cartbox-info">
+
+                                                                <p style="text-align:left; padding-left:15px;padding-right:15px; padding-top:0px">
+                                                                    MVC is an architectural pattern that separates an application into three logical components: the model, the view, and the controller. It is a framework used to create scalable project.   Learn more »
+                                                                    <a class="" href="/MVC/GetPosts">&nbsp;&nbsp;Learn more &raquo;</a>
+                                                                </p>
+                                                            </div>
+
+                                                        </li>
+
+                                                    }
+                                                        }
+                                                    </ul>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-4" style="float:left; border-right:2px, solid #f1f1f1">
+                                    <div class="card">
+
+                                        <div class="card-body text-center">
+                                            <strong style="font-size:x-large"><b>Asp.Net</b></strong>
+
+                                            <hr />
+                                            <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none">
+
+                                                @using (Html.BeginForm("Index", "Post_CSS", FormMethod.Get))
+                                                {
+                                                    <ul>
+                                                        @{
+                                                    foreach (MainProgram.Edm.tbh_Pages item in ViewBag.Ideas)
+                                                    {
+
+                                                        <li style="width:100%">
+                                                            <a href="/AspWebform/GetPosts"><img src="~/Content/img/FrontSlider/aspnet.png" style="width: 120px; height: 80px;padding-right:15px; padding-left:15px; padding-top:10px;  padding-bottom:5px; border-radius:8px; float:left; "></a>
+
+                                                            <div class="aa-cartbox-info">
+
+
+                                                                <p style="text-align:left; padding-left:15px;padding-right:15px; padding-top:0px">
+                                                                    ASP.NET is a framework developed by Microsoft for building web applications. It can also be used as a programming language such includes; C# or VB.NET for building web applications.
+                                                                    <a class="" href="/AspWebform/GetPosts">&nbsp;&nbsp;&nbsp;Learn more &raquo;</a>
+                                                                </p>
+                                                            </div>
+
+                                                        </li>
+
+                                                    }
+                                                        }
+                                                    </ul>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-4" style="float:left; border-right:2px, solid #f1f1f1">
+                                    <div class="card">
+
+                                        <div class="card-body text-center">
+                                            <strong style="font-size:x-large"><b>Web API</b></strong>
+
+                                            <hr />
+                                            <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none">
+
+                                                @using (Html.BeginForm("Index", "Post_CSS", FormMethod.Get))
+                                                {
+                                                    <ul>
+                                                        @{
+                                                    foreach (MainProgram.Edm.tbh_Pages item in ViewBag.Ideas)
+                                                    {
+
+                                                        <li style="width:100%">
+                                                            <a href="/WebApi/GetPosts"><img src="~/Content/img/FrontSlider/api.jpg" style="width: 120px; height: 80px;padding-right:15px; padding-left:15px; padding-top:10px;  padding-bottom:5px; border-radius:8px; float:left; "></a>
+
+                                                            <div class="aa-cartbox-info">
+
+
+                                                                <p style="text-align:left; padding-left:15px;padding-right:15px; padding-top:0px">
+                                                                    Web API is a framework that use HTTP services to send data to clients, including browsers and mobile devices. Web API is a platform for building RESTful applications on .NET Framework.
+                                                                    <a class="" href="/WebApi/GetPosts">&nbsp;&nbsp;Learn more &raquo;</a>
+                                                                </p>
+                                                            </div>
+
+                                                        </li>
+
+                                                    }
+                                                        }
+                                                    </ul>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row mt-4 mb-6 mb-12" style="background-color: ghostwhite;">
+                                <div class="col-lg-4" style="float:left; border-right:2px, solid #f1f1f1">
+                                    <div class="card">
+
+                                        <div class="card-body text-center">
+                                            <strong style="font-size:x-large"><b> Oracle DBA</b></strong>
+
+                                            <hr />
+                                            <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none">
+                                                @using (Html.BeginForm("Index", "Post_CSS", FormMethod.Get))
+                                                {
+                                                    <ul>
+                                                        @{
+                                                    foreach (MainProgram.Edm.tbh_Pages item in ViewBag.Ideas)
+                                                    {
+
+                                                        <li style="width:100%">
+                                                            <a href="/DBA/GetPosts"><img src="~/Content/images/HomePic/Oracle.png" style="width: 120px; height: 80px;padding-right:15px; padding-left:15px; padding-top:10px;  padding-bottom:5px;float:left; "></a>
+
+                                                            <div class="aa-cartbox-info">
+
+
+                                                                <p style="text-align:left; padding-left:15px;padding-right:15px; padding-top:0px">
+                                                                    Oracle database is a relational database management system (RDBMS) by the Oracle. It is a relational database framework which data can be directly accessed by users.
+                                                                    <a class="" href="/DBA/GetPosts">&nbsp;&nbsp;Learn more &raquo;</a>
+                                                                </p>
+                                                            </div>
+
+                                                        </li>
+
+                                                    }
+                                                        }
+                                                    </ul>
+
+                                                }
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-4" style="float:left; border-right:2px, solid #f1f1f1">
+                                    <div class="card">
+
+                                        <div class="card-body text-center">
+                                            <strong style="font-size:x-large"><b> SQL Server</b></strong>
+
+                                            <hr />
+                                            <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none">
+                                                @using (Html.BeginForm("Index", "Post_CSS", FormMethod.Get))
+                                                {
+                                                    <ul>
+                                                        @{
+                                                    foreach (MainProgram.Edm.tbh_Pages item in ViewBag.Ideas)
+                                                    {
+
+                                                        <li style="width:100%">
+                                                            <a href="/Databases/GetPosts"><img src="~/Content/images/HomePic/Sql.jpg" style="width: 120px; height: 80px;padding-right:15px; padding-left:15px; padding-top:10px;  padding-bottom:5px;float:left; "></a>
+
+                                                            <div class="aa-cartbox-info">
+
+
+                                                                <p style="text-align:left; padding-left:15px;padding-right:15px; padding-top:0px">
+                                                                    SQL Server is a relational database management system which product stores and retrieves data requested by other applications. It implements the Structured Query Language (SQL).
+                                                                    <a class="" href="/Databases/GetPosts">&nbsp;&nbsp;Learn more &raquo;</a>
+                                                                </p>
+                                                            </div>
+
+                                                        </li>
+
+                                                    }
+                                                        }
+                                                    </ul>
+
+                                                }
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+
+
+
+
+
+
+
+
+                                </div>
+
+                                <div class="col-lg-4" style="float:left; border-right:2px, solid #f1f1f1">
+                                    <div class="card">
+
+                                        <div class="card-body text-center">
+                                            <strong style="font-size:x-large"><b>MongoDB</b></strong>
+
+                                            <hr />
+                                            <div class="panel panel-default" style="width: 100%; margin-left: 0px; border:none">
+
+                                                <ul>
+                                                    @{
+                                                        foreach (MainProgram.Edm.tbh_Pages item in ViewBag.Ideas)
+                                                        {
+
+                                                            <li style="width:100%">
+                                                                <a href="/NoSql/GetPosts"><img src="~/Content/images/HomePic/MongoDb.jpg" style="width: 120px; height: 80px;padding-right:15px; padding-left:15px; padding-top:10px;  padding-bottom:5px;float:left; "></a>
+
+                                                                <div class="aa-cartbox-info">
+
+
+                                                                    <p style="text-align:left; padding-left:15px;padding-right:15px; padding-top:0px">
+                                                                        SQL Server is a relational database management system which product stores and retrieves data requested by other applications. It implements the Structured Query Language (SQL).
+                                                                        <a class="" href="/NoSql/GetPosts">&nbsp;&nbsp;Learn more &raquo;</a>
+                                                                    </p>
+                                                                </div>
+
+                                                            </li>
+
+                                                        }
+                                                    }
+                                                </ul>
+
+
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+
+
+
+
+
+
+
+
+                                </div>
+
+                            </div>
+
+                            <!--End MID-->
+
+
+                        </div>
+
+
+
+                    </div>
+
+                    <!--Slider Bottom-->
+                    <div class=" col-lg-12">
+                        <div class="card card-body block" style="background-color:white">
+                            <div class="row mt-12 mb-6 mb-12" style="background-color: ghostwhite;">
+
+                                <div class="col-md-12">
+                                    <div class="card card-body block" background-color:white">
+                                        <div id="why_buy">
+                                            <div class="info_right">
+                                                <ul class="list-unstyled list-inline mb-0" style="width:100%">
+                                                    @{
+
+                                                        <li style="width:100%; text-align:center; background-color:white">
+                                                            <div id="myCarousel" class="carousel slide fade" data-ride="carousel" style="margin-top:0px; background-color:#fff; box-shadow:none">
+
+                                                                <div class="carousel-inner" role="listbox" style="margin: 0px; padding: 0px; border: 0px; background-color:white">
+                                                                    <!--1-->
+                                                                    <div class="item active" background-color:white">
+
+                                                                        @{
+                                                                            foreach (MainProgram.Edm.tbh_FrontSlider item in ViewBag.Corporate2)
+                                                                            {
+
+
+                                                                                <div class="item">
+                                                                                    <a class="aa-cartbox-img">
+                                                                                        <img alt="@item.AltText" src="@item.FullImageUrl" style="width:240px; height: 180px; padding-right:10px;padding-left:10px; padding-bottom:20px; float:right;">
+                                                                                    </a>
+                                                                                    <a href="#" class="aa-cartbox-img">
+                                                                                        <img alt="@item.AltText" src="~/Content/img/FrontSlider/lifecycle.png" style="width:240px; height: 180px; padding-right:10px;padding-left:10px; padding-bottom:10px; float:left;">
+                                                                                    </a>
+
+                                                                                    <div class="aa-cartbox-info" background-color:white">
+
+                                                                                        <h4><b><a href="#">@item.ShortDescription</a></b></h4>
+                                                                                        <p no-padding no-gutter style="text-align:left; font-size:14px; padding-left:10px; padding-right:10px; margin-right:10px; padding-top:0px">@item.Content</p>
+
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            }
+
+                                                                        }
+
+
+                                                                    </div>
+
+                                                                    <!--2-->
+                                                                    <div class="item" background-color:white">
+
+                                                                        @{
+                                                                            foreach (MainProgram.Edm.tbh_FrontSlider item in ViewBag.Corporate2)
+                                                                            {
+
+
+                                                                                <div class="item">
+                                                                                    <a href="#" class="aa-cartbox-img">
+                                                                                        <img alt="@item.AltText" src="@item.FullImageUrl" style="width:240px; height: 180px; padding-right:10px;padding-left:10px; padding-bottom:20px; float:right;">
+                                                                                    </a>
+                                                                                    <a href="#" class="aa-cartbox-img">
+                                                                                        <img alt="@item.AltText" src="~/Content/img/FrontSlider/philosophy.jpg" style="width:240px; height: 180px; padding-right:10px;padding-left:10px; padding-bottom:10px; float:left;">
+                                                                                    </a>
+
+                                                                                    <div class="aa-cartbox-info" background-color:white">
+
+                                                                                        <h4><b><a href="#">@item.ShortDescription</a></b></h4>
+                                                                                        <p no-padding no-gutter style="text-align:left; font-size:14px; padding-left:10px; padding-right:10px; margin-right:10px; padding-top:0px">@item.Content</p>
+
+                                                                                    </div>
+                                                                                </div>
+
+
+                                                                            }
+
+                                                                        }
+
+                                                                    </div>
+
+
+                                                                    <!--3-->
+                                                                    <div class="item" background-color:white">
+
+                                                                        @{
+                                                                            foreach (MainProgram.Edm.tbh_FrontSlider item in ViewBag.Corporate1)
+                                                                            {
+
+
+                                                                                <div class="item">
+                                                                                    <a href="#" class="aa-cartbox-img">
+                                                                                        <img alt="@item.AltText" src="@item.FullImageUrl" style="width:240px; height: 180px; padding-right:10px;padding-left:10px; padding-bottom:20px; float:right;">
+                                                                                    </a>
+                                                                                    <a href="#">
+                                                                                        <img alt="@item.AltText" src="~/Content/img/FrontSlider/strategic.jpg" style="width:240px; height: 180px; padding-right:10px;padding-left:10px; padding-bottom:10px; float:left;">
+                                                                                    </a>
+
+                                                                                    <div class="aa-cartbox-info" background-color:white">
+
+                                                                                        <h4><b><a href="#">@item.ShortDescription</a></b></h4>
+                                                                                        <p no-padding no-gutter style="text-align:left; font-size:14px; padding-left:10px; padding-right:10px; margin-right:10px; padding-top:0px">@item.Content</p>
+
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            }
+
+                                                                        }
+
+
+                                                                    </div>
+
+
+                                                                    <!--4-->
+                                                                    <div class="item" background-color:white">
+
+                                                                        @{
+                                                                            foreach (MainProgram.Edm.tbh_FrontSlider item in ViewBag.Students2)
+                                                                            {
+
+
+                                                                                <div class="item">
+                                                                                    <a href="#" class="aa-cartbox-img">
+                                                                                        <img alt="@item.AltText" src="@item.FullImageUrl" style="width:240px; height: 180px; padding-right:10px;padding-left:10px; padding-bottom:20px; float:right;">
+                                                                                    </a>
+                                                                                    <a href="#" class="aa-cartbox-img">
+                                                                                        <img alt="@item.AltText" src="~/Content/img/FrontSlider/freedom.jpg" style="width:240px; height: 180px; padding-right:10px;padding-left:10px; padding-bottom:10px; float:left;">
+                                                                                    </a>
+
+                                                                                    <div class="aa-cartbox-info" background-color:white">
+
+                                                                                        <h4><b><a href="#">@item.ShortDescription</a></b></h4>
+                                                                                        <p no-padding no-gutter style="text-align:left; font-size:14px; padding-left:10px; padding-right:10px; margin-right:10px; padding-top:0px">@item.Content</p>
+
+                                                                                    </div>
+                                                                                </div>
+
+
+                                                                            }
+
+                                                                        }
+
+                                                                    </div>
+
+
+
+                                                                </div>
+
+                                                            </div>
+                                                        </li>
+
+
+                                                    }
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <style>
+                .content-wrapper {
+                    margin-top: 0%;
+                    margin-left: 0%;
+                    background-position: top;
+                }
+
+                #left {
+                    width: 20%;
+                    margin-left: 0%;
+                    margin-top: 0%;
+                    background-position: top;
+                    position: relative;
+                    background-color: #eee3e3;
+                    HEIGHT: 750px;
+                    max-height: 750px;
+                    min-height: 750px;
+                }
+
+
+                .Middle {
+                    HEIGHT: 1124px;
+                    max-height: 1124px;
+                    min-height: 1124px;
+                }
+
+
+                .Right {
+                    HEIGHT: 700px;
+                    max-height: 700px;
+                    min-height: 700px;
+                }
+
+
+
+                .Main-Bar {
+                    content: " ";
+                    position: relative;
+                    margin-top: 0%;
+                    width: 100%;
+                    overflow: no-display;
+                    padding-right: 10px;
+                    margin-left: 0%;
+                    margin-right: 1%;
+                    background-position: top;
+                    margin-bottom: 0px;
+                    padding-left: 5px;
+                    background-color: #fff;
+                }
+
+
+                .SiteT {
+                    width: 100%;
+                    border: none;
+                    margin-right: 0px;
+                    padding-right: 0px;
+                    margin-bottom: 0px;
+                    border: none;
+                }
+
+
+
+
+                .main--container {
+                    margin-left: 17px;
+                }
+
+
+                .ScrollgridL {
+                    OVERFLOW: auto;
+                    border: none;
+                    border-top-left-radius: 20px;
+                    border-top-right-radius: 20px;
+                    WIDTH: 100%;
+                    BORDER-BOTTOM: #000000 none;
+                    HEIGHT: 750px;
+                    max-height: 750px;
+                    min-height: 750px;
+                    scrollbar-3dlight-color: none;
+                    scrollbar-arrow-color: #9C3842;
+                    scrollbar-base-color: #ffffff;
+                    scrollbar-darkshadow-color: none;
+                    scrollbar-face-color: transparent;
+                    scrollbar-highlight-color: #ffffff;
+                    scrollbar-shadow-color: #ffffff;
+                }
+
+                .ScrollgridR {
+                    OVERFLOW: auto;
+                    border: none;
+                    WIDTH: 100%;
+                    BORDER-BOTTOM: #000000 none;
+                    HEIGHT: 700px;
+                    max-height: 700px;
+                    min-height: 700px;
+                    scrollbar-3dlight-color: #fff;
+                    scrollbar-arrow-color: #9C3842;
+                    scrollbar-base-color: #003366;
+                    scrollbar-face-color: #ffffff;
+                    scrollbar-face-color: #ffffff;
+                    scrollbar-highlight-color: #ffffff;
+                    scrollbar-shadow-color: #ffffff;
+                }
+
+                .ScrollgridM {
+                    OVERFLOW: auto;
+                    border: none;
+                    WIDTH: 100%;
+                    BORDER-BOTTOM: #000000 none;
+                    HEIGHT: 700px;
+                    max-height: 700px;
+                    min-height: 700px;
+                    scrollbar-3dlight-color: #fff;
+                    scrollbar-arrow-color: #9C3842;
+                    scrollbar-base-color: #003366;
+                    scrollbar-face-color: #ffffff;
+                    scrollbar-face-color: #ffffff;
+                    scrollbar-highlight-color: #ffffff;
+                    scrollbar-shadow-color: #ffffff;
+                }
+
+
+                .carousel.fade {
+                    opacity: 1;
+                }
+
+
+                    .carousel.fade .item {
+                        /* transition: opacity ease-out .7s;  can remove to stop 1st slide rapid changing */
+                        left: 0;
+                        top: 0;
+                        position: absolute;
+                        width: 100%;
+                        display: block;
+                    }
+
+                        .carousel.fade .item:first-child {
+                            top: auto;
+                            opacity: 1; /* show first slide */
+                            position: relative;
+                        }
+
+                        .carousel.fade .item.active {
+                            opacity: 1;
+                        }
+
+
+
+
+
+
+
+                .carousel,
+                .carousel-inner,
+                .carousel-inner .item {
+                    height: 100%;
+                }
+
+                .item:nth-child(1) {
+                    background: #ffffff;
+                }
+
+                .item:nth-child(2) {
+                    /* background: #51BCE8;*/
+                }
+
+                .item:nth-child(3) {
+                    /* background: #E46653;*/
+                }
+
+
+                /*.carousel-fade   .carousel-inner  .item{
+
+                    transition-property: opacity;
+                }*/
+
+                .item,
+                .active.left,
+                .active.right {
+                    opacity: 0;
+                }
+
+                .active,
+                .next.left,
+                .prev.right {
+                    opacity: 1;
+                }
+
+                    .next,
+                    .prev,
+                    .active.left,
+                    .active.right {
+                        left: 0;
+                        transform: translate3d(0, 0, 0);
+                    }
+
+
+                .carousel-control {
+                    z-index: 2;
+                }
+            </style>
+
+
+
+
+            @Scripts.Render("~/bundles/bootstrap-file")
+
+            @Styles.Render("~/Content/Bootstrap-file/css")
+
+
+
+
+
+
+
+
+            <style>
+                .main--container {
+                    content: " ";
+                    position: relative;
+                    margin-top: 0%;
+                    width: 100%;
+                    overflow: no-display;
+                    padding-right: 0px;
+                    margin-left: 0%;
+                    margin-right: 0%;
+                    margin-bottom: 0px;
+                    background-color: #fff;
+                }
+
+
+                .Mid-sidebar {
+                    content: " ";
+                    position: relative;
+                    margin-top: 0%;
+                    overflow: no-display;
+                    margin-right: 0%;
+                    background-position: top;
+                    margin-bottom: 0px;
+                }
+
+
+
+
+                .nav-tabs {
+                    border-bottom: 2px solid #DDD;
+                }
+
+                    .nav-tabs > li > a {
+                        border: none;
+                        color: #666;
+                    }
+
+                    .nav-tabs > li.nav-item > a,
+                    .nav-tabs > li.nav-item > a:hover {
+                        border: none;
+                        color: #4285F4 !important;
+                        background: transparent;
+                        position: relative;
+                    }
+
+                        .nav-tabs > li.nav-item > a::after {
+                            content: "";
+                            background: #4285F4;
+                            height: 2px;
+                            position: absolute;
+                            width: 100%;
+                            left: 0px;
+                            bottom: -1px;
+                            transition: all 250ms ease 0s;
+                            transform: scale(0);
+                        }
+
+                        .nav-tabs > li.nav-item > a.active::after,
+                        .nav-tabs > li.nav-item:hover > a::after {
+                            transform: scale(1);
+                        }
+
+                .card {
+                    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+                    background: #ffffff;
+                }
+
+
+                .col-lg-2 {
+                    flex: 0 0 10% !important;
+                    max-width: 20%;
+                }
+            </style>
+
+        </div>
+
+    </div>
+
+</section>
+@*
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+
+                <div class="modal-header" style="background: deepskyblue; font-size: xx-large;">
+                    <h4 class="modal-title" id="modal-basic-title">Registration & SignIn</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+
+
+                <div class="modal-body">
+
+                    <!-- Tab Start Code -->
+
+                                <br>
+
+
+
+                                <fieldset>
+
+                                    @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        @Html.ValidationSummary("", new { @class = "text-danger" })
+
+
+
+                                        <hr />
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
+                                            <div class="col-md-10">
+                                                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", required = "required" })
+                                                @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                            <div class="col-md-10">
+                                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", required = "required" })
+                                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                        <span>
+                                            @Html.CheckBoxFor(a => a.RememberMe) @Resource.LabelRememberMe
+                                        </span>
+                                        <br /><br />
+                                        @*  <div class="col-md-offset-2 col-md-10">
+                                <button type="submit" class="btn btn-lg btn btn-default btn-block">@Resource.Login</button></div>
+
+                                         <input type="submit" value="Login" class="btn btn-default"
+                                       styles="margin-top:10px">
+                                if (ViewBag.Msg != null)
+                                {
+                                    <span style="color:red;">
+                                        @ViewBag.Msg
+                                    </span> }
+
+
+
+                                            @* Enable this once you have account confirmation enabled for password reset functionality
+                                    <p>
+                                        <a href="@Url.Action("ForgotPassword", "Account")">
+                                            Forgot your password? </a>
+                                        </p>
+                                            <hr />
+                                            <div class="margin text-center">
+                                                <span>Sign in using social networks</span>
+                                                <br />
+                                                <button class="btn bg-light-blue btn-circle"><i class="fa fa-facebook"></i></button>
+                                                <button class="btn bg-aqua btn-circle"><i class="fa fa-twitter"></i></button>
+                                                <button class="btn bg-red btn-circle"><i class="fa fa-google-plus"></i></button>
+                                            </div>
+
+
+
+                                    }
+
+
+
+
+
+                                </fieldset>
+
+
+
+
+                    <!-- Tab End Code -->
+
+    </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+
+
+                <div class="modal-header" style="background: deepskyblue; font-size: xx-large;">
+                    <h4 class="modal-title" id="modal-basic-title">Registration & SignIn</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+
+                <div class="modal-body">
+
+                    <!-- Tab Start Code -->
+
+                                <br>
+
+
+                                <fieldset>
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        @Html.ValidationSummary("", new { @class = "text-danger" })
+
+
+
+                                        <hr />
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
+                                            <div class="col-md-10">
+                                                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", required = "required" })
+                                                @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
+                                            <div class="col-md-10">
+                                                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", required = "required" })
+                                                @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.FullName, new { @class = "col-md-2 control-label" })
+                                            <div class="col-md-10">
+                                                @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", required = "required" })
+                                                @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
+
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                            <div class="col-md-10">
+                                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", required = "required" })
+                                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                            <div class="col-md-10">
+                                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", required = "required" })
+                                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                                            <div class="col-md-10">
+                                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", required = "required" })
+                                                @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Phone, new { @class = "col-md-2 control-label" })
+                                            <div class="col-md-10">
+                                                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", required = "required" })
+                                                @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Address, new { @class = "col-md-2 control-label" })
+                                            <div class="col-md-10">
+                                                @Html.TextBoxFor(m => m.Address, new { @class = "form-control", required = "required" })
+                                                @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger"})
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.UserPhoto, new { @class = "control-label col-md-2" })
+                                            @Html.ValidationMessageFor(m => m.UserPhoto, "", new { @class = "text-danger" })
+                                            <div class="col-md-10">
+                                                <input type="file" name="UserPhoto" id="fileUpload" accept=".png,.jpg,.jpeg,.gif,.tif" required>
+                                            </div>
+                                        </div>
+
+
+                                        <br />
+
+                                        @* <span>
+                                               @Html.CheckBoxFor(m => m.Remember) @Resource.LabelRememberMe
+                                            </span>*@
+@*<div class="col-md-offset-2 col-md-10">
+                                                <button type="submit" class="btn btn-default btn-block">@Resource.Register</button>
+                                            </div>*
+                                        <input type="submit" value="Register" class="btn btn-default"
+                                               styles="margin-top:10px">
+
+                                        if (ViewBag.Msg != null)
+                                        {<span style="color:red;">
+                                            <script type="text/javascript">
+                                                $(function () {
+                                                    alert("@ViewBag.Message")
+                                                });
+                                            </script>
+                                        </span> }
+                                        <p> @Html.ActionLink("Forgot your password?", "ForgotPassword")</p>
+                                        <a href="~/Account/Register" class="text-center">Register a new membership</a>
+
+
+
+                                    }
+
+                                </fieldset>
+
+
+                    <!-- Tab End Code -->
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+
+@*
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+
+
+
+
+                <div class="modal-header" style="background: deepskyblue; font-size: xx-large;">
+                    <h4 class="modal-title" id="modal-basic-title">Registration & SignIn</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+
+
+                <div class="modal-body">
+
+                    <!-- Tab Start Code -->
+
+                    <br>
+
+
+
+                    <fieldset>
+
+                        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary("", new { @class = "text-danger" })
+
+
+
+                            <hr />
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+
+
+                            <span>
+                                @Html.CheckBoxFor(a => a.RememberMe) @Resource.LabelRememberMe
+                            </span>
+                            <br /><br />
+
+
+                            <input type="submit" value="Login" class="btn btn-default"
+                                   styles="margin-top:10px">
+                            if (ViewBag.Msg != null)
+                            {
+                                <span style="color:red;">
+                                    @ViewBag.Msg
+                                </span> }
+
+                                <p> @Html.ActionLink("Forgot your password?", "ForgotPassword")</p>
+                                <a href="~/Account/Login" class="text-center">Login if  you have account with us</a>
+
+                                <a href="~/Account/Register" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Register</a><br /><br />
+                                @* Enable this once you have account confirmation enabled for password reset functionality
+                        <p>
+                            @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                        </p>
+                                <hr />
+                                <div class="margin text-center">
+                                    <span>Sign in using social networks</span>
+                                    <br />
+                                    <button class="btn bg-light-blue btn-circle"><i class="fa fa-facebook"></i></button>
+                                    <button class="btn bg-aqua btn-circle"><i class="fa fa-twitter"></i></button>
+                                    <button class="btn bg-red btn-circle"><i class="fa fa-google-plus"></i></button>
+                                </div>
+
+
+
+                        }
+
+
+
+
+
+                    </fieldset>
+
+
+
+
+
+
+
+
+
+                    <!-- Tab End Code -->
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+
+
+
+                <div class="modal-header" style="background: deepskyblue; font-size: xx-large;">
+                    <h4 class="modal-title" id="modal-basic-title">Registration & SignIn</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+
+                <div class="modal-body">
+
+                    <!-- Tab Start Code -->
+
+                    <br>
+
+
+                    <fieldset>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary("", new { @class = "text-danger" })
+
+
+
+                            <hr />
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.FullName, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Phone, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Address, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Address, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.UserPhoto, new { @class = "control-label col-md-2" })
+                                @Html.ValidationMessageFor(m => m.UserPhoto, "", new { @class = "text-danger" })
+                                <div class="col-md-10">
+                                    <input type="file" name="UserPhoto" id="fileUpload" accept=".png,.jpg,.jpeg,.gif,.tif" required>
+                                </div>
+                            </div>
+
+
+                            <br />
+
+                            @* <span>
+                       @Html.CheckBoxFor(m => m.Remember) @Resource.LabelRememberMe
+                    </span>
+
+                            <input type="submit" value="Register" class="btn btn-default"
+                                   styles="margin-top:10px">
+
+                            if (ViewBag.Msg != null)
+                            {<span style="color:red;">
+                                <script type="text/javascript">
+                                    $(function () {
+                                        alert("@ViewBag.Message")
+                                    });
+                                </script>
+                            </span> }
+                            <p> @Html.ActionLink("Forgot your password?", "ForgotPassword")</p>
+                            <a href="~/Account/Register" class="text-center">Register a new membership</a>
+
+
+
+                        }
+
+                    </fieldset>
+
+
+
+
+
+                    <!-- Tab End Code -->
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+

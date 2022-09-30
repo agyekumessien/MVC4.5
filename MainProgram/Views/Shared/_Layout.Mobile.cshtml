@@ -1,0 +1,480 @@
+﻿@using MainProgram.Core.Resources
+@using MainProgram.Edm
+
+
+
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="keywords" content="mobile skin" />
+    <meta http-equiv="description" content="This is the Mobile version of my site" />
+    <link rel="icon" href="@Url.Content("~/Content/img/Icon")/Globe4.png" />
+    <title>@ViewBag.Title - ESSIEN.NET</title>
+    @Styles.Render("~/bundles/MobileJS")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="~/Content/js/jquery.min.js"></script>
+    <!-- Ad intellisence for searching products-->
+    <link href="~/Content/css/Phone.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/css/Custom.css" rel="stylesheet" />
+    <link href="~/Content/Intellisence/css/jquery-ui.min.css" rel="stylesheet" />
+    <script src="~/Content/Intellisence/js/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/Intellisence/js/jquery-ui.min.js"></script>
+    <script src="~/Content/js/mycustom.js"></script>
+    <link href="~/Content/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7/dist/css/bootstrap.css" rel="stylesheet" />
+
+
+
+    <!-- Favicon for Iphon, Ipod, Browser, Android Devies etc -->
+    <link rel="apple-touch-icon" sizes="57x57" href="~/Content/themefront/assets/img/fav/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="~/Content/themefront/assets/img/fav/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="~/Content/themefront/assets/img/fav/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="~/Content/themefront/assets/img/fav/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="~/Content/themefront/assets/img/fav/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="~/Content/themefront/assets/img/fav/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="~/Content/themefront/assets/img/fav/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="~/Content/themefront/assets/img/fav/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Content/themefront/assets/img/fav/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="~/Content/themefront/assets/img/fav/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Content/themefront/assets/img/fav/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="~/Content/themefront/assets/img/fav/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/themefront/assets/img/fav/favicon-16x16.png" />
+   <!-- [if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    @{
+        angulardemoEntities dbm = new angulardemoEntities();
+        var CSharpCat = dbm.CSharps.Where(c => c.DepartmentID == c.DepartmentID).ToList();
+    //      var DotNetCat = dbm.DotNets.Where(c => c.DepartmentID == c.DepartmentID).ToList();
+    //  var SqlCat = dbm.Databases.Where(c => c.DepartmentID == c.DepartmentID).ToList();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        $(function () {
+            $("#searchTxtBox").autocomplete({
+                source: '@Url.Action("item","Product")'
+            });
+        });
+    </script>
+
+
+    @* <script type="text/javascript">
+        $(document).ready(function () {
+            $(".trigger").click(function () {
+                $("#nav-sidebar").toggle("fast");
+                $("#nav-sidebar").toggleClass("active");
+                return false;
+            });
+        });
+
+        //Toggle Hide/Show sidebar slowy
+        $(document).ready(function () {
+            $('#toggleNav').click(function (e) {
+                e.preventDefault();
+                $('#nav-sidebar').toggle('slow');
+                $('#toggleNav').toggleClass('extended-panel');
+            });
+        });
+
+
+        </script>*@
+
+
+
+
+
+    <script>
+        $(function () {
+            @* $("#aa-header").click(function () {
+            $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/green-theme.css")'
+            );
+        });*@
+            $("#aa-main").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                );
+            });
+
+            $("#nav").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                   );
+            });
+
+
+            $("#navbar-default").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                   );
+            });
+
+
+            $("#dropdown-menu").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                    );
+            });
+
+            $("#aa-header-top-right").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                   );
+            });
+
+
+
+            $("#aa-header3").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                     );
+            });
+
+
+
+
+            $("#aa-header2").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+
+               );
+            });
+
+        })
+    </script>
+
+
+
+
+</head>
+<body style="background-color: ghostwhite;">
+
+    <div class="menu-area no-padding no-gutter border-bottom shadow-sm " style="width:100%;  color:white">
+
+        <div class="menu-area navbar-default" style=" color:white; margin-bottom:0px">
+            <div class="container-fluid" style="background-color:#585858; color:black;">
+
+                <!-- BRAND -->
+                <div class=" navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#alignment-example" aria-expanded="false" style="background-color:#585858; padding-right:10px; margin-right:50px; border:none">
+                        <span class="sr-only" style="color:white">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="@Url.Action("Index","Home")">
+                        <img src="~/Content/images/HomePic/Globe4E.png" style="width:150px; height:35px;padding-left:10px; padding-top:10px; float:left" />
+
+                    </a>
+                </div>
+
+                <!-- COLLAPSIBLE NAVBAR -->
+                <div class="collapse navbar-collapse" id="alignment-example" style="float:right; margin-right:40px">
+
+                    <!-- Links -->
+                    <ul class="nav navbar-nav">
+                        <!--<li><a href="#" style="color:white;">Affiliate</a></li>
+                        <li><a href="#" style="color:white;">Network</a></li>
+                        <li><a href="#" style="color:white;">Enterprise</a></li>-->
+                        <li><a href="#" style="color:white;">Link Feature</a></li>
+                        <li><a href="@Url.Action("Contact", "Home")" style="color:white;">Contact Us</a></li>
+                        <li class="dropdown">
+                            <a href="@Url.Action("About", "Home")" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong style="color:white;">About Us <span class="caret"></span></strong></a>
+                            <ul class="dropdown-menu" aria-labelledby="about-us">
+                                <li style="color:white"><a href="#">Our Story</a></li>
+                                <li style="color:white"><a href="#">Our Team</a></li>
+                            </ul>
+
+                            <!-- Search -->
+                            <form class="navbar-form navbar-left" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" />
+                                </div>
+                                <button type="submit" class="btn btn-default">Search</button>
+                            </form>
+                        </li>
+                    </ul>
+                  
+
+                </div>
+               
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    @RenderBody()
+
+
+
+    <div class="footer border-top shadow-sm" style="margin-bottom: 0px; border-top: solid 1px; border-color:#585858; width:100%">
+
+
+        <div class="row mt-4 mb-6 mb-12" style="background-color: ghostwhite;">
+
+            <div class="col-md-3" style="padding-right:8px">
+                <div class="card card-body block">
+                    <div id="why_buy">
+                        <div class="info_right" style="padding-right:8px">
+                            <h5 class="text-center mb-3">Explore Home Features?</h5>
+                            <ul>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><b>About Us</b></li>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("Procedure", "Pages")" style="color:#2c2929;">Policies & Procedure  </a></li>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("Procedure", "Pages")" style="color:#2c2929;">Blog</a></li>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("Photos", "Pages")" style="color:#2c2929;">Site Photos & Contributers</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                <div class="card card-body block">
+                    <div id="why_buy">
+                        <div class="info_right">
+                            <h5 class="text-center mb-3">Explore Our Services?</h5>
+                            <ul>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><b>Services Available </b></li>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="#" style="color:#2c2929;">Photos </a></li>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("AdminIndex", "NoteList")" style="color:#2c2929;">NoteList</a></li>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("GetPosts", "NoteList")" style="color:#2c2929;">NoteList</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                <div class="card card-body block">
+                    <div id="why_buy">
+                        <div class="info_right">
+                            <h5 class="text-center mb-3">Programs?</h5>
+                            <ul>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><b>Buy from our Store</b></li>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("Shop", "Home")" style="color:#2c2929;">Store</a></li>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="#" style="color:#2c2929;">Orders </a></li>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="# style=" color:#2c2929;"=color:#2c2929;">Profile</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card card-body block" style=" padding-left:10px">
+                    <div id="why_buy">
+                        <div class="info_right">
+                            <h5 class="text-center mb-3">Information?</h5>
+                            <ul>
+                                <li style="background-color:#f1fafa">
+
+                                    <img src="~/Content/img/Kente/Other/CustomerS6.png" style="width:50px; height:50px; border-radius:40%" />
+                                </li>
+                                <li><span class="fa fa-phone"><strong class="aa-footer-nav">Phone:404-447-3025 </strong></span></li>
+                                <li>
+                                    <a href="@Url.Action("Subscribe", "News")" class="btn-rounded" style="background-color:#f1fafa">
+                                        <img src="~/Content/img/Books/FBooks/PArror.jpg" style="width:50px; height:25px" />
+                                        Sign up!
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <div class="row mt-4 mb-6 mb-12" style=" background-color: #585858;">
+
+            <div class="row mt-4 mb-6 mb-12">
+                <table style=" text-align:center; width:100%">
+                    <tr>
+                        <td style="margin-left:22px; float:left">
+
+                            <div class="list-unstyled list-inline mb-0" style="margin-left:22px">
+                                <!--<c style="color:inherit">
+                                    <b style="color:#fff"> Designed by</b>
+                                    <a href="http://www.facebook.com/">
+                                        <b style="color:inherit">PAE:</b>
+                                    </a>
+                                </c>-->
+                                <c style="color:#fff">Copyright <b style="color:inherit"> ©2021</b></c>
+
+                                <c style="color:#585858;">
+
+
+
+                                    <!-- BEGIN: Powered by Supercounters.com -->
+
+                                    <script type="text/javascript" src="//widget.supercounters.com/ssl/online_t.js"></script>
+                                    <script type="text/javascript">sc_online_t(1601083, "585858", "585858");</script><noscript><a href="https://www.supercounters.com/">supercounters.com</a></noscript>
+
+                                    <!-- END: Powered by Supercounters.com -->
+
+                                </c>
+
+
+                            </div>
+                        </td>
+
+
+                        <td style="margin-right:50px; float:right">
+                            <div class="list-unstyled list-inline mb-0" style="margin-right:30px">
+                                <a href="@Url.Action("Admin", "Admin", "Admin")" style="color:inherit">
+                                    <span class="fa fa-cc-pricaycu" style="color:#fff"><i class="fa fa-user"></i>ADMIN</span>
+                                </a>
+                            </div>
+                        </td>
+                      
+                    </tr>
+                </table>
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+    @* <!-- wpf loader Two -->
+        <div id="wpf-loader-two">
+            <div class="wpf-loader-two-inner">
+                <span>Loading</span>
+            </div>
+        </div>*@
+    <!-- / wpf loader Two -->
+    <!-- SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
+    <!-- END SCROLL TOP BUTTON -->
+    <!-- / footer -->
+    <!-- Start header section -->
+    @Scripts.Render("~/Content/js")
+    @RenderSection("scripts", required: false)
+    <script src="~/Content/js/main.js"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560770f61b38eef5" async="async"></script>-->
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d6b94c29f26abc4"></script>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+<style>
+    /* enable absolute positioning */
+    .inner-addon {
+        position: relative;
+        border-radius: none;
+    }
+
+        /*Search style icon */
+        .inner-addon .fa-search {
+            position: absolute;
+            padding: 13px; /*move search button up and down */
+            pointer-events: initial;
+            color: black;
+            margin-right: -260px; /*move search button left and right */
+        }
+
+    /* align icon */
+    .left-addon .fa-search {
+        left: 0px;
+    }
+
+    .right-addon .fa-search {
+        right: 0px;
+    }
+
+    /* add padding  */
+    .left-addon input {
+        padding-left: 30px;
+    }
+
+    .right-addon input {
+        padding-right: 30px;
+    }
+
+    .inner-addon .form-control {
+        border-radius: none;
+    }
+
+
+
+
+    #footer {
+        background: #9154f3;
+        color: black;
+        box-sizing: border-box;
+        background-color: whitesmoke;
+        margin: 0px;
+    }
+
+
+    .mainbarbottom {
+        border: 0 solid #e1e1e1;
+        border-bottom-width: 1px;
+        height: 40px;
+        text-align: center;
+        padding: 0 0px;
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+        text-align: right;
+        float: right;
+    }
+</style>

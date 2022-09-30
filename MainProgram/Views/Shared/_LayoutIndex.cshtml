@@ -1,0 +1,1382 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    @*[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]*@
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="@Url.Content("~/Content/img/Icon")/Globe4.png" />
+    <title>@ViewBag.Title - ESSIEN.NET</title>
+    @* @Styles.Render("~/bundles/MobileJS")*@
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    @*@model MainProgram.Core.LoginViewModel*@
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    @*<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />*@
+
+    <script src="~/Content/bootstrap-3.3.7/js/popover.js"></script>
+    <script src="~/Content/bootstrap-4.2.1/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/js/jquery.min.js"></script>
+    <!-- Ad intellisence for searching products-->
+    <link href="~/Content/Intellisence/css/jquery-ui.min.css" rel="stylesheet" />
+    <script src="~/Content/Intellisence/js/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/Intellisence/js/jquery-ui.min.js"></script>
+    <script src="~/Content/js/mycustom.js"></script>
+    <!-- <link href="~/Content/css/Phone.css" rel="stylesheet" />
+     // <link href="~/Content/css/mobile/css/Mobile.css" rel="stylesheet" />-->
+    <link href="~/Content/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/Custom.css" rel="stylesheet" />
+    <link rel="stylesheet " media="screen and (min-width:768px; max-width:960px);"
+          href="~/Content/bootstrap-3.3.7/dist/css/bootstrap.css" />
+
+
+
+
+    @using MainProgram.Core.Resources
+    @using MainProgram.Edm
+    @*@using Microsoft.AspNet.Identity*@
+    @using MainProgram.Core.Provider
+    @model MainProgram.Core.LoginViewModel
+
+
+
+    @{
+        angulardemoEntities dbm = new angulardemoEntities();
+        var CSharpCat = dbm.CSharps.Where(c => c.DepartmentID == c.DepartmentID).ToList();
+
+    }
+
+    @{
+
+        var cartObj = Session[Constants.CookieCart];
+        var quantity = 0;
+        try
+        {
+            var cart = (MainProgram.Models.Orders.CartViewModel)cartObj;
+            quantity = cart == null || cart.tbh_Products1 == null ? 0 : cart.tbh_Products1.Count;
+        }
+        catch (Exception)
+        {
+        }
+
+
+
+    }
+
+
+
+
+
+    @*<script type="text/javascript">
+            $(function () {
+                $("#searchTxtBox").autocomplete({
+                    source: '@Url.Action("item","Product")'
+                });
+            });
+        </scrip>*@
+
+
+
+    @* <!--Menu drop down-->
+        <script>
+            $(document).ready(function () {
+                $('.nav li> .dropdown-menu').parent().hover(function () {
+                    var Model = $(this).children('.dropdown-menu');
+                    if ($(Model).is(':hidden')) {
+                        $(Model).slideDown(400);
+                        // $(Model).delay(2000);
+                        // $('.nav li').slideDown("slow");
+                    } else {
+                        $(Model).slideUp(400);
+                    }
+                });
+            })
+
+        </script>*@
+
+
+
+    <script type="text/javascript">
+        $(function () {
+            $("#category").change(function () {
+                // alert("CSharp Seaching OK......");
+                $("#form1").submit();
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('[data-toggle="popover"]').popover({
+                container: 'body'
+            })
+        })
+    </script>
+
+    <style>
+        .mainbar {
+            border: 0;
+            border-bottom-width: 0px;
+            height: 50px;
+            text-align: center;
+            padding: 0 0px;
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+        }
+
+        .mainbar-right {
+            float: right;
+            flex-flow: row;
+            text-align: center;
+            padding: 0 0px;
+        }
+    </style>
+
+
+
+
+</head>
+<body style="background-color: ghostwhite;">
+    <!--Top-->
+    <div id="fadeshow1" class="row mt-4 mb-6 mb-12" style="background-color:transparent">
+
+        <div class="row mt-4 mb-6 mb-12">
+            <table style=" text-align:center; width:100%">
+                <tr>
+                    <td style="margin-left:22px; float:left">
+
+                        <div class="list-unstyled list-inline mb-0" style="margin-right:22px">
+                            <c style="color:inherit">
+                                <b style="color:#888; margin-right: 15px; margin-left:20px">Direction:</b>
+                                <a href="http://www.facebook.com/">
+                                    <c style="color:#000">Contacting<b style="color:inherit"> ©Info</b></c>
+                                </a>
+                            </c>
+
+
+                            <c style="color:#000"><i><img src="~/Content/images/icons-png/cell.jpg" style="width:20px; height:20px;" /></i><b style="color:inherit">404-447-3025</b></c>
+
+
+                        </div>
+                    </td>
+
+
+                    <td style="float:none">
+
+                        <div class="list-unstyled list-inline mb-0">
+                            <a style="margin-right:15px" href="https://facebook.com/sharer.php?u=http://arunendapally.com/post/protect-your-source-code-from-decompiling-or-reverse-engineering">
+                                <span class="fa fa-facebook"></span>
+                            </a>
+                            <a style="margin-right:15px" href="#"><span class="fa fa-twitter"></span></a>
+                            <a style="margin-right:15px" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://arunendapally.com/post/protect-your-source-code-from-decompiling-or-reverse-engineering&amp;title=Protect your source code from decompiling or reverse engineering"><span class="fa fa-google-plus"></span></a>
+                            <a style="margin-right:15px" href="#"><span class="fa fa-youtube"></span></a>
+                            <a style="margin-right:15px" href="#"><span class="fa fa-linkedin"></span></a>
+                            <a href="https://plus.google.com/share?url=http://arunendapally.com/post/protect-your-source-code-from-decompiling-or-reverse-engineering"><span class="fa fa-plus.google"></span></a>
+
+                        </div>
+                    </td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                 @*  <td style="margin-right:50px; float:right">
+                        <div class="list-unstyled list-inline mb-0" style="margin-right:30px">
+                            <a href="#" class="font-italic" style="color:blue;  text-decoration-line:none; padding-bottom:0px">
+                                <strong id="cartB">@{Html.RenderAction("CartSummary", "Cart");}</strong>
+                            </a>
+                        </div>
+                    </td>*@
+
+
+                    <!--Login-->
+
+                    <td class="aa-header-top-left" style="height:25px; border-color:none; color:white; padding-bottom:0px; padding-top:0px; float:right; margin-right:10px">
+
+
+                        <ul lass="navbar navbar-default" role="navigation" navbar-collapse=navbar-collapse no-gutter=no-gutter no-padding" style="position: center; margin: auto;  background-color:transparent;  color:white">
+
+                            @{
+
+                                if (User.Identity.IsAuthenticated == false)
+                                {
+
+                                    <li class="aa-header-top-left" style="height:25px; border-color:none; color:black; padding-bottom:0px; padding-top:0px; float:right;">
+
+
+                                        <div>
+
+                                            <a href="#" class="font-italic" data-toggle="modal" data-target="#tabModal" style="color:blue; text-decoration-line:none; padding-bottom:0px">
+                                                SignIn
+                                            </a>
+
+                                        </div>
+                                    </li>
+                                }
+
+
+
+
+
+                                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                {
+                                    @Html.AntiForgeryToken()
+
+
+                                    if (User.Identity.IsAuthenticated)
+                                    {
+
+
+
+                                        <li role="presentation" class="dropdown" style="float:right">
+
+                                            <ul class="dropdown-menu" style="background-color:white; color:black">
+                                                <li><a href="@Url.Action("UserProfile", "Account")"><i class="fa fa-user"></i> @Resource.Profile</a></li>
+                                                @* <li><a href="@Url.Action("GetUserProfileByIdAsync", "Account")"><i class="fa  fa-sign-out"></i>ID</a></li> *@
+                                                <li><a href="@Url.Action("UserProfile", "Account")"><i class="fa fa-list-alt fa-fw"></i> @Resource.Orders</a></li>
+                                                <li role="presentation" class="dropdown">
+                                                    <a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa  fa-sign-out"></i>@Resource.LogOut</a>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+
+                                    }
+                                    else
+                                    {
+
+                                        <c class="dropdown-menu" style="background-color:white; color:black">
+                                            <li><a href="@Url.Action("UpdateProfilePicAsync", "Account")"><i class="fa  fa-sign-out"></i> @Resource.Profile</a></li>
+                                            @* <li><a href="@Url.Action("GetUserProfileByIdAsync", "Account")"><i class="fa  fa-sign-out"></i>ID</a></li> *@
+                                            <li><a href="@Url.Action("Index", "Account")"><i class="fa  fa-sign-out"></i> @Resource.Orders</a></li>
+                                            <li role="presentation" class="dropdown">
+                                                <a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa  fa-sign-out"></i>@Resource.LogOut</a>
+                                            </li>
+
+                                        </c>
+
+
+
+
+                                    }
+
+
+
+
+
+                                }
+
+                            }
+
+
+
+
+
+                        </ul>
+
+
+                    </td>
+
+
+                    <!--Acct Profile-->
+
+                    <td class="aa-header-top-left" style="height:25px; border-color:none; color:black; padding-bottom:0px; padding-top:0px; float:right">
+
+
+                        <ul lass="navbar navbar-default" role="navigation" navbar-collapse=navbar-collapse no-gutter=no-gutter no-padding"style="position: center; margin: auto;  background-color:#fcfafa;  color:black">
+
+                            @{
+
+
+
+
+                                if (User.Identity.IsAuthenticated)
+                                {
+
+
+
+                                    <li role="presentation" class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="@Url.Action("Login", "Account")" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <div style="padding-left:5px; padding-top:0px">
+                                                @*<img src="~/Content/images/icons-png/user-black.png" style="width:10px; height:9px;" />More<br />
+
+                                                *@
+                                                <img src="~/Content/images/icons-png/user-black.png" type="hidden" style="width:20px; height:25px; padding-bottom:10px; border-radius:50%; color:black" /><b style="color:black">
+
+                                                    <span class="caret"></span>
+                                                </b>
+                                            </div>
+                                        </a>
+
+
+                                        <ul class="dropdown-menu" style="background-color:white; color:black">
+                                            <li><a href="@Url.Action("UpdateProfilePicAsync", "Account")"><i class="fa  fa-sign-out"></i> @Resource.Profile</a></li>
+                                            @* <li><a href="@Url.Action("GetUserProfileByIdAsync", "Account")"><i class="fa  fa-sign-out"></i>ID</a></li> *@
+                                            <li><a href="@Url.Action("Index", "Account")"><i class="fa  fa-sign-out"></i> @Resource.Orders</a></li>
+                                            <li role="presentation" class="dropdown">
+                                                <a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa  fa-sign-out"></i>@Resource.LogOut</a>
+                                            </li>
+
+                                        </ul>
+
+                                    </li>
+
+
+                                }
+
+                            }
+
+
+                        </ul>
+
+
+                    </td>
+
+
+
+
+
+                    <td style="margin-right:20px; float:right">
+                        <div class="list-unstyled list-inline mb-0">
+                            <a href="@Url.Action("Procedure", "Pages")">
+                                <span class="fa fa-cc-pricaycu">Support</span>
+                            </a>
+                        </div>
+                    </td>
+
+                    <td style="margin-right:20px; float:right">
+                        <div class="list-unstyled list-inline mb-0">
+                            <a href="@Url.Action("Procedure", "Pages")">
+                                <span class="fa fa-cc-pricaycu">Faq</span>
+                            </a>
+                        </div>
+                    </td>
+                    <td style="margin-right:20px; float:right">
+                        <div class="list-unstyled list-inline mb-0">
+                            <a href="@Url.Action("Procedure", "Pages")" style="color:inherit"><span class="fa fa-cc-pricaycu"><a href="@Url.Action("Procedure", "Pages")">Blog</a></span></a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+    @RenderBody()
+
+
+
+    <div class="footer border-top shadow-sm" style="margin-bottom: 0px; border-top: solid 1px; border-color:#585858; width:100%">
+
+
+        <div class="row mt-4 mb-6 mb-12" style="background-color: #585858;padding-bottom:-20px; border-bottom:1px; border-bottom-color:#fff">
+
+            <div class="col-md-2" style="text-align:left; padding-left:6%">
+
+                <div id="why_buy">
+                    <div class="info_right">
+                        <!-- <h5 class="text-center mb-3">Explore Home Features?</h5>-->
+                        <ul>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><b style="color:#fff; font-size:18px">Home</b></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("about", "Home")" style="color:#fff;">About</a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("Procedure", "Pages")" style="color:#fff;">Blog</a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("Photos", "Pages")" style="color:#fff;">Privacy</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-2" style="text-align:left; padding-left:6%">
+
+                <div id="why_buy">
+                    <div class="info_right">
+                        <!-- <h5 class="text-center mb-3">Explore Our Services?</h5>-->
+                        <ul>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><b style="color:#fff; font-size:18px">Services </b></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="#" style="color:#fff;">Download</a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("AdminIndex", "NoteList")" style="color:#f1f1f1;">Contributers</a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("GetPosts", "CSharp")" style="color:#f1f1f1;">Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-2" style="text-align:left; padding-left:6%">
+
+                <div id="why_buy">
+                    <div class="info_right">
+                        <!-- <h5 class="text-center mb-3">Explore Our Services?</h5>-->
+                        <ul>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><b style="color:#fff; font-size:18px"> FrontEnd</b></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="#" style="color:#fff;">Asp.net</a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("GetPost", "Angular")" style="color:#fff;">Angular</a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("GetPosts", "React")" style="color:#fff;">React</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-2" style="text-align:left; padding-left:6%">
+
+                <div id="why_buy">
+                    <div class="info_right">
+                        <!-- <h5 class="text-center mb-3">Programs?</h5>-->
+                        <ul>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><b style="color:#fff; font-size:18px">BackEnd</b></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("Shop", "Home")" style="color:#fff;">Donet Core</a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="#" style="color:#fff;">Web API</a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="#" style=" color:#fff;">NodeJs</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-2" style="text-align:left; padding-left:6%">
+
+                <div id="why_buy">
+                    <div class="info_right">
+                        <!-- <h5 class="text-center mb-3">Programs?</h5>-->
+                        <ul>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><b style="color:#fff; font-size:18px">Databases</b></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("Shop", "Home")" style="color:#fff;">SQL</a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="#" style="color:#fff;">MongoDb</a></li>
+                            <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="#" style=" color:#fff;">Oracle</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-2" style="text-align:left; padding-left:6%; padding-bottom:-20px">
+
+                <div id="why_buy">
+                    <div class="info_right">
+                        <!--<h5 class="text-center mb-3">Information?</h5>-->
+                        <ul>
+                            <li>
+                                <a href="/DownLoadLink/downloadlink" title="List View" class="links" style="background-color:#888">
+                                    <img alt="List View" src="@Url.Content("~/Content/img/ApparelImages/Essien.jpg")" style="width:38px; height:38px; border-radius:50%" />
+                                </a>
+                            </li>
+
+                            <li><strong class="aa-footer-nav"><b style="color:#F69230; text-decoration:underline">Developer</b></strong></li>
+                            <li>
+                                <a href="/DownLoadLink/downloadlink" color:#fff">
+                                    <i class="fas fa-check mr-2" style="color:#F69230"></i><b style="color:white">View blog</b>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("Subscribe", "News")" color:#fff">
+                                    <i class="fas fa-check mr-2" style="color:#F69230"></i><b style="color:white"> Sign up!</b>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+              
+        </div>
+
+
+        <div class="row mt-4 mb-6 mb-12" style=" background-color: #585858; margin-top:-20px">
+           <hr />
+            <div class="row mt-4 mb-6 mb-12">
+                <table style=" text-align:center; width:100%">
+                    <tr>
+                        <td style=" float:left; padding-left:10%; padding-right:10% ">
+
+                            <div class="list-unstyled list-inline mb-0" style="padding-left:5%; padding-right:5%">
+                               
+                                    <div style="width: 99%; padding-left:10%; padding-right:10%; background-color: #585858;color:#f1f1f1">
+
+
+                                       
+                                        <p style="text-decoration:underline; margin-left: -0%"><strong> DISCLAIMER</strong></p>
+                                        <p>IN NO EVENT WILL essien.net BE RESPONSIBLE FOR ANY INCIDENTAL, CONSEQUENTIAL, DIRECT OR INDIRECT DAMAGES, OR OTHER LOSSES FOR ANY USE OF THE SITE,&#xa0;&#xa0;&#xa0;&#xa0; ITS MEMBERS SITES, OR LINKS TO THIRD PARTY SITES INCLUDING ANY LOST PROFITS, BUSINESS LOSSES, DATA LOSSES, OR ANY PROPERTY LOSSES.</p>
+                                        <p>THE CONTENTS OF THE SITE MAY BE SUBJECT TO CHANGE OR UPDATE WITHOUT ANY PRIOR NOTICE. WE DO NOT TAKE RESPONSIBILITY OF THE ACCURACY OR REDUNDANCY, OR ORIGINALITY OF THE MATERIAL OR ANY CONTENTS INCLUDING TEXT, GRAPHICS, CODE, OR OTHER MATERIAL, ON THE SITE.</p>
+                                        <p style="text-decoration:underline;"><strong &nbsp;>Copyright Notice Below</strong></p>
+                                       
+
+
+                                    </div>
+                                    <div>
+                                        <ul class="list-unstyled list-inline mb-0">
+                                            <li style="color: white; font-size: 32px; margin-right: 27px">
+                                                <a style="margin-right:15px" href="https://facebook.com/sharer.php?u=http://arunendapally.com/post/protect-your-source-code-from-decompiling-or-reverse-engineering">
+                                                    <span class="fa fa-facebook"></span>
+                                                </a>
+                                            </li>
+                                            <li style="color:white; font-size:32px; margin-right:27px">
+                                                <a style="margin-right:15px" href="#"><span class="fa fa-twitter"></span></a>
+                                            </li>
+                                            <li style="color:white; font-size:32px; margin-right:27px">
+                                                <a style="margin-right:15px" href="#"><span class="fa fa-youtube"></span></a>
+
+                                            </li>
+                                            <li style="color:white; font-size:32px">
+                                                <a style="margin-right:15px" href="#"><span class="fa fa-linkedin"></span></a>
+
+                                            </li>
+                                            <li style="color:white; font-size:32px">
+                                                <a href="https://plus.google.com/share?url=http://arunendapally.com/post/protect-your-source-code-from-decompiling-or-reverse-engineering">
+                                                <span class="fa fa-google-plus"></span></a>
+
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                              
+                                
+
+                                
+
+
+                            </div>
+                        </td>
+
+                    </tr>
+                </table>
+
+            </div>
+
+
+
+           
+
+
+
+        </div>
+
+
+        <div class="row mt-4 mb-6 mb-12" style=" background-color: #585858; margin-top:-10px;">
+            <hr />
+            <div class="row mt-4 mb-6 mb-12" style="margin-top:-10px">
+                <table style=" text-align:center; width:100%">
+                    <tr>
+                        <td style="margin-left:80px; float:left; ">
+
+                            <div class="list-unstyled list-inline mb-0" style="margin-left:22px">
+                                <c style="color:inherit">
+                                    <b style="color:#fff"> Designed by</b>
+                                    <a href="http://www.facebook.com/">
+                                        <b style="color:inherit">Peter Agyekum Essien:</b>
+                                    </a>
+                                </c>
+                                <c style="color:#fff">Copyright <b style="color:inherit"> ©2020</b></c>
+
+                                <c style="color:#585858;">
+
+
+
+                                    <!-- BEGIN: Powered by Supercounters.com -->
+
+                                    <script type="text/javascript" src="//widget.supercounters.com/ssl/online_t.js"></script>
+
+
+
+                                    <script type="text/javascript">sc_online_t(1601083, "585858", "585858");</script><noscript><a href="https://www.supercounters.com/">supercounters.com</a></noscript>
+
+                                    <!-- END: Powered by Supercounters.com -->
+
+                                </c>
+
+
+                            </div>
+                        </td>
+
+
+
+
+                        <td style="float:none;  margin-left:-140px">
+                            <div class="list-unstyled list-inline mb-0" style="margin-left:-50px">
+                                <c style="color:inherit">
+                                    <b style="color:#fff">Do not</b>
+                                    <a href="http://www.facebook.com/">
+                                        <b style="color:inherit">Sell my</b>
+                                    </a>
+                                </c>
+                                <c style="color:#fff">Personal <b style="color:inherit">Information</b></c>
+
+                            </div>
+                        </td>
+
+
+                        <td style="margin-left:150px; float:right; padding-right:50px">
+                            <div class="list-unstyled list-inline mb-0" style="margin-right:30px">
+                                <a href="@Url.Action("Admin", "Admin", "Admin")" style="color:inherit">
+                                    <span class="fa fa-cc-pricaycu" style="color:#fff"><i class="fa fa-user"></i>ADMIN</span>
+                                </a>
+                            </div>
+                        </td>
+                        <td style="margin-right:20px; float:right">
+                            <div class="list-unstyled list-inline mb-0">
+                                <a href="@Url.Action("Procedure", "Pages")" style="color:inherit"><span class="fa fa-cc-pricaycu"><a href="@Url.Action("Procedure", "Pages")">PRIVACY</a></span></a>
+                            </div>
+                        </td>
+                        <td style="margin-right:20px; float:right">
+                            <div class="list-unstyled list-inline mb-0">
+                                <a href="@Url.Action("Procedure", "Pages")">
+                                    <span class="fa fa-cc-pricaycu">POLICY</span>
+                                </a>
+                            </div>
+                        </td>
+                        @*     <td style="margin-right:10px;">
+                                <div class="list-unstyled list-inline mb-0">
+                                    <a href="@Url.Action("Procedure", "Pages")">
+                                        <span class="fa fa-cc-pricaycu">PRIVACY</span>
+                                    </a>
+                                </div>
+                            </td>*@
+                    </tr>
+                </table>
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    @* <!-- wpf loader Two -->
+        <div id="wpf-loader-two">
+            <div class="wpf-loader-two-inner">
+                <span>Loading</span>
+            </div>
+        </div>*@
+    <!-- / wpf loader Two -->
+    <!-- SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
+    <!-- END SCROLL TOP BUTTON -->
+    <!-- / footer -->
+    <!-- Start header section -->
+    @Scripts.Render("~/Content/js")
+    @RenderSection("scripts", required: false)
+    <script src="~/Content/js/main.js"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560770f61b38eef5" async="async"></script>-->
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    @* <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d6b94c29f26abc4"></script>*@
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+
+
+
+<div class="modal fade" id="tabModal" tabindex="-1" role="dialog" data-dismiss="modal" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top:30px">
+    <div class="modal-dialog">
+        <div class="modal-content" style=" border-top-left-radius:10px; border-top-right-radius:10px;">
+            <div class="modal-header" style=" background: rgb(241, 243, 243); font-size: xx-large; border-top-left-radius:5px; border-top-right-radius:5px; text-align:center">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+
+
+            </div>
+
+
+            <div class="modal-body">
+                <h4 class="modal-title" id="modal-basic-title" style="text-align:center">User SignIn</h4>
+                <!-- Tab Start Code -->
+                <fieldset>
+
+                    @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary("", new { @class = "text-danger" })
+
+
+
+                        <hr />
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", required = "required" })
+                                @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", required = "required" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group" style="text-align:center">
+                            <span style="text-align:center">
+                                @Html.CheckBoxFor(a => a.RememberMe) @Resource.LabelRememberMe
+                            </span><br /><br />
+                            <span style="text-align:center; ">
+                                <input type="submit" value="Login" class="btn btn-primary" style="background: rgb(241, 243, 243); color:black" /><br />
+
+
+                                @if (ViewBag.Msg != null)
+                                {
+                                    <span style="color:red;">
+                                        @ViewBag.Msg
+                                    </span>
+                                }
+                            </span>
+                            <br />
+                            <!--    <a href="~/Account/Register" class="text-center" data-toggle="modal" data-target="#tabModal2" data-dismiss="modal"><i class="fa fa-user">&nbsp;&nbsp;Register as a new membership</i></a>-->
+
+
+                            <a href="~/Account/Register" class="text-center"><i class="fa fa-user">&nbsp;&nbsp;Register as a new membership</i></a>
+                            <br />
+                            <br />
+                            <!--Enable this once you have account confirmation enabled for password reset functionality-->
+                            <span>
+                                @Html.ActionLink("Forgot your password?", "ForgotPassword", "Account")
+
+                            </span>
+
+
+
+
+                            <hr />
+                            <div class="margin text-center">
+                                <span>Sign in using social networks</span>
+                                <br />
+                                <button class="btn bg-light-blue btn-circle"><i class="fa fa-facebook"></i></button>
+                                <button class="btn bg-aqua btn-circle"><i class="fa fa-twitter"></i></button>
+                                <button class="btn bg-red btn-circle"><i class="fa fa-google-plus"></i></button>
+                            </div>
+                        </div>
+                    }
+                </fieldset>
+                <!-- Tab End Code -->
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<style>
+    #mySidenav {
+        margin-right: 100px;
+    }
+</style>-->
+@*
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style=" border-top-left-radius:10px; border-top-right-radius:10px;">
+                <div class="modal-header" style="background: deepskyblue; font-size: xx-large; border-top-left-radius:5px; border-top-right-radius:5px; text-align:center">
+                    <h4 class="modal-title" id="modal-basic-title">User SignIn</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+
+                <div class="modal-body">
+
+                        <!-- Tab Start Code -->
+                        <fieldset>
+
+                            @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary("", new { @class = "text-danger" })
+
+
+
+                                <hr />
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", required = "required" })
+                                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", required = "required" })
+                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group" style="text-align:center">
+                                    <span style="text-align:center">
+                                        @Html.CheckBoxFor(a => a.RememberMe) @Resource.LabelRememberMe
+                                    </span><br /><br />
+                                    <span style="text-align:center">
+                                        <input type="submit" value="Login" class="btn btn-primary" /><br />
+
+
+                                        @if (ViewBag.Msg != null)
+                                        {
+                                            <span style="color:red;">
+                                                @ViewBag.Msg
+                                            </span>
+                                        }
+                                    </span><br />
+                                    <span>
+                                        @Html.ActionLink("Forgot your password?", "ForgotPassword", "Account")
+
+                                    </span>
+
+
+                                    @* Enable this once you have account confirmation enabled for password reset functionality
+                            <p>
+                                @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                            </p>*
+                                    <hr />
+                                    <div class="margin text-center">
+                                        <span>Sign in using social networks</span>
+                                        <br />
+                                        <button class="btn bg-light-blue btn-circle"><i class="fa fa-facebook"></i></button>
+                                        <button class="btn bg-aqua btn-circle"><i class="fa fa-twitter"></i></button>
+                                        <button class="btn bg-red btn-circle"><i class="fa fa-google-plus"></i></button>
+                                    </div>
+                                </div>
+                            }
+                        </fieldset>
+                        <!-- Tab End Code -->
+
+                    </div>
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style=" border-top-left-radius:10px; border-top-right-radius:10px;">
+
+
+
+                <div class="modal-header" style="background: deepskyblue; font-size: xx-large; border-top-left-radius:5px; border-top-right-radius:5px; text-align:center">
+                    <h4 class="modal-title" id="modal-basic-title">User Registration</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+
+                <div class="modal-body">
+                    <!-- Tab Start Code -->
+                    <fieldset>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary("", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.FullName, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Phone, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Address, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Address, new { @class = "form-control", required = "required" })
+                                    @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.UserPhoto, new { @class = "control-label col-md-2" })
+                                @Html.ValidationMessageFor(m => m.UserPhoto, "", new { @class = "text-danger" })
+                                <div class="col-md-10">
+                                    <input type="file" name="UserPhoto" id="fileUpload" accept=".png,.jpg,.jpeg,.gif,.tif" required=required />
+                                </div>
+                            </div>
+
+
+                            <br />
+
+
+                            <div class="form-group" style="text-align:center">
+
+                                <span style="text-align:center">
+                                    <input type="submit" value="Register" class="btn btn-primary" />
+
+
+                                    @if (ViewBag.Msg != null)
+                                    {
+                                        <span style="color:red;">
+                                            <script type="text/javascript">
+                                                $(function () {
+                                                    alert("@ViewBag.Message")
+                                                });
+                                            </script>
+                                        </span>
+                                    }
+                                </span>
+                            </div>
+                        }
+
+                    </fieldset>
+
+
+
+
+
+                    <!-- Tab End Code -->
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="modal fade" id="tabModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style=" border-top-left-radius:10px; border-top-right-radius:10px;">
+                <div class="modal-header" style="background: deepskyblue; font-size: xx-large; border-top-left-radius:5px; border-top-right-radius:5px; text-align:center">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                      <h4 class="modal-title" id="modal-basic-title">Register | Sign in</h4>
+
+                </div>
+
+
+                <div class="modal-body">
+
+
+
+
+
+                    <ul class="nav nav-tabs">
+                        <li style="border-top-left-radius:5px; border-top-right-radius:5px; border-bottom:none; "><a href="#Register" data-toggle="tab" style="color:#0026ff;"><b>Register</b></a></li>
+                        <li><a href="#Login" data-toggle="tab" style="color:#0026ff;"><b>Login</b></a></li>
+                        <li><a href="#Forgot" data-toggle="tab" style="color:#0026ff;"><b>Forgot Password</b></a></li>
+
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="Register">
+                            <!-- Tab Start Code -->
+                            <fieldset>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary("", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.FullName, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Phone, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Address, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            @Html.TextBoxFor(m => m.Address, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.UserPhoto, new { @class = "control-label col-md-2" })
+                                        @Html.ValidationMessageFor(m => m.UserPhoto, "", new { @class = "text-danger" })
+                                        <div class="col-md-10">
+                                            <input type="file" name="UserPhoto" id="fileUpload" accept=".png,.jpg,.jpeg,.gif,.tif" required=required />
+                                        </div>
+                                    </div>
+
+
+                                    <br />
+
+
+                                    <div class="form-group" style="text-align:center">
+
+                                        <span style="text-align:center">
+                                            <input type="submit" value="Register" class="btn btn-primary" />
+
+
+                                            @if (ViewBag.Msg != null)
+                                            {
+                                                <span style="color:red;">
+                                                    <script type="text/javascript">
+                                                        $(function () {
+                                                            alert("@ViewBag.Message")
+                                                        });
+                                                    </script>
+                                                </span>
+                                            }
+                                        </span>
+                                    </div>
+                                }
+
+                            </fieldset>
+
+                        </div>
+
+
+                        <div class="tab-pane" id="Login">
+
+                            <!-- Tab Start Code -->
+                            <fieldset>
+
+                                @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+
+
+                                    <hr />
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="text-align:center">
+                                        <span style="text-align:center">
+                                            @Html.CheckBoxFor(a => a.RememberMe) @Resource.LabelRememberMe
+                                        </span><br /><br />
+                                        <span style="text-align:center">
+                                            <input type="submit" value="Login" class="btn btn-primary" /><br />
+
+
+                                            @if (ViewBag.Msg != null)
+                                            {
+                                                <span style="color:red;">
+                                                    @ViewBag.Msg
+                                                </span>
+                                            }
+                                        </span><br />
+                                        <span>
+                                            @Html.ActionLink("Forgot your password?", "ForgotPassword", "Account")
+
+                                        </span>
+
+
+                                        @* Enable this once you have account confirmation enabled for password reset functionality
+                        <p>
+                            @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                        </p>
+                                        <hr />
+                                        <div class="margin text-center">
+                                            <span>Sign in using social networks</span>
+                                            <br />
+                                            <button class="btn bg-light-blue btn-circle"><i class="fa fa-facebook"></i></button>
+                                            <button class="btn bg-aqua btn-circle"><i class="fa fa-twitter"></i></button>
+                                            <button class="btn bg-red btn-circle"><i class="fa fa-google-plus"></i></button>
+                                        </div>
+                                    </div>
+                                }
+                            </fieldset>
+                            <!-- Tab End Code -->
+
+
+
+                        </div>
+                        <div class="tab-pane" id="Forgot">
+                            <!-- Tab Start Code -->
+                            <fieldset>
+                                <div class="login-box-body">
+
+                                    <div class="login-panel panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Please Enter Email</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            @using (Html.BeginForm("ForgotPassword", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                            {
+                                                @Html.AntiForgeryToken()
+                                                <fieldset>
+                                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                                    <div class="form-group">
+                                                        <h2 style="width:300px">
+                                                            @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email" })
+                                                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "error" })
+                                                        </h2>
+                                                    </div>
+
+
+                                                    <input type="submit" class="btn btn-default" value="Email Link" />
+
+                                                </fieldset>
+                                            }
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                </fieldset>
+
+                      </div>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+<style>
+    /* enable absolute positioning */
+    .inner-addon {
+        position: relative;
+        border-radius: none;
+    }
+
+        /*Search style icon */
+        .inner-addon .fa-search {
+            position: absolute;
+            padding: 16px; /*move search button up and down */
+            pointer-events: initial;
+            color: black;
+            margin-right: -260px; /*move search button left and right */
+        }
+
+    /* align icon */
+    .left-addon .fa-search {
+        left: 0px;
+    }
+
+    .right-addon .fa-search {
+        right: 0px;
+    }
+
+    /* add padding  */
+    .left-addon input {
+        padding-left: 30px;
+    }
+
+    .right-addon input {
+        padding-right: 30px;
+    }
+
+    .inner-addon .form-control {
+        border-radius: none;
+    }
+
+    #footer {
+        background: #9154f3;
+        color: black;
+        box-sizing: border-box;
+        background-color: whitesmoke;
+        margin: 0px;
+    }
+
+
+    .mainbarbottom {
+        border: 0 solid #e1e1e1;
+        border-bottom-width: 1px;
+        height: 40px;
+        text-align: center;
+        padding: 0 0px;
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+        text-align: right;
+        float: right;
+    }
+</style>
+
+

@@ -1,0 +1,355 @@
+﻿@*@model PagedList.IPagedList<MainProgram.Edm.Angular>*@
+@model MainProgram.Edm.tbh_Pages
+
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+
+
+
+@{
+    ViewBag.Title = "GetPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Intellisence/css/jquery-ui.min.css" rel="stylesheet" />
+<script src="~/Content/Intellisence/js/jquery-1.10.2.min.js"></script>
+<script src="~/Content/Intellisence/js/jquery-ui.min.js"></script>
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="hero is-info is-fullheight is-bold">
+
+
+    <div class="Main-Bar" style="width:100%; margin-right:0px; padding-right:0px; margin-top:20px; text-align:center; background-color:#fff">
+        <div class="panel2" style="width: 98.8%; padding-left: 0px; padding-right: 0px;">
+            <div class="row mt-4 mb-6 mb-12">
+
+                <div class="hero-body   mt-4 mb-6 mb-12" style="background-color: ghostwhite; margin-right:0px; padding-right:0px; text-align:center">
+
+                    <div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; margin-top:30px; background-color:white; border:none">
+
+
+
+
+                        <!-- left sidebar-->
+
+
+                        <div class="left" style="float:left; top:0px; background-color:white; border:none">
+                            <div class="Container">
+                                <div class="col-md-4">
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!--End Of Left-->
+                        <!-- Right-->
+
+
+                        <div class="right"
+                             style="float:right; margin-right:8px; padding-right:8px; top:0px; background-color:white; border:none">
+                            <div class="Container">
+                                <div class="col-md-4">
+
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+                        <!--End Of Right-->
+                        <!--MID Sidebar Main content-->
+                        <div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+                            <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+                                <div class="card card-body block">
+                                    <div id="why_buy">
+                                        <div class="info_right">
+                                            <h5 class="text-center mb-3">News Post</h5>
+                                            <ul style="text-align:left; font-size:16px; margin:15px">
+
+                                                @{
+
+
+                                                    MainProgram.Edm.angulardemoEntities dbg = new MainProgram.Edm.angulardemoEntities();
+
+                                                    List<MainProgram.Edm.tbh_Pages> Modelg = dbg.tbh_Pages.ToList();
+
+
+
+
+
+                                                    foreach (MainProgram.Edm.tbh_Pages item in ViewBag.netCoreN)
+                                                    {
+
+
+                                                        <li style="text-align:center"><br> <strong style="font-size:20px; color:red">Difference between .NET Core and .NET Framework&#58;</strong><br><br></li>
+
+
+
+                                                        <li style="text-align:left; margin-left:10px; margin-right:10px ">Since the announcement of ASP.NET 5.0 ASP.NET Core 1.0 now, it has created confusion with the name and different flavors of new version of .NET. Some of my colleagues were also confused with naming and different flavor of it. So in this short post, let’s understand difference between .NET Core and .NET Framework.  &#xa0;&#xa0;&#xa0;&#xa0; &#xa0;&#xa0;&#xa0;&#xa0; </li>
+
+
+                                                        <li style="text-align:left"><strong style="font-size:20px; color:red">Difference</strong></li>
+
+
+                                                        <li style="text-align:left">
+                                                            .NET Core and the .NET Framework have (for the most part) a subset-superset relationship. .NET Core is named “Core” since it contains the core features from the .NET Framework, for both the runtime and framework libraries. For example, .NET Core and the .NET Framework share the GC, the JIT and types such as String and List.
+                                                            .NET Core was created so that .NET could be open source, cross platform and be used in more resource-constrained environments.<br><br>
+                                                        </li>
+
+
+
+                                                        <li style="text-align:left">
+                                                            Like .NET, ASP.NET now also has 2 flavors.<br><br>
+
+                                                            ASP.NET 4.6 ASP.NET Core 1.0 ASP.NET 4.6 is upgraded version of ASP.NET which we all are using from last 13 years. It started with 1.0 back in 2012 and now it has reached at 4.6. Applications built using ASP.NET 4.6 or prior version of ASP.NET run only on windows platform.
+                                                            ASP.NET Core 1.0 is completely a new platform to build cross platform applications and it was written from scrath.
+                                                        </li>
+
+
+
+                                                        <li style="text-align:center;  margin-top:50px; margin-bottom:50px">
+                                                            &#8231;
+
+                                                            <img src="~/Content/img/FrontSlider/Core.png" style="width: 300px; height: 300px; ">
+                                                        </li>
+
+
+
+                                                        <li style="text-align:left; margin-left:10px; margin-right:10px">
+                                                            <br><br>
+                                                            So now you can build web application using ASP.NET Core 1.0 and you can target .NET Framework 4.6 and/or .NET Core. The .NET Framework 4.6 runs on top of Windows operating system, where .NET Core 1.0 is a cross platform framework and runs on top of Windows and Non-windows operating systems. Please note that .NET Core 1.0 doesn’t have all the features and functionality of .NET Framework 4.6 (at the time of writing).
+
+                                                            That should clear the confusion. Thanks for reading and keep visiting for updates and share this in your network.
+
+                                                            PS: If you found this content valuable and want to return the favour, then
+                                                        </li>
+
+
+
+
+                                                        <li style="text-align:left; margin-left:10px; margin-right:10px">
+                                                            &#8231;
+                                                            @*   @item.Content  *@
+                                                        </li>
+
+
+                                                        <li style="text-align:center"><br> <strong style="font-size:20px; color:red">ASP.NET 5 is now ASP.NET CORE 1.0</strong><br><br></li>
+
+                                                        <li style="text-align:left"><strong style="font-size:20px; color:red">Here are the new names.</strong></li>
+
+
+                                                        <li style="text-align:left">
+                                                            ASP.NET 5 is now ASP.NET Core 1.0.
+                                                            .NET Core 5 is now .NET Core 1.0.
+                                                            Entity Framework 7 is now Entity Framework Core 1.0 or EF Core 1.0.
+                                                            Why 1.0? Because these are new. The whole .NET Core concept is new. The .NET Core 1.0 CLI is very new. Not only that, but .NET Core isn’t as complete as the full .NET Framework 4.6.
+
+                                                            So now the question is that these are only name change or as a developer do we have to also make any changes? Well, the answer is YES.
+
+                                                            The version of libraries and nuget package will change and requires developer attention. So what actually changed, other than name?<br><br>
+                                                        </li>
+
+
+                                                        <li style="text-align:left"><strong style="font-size:20px; color:red">What changed?</strong></li>
+                                                        <li style="text-align:left">
+                                                            The Microsoft.AspNet.* packages and namespaces are changing to Microsoft.AspNetCore.*.
+                                                            The EntityFramework.* packages and namespaces are changing to Microsoft.EntityFrameworkCore.*.
+                                                            The version numbers of all of the above are being reset to 1.0.0-*.
+                                                            MVC 6 is now ASP.NET Core MVC 1.0
+                                                            Microsoft.AspNet.Identity.EntityFramework package being renamed to Microsoft.AspNetCore.Identity.EntityFrameworkCore<br><br>
+                                                        </li>
+
+
+
+                                                        <li style="text-align:left"><strong style="font-size:20px; color:red">Conclusion</strong></li>
+                                                        <li style="text-align:left">
+                                                            The decision to rename ASP.NET 5 to ASP.NET Core 1.0 is the right decision and it was required as well. But I believe they are bit late to rename this as this is affecting the nuget packages and libraries. But there is a saying “It’s never too late – in fiction or in life – to revise”.
+
+                                                            That’s all folks for now. Keep visiting for updates and share this in your network.
+
+                                                            PS: If you found this content valuable and want to return the favour, then <br><br>
+                                                        </li>
+
+
+
+
+
+
+
+
+                                                    }
+
+
+
+
+
+                                                }
+
+
+
+
+
+
+                                            </ul>
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+                    <!--End Of MID-->
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<style>
+    .content-wrapper {
+        margin-top: 0%;
+        margin-left: 0%;
+        background-position: top;
+        background: #d2d6de;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+
+    #left {
+        width: 10%;
+        margin-left: 0%;
+        margin-top: 0%;
+        background-position: top;
+        position: relative;
+        background-color: #eee3e3;
+    }
+
+    #Right {
+        width: 10%;
+        margin-right: 0%;
+        margin-top: 0%;
+        background-position: top;
+        position: relative;
+        background-color: #eee3e3;
+    }
+
+
+    .Mid-sidebar {
+        content: " ";
+        position: relative;
+        margin-top: 0%;
+        width: 80%;
+        overflow: no-display;
+        padding-right: 0px;
+        margin-left: 10%;
+        margin-right: 0%;
+        background-position: top;
+        margin-bottom: 0px;
+        background-color: #fff;
+    }
+
+
+    .SiteT {
+        width: 100%;
+        border: none;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
+
+
+
+    .main--container {
+        margin-left: 17px;
+    }
+
+    .card-body {
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+<style>
+    .blue {
+        height: 200px;
+        text-align: left;
+    }
+
+    .card {
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+        background: #ffffff;
+    }
+
+
+    .col-lg-2 {
+        flex: 0 0 10% !important;
+        max-width: 20%;
+    }
+</style>
+

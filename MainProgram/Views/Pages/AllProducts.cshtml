@@ -1,0 +1,488 @@
+﻿@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@{
+    ViewBag.Title = "AllProducts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+
+   
+
+    <!-- left sidebar-->
+    <div class="aa-sidebar-widget">
+        <div class="col-md-4">
+
+            <img src="~/Content/img/ApparelImages/Essien.jpg" class="img-circle" alt="User Image" />
+            <p style="width:250px; height:auto; overflow-wrap:initial">You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="@Url.Action("Index", "Blog")">check developer blog &raquo;</a></p>
+
+
+            <hr />
+            <ul>
+
+                <li><a href="@Url.Action("Index", "~/Home")"><i class="fa fa-reply"></i> <span>Home</span></a></li>
+                <li class="@(Request.Url.Segments[0].ToString().Trim().StartsWith("Category") ? "active" : "") treeview" style="width:250px;">
+
+                    <a href="#">
+                        <i class="fa fa-laptop"></i>
+                        <span>Women</span>
+
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <li>
+                            <a href="@Url.Action("Index", "Women")" style="width:250px;">
+                                <i class="fa fa-circle-o"></i> List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+                <li class="@(Request.Url.Segments[0].ToString().Trim().StartsWith("Category") ? "active" : "") treeview" style="width:250px;">
+
+                    <a href="#">
+                        <i class="fa fa-laptop"></i>
+                        <span>Order</span>
+
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <li>
+                            <a href="@Url.Action("Index", "Order")" style="width:250px;">
+                                <i class="fa fa-circle-o"></i> List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="@(Request.Url.Segments[0].ToString().Trim().StartsWith("Category") ? "active" : "") treeview" style="width:250px;">
+
+                    <a href="#">
+                        <i class="fa fa-laptop"></i>
+                        <span>Account</span>
+
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <li>
+                            <a href="@Url.Action("login", "Account")" style="width:250px;">
+                                <i class="fa fa-circle-o"></i> login
+                            </a>
+                        </li>
+                        <li><a href="@Url.Action("Vendor", "Account")"><i class="fa fa-circle-o"></i> Vendors</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="@(Request.Url.Segments[0].ToString().Trim().StartsWith("Category") ? "active" : "") treeview" style="width:250px;">
+
+                    <a href="#">
+                        <i class="fa fa-laptop"></i>
+                        <span>Membership</span>
+
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="@Url.Action("Add", "MemberShip")"><i class="fa fa-circle-o"></i> Add</a></li>
+                        <li><a href="@Url.Action("Index", "MemberShip")"><i class="fa fa-circle-o"></i> List</a></li>
+                    </ul>
+                </li>
+
+                <li class="@(Request.Url.Segments[0].ToString().Trim().StartsWith("Category") ? "active" : "") treeview" style="width:250px;">
+
+                    <a href="#">
+                        <i class="fa fa-laptop"></i>
+                        <span>Pages</span>
+
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="@Url.Action("Index", "Page")"><i class="fa fa-circle-o"></i> List</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="@(Request.Url.Segments[0].ToString().Trim().StartsWith("Category") ? "active" : "") treeview" style="width:250px;">
+
+                    <a href="#">
+                        <i class="fa fa-laptop"></i>
+                        <span>Settings</span>
+
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="@Url.Action("Group", "Setting", new { id = "general" })"><i class="fa fa-circle-o"></i> General</a></li>
+                        <li><a href="@Url.Action("Group", "Setting", new { id = "paypal" })"><i class="fa fa-circle-o"></i> Paypal</a></li>
+                        <li><a href="@Url.Action("Group", "Setting", new { id = "social network" })"><i class="fa fa-circle-o"></i> Social Networks</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div> <!--Main-->
+<!--Right Sidebar Main content-->
+<div class="aa-product-catg-body">
+    <div class="col-md-4">
+        <h2>maybefirst</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+
+
+    <h3>Recently Views</h3>
+
+    <div class="col-md-4">
+        <h2>maybe1</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+
+
+
+
+
+
+    <div class="col-md-4">
+        <h2>maybe1</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>maybe2</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+
+</div>
+
+
+<style>
+    .content-wrapper {
+        margin-top: 0%;
+        margin-left: 0%;
+        background-position: top;
+    }
+
+    .left {
+        width: 20%;
+        margin-left: 1%;
+        margin-top: 0%;
+        background-position: top;
+        position: relative;
+    }
+
+
+
+    .right-sidebar {
+        content: " ";
+        position: relative;
+        background-color: lightblue;
+        margin-top: 0%;
+        width: 80%;
+        overflow: no-display;
+        padding-right: 10px;
+        margin-left: 20%;
+        margin-right: 0%;
+        background-position: top;
+        margin-bottom: 0px;
+    }
+
+    /*Menu*/
+
+    #menu .menu-area .aa-logo {
+        float: left;
+    }
+
+        #menu .menu-area .aa-logo a {
+            font-family: "Raleway", sans-serif;
+            font-size: 28px;
+            color: white;
+        }
+
+            #menu .menu-area .aa-logo a:hover {
+                color: #808080;
+            }
+
+            #menu .menu-area .aa-logo a span {
+                display: inline-block;
+                float: left;
+                font-size: 50px;
+                color: red;
+            }
+
+            #menu .menu-area .aa-logo a p {
+                display: inline-block;
+                float: left;
+                font-weight: bold;
+                margin-bottom: 0;
+                margin-left: 5px;
+                margin-top: -5px;
+            }
+
+                #menu .menu-area .aa-logo a p span {
+                    display: block;
+                    font-size: 12px;
+                    font-weight: normal;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    color: orangered;
+                }
+
+    #menu .container {
+        background: url(Content/img/Slider/Nyork.jpg) no-repeat;
+        height: 100%;
+        margin: 0px;
+        width: 100%;
+    }
+</style>
+
+<style>
+
+    @if (ViewBag.NameLeft == "Downloads" || ViewBag.NameLeft == "Useful Links")
+    {
+        @:.container .col-md-9 p span:hover {
+             @:font-size: 19px !important;
+        @:}
+    }
+
+</style>
+<style>
+    /*.col-md-9 ul, ol li {
+        list-style: initial;
+        color: #f5ab35;
+    }*/
+
+    .col-md-9 ul {
+        list-style-type: disc;
+        list-style-position: inside;
+        /*color: #f5ab35;*/
+    }
+
+    .col-md-9 ol {
+        list-style-type: decimal;
+        list-style-position: inside;
+        /*color: #f5ab35;*/
+    }
+
+    .col-md-9 ul ul, ol ul {
+        list-style-type: circle;
+        list-style-position: inside;
+        margin-left: 15px;
+        /*color: #f5ab35;*/
+    }
+
+    .col-md-9 ol ol, ul ol {
+        list-style-type: lower-latin;
+        list-style-position: inside;
+        margin-left: 15px;
+        /*color: #f5ab35;*/
+    }
+
+    .site-container .wrapper ul.list-ticked li {
+        list-style: none !important;
+    }
+
+    .container .col-md-9 span {
+    }
+
+    .container .col-md-9 p span a {
+        text-decoration: none;
+    }
+
+    .site-container .wrapper .projects {
+        float: none;
+    }
+
+    .site-container .wrapper .sidebar > .widgets.widget-tagcloud > ul li span {
+        border: 1px solid #c8c5c0;
+        color: #9b9b9b;
+        display: block;
+        font-family: "Poppins",sans-serif;
+        font-size: 11px;
+        font-weight: 400;
+        margin: 0;
+        padding: 5px 4px;
+        text-align: center;
+        text-decoration: none;
+    }
+</style>
+
+
+
+@*
+
+    <!--Right Sidebar Main content-->
+    <div class="left style=" padding-right:15px;">
+        <div class="col-md-4">
+            <ul class="box-offers clearfix">
+
+                @if (Model != null)
+                {
+                    int jj = 1;
+                    foreach (var item in Model)
+                    {
+                        <li>
+                            <a href="@Html.Raw(item.Name)">
+                                <i class="fa fa-graduation-cap" style="color:#000"></i>
+                            </a>
+                            <h2>
+                                <span>@item.Description</span>
+
+                                @if (jj == 1)
+                                {
+                                    <span style="display:inline-block; width: 200px;"></span>
+                                }
+                            </h2>
+
+                        </li>
+
+
+                        <li>
+                            <a href="~/Pages/@item.Name" data-filter"="*">
+                                <i class="fa fa-university" aria-hidden="true"></i>
+                                @Html.Raw(item.Description)
+                            </a>
+                        </li>
+
+
+
+
+
+
+                                jj++;
+                    }
+                }
+
+            </ul>
+
+        </div>
+
+
+      <h3>Recently Views</h3>
+            <div class="aa-recently-views">
+                <ul>
+
+
+
+                        @foreach (MainProgram.Edm.tbh_Pages item in ViewBag.Women)
+                    {
+                        <li>
+                            <a href="@Url.Action("Pages", "Women", new { id = item.PageID })" class="aa-cartbox-img"><img alt="@item.AltText" src="@item.FullImageUrl" style="width: 50px; height: 50px"></a>
+                            <div class="aa-cartbox-info">
+                                <h4><b><a href="@Url.Action("Pages", "Women", new { id = item.PageID })">@item.Name</a></b></h4>
+                                <p>@item.Content</p>
+                                <p>@item.UnitPrice</p>
+                            </div>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+
+
+
+
+*@
+
+
+
+
+
+

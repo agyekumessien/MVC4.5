@@ -1,0 +1,92 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+/* gray background of the page */
+body {
+  
+  .wrapper {
+  
+    .jumbotron {
+      border-radius: 0;
+      padding: 0;
+      margin: 0;
+
+      blockquote {
+        border-left: none;
+
+        p {
+          font: 300 italic 33px @brand-font;
+          text-transform: uppercase;
+          margin-bottom: 0;
+        }
+
+        small {
+          text-align: right;
+          color: #1D8EA6;
+          font: 300 20px @brand-font;
+
+          &:before {
+            content: '';
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+@body-bg: #f8f8f8; 
+/* blue background */
+@ brand-primary: #29c5e6; 
+/* background of panels */
+@panel-bg: #f3f3f3;
+/* frame color of panels */
+@panel-inner-border: #e7e7e7;
+/* remove rounding in blocks */
+@border-radius-base: 0;
+/* primary buttons have blue background */
+@btn-primary-bg: @brand-primary; 
+/* if the screen width is more then 992px, then the container width is 960px */
+@container-md: 660px; 
+/* if the screen width is more 1200px, then the container width is 960px again */
+@container-lg: @container-md; 
+/* main font is Tahoma */
+@font-family-base: Tahoma, sans-serif;
+/* base font size */
+@font-size-base: 12px; 
+/* main color of text */
+@text-color: #8f8f8f;
+/* gray background of text fields */
+@input-bg: @panel-bg;
+/* gray frame of text fields */
+@input-border: @panel-inner-border;
+/* gray color of the text in the fields */
+@input-color: #b2b2b2;
+/* gray color of the text in the fields */
+
+@jumbotron-bg: @brand-primary;
+@jumbotron-color: #fff;
+
+.panel {
+  box-shadow: none;
+  .panel-heading {
+    font: 14px @brand-font;
+    text-transform: uppercase;
+    padding: 10px;
+  }
+
+  .panel-body {
+    padding: 10px;
+  }
+}

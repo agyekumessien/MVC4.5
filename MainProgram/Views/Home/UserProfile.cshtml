@@ -1,0 +1,280 @@
+﻿@*@model PagedList.IPagedList<MainProgram.Edm.AspNetUser>*@
+
+
+@model IEnumerable<MainProgram.Edm.AspNetUser>
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+
+
+<div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; top:0px;  background-color:#fff; border:none;">
+
+
+
+    <!-- left sidebar-->
+
+
+
+    <div class="left" style="width: 17%; float:left; top:0px;  background-color:#fff; border:none;">
+        <div class="Container">
+            <div class="col-md-4">
+                <div class="container">
+                    <div class="panel panel-default" style="width: 22%">
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--End Of Left-->
+<!-- Right-->
+<!--
+<div class="right"
+     style="width: 21%; float:right; margin-right:8px; padding-right:8px; top:0px; background-color:#fff; border:none;">
+    <div class="Container">
+        <div class="col-md-4">
+            <div class="container">
+                <div class="panel panel-default" style="width: 22%">
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!--End Of Right-->
+<!--MID Sidebar Main content-->
+<div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+    <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+        <strong style="font-size:x-large"><b>Profile</b></strong>
+
+        UNDER CONSTRUCTION, COMING SOON
+        <hr />
+
+        <form id="profile-form" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-6">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Input.FirstName"></label>
+                        <input asp-for="Input.FirstName" class="form-control" />
+                        <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.LastName"></label>
+                        <input asp-for="Input.LastName" class="form-control" />
+                        <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Username"></label>
+                        <input asp-for="Input.Username" class="form-control" />
+                        <span asp-validation-for="Input.Username" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.PhoneNumber"></label>
+                        <input asp-for="Input.PhoneNumber" class="form-control" />
+                        <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <button id="update-profile-button" type="submit" class="btn btn-primary">Save</button>
+                </div>
+                <div class="col-md-6">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    
+                </div>
+
+            </div>
+        </form>
+ 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          @*   <!--  <fieldset>
+            @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+            {
+                <p>
+                    Find by words: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+                    <input type="submit" value="Search" />
+                </p>
+            }
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.ActionLink("NoteList", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        Action
+                    </th>
+
+                    <th></th>
+                </tr>
+
+
+                @foreach (var item in Model)
+                {
+
+                    <tr style="border:1px solid white">
+
+                        <td>
+
+
+
+                            <span style="margin-right:15px; font-size:16px; color:black">
+                                <b>@item.FirstName</b>
+                            </span>
+                            <span style="margin-right:15px; font-size:16px; color:black">
+                                <b>@Html.Raw(@item.FullName)
+                                </b>
+                            </span>
+                            <br />
+                            <span style="margin-right:15px; font-size:16px; color:black">
+                                <br /> @Html.Raw(@item.Email)
+                            </span>
+
+
+
+                        </td>
+
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                            @Html.ActionLink("Details", "Details", new { id = item.Id })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </td>
+
+                    </tr>
+
+
+                }
+
+            </table>
+
+
+            <br />
+            <ul>
+                @*<li>
+                                    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                                    @Html.PagedListPager(Model, page => Url.Action("Index",
+                    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+                                </li>
+                <li>
+                    @Html.ActionLink("Full Page", "GetPosts", "NoteList")
+                </li>
+            </ul>
+
+
+
+
+        </fieldset>-->*@
+
+    </div>
+
+
+
+    <!--End Of MID-->
+
+    <style>
+        .content-wrapper {
+            margin-top: 0%;
+            margin-left: 0%;
+            background-position: top;
+        }
+
+        #left {
+            width: 20%;
+            margin-left: 0%;
+            margin-top: 0%;
+            background-position: top;
+            position: relative;
+            background-color: #eee3e3;
+        }
+
+
+
+        .Mid-sidebar {
+            content: " ";
+            position: relative;
+            margin-top: 0%;
+            width: 80%;
+            overflow: no-display;
+            padding-right: 0px;
+            margin-left: 20%;
+            margin-right: 0%;
+            background-position: top;
+            margin-bottom: 0px;
+            background-color: #fff;
+        }
+
+
+        .SiteT {
+            width: 100%;
+            border: none;
+            margin-right: 0px;
+            padding-right: 0px;
+        }
+
+
+
+
+        .main--container {
+            margin-left: 17px;
+        }
+    </style>
+
+
+</div>

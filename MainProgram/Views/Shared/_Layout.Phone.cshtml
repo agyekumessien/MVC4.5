@@ -1,0 +1,1648 @@
+﻿@using MainProgram.Core.Resources
+@using MainProgram.Edm
+
+
+
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="keywords" content="mobile skin" />
+    <meta http-equiv="description" content="This is the Mobile version of my site" />
+    <link rel="icon" href="@Url.Content("~/Content/img/Icon")/Globe4.png" />
+    <title>@ViewBag.Title - ESSIEN.NET</title>
+    @Styles.Render("~/bundles/MobileJS")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="~/Content/js/jquery.min.js"></script>
+    <!-- Ad intellisence for searching products-->
+    <link href="~/Content/css/Phone.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/css/Custom.css" rel="stylesheet" />
+    <link href="~/Content/Intellisence/css/jquery-ui.min.css" rel="stylesheet" />
+    <script src="~/Content/Intellisence/js/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/Intellisence/js/jquery-ui.min.js"></script>
+    <script src="~/Content/js/mycustom.js"></script>
+
+
+    <!-- Favicon for Iphon, Ipod, Browser, Android Devies etc -->
+    <link rel="apple-touch-icon" sizes="57x57" href="~/Content/themefront/assets/img/fav/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="~/Content/themefront/assets/img/fav/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="~/Content/themefront/assets/img/fav/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="~/Content/themefront/assets/img/fav/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="~/Content/themefront/assets/img/fav/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="~/Content/themefront/assets/img/fav/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="~/Content/themefront/assets/img/fav/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="~/Content/themefront/assets/img/fav/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Content/themefront/assets/img/fav/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="~/Content/themefront/assets/img/fav/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Content/themefront/assets/img/fav/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="~/Content/themefront/assets/img/fav/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/themefront/assets/img/fav/favicon-16x16.png" />
+    [if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]
+
+
+    @{
+        angulardemoEntities dbm = new angulardemoEntities();
+        var CSharpCat = dbm.CSharps.Where(c => c.DepartmentID == c.DepartmentID).ToList();
+    //      var DotNetCat = dbm.DotNets.Where(c => c.DepartmentID == c.DepartmentID).ToList();
+    //  var SqlCat = dbm.Databases.Where(c => c.DepartmentID == c.DepartmentID).ToList();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        $(function () {
+            $("#searchTxtBox").autocomplete({
+                source: '@Url.Action("item","Product")'
+            });
+        });
+    </script>
+
+
+    @* <script type="text/javascript">
+        $(document).ready(function () {
+            $(".trigger").click(function () {
+                $("#nav-sidebar").toggle("fast");
+                $("#nav-sidebar").toggleClass("active");
+                return false;
+            });
+        });
+
+        //Toggle Hide/Show sidebar slowy
+        $(document).ready(function () {
+            $('#toggleNav').click(function (e) {
+                e.preventDefault();
+                $('#nav-sidebar').toggle('slow');
+                $('#toggleNav').toggleClass('extended-panel');
+            });
+        });
+
+
+        </script>*@
+
+
+
+
+
+    <script>
+        $(function () {
+            @* $("#aa-header").click(function () {
+            $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/green-theme.css")'
+            );
+        });*@
+            $("#aa-main").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                );
+            });
+
+            $("#nav").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                   );
+            });
+
+
+            $("#navbar-default").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                   );
+            });
+
+
+            $("#dropdown-menu").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                    );
+            });
+
+            $("#aa-header-top-right").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                   );
+            });
+
+
+
+            $("#aa-header3").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+                     );
+            });
+
+
+
+
+            $("#aa-header2").click(function () {
+                $("link#cssfile").attr("href", "@Url.Content("~/Content/css/theme-color/custom-theme.css")"
+
+               );
+            });
+
+        })
+    </script>
+
+
+
+
+</head>
+<body style="background-color: ghostwhite;">
+
+    <div class="menu-area no-padding no-gutter border-bottom shadow-sm " style="width:100%;  color:white">
+
+
+
+
+
+        <div class="menu-area no-padding no-gutter " style="width:100%">
+            <!-- Navbar -->
+            <!-- logo  -->
+            <!-- Text based logo -->
+
+            <table style="text-align:center; width:100%;">
+                <tr>
+                    <td>
+                        <!-- Left nav -->
+                        <ul class="nav navbar-nav center-block  navbar-collapse  no-gutter no-padding" role="navigation" style=" width:100%; position: center; background-color: #585858;  color:white; padding-bottom: 12px;">
+
+                            <!--More-->
+                            <li class="aa-header-top-left" style="height:35px; border-color:none; color:black; padding-top:20px; float:right; margin-right:80px">
+
+
+                                <ul lass="navbar navbar-default" role="navigation" navbar-collapse=navbar-collapse no-gutter=no-gutter style="position: center; margin: auto;  color:white">
+
+                                    @{
+
+                                        {
+
+                                            <li role="presentation" class="dropdown">
+                                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    <div>
+
+                                                        Support
+
+                                                    </div>
+                                                </a>
+                                                <ul id="mySidenav" class="dropdown-menu" style="background-color:white; color:black; margin-right:100px">
+                                                    <li><a href="#"><i class="fa  fa-sign-out"></i>help desk</a></li>
+                                                    <li><a href="#"><i class="fa  fa-sign-out"></i>Phone</a></li>
+                                                    <li><a href="#"><i class="fa  fa-sign-out"></i>Other</a></li>
+                                                    <li><a href="#"><i class="fa  fa-sign-out"></i>Other</a></li>
+
+
+                                                </ul>
+                                            </li>
+                                        }
+                                    }
+                                </ul>
+                            </li>
+
+
+
+                            <!--Oracle-->
+                            <li class="aa-header-top-left" style="height:35px; border-color:none; color:white; float:right">
+
+
+                                <ul lass="navbar navbar-default" role="navigation" navbar-collapse=navbar-collapse no-gutter=no-gutter style="position: center; margin: auto;  background-color:#000;  color:white">
+
+                                    @{
+                                        <li role="presentation" class="dropdown" style="float:right; position:relative; color:white;  width:92px; margin-top:0px">
+
+                                            <div>
+                                                <br />
+                                                <a href="@Url.Action("About", "Home")"><b style="color:white; font-family: Georgia,'Times New Roman',serif;">About Us</b></a>
+                                            </div>
+
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
+
+
+
+
+                            <!--Angular-->
+                            <li class="aa-header-top-left" style="height:35px; border-color:none; color:white; float:right">
+
+
+                                <ul lass="navbar navbar-default" role="navigation" navbar-collapse=navbar-collapse no-gutter=no-gutter style="position: center; margin: auto; background-color: #585858; color:white">
+
+                                    @{
+                                        <li role="presentation" class="dropdown" style="float:right; position:relative; color:white;  width:100px; margin-top:0px">
+
+                                            <div>
+                                                <br />
+                                                <a href="@Url.Action("Contact", "Home")"><b style="color:white; font-family: Georgia,'Times New Roman',serif;">Contact</b></a>
+                                            </div>
+                                        </li>
+                                    }
+
+                                </ul>
+                            </li>
+
+                            <!--JQ Java-->
+                            <li class="aa-header-top-left" style="height:35px; border-color:none; color:white; float:right">
+
+
+                                <ul lass="navbar navbar-default" role="navigation" navbar-collapse=navbar-collapse no-gutter=no-gutter style="position: center; margin: auto;   color:white">
+
+                                    @{
+
+
+                                        <li role="presentation" class="dropdown" style="float:right; position:relative; color:white;  width:100px; margin-top:0px">
+
+                                            <div>
+
+                                                <br />
+
+                                                <a href="#"><b style="color:white; font-family: Georgia,'Times New Roman',serif;">Features</b></a>
+                                            </div>
+
+                                        </li>
+
+                                    }
+
+                                </ul>
+
+
+                            </li>
+
+
+                            <!--JQ Java-->
+                            <li class="aa-header-top-left" style="height:35px; border-color:none; color:white; float:right">
+
+
+                                <ul lass="navbar navbar-default" role="navigation" navbar-collapse=navbar-collapse no-gutter=no-gutter style="position: center; margin: auto;  color:white">
+
+                                    @{
+
+
+                                        <li role="presentation" class="dropdown" style="float:right; position:relative; color:white;  width:100px; margin-top:0px">
+
+                                            <div>
+
+                                                <br />
+
+                                                <a href="#"><b style="color:white; font-family: Georgia,'Times New Roman',serif;">Enterprise</b></a>
+                                            </div>
+
+                                        </li>
+
+                                    }
+
+                                </ul>
+
+
+                            </li>
+
+
+
+
+                            <!--AdminIndex-->
+                            <li class="aa-header-top-left" style="height:35px; border-color:none; color:white; float:right">
+
+
+                                <ul lass="navbar navbar-default" role="navigation" navbar-collapse=navbar-collapse no-gutter=no-gutter style="position: center; margin: auto;  color:white">
+
+                                    @{
+
+
+                                        <li role="presentation" class="dropdown" style="float:right; position:relative; color:white;  width:100px; margin-top:0px">
+
+                                            <div>
+
+                                                <br />
+
+                                                <a href="@Url.Action("AdminIndex", "CSharp")">
+                                                    <b style="color:white; font-family: Georgia,'Times New Roman',serif;">AdminIndex</b>
+                                                </a>
+                                            </div>
+
+                                        </li>
+
+                                    }
+
+                                </ul>
+
+
+                            </li>
+
+
+
+
+                            <!--Hot Deals-->
+                            <li class="aa-header-top-left" style="height:50px; border-color:none; color:white; float:left">
+
+
+                                <ul lass="navbar navbar-default" role="navigation" navbar-collapse=navbar-collapse no-gutter=no-gutter style="position: center; margin: auto;  color:white">
+
+                                    @{
+
+                                        <li role="presentation" class="dropdown" style="float:right; position:relative; color:black;  width:92px; margin-top:0px">
+
+                                            <div class="my-0 mr-md-auto font-weight-normal">
+
+
+                                                <a href="@Url.Action("Index","Home")">
+                                                    <img src="~/Content/images/HomePic/Globe4E.png" style="width:180px; height:55px; padding-top:15px; padding-left:10px" />
+
+                                                </a>
+                                            </div>
+
+                                        </li>
+                                    }
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+
+
+        <div class="menu-area no-padding no-gutter col-md-4 col-md-6 col-md-12" style="width:100%; color:black; margin-bottom:8px;  background-color:white;">
+
+            <table style="text-align:center; width:100%; margin-bottom:5px;">
+                <tr>
+                    <td style="background-color:white;">
+
+                        <ul class="list-unstyled list-inline mb-0" style=" background-color:white; color:black">
+
+                            <!--Logo-->
+                            @*<li class="aa-header-top-left" style="height:50px; border-color:none; color:black; float:left; padding-bottom:10px">
+
+                                    <div>
+
+                                        <a href="@Url.Action("Index","Home")">
+                                            <img src="~/Content/images/icons-png/heart-black.png" style="width:220px; height:50px; padding-top:10px" />
+                                        </a>
+                                    </div>
+
+                                </li>*@
+
+
+                            <!--Home-->
+                            <li class="aa-header-top-left" style="height:50px; border-color:none; color:black; text-decoration:none; padding-top:0px; float:left; padding-bottom:10px">
+
+                                <div>
+
+                                    <a href="@Url.Action("Index","Home")">
+                                        @*@img src="/Content/images/icons-png/Home3.png" style="width:20px; height:20px;" />*@
+                                        <c class="font-italic" style="color:black; text-decoration-line:none">
+                                            <br />
+                                            Home
+                                        </c>
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+
+                            <!--About-->
+
+
+                            <li class="aa-header-top-left" style="height:50px; border-color:none; color:black; text-decoration:none; padding-top:0px; float:left;padding-bottom:10px ">
+
+                                <div>
+
+                                    <a href="@Url.Action("Procedure", "Pages")">
+                                        @* <img src="/Content/images/icons-png/Home3.png" style="width:20px; height:20px;" />*@
+                                        <c class="font-italic" style="color:black; text-decoration-line:none">
+                                            <br />
+                                            About
+                                        </c>
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+
+
+
+
+                            <!--Services-->
+
+                            <li style="text-align:center; height:35px; border:none; color:black; float:left; padding-bottom:10px ">
+
+
+                                <ul lass="navbar navbar-default" role="navigation" navbar-collapse=navbar-collapse no-gutter=no-gutter style="position: center; margin: auto;  background-color:#fcfafa;  color:black">
+
+                                    @{
+
+                                        {
+
+                                            <li role="presentation" class="dropdown" style="float:right; position:relative; color:black;  width:92px; margin-top:0px">
+                                                <a class="dropdown-toggle" data-toggle="dropdown" href="@Url.Action("Contact", "Home")" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    <div>
+
+                                                        @* <img src="~/Content/images/icons-png/Services5.png" style="width:20px; height:20px; color:black" />*@
+                                                        <br />
+                                                        <c class="font-italic" style="color:black; text-decoration-line:none">
+                                                            Services
+                                                        </c>
+                                                    </div>
+                                                </a>
+
+                                                <ul class="dropdown-menu" style="background-color:white; color:black">
+                                                    <li><a href="@Url.Action("Blog", "Pages")"><i class="fa  fa-sign-out"></i>Blog</a></li>
+                                                    <li><a href="@Url.Action("Download", "Pages")"><i class="fa  fa-sign-out"></i>Download</a></li>
+                                                    <li><a href="@Url.Action("Ideas", "Pages")"><i class="fa  fa-sign-out"></i>Ideas</a></li>
+
+                                                </ul>
+
+                                            </li>
+
+                                        }
+
+                                    }
+
+                                </ul>
+
+                            </li>
+
+
+                            <!--Shop-->
+                            <li class="aa-header-top-left" style="height:50px; border-color:none; color:black; text-decoration:none; padding-bottom:10px; float:left">
+
+                                <div>
+
+                                    <a href="@Url.Action("Index", "Product")">
+                                        @* <img src="/Content/images/icons-png/Home3.png" style="width:20px; height:20px;" />*@
+                                        <c class="font-italic" style="color:black; text-decoration-line:none">
+                                            <br />
+                                            Shop
+                                        </c>
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+
+                            <!--Gallery-->
+
+
+
+                            <li style="text-align:center; height:35px; border:none; color:black; float:left; padding-bottom:10px">
+
+
+                                <ul lass="navbar navbar-default" role="navigation" navbar-collapse=navbar-collapse no-gutter=no-gutter style="position: center; margin: auto;  background-color:#fcfafa;  color:black">
+
+                                    @{
+
+                                        {
+
+                                            <li role="presentation" class="dropdown" style="float:right; position:relative; color:black;  width:92px; margin-top:0px">
+                                                <a class="dropdown-toggle" data-toggle="dropdown" href="@Url.Action("Contact", "Home")" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    <div>
+
+                                                        @* <img src="~/Content/images/icons-png/Services5.png" style="width:20px; height:20px; color:black" />*@
+                                                        <br />
+                                                        <c class="font-italic" style="color:black; text-decoration-line:none">
+                                                            Gallery
+                                                        </c>
+                                                    </div>
+                                                </a>
+
+                                                <ul class="dropdown-menu" style="background-color:white; color:black">
+                                                    <li><a href="@Url.Action("MvcVideo", "Video")"><i class="fa  fa-sign-out"></i>Media</a></li>
+                                                    <li><a href="@Url.Action("Photos", "Pages")"><i class="fa  fa-sign-out"></i>Photos</a></li>
+
+                                                </ul>
+
+                                            </li>
+
+                                        }
+
+                                    }
+
+                                </ul>
+
+                            </li>
+
+
+
+                            <!--Communication
+                            <li class="aa-header-top-left" style="height:50px; border-color:none; color:black; text-decoration:none; padding-top:0px; float:left">
+
+                                <div>
+
+                                    <a href="@Url.Action("Subscribe", "News")">
+
+                                        <c class="font-italic" style="color:black; text-decoration-line:none">
+                                            <br />
+                                            Messaging
+                                        </c>
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+
+
+
+                            <!--Contact
+                            <li class="aa-header-top-left" style="height:50px; border-color:none; color:black; text-decoration:none; padding-top:0px; float:left">
+
+                                <div>
+                                    <a href="@Url.Action("Contact", "Home")">
+                                        @* <img src="/Content/images/icons-png/Home3.png" style="width:20px; height:20px;" />*@
+                                        <c class="font-italic" style="color:black; text-decoration-line:none">
+                                            <br />
+                                            Contact
+                                        </c>
+
+                                    </a>
+
+                                </div>
+
+                            </li>-->
+                            <!--NEW-->
+                            <!--Cart-->
+
+                            <li class="aa-header-top-left" style="height:50px; border-color:none; color:black; padding-bottom:0px; padding-top:5px; float:right; margin-right:20px">
+
+                                <div>
+
+                                    <img src="~/Content/images/icons-png/Scart2.png" style="width:20px; height:20px;" /><br />
+                                    <c style="color:black">@{Html.RenderAction("CartSummary", "Cart");}</c>
+
+                                </div>
+
+                            </li>
+
+
+
+                            <!--modal-Login
+                            <li class="aa-header-top-left" style="height:50px; border-color:none; color:black; padding-bottom:0px; padding-top:5px; float:right">
+
+
+                                <div>
+                                    <a href="#">
+                                        <img src="~/Content/images/icons-png/User3.png" style="width:20px; height:20px;" /><br />
+                                        <c class="font-italic" data-toggle="modal" data-target="#tabModal" style="color:black; text-decoration-line:none; padding-bottom:10px">
+                                            Login
+                                        </c>
+                                    </a>
+                                </div>
+                            </li>-->
+                            <!---Login
+                            <li class="aa-header-top-left" style="height:50px; border-color:none; color:black; padding-bottom:0px; padding-top:5px; float:right;">
+
+
+                                <div>
+                                    <a href="@Url.Action("Login", "Account")">
+                                        <img src="~/Content/images/icons-png/User3.png" style="width:20px; height:20px;" /><br />
+                                        <c class="font-italic"  style="color:black; text-decoration-line:none; padding-bottom:10px">
+                                            Login
+                                        </c>
+                                    </a>
+                                </div>
+                            </li>-->
+                            <!--modal3-->
+
+                            <li class="aa-header-top-left" style="height:50px; border-color:none; color:black; padding-bottom:0px; padding-top:5px; float:right">
+
+
+                                <ul lass="navbar navbar-default" role="navigation" navbar-collapse=navbar-collapse no-gutter=no-gutter no-padding"style="position: center; margin: auto;  background-color:#fcfafa;  color:black">
+
+                                    @{
+
+                                        <li class="aa-header-top-left" style="height:50px; border-color:none; color:black; padding-bottom:0px; padding-top:0px; float:right;">
+
+
+                                            <div>
+                                                <a href="@Url.Action("Login", "Account")">
+                                                    <img src="~/Content/images/icons-png/User3.png" style="width:20px; height:20px;" /><br />
+                                                    <c class="font-italic" style="color:black; text-decoration-line:none; padding-bottom:10px">
+                                                        Login
+                                                    </c>
+                                                </a>
+                                            </div>
+                                        </li>
+
+
+
+                                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+
+
+                                            if (User.Identity.IsAuthenticated)
+                                            {
+
+
+
+                                                <li role="presentation" class="dropdown" style="float:right">
+
+                                                    <ul class="dropdown-menu" style="background-color:white; color:black">
+                                                        <li><a href="@Url.Action("UserProfile", "Home")"><i class="fa fa-user"></i> @Resource.Profile</a></li>
+                                                        <li><a href="@Url.Action("UserProfile", "UserProfile")"><i class="fa fa-list-alt fa-fw"></i> @Resource.Orders</a></li>
+                                                        <li role="presentation" class="dropdown">
+                                                            <a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa  fa-sign-out"></i>@Resource.LogOut</a>
+                                                        </li>
+
+                                                    </ul>
+                                                </li>
+
+                                            }
+                                            else
+                                            {
+
+                                                <c class="dropdown-menu" style="background-color:white; color:black">
+                                                    <li><a href="@Url.Action("UserProfile", "Home")"><i class="fa  fa-sign-out"></i> @Resource.Profile</a></li>
+                                                    <li><a href="@Url.Action("UserProfil", "UserProfile")"><i class="fa  fa-sign-out"></i> @Resource.Orders</a></li>
+                                                    <li role="presentation" class="dropdown">
+                                                        <a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa  fa-sign-out"></i>@Resource.LogOut</a>
+                                                    </li>
+
+                                                </c>
+
+
+
+
+                                            }
+
+
+
+
+
+                                        }
+
+                                    }
+
+
+
+
+
+                                </ul>
+
+
+                            </li>
+
+
+                            <!--Acct Profile-->
+
+                            <li class="aa-header-top-left" style="height:35px; border-color:none; color:black; padding-bottom:0px; padding-top:5px; float:right">
+
+
+                                <ul lass="navbar navbar-default" role="navigation" navbar-collapse=navbar-collapse no-gutter=no-gutter no-padding"style="position: center; margin: auto;  background-color:#fcfafa;  color:black">
+
+                                    @{
+
+
+
+
+                                        if (User.Identity.IsAuthenticated)
+                                        {
+
+
+
+
+
+                                            <li role="presentation" class="dropdown">
+                                                <a class="dropdown-toggle" data-toggle="dropdown" href="@Url.Action("Login", "Account")" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    <div style="padding-left:5px;">
+                                                        @*<img src="~/Content/images/icons-png/grid-black.png" style="width:10px; height:9px;" />More<br />*@
+                                                        <img src="@Url.Action("UserPhotos", "Home" )" type="hidden" style="width:20px; height:20px; border-radius:50%;" />
+                                                        <br />Acct
+                                                        <span class="caret"></span>
+                                                    </div>
+                                                </a>
+
+
+
+
+
+
+                                                <ul class="dropdown-menu" style="background-color:white; color:black">
+                                                    <li><a href="@Url.Action("UserProfile", "Home")"><i class="fa  fa-sign-out"></i> @Resource.Profile</a></li>
+                                                    <li><a href="@Url.Action("UserProfile", "UserProfile")"><i class="fa  fa-sign-out"></i> @Resource.Orders</a></li>
+                                                    <li role="presentation" class="dropdown">
+                                                        <a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa  fa-sign-out"></i>@Resource.LogOut</a>
+                                                    </li>
+
+                                                </ul>
+
+                                            </li>
+
+
+
+
+
+
+                                        }
+
+                                    }
+
+
+                                </ul>
+
+
+                            </li>
+
+
+
+
+
+
+                            <!--Search-->
+                            <li class="aa-header-top-left" style="height:50px; border-color:none; color:black; text-decoration:none; padding-top:3px; float:right; margin-right:20px;">
+
+                                <div class="inner-addon right-addon col-md-5">
+                                    <form action="@Url.Action("CSharpIndex", "Search")" method="get" id="form1">
+                                        <a href="@Url.Action("CSharpIndex", "Search")"><i type="submit" value="Search" class="fa fa-search" style="color:black"></i></a>
+
+                                        <input type="text" id="searchString" name="searchString" value="@ViewBag.searchString" class="form-control" placeholder="Search for..." style="width:450px; height:40px; margin-top:5px" />
+
+
+                                    </form>,
+
+
+                                </div>
+
+                            </li>
+
+
+
+
+
+
+
+
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+
+
+
+
+
+        <div style="border-bottom: solid thin 1px; padding-left: 3px;">
+            <div class="mainbar text-dark border-bottom shadow-sm " style=" width:100%;">
+
+                <table style="text-align:center; width:100%;">
+                    <tr>
+                        <td>
+
+                            <!-- Left nav -->
+                            <ul class="nav navbar-nav center-block  navbar-collapse  no-gutter no-padding" role="navigation" style="position: center;">
+
+                                <!--Angular-->
+                                <li style=" border-color:none; color:black;  float:left; margin-right:27px">
+
+
+                                    <ul style="position: center; margin: auto;  background-color:#fcfafa;  color:black">
+
+
+                                        <li>
+                                            <c>
+                                                <div>
+                                                    <a href="@Url.Action("GetPosts", "Angular")">
+                                                        <b style="font-size:16px; margin-right: 10px; color:black">Angular</b>
+                                                    </a>
+
+                                                </div>
+                                            </c>
+
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+                                <!--JQ Java-->
+                                <li style=" border-color:none; color:black;  float:left; margin-right:27px">
+
+
+                                    <ul style="position: center; margin: auto;  background-color:#fcfafa;  color:black">
+
+
+
+                                        <li>
+                                            <c>
+                                                <div>
+                                                    <a href="@Url.Action("GetPosts", "JqJa")">
+                                                        <b style="font-size:16px; margin-right: 10px; color:black">JQuery JavaScript</b>
+                                                    </a>
+                                                </div>
+                                            </c>
+
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+                                <!--Asp.net-->
+                                <li style=" border-color:none; color:black;  float:left; margin-right:27px">
+
+
+                                    <ul style="position: center; margin: auto;  background-color:#fcfafa;  color:black">
+
+
+                                        <li>
+                                            <c>
+                                                <div>
+                                                    <a href="@Url.Action("GetPosts", "AspWebform")">
+                                                        <b style="font-size:16px; margin-right: 10px; color:black">Asp.Net</b>
+                                                    </a>
+                                                </div>
+                                            </c>
+
+                                        </li>
+
+
+                                    </ul>
+                                </li>
+
+                                <!--MVC-->
+                                <li style=" border-color:none; color:black;  float:left; margin-right:27px">
+
+
+                                    <ul style="position: center; margin: auto;  background-color:#fcfafa;  color:black">
+
+
+
+                                        <li>
+                                            <c>
+                                                <div>
+                                                    <a href="@Url.Action("GetPosts", "MVC")">
+                                                        <b style="font-size:16px; margin-right: 10px; color:black">MVC</b>
+                                                    </a>
+                                                </div>
+                                            </c>
+
+                                        </li>
+
+
+                                    </ul>
+                                </li>
+
+                                <!--Entity Framework-->
+                                <li style=" border-color:none; color:black;  float:left; margin-right:27px">
+
+
+                                    <ul style="position: center; margin: auto;  background-color:#fcfafa;  color:black">
+
+
+                                        <li>
+                                            <c>
+                                                <div>
+                                                    <a href="@Url.Action("GetPosts", "EntityF")">
+                                                        <b style="font-size:16px; margin-right: 10px; color:black">Entity framework</b>
+                                                    </a>
+                                                </div>
+                                            </c>
+
+                                        </li>
+
+
+                                    </ul>
+                                </li>
+
+
+
+                                <!--CSS-->
+                                <li style=" border-color:none; color:black;  float:left; margin-right:27px">
+
+
+                                    <ul style="position: center; margin: auto;  background-color:#fcfafa;  color:black">
+
+
+
+                                        <li>
+                                            <c>
+                                                <div>
+                                                    <a href="@Url.Action("GetPosts", "CSS")">
+                                                        <b style="font-size:16px; margin-right: 10px; color:black">CSS</b>
+                                                    </a>
+                                                </div>
+                                            </c>
+
+                                        </li>
+
+
+                                    </ul>
+                                </li>
+
+
+
+                                <!--Sql Database-->
+                                <li style=" border-color:none; color:black;  float:left; margin-right:27px">
+
+
+                                    <ul style="position: center; margin: auto;  background-color:#fcfafa;  color:black">
+
+
+
+                                        <li>
+                                            <c>
+                                                <div>
+                                                    <a href="@Url.Action("GetPosts", "Databases")">
+                                                        <b style="font-size:16px; margin-right: 10px; color:black">Sql Server</b>
+                                                    </a>
+                                                </div>
+                                            </c>
+
+                                        </li>
+
+
+                                    </ul>
+                                </li>
+
+
+
+                                <!--DotNet-->
+                                <li style=" border-color:none; color:black;  float:left; margin-right:27px">
+
+
+                                    <ul style="position: center; margin: auto;  background-color:#fcfafa;  color:black">
+
+
+
+                                        <li>
+                                            <c>
+                                                <div>
+                                                    <a href="@Url.Action("GetPosts", "DotNet")">
+                                                        <b style="font-size:16px; margin-right: 10px; color:black">DotNet</b>
+                                                    </a>
+                                                </div>
+                                            </c>
+
+                                        </li>
+
+
+                                    </ul>
+                                </li>
+
+
+                                <!--CSharp-->
+                                <li style=" border-color:none; color:black;  float:left; margin-right:27px">
+
+
+                                    <ul style="position: center; margin: auto;  background-color:#fcfafa;  color:black">
+                                        <li>
+                                            <c>
+                                                <div>
+                                                    <a href="@Url.Action("GetPosts", "CSharp")">
+                                                        <b style="font-size:16px; margin-right: 10px; color:black">CSharp</b>
+                                                    </a>
+                                                </div>
+                                            </c>
+
+                                        </li>
+
+
+                                    </ul>
+                                </li>
+
+
+
+                                <!--More-->
+                                <li class="aa-header-top-left" style=" border-color:none; color:black;  float:right; margin-right:60px">
+
+
+                                    <ul lass="navbar navbar-default" role="navigation" navbar-collapse=navbar-collapse no-gutter=no-gutter style="position: center; margin: auto;  background-color:#fcfafa;  color:black">
+
+                                        @{
+
+                                            {
+
+                                                <li role="presentation" class="dropdown">
+                                                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                        <div>
+                                                            @*<img src="~/Content/images/icons-png/grid-black.png" style="width:10px; height:9px;" />More<br />*@
+                                                            <img src="~/Content/images/icons-png/plus-black.png" style="width:10px; height:12px;" /><b style="font-size:16px; margin-right: 10px; color:black">Categories</b>
+
+                                                        </div>
+                                                    </a>
+                                                    <ul id="mySidenav" class="dropdown-menu" style="background-color:white; color:black; margin-right:100px">
+                                                        <li><a href="@Url.Action("GetPosts", "NetCore")"><i class="fa  fa-sign-out"></i>Asp.net Core</a></li>
+                                                        <li><a href="@Url.Action("GetPosts", "React")"><i class="fa  fa-sign-out"></i>ReactJs</a></li>
+                                                        <li><a href="@Url.Action("GetPosts", "DBA")"><i class="fa  fa-sign-out"></i>Oracle</a></li>
+                                                        <li><a href="@Url.Action("GetPosts", "NoSql")"><i class="fa  fa-sign-out"></i>NoSql</a></li>
+                                                        <li><a href="@Url.Action("GetPosts", "WebApi")"><i class="fa  fa-sign-out"></i>Web API</a></li>
+                                                        <li><a href="@Url.Action("GetPosts", "Java")"><i class="fa  fa-sign-out"></i>Java</a></li>
+                                                        <li><a href="@Url.Action("Trainning", "WCF")"><i class="fa  fa-sign-out"></i>Bootstrap</a></li>
+                                                        <li><a href="@Url.Action("Trainning", "WCF")"><i class="fa  fa-sign-out"></i>AJax</a></li>
+                                                        <li><a href="@Url.Action("Trainning", "WCF")"><i class="fa  fa-sign-out"></i>Google APIs</a></li>
+                                                        <li><a href="@Url.Action("Trainning", "WCF")"><i class="fa  fa-sign-out"></i>NoteJs</a></li>
+                                                        <li><a href="@Url.Action("Trainning", "WCF")"><i class="fa  fa-sign-out"></i>MongoDB</a></li>
+                                                        <li><a href="@Url.Action("Trainning", "WCF")"><i class="fa  fa-sign-out"></i>PHP</a></li>
+                                                        <li><a href="@Url.Action("Trainning", "WCF")"><i class="fa  fa-sign-out"></i>MySql</a></li>
+                                                        <li><a href="@Url.Action("Trainning", "WCF")"><i class="fa  fa-sign-out"></i>GitGiHub</a></li>
+                                                        <li><a href="@Url.Action("Trainning", "WCF")"><i class="fa  fa-sign-out"></i>WCF</a></li>
+                                                        <li><a href="@Url.Action("Trainning", "WCF")"><i class="fa  fa-sign-out"></i>WPF</a></li>
+                                                    </ul>
+                                                </li>
+                                            }
+                                        }
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    @RenderBody()
+
+
+
+    <div class="footer border-top shadow-sm" style="margin-bottom: 0px; border-top: solid 1px; border-color:#585858; width:100%">
+
+
+        <div class="row mt-4 mb-6 mb-12" style="background-color: ghostwhite;">
+
+            <div class="col-md-3" style="padding-right:8px">
+                <div class="card card-body block">
+                    <div id="why_buy">
+                        <div class="info_right" style="padding-right:8px">
+                            <h5 class="text-center mb-3">Explore Home Features?</h5>
+                            <ul>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><b>About Us</b></li>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("Procedure", "Pages")" style="color:#2c2929;">Policies & Procedure  </a></li>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("Procedure", "Pages")" style="color:#2c2929;">Blog</a></li>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("Photos", "Pages")" style="color:#2c2929;">Site Photos & Contributers</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                <div class="card card-body block">
+                    <div id="why_buy">
+                        <div class="info_right">
+                            <h5 class="text-center mb-3">Explore Our Services?</h5>
+                            <ul>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><b>Services Available </b></li>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="#" style="color:#2c2929;">Photos </a></li>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("AdminIndex", "NoteList")" style="color:#2c2929;">NoteList</a></li>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("GetPosts", "NoteList")" style="color:#2c2929;">NoteList</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                <div class="card card-body block">
+                    <div id="why_buy">
+                        <div class="info_right">
+                            <h5 class="text-center mb-3">Programs?</h5>
+                            <ul>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><b>Buy from our Store</b></li>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="@Url.Action("Shop", "Home")" style="color:#2c2929;">Store</a></li>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="#" style="color:#2c2929;">Orders </a></li>
+                                <li><i class="fas fa-check mr-2" style="color:#F69230;font-size:17px;"></i><a href="# style=" color:#2c2929;"=color:#2c2929;">Profile</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card card-body block" style=" padding-left:10px">
+                    <div id="why_buy">
+                        <div class="info_right">
+                            <h5 class="text-center mb-3">Information?</h5>
+                            <ul>
+                                <li style="background-color:#f1fafa">
+
+                                    <img src="~/Content/img/Kente/Other/CustomerS6.png" style="width:50px; height:50px; border-radius:40%" />
+                                </li>
+                                <li><span class="fa fa-phone"><strong class="aa-footer-nav">Phone:404-447-3025 </strong></span></li>
+                                <li>
+                                    <a href="@Url.Action("Subscribe", "News")" class="btn-rounded" style="background-color:#f1fafa">
+                                        <img src="~/Content/img/Books/FBooks/PArror.jpg" style="width:50px; height:25px" />
+                                        Sign up!
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <div class="row mt-4 mb-6 mb-12" style=" background-color: #585858;">
+
+            <div class="row mt-4 mb-6 mb-12">
+                <table style=" text-align:center; width:100%">
+                    <tr>
+                        <td style="margin-left:22px; float:left">
+
+                            <div class="list-unstyled list-inline mb-0" style="margin-left:22px">
+                                <c style="color:inherit">
+                                    <b style="color:#fff"> Designed by</b>
+                                    <a href="http://www.facebook.com/">
+                                        <b style="color:inherit">Peter Agyekum Essien:</b>
+                                    </a>
+                                </c>
+                                <c style="color:#fff">Copyright <b style="color:inherit"> ©2020</b></c>
+
+                                <c style="color:#585858;">
+
+
+
+                                    <!-- BEGIN: Powered by Supercounters.com -->
+
+                                    <script type="text/javascript" src="//widget.supercounters.com/ssl/online_t.js"></script>
+                                    <script type="text/javascript">sc_online_t(1601083, "585858", "585858");</script><noscript><a href="https://www.supercounters.com/">supercounters.com</a></noscript>
+
+                                    <!-- END: Powered by Supercounters.com -->
+
+                                </c>
+
+
+                            </div>
+                        </td>
+
+
+                        <td style="float:none">
+
+                            <div class="list-unstyled list-inline mb-0">
+                                <a href="https://facebook.com/sharer.php?u=http://arunendapally.com/post/protect-your-source-code-from-decompiling-or-reverse-engineering"><span class="fa fa-facebook"></span></a>
+                                <a href="#"><span class="fa fa-twitter"></span></a>
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://arunendapally.com/post/protect-your-source-code-from-decompiling-or-reverse-engineering&amp;title=Protect your source code from decompiling or reverse engineering"><span class="fa fa-google-plus"></span></a>
+                                <a href="#"><span class="fa fa-youtube"></span></a>
+                                <a href="#"><span class="fa fa-linkedin"></span></a>
+                                <a href="https://plus.google.com/share?url=http://arunendapally.com/post/protect-your-source-code-from-decompiling-or-reverse-engineering"><span class="fa fa-plus.google"></span></a>
+
+                            </div>
+                        </td>
+
+                        <td style="float:none">
+                            <div class="list-unstyled list-inline mb-0">
+                                <a href="#"><span class="fa fa-cc-mastercard"></span></a>
+                                <a href="#"><span class="fa fa-cc-visa"></span></a>
+                                <a href="#"><span class="fa fa-paypal"></span></a>
+                                <a href="#"><span class="fa fa-cc-discover"></span></a>
+                            </div>
+                        </td>
+
+
+                        <td style="margin-right:50px; float:right">
+                            <div class="list-unstyled list-inline mb-0" style="margin-right:30px">
+                                <a href="@Url.Action("Admin", "Admin", "Admin")" style="color:inherit">
+                                    <span class="fa fa-cc-pricaycu" style="color:#fff"><i class="fa fa-user"></i>ADMIN</span>
+                                </a>
+                            </div>
+                        </td>
+                        <td style="margin-right:20px; float:right">
+                            <div class="list-unstyled list-inline mb-0">
+                                <a href="@Url.Action("Procedure", "Pages")" style="color:inherit"><span class="fa fa-cc-pricaycu"><a href="@Url.Action("Procedure", "Pages")">PRIVACY</a></span></a>
+                            </div>
+                        </td>
+                        <td style="margin-right:20px; float:right">
+                            <div class="list-unstyled list-inline mb-0">
+                                <a href="@Url.Action("Procedure", "Pages")">
+                                    <span class="fa fa-cc-pricaycu">POLICY</span>
+                                </a>
+                            </div>
+                        </td>
+                        @*     <td style="margin-right:10px;">
+                                <div class="list-unstyled list-inline mb-0">
+                                    <a href="@Url.Action("Procedure", "Pages")">
+                                        <span class="fa fa-cc-pricaycu">PRIVACY</span>
+                                    </a>
+                                </div>
+                            </td>*@
+                    </tr>
+                </table>
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- bottom
+    <div class="row mt-4 mb-6 mb-12" style="background-color: ghostwhite;">
+
+
+        <div class="aa-footer-bottom" style=" border-top: inset 2px;   border-bottom-color: #f1f1f1; border-top-color: #f1f1f1;">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="aa-footer-bottom-area" style="text-align:center">
+
+
+                            <table style="text-align:center; width:100%">
+                                <tr>
+                                    <td style="margin-left:0px; float:left">
+
+                                        <ul class="list-unstyled list-inline mb-0">
+                                            <li style="color:inherit"> Designed by <a href="http://www.facebook.com/"><b style="color:inherit">Peter Agyekum Essien:</b></a></li>
+                                            <li style="color:inherit">Copyright <b style="color:inherit"> ©2020</b></li>
+                                        </ul>
+                                    </td>
+
+
+                                    <td style="float:none">
+
+                                        <div class="list-unstyled list-inline mb-0">
+                                            <a href="https://facebook.com/sharer.php?u=http://arunendapally.com/post/protect-your-source-code-from-decompiling-or-reverse-engineering"><span class="fa fa-facebook"></span></a>
+                                            <a href="#"><span class="fa fa-twitter"></span></a>
+                                            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://arunendapally.com/post/protect-your-source-code-from-decompiling-or-reverse-engineering&amp;title=Protect your source code from decompiling or reverse engineering"><span class="fa fa-google-plus"></span></a>
+                                            <a href="#"><span class="fa fa-youtube"></span></a>
+                                            <a href="#"><span class="fa fa-linkedin"></span></a>
+                                            <a href="https://plus.google.com/share?url=http://arunendapally.com/post/protect-your-source-code-from-decompiling-or-reverse-engineering"><span class="fa fa-plus.google"></span></a>
+
+                                        </div>
+                                    </td>
+
+                                    <td style="float:none">
+                                        <div class="list-unstyled list-inline mb-0">
+                                            <a href="#"><span class="fa fa-cc-mastercard"></span></a>
+                                            <a href="#"><span class="fa fa-cc-visa"></span></a>
+                                            <a href="#"><span class="fa fa-paypal"></span></a>
+                                            <a href="#"><span class="fa fa-cc-discover"></span></a>
+                                        </div>
+                                    </td>
+
+
+                                    <td style="margin-right:20px; float:right">
+                                        <div class="list-unstyled list-inline mb-0">
+                                            <a href="@Url.Action("Admin", "Admin", "Admin")" style="color:inherit"><span class="fa fa-cc-pricaycu"><i class="fa fa-user"></i>ADMIN</span></a>
+                                        </div>
+                                    </td>
+                                    <td style="margin-right:20px; float:right">
+                                        <div class="list-unstyled list-inline mb-0">
+                                            <a href="@Url.Action("Procedure", "Pages")">
+                                                <span class="fa fa-cc-pricaycu">POLICY</span>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td style="margin-right:20px; float:right">
+                                        <div class="list-unstyled list-inline mb-0">
+                                            <a href="@Url.Action("Procedure", "Pages")">
+                                                <span class="fa fa-cc-pricaycu">PRIVACY</span>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>-->
+    @*<footer id="aa-footer">*@
+    @* <footer id="aa-footer-top">
+
+        <!-- Middle -->
+
+        <div class="aa-footer-top" style=" border-top: inset 1px;   border-bottom-color: #f1f1f1; border-top-color: #f1f1f1;">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="aa-footer-top-area">
+                            <table style="width:100%;">
+                                <tr>
+                                    <td>
+
+                                        Quick Links: <a href="http://www.facebook.com/"><b style="color:white"> </b></a>
+                                        <ul class="aa-footer-nav" style="color:black">
+                                            <li style="color:black">
+                                                <a href="@Url.Action("Index", "Home")">
+                                                    <c style="color:black">Home</c>
+                                                </a>
+                                            </li>
+                                            <li><a href="@Url.Action("Procedure", "Pages")"><c style="color:black">Policies</c></a></li>
+                                            <li><a href="@Url.Action("Blog", "Pages")"><c style="color:black">Blog</c></a></li>
+                                            <li><a href="@Url.Action("Download", "Pages")"><c style="color:black">Download</c></a></li>
+                                            <li><a href="@Url.Action("Media", "Pages")"><c style="color:black">Media</c></a></li>
+                                            <li><a href="@Url.Action("DownLoadLink", "Pages")"><c style="color:black">Photo</c></a></li>
+                                            <li><a href="@Url.Action("Articles", "Home")"><c style="color:black">Article</c></a></li>
+                                            <li><a href="@Url.Action("Contact", "Home")"><c style="color:black">Contact</c></a></li>
+                                        </ul>
+
+                                    </td>
+                                    <td>
+
+                                        Top Tutorials:
+                                        <ul class="aa-footer-nav">
+                                            <li><a href="@Url.Action("Media", "Pages")"><c style="color:black">Mvc Tutorials</c></a></li>
+                                            <li><a href="@Url.Action("Media", "Pages")"><c style="color:black">Sql Tutorials</c></a></li>
+                                            <li><a href="@Url.Action("Media", "Pages")"><c style="color:black">CSS Tutorials</c></a></li>
+                                            <li><a href="@Url.Action("Media", "Pages")"><c style="color:black">Jquery Tutorials</c></a></li>
+                                            <li><a href="@Url.Action("Media", "Pages")"><c style="color:black">Asp Tutorials</c></a></li>
+                                            <li><a href="@Url.Action("Media", "Pages")"><c style="color:black">DBA Tutorials</c></a></li>
+                                            <li><a href="@Url.Action("Media", "Pages")"><c style="color:black">C# Tutorials</c></a></li>
+                                            <li><a href="@Url.Action("Media", "Pages")"><c style="color:black">DotNet Tutorials</c></a></li>
+                                        </ul>
+
+
+
+                                    </td>
+                                    <td>
+
+                                        Post Question: <a href="http://www.facebook.com/"><b style="color:white"> </b></a>
+                                        <ul class="aa-footer-nav">
+                                            <li><a href="@Url.Action("GetPosts", "Csharp")"><c style="color:black">C Sharp</c></a></li>
+                                            <li><a href="@Url.Action("GetPosts", "MVC")"><c style="color:black">Mvc</c></a></li>
+                                            <li><a href="@Url.Action("GetPosts", "CSS")"><c style="color:black">CSS</c></a></li>
+                                            <li><a href="@Url.Action("GetPosts", "Databases")"><c style="color:black">Sql Server</c></a></li>
+                                            <li><a href="@Url.Action("GetPosts", "JqJa")"><c style="color:black">JQuery & Java</c></a></li>
+                                            <li><a href="@Url.Action("GetPosts", "AspWebform")"><c style="color:black">Asp.Net</c></a></li>
+                                            <li><a href="@Url.Action("GetPosts", "DotNet")"><c style="color:black">DotNet</c></a></li>
+                                            <li><a href="@Url.Action("GetPosts", "DBA")"><c style="color:black">DBA</c></a></li>
+                                        </ul>
+
+
+
+                                    </td>
+
+                                    <td>
+
+                                        Post Reply: <a href="http://www.facebook.com/"></a>
+                                        <ul class="aa-footer-nav">
+                                            <li><a href="@Url.Action("Details", "Post_CSharp")"><c style="color:black">C Sharp</c></a></li>
+                                            <li><a href="~/Post_MVC/Details/41"><c style="color:black">MVC</c></a></li>
+                                            <li><a href="~/Post_CSS/Details/1"><c style="color:black">CSS</c></a></li>
+                                            <li><a href="~/Post_Databases/Details/1"><c style="color:black">Sql Server</c></a></li>
+                                            <li><a href="~/Post_Databases/Details/1"><c style="color:black">JQuery & Java</c></a></li>
+                                            <li><a href="~/Post_Databases/Details/1"><c style="color:black">Asp.Ne</c></a></li>
+                                            <li><a href="@Url.Action("Details", "Post_EntityFrameWorks")"><c style="color:black">Entity Framework</c></a></li>
+                                            <li><a href="@Url.Action("Details", "Post_DBA")"><c style="color:black">DBA</c></a></li>
+                                        </ul>
+
+
+                                    </td>
+
+                                    <td>
+
+                                        Searching: <a href="http://www.facebook.com/"></a>
+                                        <ul class="aa-footer-nav">
+                                            <li><a href="@Url.Action("CSharpIndex", "Search")"><c style="color:black">Search</c></a></li>
+                                            <li><a href="@Url.Action("DotNetIndex", "Search")"><c style="color:black">Advanced Search</c></a></li>
+                                            <li><a href="@Url.Action("Subcribe", "News")"><c style="color:black">Subscribe</c></a></li>
+                                            <li><a href="@Url.Action("DownLoadLink", "Page")"><c style="color:black">FAQ</c></a></li>
+                                            <li><a href="@Url.Action("Contact", "Home")"><c style="color:black">Message</c></a></li>
+                                            <li><a href="@Url.Action("DownLoadLink", "DownLoadLink")"><c style="color:black">Developer</c></a></li>
+                                            <li><a href="@Url.Action("Login", "Account")"><c style="color:black">Login</c></a></li>
+                                            <li><a href="@Url.Action("Register", "Account")"><c style="color:black">register</c></a></li>
+                                        </ul>
+
+                                    </td>
+
+                                    <td>
+
+                                        <b style="color:aliceblue"> </b>  Store: <a href="http://www.facebook.com/"></a>
+
+                                        <ul class="aa-footer-nav" style="color:black">
+                                            <li><a href="@Url.Action("Shop", "Home")"><c style="color:black">Store Center</c></a></li>
+                                            <li><a href="~/Home/Details/1"><c style="color:black">McMagainBooks</c></a></li>
+                                            <li><a href="~/Home/Details/8"><c style="color:black">Whitney Books</c></a></li>
+                                            <li><a href="~/Home/Details/7"><c style="color:black">DK Books</c></a></li>
+                                            <li><a href="@Url.Action("Admin", "Admin", "Admin")"><c style="color:black">Store Manager</c></a></li>
+                                            <li><a href="~/Pages/Career/7007"><c style="color:black">Career</c></a></li>
+                                            <li><a href="~/Pages/Trainning/7005"><c style="color:black">Trainning</c></a></li>
+                                            <li><a href="~/Pages/Interview/7009"><c style="color:black">Interview</c></a></li>
+
+
+                                        </ul>
+
+
+                                    </td>
+
+
+
+
+
+                                    <td>
+                                        <ul class="widget-nav" style="display:inline-block; background-color:#f1fafa">
+                                            <li style="background-color:#f1fafa">
+
+                                                <img src="~/Content/img/Kente/Other/CustomerS6.png" style="width:100px; height:100px; border-radius:40%" />
+                                            </li>
+
+
+                                        </ul>
+                                    </td>
+                                    <td>
+
+                                        <a href="http://www.facebook.com/"></a>
+
+
+                                        <ul class="widget-nav" style="display:inline-block; background-color:#f1f1f1">
+                                            INFO: @ApplicationInstance.Application["Totaluser"]
+                                            @*<li>
+                                                <!-- Global site tag (gtag.js) - Google Analytics -->
+                                                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159143661-1"></script>
+                                                <script>
+                                                    window.dataLayer = window.dataLayer || [];
+                                                    function gtag() { dataLayer.push(arguments); }
+                                                    gtag('js', new Date());
+
+                                                    gtag('config', 'UA-159143661-1');
+                                                </script>
+                                                </li>
+
+
+
+
+                                                <li>
+                                                    <!-- BEGIN: Powered by Supercounters.com -->
+                                                    <center>
+                                                        <script type="text/javascript" src="//widget.supercounters.com/ssl/hit.js"></script>
+                                                        <script type="text/javascript">sc_hit(1568730, 12, 3);</script><br /><noscript><a href="http://www.supercounters.com/">free online counter</a></noscript>
+                                                    </center>
+                                                    <!-- END: Powered by Supercounters.com -->
+                                                </li>
+
+                                            <li>114 Corners Mill Drive, Norcross</li>
+                                            <li><span class="fa fa-phone"><strong class="aa-footer-nav">Phone:404-447-3025 </strong></span></li>
+                                            <li><span class="fa-globe">Essien.Net</span></li>
+                                            <li>
+                                                <a href="@Url.Action("Subscribe", "News")" class="btn-rounded" style="background-color:#f1fafa">
+                                                    <img src="~/Content/img/Books/FBooks/PArror.jpg" style="width:50px; height:25px" />
+
+
+                                                    Sign up!
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+        <!-- bottom -->
+
+        <div class="aa-footer-bottom" style=" border-top: inset 2px;   border-bottom-color: #f1f1f1; border-top-color: #f1f1f1;">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="aa-footer-bottom-area" style="text-align:center">
+
+
+                            <table style="text-align:center; width:100%">
+                                <tr>
+                                    <td style="margin-left:0px; float:left">
+
+                                        <ul class="list-unstyled list-inline mb-0">
+                                            <li style="color:inherit"> Designed by <a href="http://www.facebook.com/"><b style="color:inherit">Peter Agyekum Essien:</b></a></li>
+                                            <li style="color:inherit">Copyright <b style="color:inherit"> ©2020</b></li>
+                                        </ul>
+                                    </td>
+
+
+                                    <td style="float:none">
+
+                                        <div class="list-unstyled list-inline mb-0">
+                                            <a href="https://facebook.com/sharer.php?u=http://arunendapally.com/post/protect-your-source-code-from-decompiling-or-reverse-engineering"><span class="fa fa-facebook"></span></a>
+                                            <a href="#"><span class="fa fa-twitter"></span></a>
+                                            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://arunendapally.com/post/protect-your-source-code-from-decompiling-or-reverse-engineering&amp;title=Protect your source code from decompiling or reverse engineering"><span class="fa fa-google-plus"></span></a>
+                                            <a href="#"><span class="fa fa-youtube"></span></a>
+                                            <a href="#"><span class="fa fa-linkedin"></span></a>
+                                            <a href="https://plus.google.com/share?url=http://arunendapally.com/post/protect-your-source-code-from-decompiling-or-reverse-engineering"><span class="fa fa-plus.google"></span></a>
+
+                                        </div>
+                                    </td>
+
+                                    <td style="float:none">
+                                        <div class="list-unstyled list-inline mb-0">
+                                            <a href="#"><span class="fa fa-cc-mastercard"></span></a>
+                                            <a href="#"><span class="fa fa-cc-visa"></span></a>
+                                            <a href="#"><span class="fa fa-paypal"></span></a>
+                                            <a href="#"><span class="fa fa-cc-discover"></span></a>
+                                        </div>
+                                    </td>
+
+
+                                    <td style="margin-right:20px; float:right">
+                                        <div class="list-unstyled list-inline mb-0">
+                                            <a href="@Url.Action("Admin", "Admin", "Admin")" style="color:inherit"><span class="fa fa-cc-pricaycu"><i class="fa fa-user"></i>ADMIN</span></a>
+                                        </div>
+                                    </td>
+                                    <td style="margin-right:20px; float:right">
+                                        <div class="list-unstyled list-inline mb-0">
+                                            <a href="@Url.Action("Procedure", "Pages")">
+                                                <span class="fa fa-cc-pricaycu">POLICY</span>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td style="margin-right:20px; float:right">
+                                        <div class="list-unstyled list-inline mb-0">
+                                            <a href="@Url.Action("Procedure", "Pages")">
+                                                <span class="fa fa-cc-pricaycu">PRIVACY</span>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+
+
+
+
+
+    @* <!-- wpf loader Two -->
+        <div id="wpf-loader-two">
+            <div class="wpf-loader-two-inner">
+                <span>Loading</span>
+            </div>
+        </div>*@
+    <!-- / wpf loader Two -->
+    <!-- SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
+    <!-- END SCROLL TOP BUTTON -->
+    <!-- / footer -->
+    <!-- Start header section -->
+    @Scripts.Render("~/Content/js")
+    @RenderSection("scripts", required: false)
+    <script src="~/Content/js/main.js"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560770f61b38eef5" async="async"></script>-->
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d6b94c29f26abc4"></script>
+
+
+
+</body>
+
+</html>

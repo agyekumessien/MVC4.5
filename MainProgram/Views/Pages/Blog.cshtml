@@ -1,0 +1,297 @@
+﻿<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@using MainProgram.Core.Resources
+@using MainProgram.Edm
+@using Microsoft.AspNet.Identity
+@using MainProgram.Models
+
+
+
+@{
+    ViewBag.Title = "GetPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/Custom.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="content-wrapper" style="width: 20%; margin-left: 0px; width:100%; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+
+
+  
+
+    <!-- left sidebar-->
+
+
+    <div class="left" style="width: 17%; float:left; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+        <div class="Container">
+            <div class="col-md-4">
+                <div class="container">
+                    <div class="panel panel-default" style="width: 22%">
+                        <strong style="font-size:x-large"><b>Best Contributers</b></strong>
+                        <div class=" panel-body  no-gutter">
+                            <div col-md-4">
+                                <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+                                    @using (Html.BeginForm("Index", "Post", FormMethod.Get))
+                                    {
+
+                                    }
+                                    <div class="table">
+                                        <ul>
+                                            <li>
+                                                @Html.ActionLink("Post", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </li>
+                                            <li>
+                                                First Name
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("PostDate", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </li>
+
+
+
+                                            @{
+
+
+                                                MainProgram.Edm.angulardemoEntities dbg3 = new MainProgram.Edm.angulardemoEntities();
+
+                                                List<MainProgram.Edm.tbh_Replies> Modelq = dbg3.tbh_Replies.ToList();
+
+                                                foreach (MainProgram.Edm.tbh_Replies item in Modelq)
+                                                {
+                                                    <li>
+                                                        <br /><br />
+                                                        <a href="@Url.Action("ChatRoom", "Post", new { id = item.ThreadId })" class="aa-cartbox-img"><img src="data:image;base64,@System.Convert.ToBase64String(@item.AspNetUser.UserPhoto)" width="60" height="60" style="padding-right:5px; margin-bottom:0px; padding-bottom:0px; border-radius:40px; text-align:left; float:left; vertical-align:sub" multiple /></a>
+                                                        <a href="@Url.Action("ChatRoom", "Post", new { id = item.ThreadId })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                            @item.AspNetUser.UserName
+
+                                                        </a>
+
+                                                        <br />
+                                                        <a href="@Url.Action("ChatRoom", "Post")">View</a>
+
+
+                                                    </li>
+                                                }
+                                            }
+
+
+
+
+
+                                        </ul>
+
+                                    </div>
+
+
+
+
+
+
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--End Of Left-->
+    <!-- Right-->
+
+
+    <div class="right"
+         style="width: 21%; float:right; margin-right:8px; padding-right:8px; top:0px; background-image: url('../../Content/img/ApparelImages/back.jpg');">
+        <div class="Container">
+            <div class="col-md-4">
+                <div class="container">
+                    <div class="panel panel-default" style="width: 22%">
+                        <strong style="font-size:x-large"><b>Best Contributers</b></strong>
+                        <div class=" panel-body  no-gutter">
+                            <div col-md-4">
+                                <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+
+                                    @using (Html.BeginForm("Index", "EntityF", FormMethod.Get))
+                                    {
+
+                                    }
+                                    <div class="table">
+                                        <ul>
+                                            <li>
+                                                @Html.ActionLink("EntityF", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </li>
+                                            <li>
+                                                First Name
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("PostDate", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </li>
+
+
+
+                                            @{
+
+
+                                                MainProgram.Edm.angulardemoEntities dbgr = new MainProgram.Edm.angulardemoEntities();
+
+                                                List<MainProgram.Edm.EntityFrameWork> Modelr = dbgr.EntityFrameWorks.ToList();
+
+                                                foreach (MainProgram.Edm.EntityFrameWork item in Modelr)
+                                                {
+                                                    <li>
+                                                        <a href="@Url.Action("Details", "EntityF", new { id = item.EntityFId })" class="aa-cartbox-img" style="text-align:left; font-family:Arial; font-size:12px; vertical-align:text-bottom" multiple>
+                                                            @item.EntityFTitle
+
+                                                        </a>
+
+
+                                                    </li>
+                                                }
+                                            }
+
+
+
+
+
+                                        </ul>
+
+                                    </div>
+
+
+
+
+
+
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--End Of Right-->
+    <!--MID Sidebar Main content-->
+    <div class="Mid-sidebar" style="margin-right:10px; padding-right:0px; text-align:center">
+        <div class="panel panel-default" style="width: 100%; margin-left: 0px;">
+            <strong style="font-size:x-large"><b> DotNet Top questions</b></strong>
+
+           
+
+
+
+                </div>
+
+
+
+
+
+
+          
+        </div>
+
+
+       
+
+        <div>
+            @Html.ActionLink("Back to HomePage", "Index", "Home")
+        </div>
+
+
+
+    </div>
+    <!--End Of MID-->
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        .content-wrapper {
+            margin-top: 0%;
+            margin-left: 0%;
+            background-position: top;
+        }
+
+        #left {
+            width: 20%;
+            margin-left: 0%;
+            margin-top: 0%;
+            background-position: top;
+            position: relative;
+            background-color: #eee3e3;
+        }
+
+
+
+        .Mid-sidebar {
+            content: " ";
+            position: relative;
+            margin-top: 0%;
+            width: 60%;
+            overflow: no-display;
+            padding-right: 0px;
+            margin-left: 20%;
+            margin-right: 0%;
+            background-position: top;
+            margin-bottom: 0px;
+            background-color: #fff;
+        }
+
+
+        .SiteT {
+            width: 100%;
+            border: none;
+            margin-right: 0px;
+            padding-right: 0px;
+        }
+
+
+
+
+        .main--container {
+            margin-left: 17px;
+        }
+    </style>
+
+
+</div>
